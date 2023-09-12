@@ -3,5 +3,5 @@ export default async function MainLayout({
 }: {
    children: React.ReactNode;
 }) {
-   return <div> navbar sfsd{children}</div>;
+   return <div> navbar about{children}</div>;
 }

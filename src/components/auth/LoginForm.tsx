@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Login } from "@/services/api/auth";
-import type { AxiosError } from "axios";
+import { AxiosError } from "axios";
 
 export default function LoginForm() {
    const [email, setEmail] = useState("");
@@ -23,8 +23,6 @@ export default function LoginForm() {
    };
 
    return (
-      <section>
-         <div className="container flex items-center justify-center min-h-screen px-6 mx-auto">
             <form
                onSubmit={(e) => e.preventDefault}
                className="w-full max-w-md"
@@ -71,7 +69,5 @@ export default function LoginForm() {
                   {error && <div className="error">{error}</div>}
                </div>
             </form>
-         </div>
-      </section>
    );
 }
