@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Login } from "@/services/api/auth";
+import type { AxiosError } from "axios";
 
 export default function LoginForm() {
    const [email, setEmail] = useState("");
@@ -11,10 +12,13 @@ export default function LoginForm() {
       try {
          const result = await Login(email, password);
          // handl successful login
-         console.log(result);
-      } catch (error) {
+      } catch (error: any) {
          //handle error
-         setError("Login failed");
+         if (error?.response?.status === 400) {
+            setError("Invalid credentials");
+         } else {
+            setError("Login failed");
+         }
       }
    };
 
