@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Login } from "@/services/api/auth";
 
-function LoginForm() {
+export default function LoginForm() {
    const [email, setEmail] = useState("");
    const [password, setPassword] = useState("");
    const [error, setError] = useState("");
@@ -32,7 +32,7 @@ function LoginForm() {
                />
 
                <h1 className="mt-3 text-2xl font-semibold text-gray-100 capitalize sm:text-3xl text-center">
-                  sign In
+                  Sign In
                </h1>
 
                <div className="relative flex items-center mt-8">
@@ -71,5 +71,3 @@ function LoginForm() {
       </section>
    );
 }
-
-export default LoginForm;
