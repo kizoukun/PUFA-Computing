@@ -55,11 +55,11 @@ export default function RegisterForm() {
   return (
     <div>
       <form onSubmit={handleRegister} className="w-full max-w-md">
-        <img
+        {/* <img
           className="w-auto h-4 sm:h-8 mx-auto my-8"
           src="https://merakiui.com/images/logo.svg"
           alt=""
-        />
+        /> */}
 
         <h1 className="mt-3 text-2xl font-semibold text-gray-100 capitalize sm:text-3xl text-center">
           sign Up
@@ -127,7 +127,7 @@ export default function RegisterForm() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border rounded-lg"
-            placeholder="ilhampratama@example.com"
+            placeholder="password"
             required
           />
         </div>
@@ -214,7 +214,7 @@ export default function RegisterForm() {
           )}
         </div>
 
-        {/* Institution
+        {/* Institution */}
         <div>
           {selectedRole != "Student" && (
             <div className="mt-2">
@@ -229,12 +229,12 @@ export default function RegisterForm() {
                 className="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border rounded-lg"
                 placeholder="Universitas Perdana Mentri"
                 required
-                value={institution}
-                onChange={(e) => setInstitution(e.target.value)}
+                // value={institution}
+                // onChange={(e) => setInstitution(e.target.value)}
               />
             </div>
           )}
-        </div> */}
+        </div>
 
         <div className="mt-6">
           <button
