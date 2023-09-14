@@ -1,10 +1,11 @@
 import Navbar from "@/components/Navbar";
 
 export default async function MainLayout({
-  children,
+   children,
 }: {
-  children: React.ReactNode;
+   children: React.ReactNode;
 }) {
+<<<<<<< HEAD
   return(
    //navbar
    
@@ -13,4 +14,14 @@ export default async function MainLayout({
       {children}
   </div>
   );
+=======
+   return (
+      //navbar
+
+      <div className="bg-black font-inter">
+         <Navbar />
+         {children}
+      </div>
+   );
+>>>>>>> d0600b905eb0bd81fd0f776e4c2a78ae7360209c
 }
