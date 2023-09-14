@@ -8,7 +8,7 @@ export default async function MainLayout({
   return(
    //navbar
    
-  <div className="bg-black font-inter">
+  <div className=" font-inter">
    <Navbar/>
       {children}
   </div>

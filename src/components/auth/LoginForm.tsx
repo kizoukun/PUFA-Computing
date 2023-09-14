@@ -29,7 +29,7 @@ export default function LoginForm() {
             >
                <img
                   className="w-auto h-7 sm:h-8 mx-auto my-8"
-                  src="https://merakiui.com/images/logo.svg"
+                  src="../PUComputing.png"
                   alt=""
                />
 

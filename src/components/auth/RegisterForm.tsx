@@ -187,10 +187,12 @@ export default function RegisterForm() {
               </label>
               <input
                 type="text"
+                inputMode="numeric"
                 className="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border rounded-lg"
                 placeholder="0110333333"
                 value={nim}
                 onChange={(e) => setNim(e.target.value)}
+                pattern="[0-9]*"
                 required
               />
             </div>
