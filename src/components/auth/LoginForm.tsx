@@ -17,7 +17,7 @@ export default function LoginForm() {
       } catch (error: any) {
          //handle error
          if (error?.response?.status === 400) {
-            setError(error.response?.data?.message ?? "Failed to Login");
+            setError(error.response?.data?.error ?? "Failed to Login");
          } else {
             setError("Login failed");
          }

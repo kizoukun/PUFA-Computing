@@ -45,7 +45,7 @@ export default function RegisterForm() {
          if (error instanceof AxiosError) {
             if (error.response?.status === 400) {
                // setError("Invalid credentials");
-               setError(error.response?.data?.message ?? "Failed to Login");
+               setError(error.response?.data?.error ?? "Failed to Login");
             } else {
                setError("Register failed");
             }
