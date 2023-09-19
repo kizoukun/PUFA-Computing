@@ -10,13 +10,14 @@ export default function LoginForm() {
 
    const handleLogin = async (e: React.FormEvent) => {
       e.preventDefault();
+      setError("");
       try {
          const result = await Login(email, password);
          // handl successful login
       } catch (error: any) {
          //handle error
          if (error?.response?.status === 400) {
-            setError("Invalid credentials");
+            setError(error.response?.data?.message ?? "Failed to Login");
          } else {
             setError("Login failed");
          }
@@ -58,13 +59,13 @@ export default function LoginForm() {
          </div>
 
          <div className="mt-6">
+            {error && <div className="error text-red-500 my-2">{error}</div>}
             <button
                onClick={handleLogin}
                className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
             >
                Sign in
             </button>
-            {error && <div className="error">{error}</div>}
          </div>
       </form>
    );
