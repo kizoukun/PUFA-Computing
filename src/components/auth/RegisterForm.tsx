@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { FormEventHandler, useState } from "react";
 import { Register } from "@/services/api/auth";
 import { AxiosError, AxiosResponse } from "axios";
 import User from "@/models/user";
@@ -23,7 +23,8 @@ export default function RegisterForm() {
    const [error, setError] = useState("");
 
    // Handle Register
-   const handleRegister = async () => {
+   const handleRegister = async (e: React.FormEvent) => {
+      e.preventDefault();
       try {
          const user: User = {
             first_name,

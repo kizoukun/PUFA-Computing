@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Login } from "@/services/api/auth";
 import { AxiosError } from "axios";
 
@@ -8,7 +8,8 @@ export default function LoginForm() {
    const [password, setPassword] = useState("");
    const [error, setError] = useState("");
 
-   const handleLogin = async () => {
+   const handleLogin = async (e: React.FormEvent) => {
+      e.preventDefault();
       try {
          const result = await Login(email, password);
          // handl successful login
