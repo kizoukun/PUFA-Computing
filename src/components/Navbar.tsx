@@ -10,16 +10,6 @@ function classNames(...classes: string[]): string {
 }
 
 export default function Navbar() {
-   const [isSignUpHovered, setIsSignUpHovered] = useState(false);
-
-   const handleSignUpHover = () => {
-      setIsSignUpHovered(true);
-   };
-
-   const handleSignUpLeave = () => {
-      setIsSignUpHovered(false);
-   };
-
    return (
       <header className="sticky bg-white shadow-md top-0 ">
          <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -155,26 +145,20 @@ export default function Navbar() {
                </div>
 
                <div className="flex items-center gap-4">
-                  <div className="sm:flex sm:gap-1">
+                  <div className="sm:flex sm:gap-4">
                      <Link
-                        className="rounded-md bg-white px-2 md:px-5 py-2.5 text-sm font-medium text-black hover:text-white hover:bg-[#0C8CE9] duration-300"
+                        className="block rounded-md bg-white px-2 md:px-5 py-2.5 text-sm font-medium text-black hover:text-white hover:bg-[#0C8CE9] border-2 border-[#0C8CE9] duration-300"
                         href="/auth/signin"
                      >
-                        Sign In
+                        Sign in
                      </Link>
 
                      <div className="hidden sm:flex">
                         <Link
-                           className={`rounded-md px-5 py-2.5 text-sm font-medium hover:text-black hover:bg-white duration-300 ${
-                              isSignUpHovered
-                                 ? "bg-[#0C8CE9] text-white"
-                                 : "bg-white text-[#0C8CE9]"
-                           }`}
+                           className={`block rounded-md px-5 py-2.5 text-sm font-medium hover:text-black text-white duration-300 bg-[#0C8CE9] hover:bg-white border-2 border-[#0C8CE9]`}
                            href="/auth/signup"
-                           onMouseEnter={handleSignUpHover}
-                           onMouseLeave={handleSignUpLeave}
                         >
-                           Sign Up
+                           Sign up
                         </Link>
                      </div>
                   </div>
