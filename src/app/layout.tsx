@@ -1,8 +1,10 @@
 import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({ weight: "500", subsets: ["latin"] });
 
 export const metadata = {
    title: {
@@ -19,7 +21,7 @@ export default function RootLayout({
 }) {
    return (
       <html lang="en">
-         <body className={inter.className}>
+         <body className={poppins.className}>
             <NextTopLoader height={3} />
             {children}
          </body>

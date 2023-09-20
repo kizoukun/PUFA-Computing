@@ -9,7 +9,7 @@ export default async function MainLayout({
       //navbar
       <>
          <Navbar />
-         <div className="bg-black font-inter">{children}</div>
+         <div className="bg-white">{children}</div>
       </>
    );
 }
