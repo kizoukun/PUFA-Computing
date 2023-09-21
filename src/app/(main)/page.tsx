@@ -38,7 +38,7 @@ export default async function Index() {
                   the IT (Information Technology) and IS (Information System)
                   majors.
                </p>
-               <Link href="/" className="block w-max">
+               <Link href="#" className="block w-max">
                   <Button>See Details</Button>
                </Link>
             </div>
@@ -170,7 +170,9 @@ export default async function Index() {
                      graduates in the field of educators who are experts in
                      Informatics.
                   </p>
-                  <Button className="w-max mx-auto my-4">See Details</Button>
+                  <Link href="#" className="block w-max mx-auto">
+                     <Button className="my-4">See Details</Button>
+                  </Link>
                </div>
                <div className="bg-white shadow-lg rounded-lg p-3">
                   <p>Information System</p>
@@ -180,7 +182,9 @@ export default async function Index() {
                      graduates in the field of educators who are experts in
                      Informatics.
                   </p>
-                  <Button className="w-max mx-auto my-4">See Details</Button>
+                  <Link href="#" className="block w-max mx-auto">
+                     <Button className="my-4">See Details</Button>
+                  </Link>
                </div>
             </div>
          </section>
