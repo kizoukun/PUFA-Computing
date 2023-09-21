@@ -128,7 +128,7 @@ export default async function Index() {
          {/* event */}
          <section
             id="event"
-            className="max-w-3xl space-y-8 mx-auto p-5 my-32 text-center"
+            className="max-w-7xl space-y-8 mx-auto p-5 my-32 text-center"
          >
             <h2 className="text-2xl font-bold">
                <span className="border-l-8 border-l-[#E50D0D] mr-4"></span>
@@ -139,9 +139,99 @@ export default async function Index() {
                campus life
             </h3>
             <div className="">
-               <div className="flex items-center justify-center">
+               <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                  {/* 1 */}
+                  <div className="p-0.5 rounded-md bg-[#E50D0D]">
+                     <div className="rounded-md bg-white pt-20 sm:p-6">
+                        <div className="text-[#353535]">
+                           <p className="mt-0.5 text-2xl text-justify font-bold border-b-8 border-[#E50D0D] pb-1">
+                              Computing Social Project 2023
+                           </p>
+                           {/* content */}
+                           <div className="mt-4 text-md font-extralight text-justify">
+                              with{" "}
+                              <span className="font-semibold">
+                                 Rumah Tahfidz Taman Qur’ani
+                              </span>
+                           </div>
+                           <div className="mt-4 flex flex-wrap gap-1 justify-between">
+                              {/* status */}
+                              <div className="whitespace-nowrap rounded-full bg-white px-2.5 py-0.5 text-xs text-[#E50D0D] border border-[#E50D0D]">
+                                 Completed
+                              </div>
+                              <Link
+                                 href="#"
+                                 className="group inline-flex items-center gap-1 text-sm font-medium text-black"
+                              >
+                                 Read more
+                              </Link>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  {/* 1 */}
+                  <div className="p-0.5 rounded-md bg-[#E50D0D]">
+                     <div className="rounded-md bg-white pt-20 sm:p-6">
+                        <div className="text-[#353535]">
+                           <p className="mt-0.5 text-2xl text-justify font-bold border-b-8 border-[#E50D0D] pb-1">
+                              Computing Social Project 2023
+                           </p>
+                           {/* content */}
+                           <div className="mt-4 text-md font-extralight text-justify">
+                              with{" "}
+                              <span className="font-semibold">
+                                 Rumah Tahfidz Taman Qur’ani
+                              </span>
+                           </div>
+                           <div className="mt-4 flex flex-wrap gap-1 justify-between">
+                              {/* status */}
+                              <div className="whitespace-nowrap rounded-full bg-white px-2.5 py-0.5 text-xs text-[#E50D0D] border border-[#E50D0D]">
+                                 Completed
+                              </div>
+                              <Link
+                                 href="#"
+                                 className="group inline-flex items-center gap-1 text-sm font-medium text-black"
+                              >
+                                 Read more
+                              </Link>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  {/* 1 */}
+                  <div className="p-0.5 rounded-md bg-[#E50D0D]">
+                     <div className="rounded-md bg-white pt-20 sm:p-6">
+                        <div className="text-[#353535]">
+                           <p className="mt-0.5 text-2xl text-justify font-bold border-b-8 border-[#E50D0D] pb-1">
+                              Computing Social Project 2023
+                           </p>
+                           {/* content */}
+                           <div className="mt-4 text-md font-extralight text-justify">
+                              with{" "}
+                              <span className="font-semibold">
+                                 Rumah Tahfidz Taman Qur’ani
+                              </span>
+                           </div>
+                           <div className="mt-4 flex flex-wrap gap-1 justify-between">
+                              {/* status */}
+                              <div className="whitespace-nowrap rounded-full bg-white px-2.5 py-0.5 text-xs text-[#E50D0D] border border-[#E50D0D]">
+                                 Completed
+                              </div>
+                              <Link
+                                 href="#"
+                                 className="group inline-flex items-center gap-1 text-sm font-medium text-black"
+                              >
+                                 Read more
+                              </Link>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               {/* button */}
+               <div className="mt-4 flex items-center justify-center">
                   <Link href="/" className="block w-max">
-                     <Button className="border-[#E50D0D] text-[#E50D0D] px-10 py-2">
+                     <Button className="border-[#E50D0D] text-[#E50D0D] hover:bg-[#E50D0D] hover:text-white px-10 py-2">
                         See all Events
                      </Button>
                   </Link>
@@ -167,7 +257,7 @@ export default async function Index() {
                {/* grid */}
                <div className="flex items-center justify-center">
                   <Link href="/" className="block w-max">
-                     <Button className="border-[#705100] text-[#705100] px-10 py-2">
+                     <Button className="border-[#705100] text-[#705100] hover:bg-[#705100] hover:text-white px-10 py-2">
                         See all News
                      </Button>
                   </Link>
