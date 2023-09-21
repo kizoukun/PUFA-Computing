@@ -80,7 +80,7 @@ export default function Navbar() {
                                                    "block px-4 py-2 text-sm"
                                                 )}
                                              >
-                                                ipe
+                                                Menu 1
                                              </Link>
                                           )}
                                        </Menu.Item>
@@ -95,7 +95,7 @@ export default function Navbar() {
                                                    "block px-4 py-2 text-sm"
                                                 )}
                                              >
-                                                ipe
+                                                Menu 1
                                              </Link>
                                           )}
                                        </Menu.Item>
@@ -110,7 +110,7 @@ export default function Navbar() {
                                                    "block px-4 py-2 text-sm"
                                                 )}
                                              >
-                                                alek
+                                                Menu 1
                                              </Link>
                                           )}
                                        </Menu.Item>
@@ -126,7 +126,7 @@ export default function Navbar() {
                                                       "block w-full px-4 py-2 text-left text-sm"
                                                    )}
                                                 >
-                                                   alek
+                                                   Menu 1
                                                 </button>
                                              )}
                                           </Menu.Item>
