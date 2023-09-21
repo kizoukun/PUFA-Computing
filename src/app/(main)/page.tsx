@@ -2,6 +2,7 @@ import Image from "next/image";
 import BGImage from "@/assets/backgroundimg.png";
 import Link from "next/link";
 import Button from "@/components/Button";
+import Card from "@/components/Card";
 
 export default async function Index() {
    return (
