@@ -140,8 +140,10 @@ export default async function Index() {
             </h3>
             <div className="">
                <div className="flex items-center justify-center">
-                  <Link href="/" className="block w-max text-[#E50D0D]">
-                     <Button>See all Events</Button>
+                  <Link href="/" className="block w-max">
+                     <Button className="border-[#E50D0D] text-[#E50D0D] px-10 py-2">
+                        See all Events
+                     </Button>
                   </Link>
                </div>
             </div>
@@ -161,29 +163,13 @@ export default async function Index() {
                The latest news about research, technology, achievements, and
                campus life
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-               <div className="bg-white shadow-lg rounded-lg p-3">
-                  <p>Informatics</p>
-                  <hr className="mt-4 mb-12 border border-[#00357C] w-16 mx-auto" />
-                  <p className="my-16">
-                     Informatics study program that will produce qualified
-                     graduates in the field of educators who are experts in
-                     Informatics.
-                  </p>
-                  <Link href="#" className="block w-max mx-auto">
-                     <Button className="my-4">See Details</Button>
-                  </Link>
-               </div>
-               <div className="bg-white shadow-lg rounded-lg p-3">
-                  <p>Information System</p>
-                  <hr className="mt-4 mb-12 border border-[#00357C] w-16 mx-auto" />
-                  <p className="my-16">
-                     Informatics study program that will produce qualified
-                     graduates in the field of educators who are experts in
-                     Informatics.
-                  </p>
-                  <Link href="#" className="block w-max mx-auto">
-                     <Button className="my-4">See Details</Button>
+            <div className="">
+               {/* grid */}
+               <div className="flex items-center justify-center">
+                  <Link href="/" className="block w-max">
+                     <Button className="border-[#705100] text-[#705100] px-10 py-2">
+                        See all News
+                     </Button>
                   </Link>
                </div>
             </div>
