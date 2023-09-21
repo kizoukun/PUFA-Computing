@@ -1,6 +1,7 @@
 import Image from "next/image";
 import BGImage from "@/assets/backgroundimg.png";
 import Link from "next/link";
+import Button from "@/components/Button";
 
 export default async function Index() {
    return (
@@ -37,15 +38,46 @@ export default async function Index() {
                   the IT (Information Technology) and IS (Information System)
                   majors.
                </p>
-               <Link
-                  href="/"
-                  className="block w-max border-2 border-[#0C8CE9] p-2 hover:bg-[#0C8CE9] hover:text-white duration-300 rounded-lg mt-4"
-               >
-                  See Details
+               <Link href="/" className="block w-max">
+                  <Button>See Details</Button>
                </Link>
             </div>
          </section>
-         <section className="min-h-screen"></section>
+         <section
+            id="programs"
+            className="max-w-3xl space-y-8 mx-auto p-5 my-32 text-center"
+         >
+            <h2 className="text-2xl font-bold">
+               <span className="border-l-8 border-l-[#0C8CE9] mr-4"></span>
+               Study Programs in the Faculty of Computing
+            </h2>
+            <h3 className="">
+               The Faculty of Computing has two study programs that produce
+               qualified student graduates in their fields.
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+               <div className="bg-white shadow-lg rounded-lg p-3">
+                  <p>Informatics</p>
+                  <hr className="mt-4 mb-12 border border-[#00357C] w-16 mx-auto" />
+                  <p className="my-16">
+                     Informatics study program that will produce qualified
+                     graduates in the field of educators who are experts in
+                     Informatics.
+                  </p>
+                  <Button className="w-max mx-auto my-4">See Details</Button>
+               </div>
+               <div className="bg-white shadow-lg rounded-lg p-3">
+                  <p>Information System</p>
+                  <hr className="mt-4 mb-12 border border-[#00357C] w-16 mx-auto" />
+                  <p className="my-16">
+                     Informatics study program that will produce qualified
+                     graduates in the field of educators who are experts in
+                     Informatics.
+                  </p>
+                  <Button className="w-max mx-auto my-4">See Details</Button>
+               </div>
+            </div>
+         </section>
       </div>
    );
 }
