@@ -264,48 +264,137 @@ export default async function Index() {
                The latest news about research, technology, achievements, and
                campus life
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-               {/* grid */}
-               <div className="p-1 shadow-lg mx-aut">
-                  <img
-                     className=" mx-auto"
-                     src="../anagatalogo.jpeg"
-                     alt="PUMA Photo"
-                  />
-               </div>
-               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                  <Card
-                     title="Computing Social Project 2023"
-                     description="tset"
-                     status="Completed"
-                     link="#"
-                  />
-                  <Card
-                     title="Computing Social Project 2023"
-                     description="tset"
-                     status="Completed"
-                     link="#"
-                  />
-                  <Card
-                     title="Computing Social Project 2023"
-                     description="tset"
-                     status="Completed"
-                     link="#"
-                  />
-                  <Card
-                     title="Computing Social Project 2023"
-                     description="tset"
-                     status="Completed"
-                     link="#"
-                  />
-               </div>
-               <div className="flex items-center justify-center">
-                  <Link href="/" className="block w-max">
-                     <Button className="border-[#705100] text-[#705100] hover:bg-[#705100] hover:text-white px-10 py-2">
-                        See all News
-                     </Button>
-                  </Link>
-               </div>
+            <section className="container mx-auto p-10 md:py-20 px-0 md:p-10 md:px-0">
+               <section className="p-5 md:p-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10">
+                  <article className="p-10 min-h-116 max-w-xl w-full bg-gray-200 rounded-xl text-gray-600 transform duration-500 hover:-translate-y-1 cursor-pointer">
+                     <h1 className="mt-5 text-2xl md:text-3xl font-light leading-snug min-h-33">
+                        One small step for man one giant leap for mankind
+                     </h1>
+                     <div className="mt-20">
+                        <span className="text-xl">Moonlanding - </span>
+                        <span className="font-bold text-xl">
+                           Neil Armstrong
+                        </span>
+                     </div>
+                     <div className="mt-16 flex justify-between">
+                        <span className="p-3 pl-0 font-bold">Story</span>
+                        <span className="p-3  border-2 border-gray-500 rounded-md text-base hover:bg-black hover:border-gray-200 cursor-pointer hover:text-white ">
+                           Paid Membership
+                        </span>
+                     </div>
+                  </article>
+
+                  <article
+                     className="min-h-116 bg-orange-600 max-w-xl w-full rounded-xl text-gray-100 bg-cover bg-center transform duration-500 hover:-translate-y-1 cursor-pointer"
+                     style={{
+                        backgroundImage:
+                           "url(https://images.unsplash.com/photo-1614527333177-d27e9e29ff98?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=950&q=80)",
+                     }}
+                  >
+                     <div className="bg-black bg-opacity-60 p-10 rounded-xl h-full">
+                        <h1 className="mt-5 text-3xl text-gray-100 leading-snug  min-h-33">
+                           One small step for man one giant leap for mankind
+                        </h1>
+                        <div className="mt-20">
+                           <span className="text-xl">Moonlanding - </span>
+                           <span className="font-bold text-xl">
+                              Neil Armstrong
+                           </span>
+                        </div>
+                        <div className="mt-16 flex justify-between ">
+                           <span className="p-3 pl-0 font-bold">Travel</span>
+                           <span className="p-3  border-2 border-gray-200 rounded-md text-base hover:bg-gray-200 hover:border-gray-200 cursor-pointer hover:text-black ">
+                              Paid Membership
+                           </span>
+                        </div>
+                     </div>
+                  </article>
+
+                  <article className="p-10 min-h-116 max-w-3xl w-full bg-purple-600 rounded-xl text-gray-100 xl:col-span-2 transform duration-500 hover:-translate-y-1 cursor-pointer">
+                     <h1 className="mt-5 text-5xl font-light text-gray-100 leading-snug  min-h-33">
+                        One small step for man one giant leap for mankind
+                     </h1>
+                     <div className="mt-20">
+                        <span className="text-xl">Moonlanding - </span>
+                        <span className="font-bold text-xl">
+                           Neil Armstrong
+                        </span>
+                     </div>
+                     <div className="mt-16 flex justify-between ">
+                        <span className="p-3 pl-0 font-bold">Quotes</span>
+                        <span className="p-3  border-2 border-gray-200 rounded-md text-base hover:bg-gray-200 hover:border-gray-200 cursor-pointer hover:text-black ">
+                           Paid Membership
+                        </span>
+                     </div>
+                  </article>
+
+                  <article
+                     className="p-10 min-h-116 max-w-3xl w-full rounded-xl text-gray-100 xl:col-span-2 bg-center bg-cover transform duration-500 hover:-translate-y-1 cursor-pointer"
+                     style={{
+                        backgroundImage:
+                           "url(https://images.unsplash.com/photo-1559827291-72ee739d0d9a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80)",
+                     }}
+                  >
+                     <h1 className="mt-5 text-4xl text-gray-100 leading-snug  min-h-33">
+                        One small step for man one giant leap for mankind
+                     </h1>
+                     <div className="mt-20">
+                        <span className="text-xl">Moonlanding - </span>
+                        <span className="font-bold text-xl">
+                           Neil Armstrong
+                        </span>
+                     </div>
+                     <div className="mt-16 flex justify-between ">
+                        <span className="p-3 pl-0 font-bold">Travel Guide</span>
+                        <span className="p-3 px-5 bg-gray-200  rounded-md text-base hover:bg-orange-600 cursor-pointer hover:text-white text-black ">
+                           Paid Membership
+                        </span>
+                     </div>
+                  </article>
+
+                  <article className="p-10 min-h-116 max-w-xl w-full bg-cyan-600 rounded-xl text-gray-100 transform duration-500 hover:-translate-y-1 cursor-pointer">
+                     <h1 className="mt-5 text-3xl text-gray-100 leading-snug  min-h-33">
+                        One small step for man one giant leap for mankind
+                     </h1>
+                     <div className="mt-20">
+                        <span className="text-xl">Moonlanding - </span>
+                        <span className="font-bold text-xl">
+                           Neil Armstrong
+                        </span>
+                     </div>
+                     <div className="mt-16 flex justify-between ">
+                        <span className="p-3 pl-0">Story</span>
+                        <span className="p-3  border-2 border-gray-200 rounded-md text-base hover:bg-gray-200 hover:border-gray-200 cursor-pointer hover:text-black ">
+                           Paid Membership
+                        </span>
+                     </div>
+                  </article>
+
+                  <article className="flex flex-col-reverse p-10 min-h-116 max-w-xl w-full bg-orange-600 rounded-xl text-gray-100 transform duration-500 hover:-translate-y-1 cursor-pointer">
+                     <h1 className="mt-10 text-3xl text-gray-100 leading-snug  min-h-33">
+                        One small step for man one giant leap for mankind
+                     </h1>
+                     <div className="mt-24">
+                        <span className="text-xl">Moonlanding - </span>
+                        <span className="font-bold text-xl">
+                           Neil Armstrong
+                        </span>
+                     </div>
+                     <div className="mt-4 flex justify-between ">
+                        <span className="p-3 pl-0">Story</span>
+                        <span className="p-3  border-2 border-gray-200 rounded-md text-base hover:bg-gray-200 hover:border-gray-200 cursor-pointer hover:text-black ">
+                           Paid Membership
+                        </span>
+                     </div>
+                  </article>
+               </section>
+            </section>
+            <div className="flex items-center justify-center">
+               <Link href="/" className="block w-max">
+                  <Button className="border-[#705100] text-[#705100] hover:bg-[#705100] hover:text-white px-10 py-2">
+                     See all News
+                  </Button>
+               </Link>
             </div>
          </section>
          {/* end */}

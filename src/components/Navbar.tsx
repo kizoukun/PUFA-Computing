@@ -20,9 +20,9 @@ export default function Navbar() {
                   </Link>
                   <div className="font-bold px-7 hidden lg:block">
                      <div className="flex flex-col items-center">
-                        <div className="flex-grow text-sm font-normal tracking-[.10em]">
+                        <div className="flex-grow text-sm font-normal tracking-[.11em]">
                            President University
-                        <div className="flex-grow text-sm font-normal tracking-[.20em]">
+                        <div className="flex-grow text-sm font-normal tracking-[.205em]">
                            Major Association
                         </div>
                         </div>
