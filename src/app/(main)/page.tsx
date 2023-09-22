@@ -3,6 +3,8 @@ import BGImage from "@/assets/backgroundimg.png";
 import Link from "next/link";
 import Button from "@/components/Button";
 import Card from "@/components/Card";
+import CardStoreUp from "@/components/CardStoreUp";
+import CardStoreDown from "@/components/CardStoreDown";
 
 export default async function Index() {
    const card = [
@@ -206,98 +208,46 @@ export default async function Index() {
 
             <section className="container mx-auto p-10 md:py-20 px-0 md:p-20 md:px-0">
                <div className="grid lg:grid-cols-2 2xl:grid-cols-4 grid-cols-1 gap-10 antialiased">
-                  <article className="flex flex-col shadow-xl mx-auto max-w-sm bg-red-100 py-20 px-12 transform duration-500 hover:-translate-y-2 cursor-pointer max-h-190 rounded-md">
-                     <div className="min-h-62">
-                        <img
-                           className="mx-auto"
-                           src="../anagatalogo.jpeg"
-                           alt=""
-                        />
-                     </div>
-                     <h1 className="font-extrabold text-6xl mt-28 mb-10 text-gray-800">
-                        01.
-                     </h1>
-                     <h2 className="font-bold mb-5 text-gray-800">
-                        Stylish Egg Chair
-                     </h2>
-                     <p className="text-sm leading-relaxed text-gray-700">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Id beatae repellendus nam! Dolor dignissimos unde,
-                        dolore laboriosam atque numquam quam.
-                     </p>
-                  </article>
+                  <CardStoreUp
+                     image="../anagatalogo.jpeg"
+                     number="01"
+                     title="adasd"
+                     description="adasdads"
+                     bgColor="bg-red-100"
+                  />
 
-                  <article className="flex flex-col shadow-xl mx-auto max-w-sm bg-yellow-100 py-20 px-12 transform duration-500 hover:-translate-y-2 cursor-pointer mt-0 md:mt-20 max-h-190 rounded-md">
-                     <div className="min-h-62">
-                        <img
-                           className="mx-auto"
-                           src="../anagatalogo.jpeg"
-                           alt=""
-                        />
-                     </div>
-                     <h1 className="font-extrabold text-6xl mt-28 mb-10 text-gray-800">
-                        02.
-                     </h1>
-                     <h2 className="font-bold mb-5 text-gray-800">
-                        Stylish Leather Bag
-                     </h2>
-                     <p className="text-sm leading-relaxed text-gray-700">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Id beatae repellendus nam! Dolor dignissimos unde,
-                        dolore laboriosam atque numquam quam.
-                     </p>
-                  </article>
+                  <CardStoreDown
+                     image="../anagatalogo.jpeg"
+                     number="01"
+                     title="adasd"
+                     description="adasdads"
+                     bgColor="bg-red-100"
+                  />
 
-                  <article className="flex flex-col shadow-xl mx-auto max-w-sm bg-blue-100 py-20 px-12 transform duration-500 hover:-translate-y-2 cursor-pointer max-h-190 rounded-md">
-                     <div className="min-h-62">
-                        <img
-                           className="mx-auto"
-                           src="../anagatalogo.jpeg"
-                           alt=""
-                        />
-                     </div>
-                     <h1 className="font-extrabold text-6xl mt-28 mb-10 text-gray-800">
-                        03.
-                     </h1>
-                     <h2 className="font-bold mb-5 text-gray-800">
-                        Modern Wooden Chair
-                     </h2>
-                     <p className="text-sm leading-relaxed text-gray-700">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Id beatae repellendus nam! Dolor dignissimos unde,
-                        dolore laboriosam atque numquam quam.
-                     </p>
-                  </article>
+                  <CardStoreUp
+                     image="../anagatalogo.jpeg"
+                     number="01"
+                     title="adasd"
+                     description="adasdads"
+                     bgColor="bg-red-100"
+                  />
 
-                  <article className="flex flex-col shadow-xl mx-auto max-w-sm bg-purple-100 py-20 px-12 transform duration-500 hover:-translate-y-2 cursor-pointer mt-0 md:mt-20 max-h-190 rounded-md">
-                     <div className="min-h-62">
-                        <img
-                           className="mx-auto"
-                           src="../anagatalogo.jpeg"
-                           alt=""
-                        />
-                     </div>
-                     <h1 className="font-extrabold text-6xl mt-28 mb-10 text-gray-800">
-                        04.
-                     </h1>
-                     <h2 className="font-bold mb-5 text-gray-800">
-                        Comfortable Chair
-                     </h2>
-                     <p className="text-sm leading-relaxed text-gray-700">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Id beatae repellendus nam! Dolor dignissimos unde,
-                        dolore laboriosam atque numquam quam.
-                     </p>
-                  </article>
+                  <CardStoreDown
+                     image="../anagatalogo.jpeg"
+                     number="01"
+                     title="adasd"
+                     description="adasdads"
+                     bgColor="bg-red-100"
+                  />
                </div>
             </section>
             <div className="flex items-center justify-center">
-                  <Link href="/" className="block w-max">
-                     <Button className="border-[#705100] text-[#705100] hover:bg-[#705100] hover:text-white px-10 py-2">
-                        See all merchandise
-                     </Button>
-                  </Link>
-               </div>
+               <Link href="/" className="block w-max">
+                  <Button className="border-[#705100] text-[#705100] hover:bg-[#705100] hover:text-white px-10 py-2">
+                     See all merchandise
+                  </Button>
+               </Link>
+            </div>
          </section>
          {/* end */}
 

@@ -20,10 +20,13 @@ export default function Navbar() {
                   </Link>
                   <div className="font-bold px-7 hidden lg:block">
                      <div className="flex flex-col items-center">
-                        <div className="flex-grow text-3xl tracking-wider">
-                           PUMA
+                        <div className="flex-grow text-sm font-normal tracking-[.10em]">
+                           President University
+                        <div className="flex-grow text-sm font-normal tracking-[.20em]">
+                           Major Association
                         </div>
-                        <div className="font-semibold">COMPUTING</div>
+                        </div>
+                        <div className="font-semibold mt-1">COMPUTING</div>
                      </div>
                   </div>
                </div>
