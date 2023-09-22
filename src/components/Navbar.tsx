@@ -11,7 +11,7 @@ function classNames(...classes: string[]): string {
 
 export default function Navbar() {
    return (
-      <header className="sticky bg-white shadow-md top-0 ">
+      <header className="sticky bg-white shadow-md top-0 z-50">
          <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-24 items-center justify-between">
                <div className="flex items-center gap-12 lg:divide-x-2 lg:divide-black">

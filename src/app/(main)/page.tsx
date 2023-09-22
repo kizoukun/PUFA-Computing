@@ -5,6 +5,14 @@ import Button from "@/components/Button";
 import Card from "@/components/Card";
 
 export default async function Index() {
+   const card = [
+      {
+         title: "alip",
+         description: "alip",
+         status: "alip",
+         link: "alip",
+      },
+   ];
    return (
       <div className="min-h-screen">
          <div>
@@ -129,7 +137,7 @@ export default async function Index() {
          {/* event */}
          <section
             id="event"
-            className="max-w-7xl space-y-8 mx-auto p-5 my-32 text-center"
+            className="max-w-8xl space-y-8 mx-auto p-5 my-32 text-center"
          >
             <h2 className="text-2xl font-bold">
                <span className="border-l-8 border-l-[#E50D0D] mr-4"></span>
@@ -140,12 +148,37 @@ export default async function Index() {
                campus life
             </h3>
             <div className="">
-               <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-                  {/* 1 */}
+               <div className=" max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14">
+                  <Card
+                     title="Computing Social Project 2023"
+                     description="with Rumah Tahfidz Taman Qur’ani"
+                     status="Completed"
+                     link="#"
+                  />
                   <Card
                      title="Computing Social Project 2023"
                      description="tset"
-                     status="csdasda"
+                     status="Completed"
+                     link="#"
+                  />
+               </div>
+               <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
+                  <Card
+                     title="Computing Social Project 2023"
+                     description="tset"
+                     status="Completed"
+                     link="#"
+                  />
+                  <Card
+                     title="Computing Social Project 2023"
+                     description="tset"
+                     status="Completed"
+                     link="#"
+                  />
+                  <Card
+                     title="Computing Social Project 2023"
+                     description="tset"
+                     status="Completed"
                      link="#"
                   />
                </div>
@@ -161,10 +194,117 @@ export default async function Index() {
          </section>
          {/* end */}
 
+         {/* store */}
+         <section
+            id="store"
+            className="max-w-7xl space-y-8 mx-auto p-5 my-32 text-center"
+         >
+            <h2 className="text-2xl font-bold">
+               <span className="border-l-8 border-l-[#1FA820] mr-4"></span>
+               Computing Store
+            </h2>
+
+            <section className="container mx-auto p-10 md:py-20 px-0 md:p-20 md:px-0">
+               <div className="grid lg:grid-cols-2 2xl:grid-cols-4 grid-cols-1 gap-10 antialiased">
+                  <article className="flex flex-col shadow-xl mx-auto max-w-sm bg-red-100 py-20 px-12 transform duration-500 hover:-translate-y-2 cursor-pointer max-h-190 rounded-md">
+                     <div className="min-h-62">
+                        <img
+                           className="mx-auto"
+                           src="../anagatalogo.jpeg"
+                           alt=""
+                        />
+                     </div>
+                     <h1 className="font-extrabold text-6xl mt-28 mb-10 text-gray-800">
+                        01.
+                     </h1>
+                     <h2 className="font-bold mb-5 text-gray-800">
+                        Stylish Egg Chair
+                     </h2>
+                     <p className="text-sm leading-relaxed text-gray-700">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Id beatae repellendus nam! Dolor dignissimos unde,
+                        dolore laboriosam atque numquam quam.
+                     </p>
+                  </article>
+
+                  <article className="flex flex-col shadow-xl mx-auto max-w-sm bg-yellow-100 py-20 px-12 transform duration-500 hover:-translate-y-2 cursor-pointer mt-0 md:mt-20 max-h-190 rounded-md">
+                     <div className="min-h-62">
+                        <img
+                           className="mx-auto"
+                           src="../anagatalogo.jpeg"
+                           alt=""
+                        />
+                     </div>
+                     <h1 className="font-extrabold text-6xl mt-28 mb-10 text-gray-800">
+                        02.
+                     </h1>
+                     <h2 className="font-bold mb-5 text-gray-800">
+                        Stylish Leather Bag
+                     </h2>
+                     <p className="text-sm leading-relaxed text-gray-700">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Id beatae repellendus nam! Dolor dignissimos unde,
+                        dolore laboriosam atque numquam quam.
+                     </p>
+                  </article>
+
+                  <article className="flex flex-col shadow-xl mx-auto max-w-sm bg-blue-100 py-20 px-12 transform duration-500 hover:-translate-y-2 cursor-pointer max-h-190 rounded-md">
+                     <div className="min-h-62">
+                        <img
+                           className="mx-auto"
+                           src="../anagatalogo.jpeg"
+                           alt=""
+                        />
+                     </div>
+                     <h1 className="font-extrabold text-6xl mt-28 mb-10 text-gray-800">
+                        03.
+                     </h1>
+                     <h2 className="font-bold mb-5 text-gray-800">
+                        Modern Wooden Chair
+                     </h2>
+                     <p className="text-sm leading-relaxed text-gray-700">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Id beatae repellendus nam! Dolor dignissimos unde,
+                        dolore laboriosam atque numquam quam.
+                     </p>
+                  </article>
+
+                  <article className="flex flex-col shadow-xl mx-auto max-w-sm bg-purple-100 py-20 px-12 transform duration-500 hover:-translate-y-2 cursor-pointer mt-0 md:mt-20 max-h-190 rounded-md">
+                     <div className="min-h-62">
+                        <img
+                           className="mx-auto"
+                           src="../anagatalogo.jpeg"
+                           alt=""
+                        />
+                     </div>
+                     <h1 className="font-extrabold text-6xl mt-28 mb-10 text-gray-800">
+                        04.
+                     </h1>
+                     <h2 className="font-bold mb-5 text-gray-800">
+                        Comfortable Chair
+                     </h2>
+                     <p className="text-sm leading-relaxed text-gray-700">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Id beatae repellendus nam! Dolor dignissimos unde,
+                        dolore laboriosam atque numquam quam.
+                     </p>
+                  </article>
+               </div>
+            </section>
+            <div className="flex items-center justify-center">
+                  <Link href="/" className="block w-max">
+                     <Button className="border-[#705100] text-[#705100] hover:bg-[#705100] hover:text-white px-10 py-2">
+                        See all merchandise
+                     </Button>
+                  </Link>
+               </div>
+         </section>
+         {/* end */}
+
          {/* news */}
          <section
             id="news"
-            className="max-w-3xl space-y-8 mx-auto p-5 my-32 text-center"
+            className="max-w-7xl max-h-xl space-y-8 mx-auto p-5 my-32 text-center"
          >
             <h2 className="text-2xl font-bold">
                <span className="border-l-8 border-l-[#705100] mr-4"></span>
@@ -174,8 +314,41 @@ export default async function Index() {
                The latest news about research, technology, achievements, and
                campus life
             </h3>
-            <div className="">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
                {/* grid */}
+               <div className="p-1 shadow-lg mx-aut">
+                  <img
+                     className=" mx-auto"
+                     src="../anagatalogo.jpeg"
+                     alt="PUMA Photo"
+                  />
+               </div>
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                  <Card
+                     title="Computing Social Project 2023"
+                     description="tset"
+                     status="Completed"
+                     link="#"
+                  />
+                  <Card
+                     title="Computing Social Project 2023"
+                     description="tset"
+                     status="Completed"
+                     link="#"
+                  />
+                  <Card
+                     title="Computing Social Project 2023"
+                     description="tset"
+                     status="Completed"
+                     link="#"
+                  />
+                  <Card
+                     title="Computing Social Project 2023"
+                     description="tset"
+                     status="Completed"
+                     link="#"
+                  />
+               </div>
                <div className="flex items-center justify-center">
                   <Link href="/" className="block w-max">
                      <Button className="border-[#705100] text-[#705100] hover:bg-[#705100] hover:text-white px-10 py-2">
