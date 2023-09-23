@@ -64,12 +64,12 @@ export default function RegisterForm() {
           alt=""
         /> */}
             <img
-               className="w-auto h-32 sm:h-48 rounded-lg mx-auto my-8"
+               className="w-auto h-32 sm:h-48 rounded-lg mx-auto mt-8"
                src="../PUComputing.png"
                alt=""
             />
 
-            <h1 className="mt-3 text-2xl font-semibold text-gray-100 capitalize sm:text-3xl text-center">
+            <h1 className="mt-3 text-2xl font-semibold text-black capitalize sm:text-3xl text-center">
                sign Up
             </h1>
 

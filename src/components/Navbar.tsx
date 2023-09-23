@@ -22,9 +22,9 @@ export default function Navbar() {
                      <div className="flex flex-col items-center">
                         <div className="flex-grow text-sm font-normal tracking-[.11em]">
                            President University
-                        <div className="flex-grow text-sm font-normal tracking-[.205em]">
-                           Major Association
-                        </div>
+                           <div className="flex-grow text-sm font-normal tracking-[.205em]">
+                              Major Association
+                           </div>
                         </div>
                         <div className="font-semibold mt-1">COMPUTING</div>
                      </div>
@@ -43,7 +43,7 @@ export default function Navbar() {
                         </li>
 
                         <li>
-                           <Link href="/">News</Link>
+                           <Link href="/news">News</Link>
                         </li>
 
                         <li>
@@ -141,7 +141,7 @@ export default function Navbar() {
                         </li>
 
                         <li>
-                           <Link href="/">Contact</Link>
+                           <Link href="/contact">Contact</Link>
                         </li>
                      </ul>
                   </nav>
