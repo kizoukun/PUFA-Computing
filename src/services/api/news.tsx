@@ -1,19 +1,24 @@
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
+import News from "../../models/news";
 
-const API_URL = 'http://api.dev.irfansaf.com/news/';
+const API_URL = "http://localhost:8080/news/";
 
-//news
-export async function News(
-    id: number,
-    title: string,
-    description: string,
-    date: string 
-): Promise<AxiosResponse> {
-    return axios.post(`${API_URL}/news`, {
-       id,
-       title,
-       description,
-       date
-    });
-    
-}
+export const fetchNews = async (): Promise<News[]> => {
+    try {
+        const response = await axios.get(API_URL);
+        const newsData = response.data?.data?.attributes || [];
+        return newsData.map((news: any) => ({
+            id: news.id,
+            title: news.title,
+            content: news.content,
+            user_id: news.user_id,
+            publish_date: news.publish_date,
+            likes: news.likes,
+            created_at: news.created_at,
+            updated_at: news.updated_at,
+        }));
+    } catch (error) {
+        console.error('Error fetching news', error);
+        throw error;
+    }
+};
