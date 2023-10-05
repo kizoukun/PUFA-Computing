@@ -5,6 +5,7 @@ import Button from "@/components/Button";
 import Card from "@/components/Card";
 import CardStoreUp from "@/components/CardStoreUp";
 import CardStoreDown from "@/components/CardStoreDown";
+import EventCard from "@/components/event/EventCard";
 
 export default async function Index() {
    const card = [
@@ -151,18 +152,9 @@ export default async function Index() {
             </h3>
             <div className="">
                <div className=" max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14">
-                  <Card
-                     title="Computing Social Project 2023"
-                     description="with Rumah Tahfidz Taman Qur’ani"
-                     status="Completed"
-                     link="#"
-                  />
-                  <Card
-                     title="Computing Social Project 2023"
-                     description="tset"
-                     status="Completed"
-                     link="#"
-                  />
+                  <EventCard/>
+                  <EventCard/>
+
                </div>
                <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
                   <Card
