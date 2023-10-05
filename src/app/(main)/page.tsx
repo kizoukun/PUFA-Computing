@@ -5,7 +5,7 @@ import Button from "@/components/Button";
 import Card from "@/components/Card";
 import CardStoreUp from "@/components/CardStoreUp";
 import CardStoreDown from "@/components/CardStoreDown";
-import EventCard from "@/components/event/EventCard";
+import EventSection from "@/components/event/EventSection";
 
 export default async function Index() {
    const card = [
@@ -138,54 +138,7 @@ export default async function Index() {
          {/* end */}
 
          {/* event */}
-         <section
-            id="event"
-            className="max-w-8xl space-y-8 mx-auto p-5 my-32 text-center"
-         >
-            <h2 className="text-2xl font-bold">
-               <span className="border-l-8 border-l-[#E50D0D] mr-4"></span>
-               Computing Events
-            </h2>
-            <h3 className="">
-               The latest news about research, technology, achievements, and
-               campus life
-            </h3>
-            <div className="">
-               <div className=" max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14">
-                  <EventCard/>
-                  <EventCard/>
-
-               </div>
-               <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
-                  <Card
-                     title="Computing Social Project 2023"
-                     description="tset"
-                     status="Completed"
-                     link="#"
-                  />
-                  <Card
-                     title="Computing Social Project 2023"
-                     description="tset"
-                     status="Completed"
-                     link="#"
-                  />
-                  <Card
-                     title="Computing Social Project 2023"
-                     description="tset"
-                     status="Completed"
-                     link="#"
-                  />
-               </div>
-               {/* button */}
-               <div className="mt-4 flex items-center justify-center">
-                  <Link href="/" className="block w-max">
-                     <Button className="border-[#E50D0D] text-[#E50D0D] hover:bg-[#E50D0D] hover:text-white px-10 py-2">
-                        See all Events
-                     </Button>
-                  </Link>
-               </div>
-            </div>
-         </section>
+         <EventSection/>
          {/* end */}
 
          {/* store */}
