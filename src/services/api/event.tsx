@@ -1,7 +1,7 @@
 import axios from "axios";
 import Event from "../../models/event";
 
-const API_URL = "http://localhost:8080/event/";
+const API_URL = "http://api.dev.irfansaf.com/event/";
 
 export const fetchEvents = async (): Promise<Event[]> => {
     try {

@@ -1,18 +1,19 @@
 import React from 'react';
-import { AxiosError } from 'axios';
 import Link from 'next/link';
 import Event from '@/models/event';
 
 export default function EventCardUpcoming({ events }: { events: Event[] }) {
-    // Filter and sort upcoming events
+    const currentDate = new Date();
     const upcomingEvents = events
-        .filter((event) => new Date(event.start_date) >= new Date())
-        .sort((a, b) => new Date(a.start_date).getTime() - new Date(b.start_date).getTime())
-        .slice(0, 2); // Limit to 2 upcoming events
+        .filter((event) => new Date(event.end_date) > currentDate)
+        .sort((a, b) => new Date(a.end_date).getTime() - new Date(b.end_date).getTime()
+        );
 
+    console.log('Current Date', currentDate)
+    console.log('Upcoming Event', upcomingEvents);
     return (
-        <div>
-        {upcomingEvents.map((event: Event) => ( // Add type annotation here
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14">
+            {upcomingEvents.map((event) => (
                 <div className="p-0.5 rounded-md bg-[#E50D0D]" key={event.id}>
                     <div className="rounded-md bg-white pt-20 sm:p-6">
                         <div className="text-[#353535]">

@@ -11,7 +11,7 @@ export default function EventCardCompleted({ events }: { events: Event[] }) {
         .slice(0, 3); // Limit to 3 completed events
 
     return (
-        <div>
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
             {completedEvents.map((event) => (
                 <div key={event.id} className="p-0.5 rounded-md bg-[#E50D0D]">
                     <div className="rounded-md bg-white pt-20 sm:p-6">

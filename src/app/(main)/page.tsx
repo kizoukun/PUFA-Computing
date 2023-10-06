@@ -6,16 +6,13 @@ import Card from "@/components/Card";
 import CardStoreUp from "@/components/CardStoreUp";
 import CardStoreDown from "@/components/CardStoreDown";
 import EventSection from "@/components/event/EventSection";
+import EventCardUpcoming from "@/components/event/EventCardUpcoming";
+import Event from "@/models/event";
+import {AxiosError} from "axios";
+import EventCardCompleted from "@/components/event/EventCardCompleted";
 
 export default async function Index() {
-   const card = [
-      {
-         title: "alip",
-         description: "alip",
-         status: "alip",
-         link: "alip",
-      },
-   ];
+
    return (
       <div className="min-h-screen">
          <div>
@@ -138,7 +135,20 @@ export default async function Index() {
          {/* end */}
 
          {/* event */}
-         <EventSection/>
+         <section
+             id="event"
+             className="max-w-8xl space-y-8 mx-auto p-5 my-32 text-center"
+         >
+            <h2 className="text-2xl font-bold">
+               <span className="border-l-8 border-l-[#E50D0D] mr-4"></span>
+               Computing Events
+            </h2>
+            <h3 className="">
+               The latest news about research, technology, achievements, and
+               campus life
+            </h3>
+            <EventSection/>
+         </section>
          {/* end */}
 
          {/* store */}
