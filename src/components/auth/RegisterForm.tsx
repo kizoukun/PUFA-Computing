@@ -3,8 +3,6 @@ import { FormEventHandler, useState } from "react";
 import { Register } from "@/services/api/auth";
 import { AxiosError, AxiosResponse } from "axios";
 import User from "@/models/user";
-import { Simulate } from "react-dom/test-utils";
-import submit = Simulate.submit; // Assuming you have a User type defined
 
 export default function RegisterForm() {
    // Role
