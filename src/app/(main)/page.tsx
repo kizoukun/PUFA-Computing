@@ -5,6 +5,8 @@ import Button from "@/components/Button";
 import CardStoreUp from "@/components/CardStoreUp";
 import CardStoreDown from "@/components/CardStoreDown";
 import EventSection from "@/components/event/EventSection";
+import Faq from "@/components/Faq";
+import CompreciationCard from "@/components/CompreciationCard";
 
 export default async function Index() {
    return (
@@ -142,61 +144,6 @@ export default async function Index() {
                campus life
             </h3>
             <EventSection />
-         </section>
-         {/* end */}
-
-         {/* store */}
-         <section
-            id="store"
-            className="max-w-7xl space-y-8 mx-auto p-5 my-32 text-center"
-         >
-            <h2 className="text-2xl font-bold">
-               <span className="border-l-8 border-l-[#1FA820] mr-4"></span>
-               Computing Store
-            </h2>
-
-            <section className="container mx-auto p-10 md:py-20 px-0 md:p-20 md:px-0">
-               <div className="grid lg:grid-cols-2 2xl:grid-cols-4 grid-cols-1 gap-10 antialiased">
-                  <CardStoreUp
-                     image="../anagatalogo.jpeg"
-                     number="01"
-                     title="adasd"
-                     description="adasdads"
-                     bgColor="bg-red-100"
-                  />
-
-                  <CardStoreDown
-                     image="../anagatalogo.jpeg"
-                     number="01"
-                     title="adasd"
-                     description="adasdads"
-                     bgColor="bg-red-100"
-                  />
-
-                  <CardStoreUp
-                     image="../anagatalogo.jpeg"
-                     number="01"
-                     title="adasd"
-                     description="adasdads"
-                     bgColor="bg-red-100"
-                  />
-
-                  <CardStoreDown
-                     image="../anagatalogo.jpeg"
-                     number="01"
-                     title="adasd"
-                     description="adasdads"
-                     bgColor="bg-red-100"
-                  />
-               </div>
-            </section>
-            <div className="flex items-center justify-center">
-               <Link href="/" className="block w-max">
-                  <Button className="border-[#705100] text-[#705100] hover:bg-[#705100] hover:text-white px-10 py-2">
-                     See all merchandise
-                  </Button>
-               </Link>
-            </div>
          </section>
          {/* end */}
 
@@ -346,6 +293,107 @@ export default async function Index() {
                </Link>
             </div>
          </section>
+         {/* end */}
+
+         {/* compreciacion */}
+
+         <section
+            id="compreciacion"
+            className="max-w-7xl max-h-xl space-y-8 mx-auto p-5 my-32 text-center"
+         >
+            <h2 className="text-2xl font-bold">
+               <span className="border-l-8 border-l-[#02ABF3] mr-4"></span>
+               Compreciation
+            </h2>
+            <h3 className="">Appreciation to Computizen’s best projects.</h3>
+
+            <div className="grid grid-cols-2 gap-2 gap-y-4">
+               <CompreciationCard
+                  title="Shingeki No Kyojin"
+                  description="Hajime Isayama"
+                  image="../aot.jpg"
+               />
+            </div>
+         </section>
+         {/* end */}
+
+         {/* store */}
+         <section
+            id="store"
+            className="max-w-7xl space-y-8 mx-auto p-5 my-32 text-center"
+         >
+            <h2 className="text-2xl font-bold">
+               <span className="border-l-8 border-l-[#1FA820] mr-4"></span>
+               Computing Store
+            </h2>
+
+            <div className="container mx-auto p-10 md:py-20 px-0 md:p-20 md:px-0">
+               <div className="grid lg:grid-cols-2 2xl:grid-cols-4 grid-cols-1 gap-10 antialiased">
+                  <CardStoreUp
+                     image="../anagatalogo.jpeg"
+                     number="01"
+                     title="adasd"
+                     description="adasdads"
+                     bgColor="bg-red-100"
+                  />
+
+                  <CardStoreDown
+                     image="../anagatalogo.jpeg"
+                     number="01"
+                     title="adasd"
+                     description="adasdads"
+                     bgColor="bg-red-100"
+                  />
+
+                  <CardStoreUp
+                     image="../anagatalogo.jpeg"
+                     number="01"
+                     title="adasd"
+                     description="adasdads"
+                     bgColor="bg-red-100"
+                  />
+
+                  <CardStoreDown
+                     image="../anagatalogo.jpeg"
+                     number="01"
+                     title="adasd"
+                     description="adasdads"
+                     bgColor="bg-red-100"
+                  />
+               </div>
+            </div>
+            <div className="flex items-center justify-center">
+               <Link href="/" className="block w-max">
+                  <Button className="border-[#02ABF3] text-[#02ABF3] hover:bg-[#02ABF3] hover:text-white px-10 py-2">
+                     See all items
+                  </Button>
+               </Link>
+            </div>
+         </section>
+
+         {/* Faq */}
+         <section
+            id="faq"
+            className="max-w-7xl max-h-xl space-y-8 mx-auto p-5 my-32"
+         >
+            <div className="container flex flex-col items-justify px-4 py-8 mx-auto md:p-8 border border-black bg-white rounded-lg">
+               <div>
+                  <h2 className="text-2xl font-semibold sm:text-4xl">
+                     Frequently Asked Questions
+                  </h2>
+               </div>
+               <div className="space-y-4 mt-8 mb-6">
+                  <Faq
+                     status="open"
+                     title="Kukurukuurkrurkurkrkrurkrkruk?"
+                     content="lorem ipsum skdskdsj asdjnaskdjahsfj asljkashdaslfhd dfjlasdfhdjlcbd dsfjkadsfhdsjfbdsc dsfbdsjfbdsjbdsc dsjfdsjdscbdsc dsc jdkfhdslkcbzd"
+                  />
+
+                  <Faq title="ayam itu apa ?" content="ikan bilis" />
+               </div>
+            </div>
+         </section>
+
          {/* end */}
       </div>
    );

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import a from "next/link";
 import NavbarDropdown from "./NavbarDropdown";
 
 export default function Navbar() {
@@ -26,15 +26,15 @@ export default function Navbar() {
          <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-24 items-center justify-between">
                <div className="flex items-center gap-12 lg:divide-x-2 lg:divide-black">
-                  <Link className=" text-teal-600 inline" href="/">
+                  <a className=" text-teal-600 inline" href="/">
                      <img src="../logo.png" width="130" height="80" />
-                  </Link>
+                  </a>
                   <div className="font-bold px-7 hidden lg:block">
                      <div className="flex flex-col items-center">
                         <div className="flex-grow text-sm font-normal tracking-[.11em]">
                            President University
                            <div className="flex-grow text-sm font-normal tracking-[.205em]">
-                              Major Association
+                              Faculty Association
                            </div>
                         </div>
                         <div className="font-semibold mt-1">COMPUTING</div>
@@ -46,19 +46,19 @@ export default function Navbar() {
                   <nav aria-label="Global">
                      <ul className="flex items-center gap-6 text-md font-medium text-black">
                         <li>
-                           <Link href="/">Home</Link>
+                           <a href="/">Home</a>
                         </li>
 
                         <li>
-                           <Link href="/events">Events</Link>
+                           <a href="/events">Events</a>
                         </li>
 
                         <li>
-                           <Link href="/news">News</Link>
+                           <a href="/news">News</a>
                         </li>
 
                         <li>
-                           <Link href="/merch">Merch</Link>
+                           <a href="/merch">Merch</a>
                         </li>
                         {NavbarDropdownItems.map((item) => (
                            <NavbarDropdown
@@ -69,7 +69,7 @@ export default function Navbar() {
                         ))}
 
                         <li>
-                           <Link href="/contact">Contact</Link>
+                           <a href="/contact">Contact</a>
                         </li>
                      </ul>
                   </nav>
@@ -77,20 +77,20 @@ export default function Navbar() {
 
                <div className="flex items-center gap-4">
                   <div className="sm:flex sm:gap-4">
-                     <Link
+                     <a
                         className="block rounded-md bg-white px-2 md:px-5 py-2.5 text-sm font-medium text-black hover:text-white hover:bg-[#0C8CE9] border-2 border-[#0C8CE9] duration-300"
                         href="/auth/signin"
                      >
                         Sign in
-                     </Link>
+                     </a>
 
                      <div className="hidden sm:flex">
-                        <Link
+                        <a
                            className={`block rounded-md px-5 py-2.5 text-sm font-medium hover:text-black text-white duration-300 bg-[#0C8CE9] hover:bg-white border-2 border-[#0C8CE9]`}
                            href="/auth/signup"
                         >
                            Sign up
-                        </Link>
+                        </a>
                      </div>
                   </div>
 
