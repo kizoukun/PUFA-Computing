@@ -30,7 +30,7 @@ export default function Footer() {
                         </button>
                     </div>
                 </div>
-                <hr className="my- border-gray-200 dark:border-gray-700" />
+                <hr className="my-4 border-gray-200 dark:border-gray-700" />
                 <div className="md:flex md:-mx-3 md:items-center md:justify-between">
                     <div className="md:mx-3 xl:text-sm dark:text-white">
                         <div className="font-normal tracking-widest text-sm text-[#9CA3AF]">

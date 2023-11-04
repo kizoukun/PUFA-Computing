@@ -7,7 +7,6 @@ export default async function MainLayout({
    children: React.ReactNode;
 }) {
    return (
-      //navbar
       <>
          <Navbar />
          <div className="bg-[#FBFBFB]">{children}</div>
