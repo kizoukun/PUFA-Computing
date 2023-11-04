@@ -3,6 +3,7 @@ import React from "react";
 interface CompreciationCardProps {
     title: string;
     description: string;
+    major: string,
     image?: string;
 }
 
@@ -10,7 +11,11 @@ export default function CompreciationCard({
     title,
     description,
     image,
+    major,
 }: CompreciationCardProps) {
+
+    const BGColor = major === 'IT' ? 'bg-[#F98866]' : major === 'IS' ? 'bg-[#336B87]' : major === 'ID' ? 'bg-[#80BD9E]' : major === "VCD" ? 'bg-[#89DA59]': 'bg-black';
+
     return (
         <div className="flex flex-col items-center justify-center w-full max-w-lg mx-auto relative">
             <div className="relative">
@@ -18,8 +23,8 @@ export default function CompreciationCard({
                     className="w-full h-72 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
                     src={image}
                 />
-                <div className="absolute top-0 right-0 bg-green-500 text-white px-2 py-1 rounded-tr">
-                    <span className="text-xs font-semibold">Best Anime No Debat</span>
+                <div className={`absolute top-0 right-0 ${BGColor} text-white px-4 py-1 rounded-tr`}>
+                    <span className="text-xs font-semibold">{major}</span>
                 </div>
             </div>
 

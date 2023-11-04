@@ -143,7 +143,6 @@ export default async function Index() {
                The latest news about research, technology, achievements, and
                campus life
             </h3>
-            <EventSection />
          </section>
          {/* end */}
 
@@ -307,8 +306,27 @@ export default async function Index() {
             </h2>
             <h3 className="">Appreciation to Computizen’s best projects.</h3>
 
-            <div className="grid grid-cols-2 gap-2 gap-y-4">
+            <div className="grid grid-cols-2 gap-2 gap-y-6">
                <CompreciationCard
+                  major="IT"
+                  title="Shingeki No Kyojin"
+                  description="Hajime Isayama"
+                  image="../aot.jpg"
+               />
+               <CompreciationCard
+                  major="IS"
+                  title="Shingeki No Kyojin"
+                  description="Hajime Isayama"
+                  image="../aot.jpg"
+               />
+               <CompreciationCard
+                  major="ID"
+                  title="Shingeki No Kyojin"
+                  description="Hajime Isayama"
+                  image="../aot.jpg"
+               />
+               <CompreciationCard
+                  major="VCD"
                   title="Shingeki No Kyojin"
                   description="Hajime Isayama"
                   image="../aot.jpg"
