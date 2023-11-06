@@ -24,7 +24,7 @@ export default async function Index() {
             />
          </div>
          <section
-            id="intro"
+            id="introduction"
             className="container mx-auto  -mt-24 sm:-mt-32 md:-mt-48 lg:-mt-64 xl:-mt-96"
          >
             <img
@@ -161,14 +161,14 @@ export default async function Index() {
                The latest news about research, technology, achievements, and
                campus life
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-justify">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-justify">
                <NewsCardBig
                   image="../aot.jpg"
                   title="Attack On Titan"
                   description="AOT DEBEST"
                   time="10 november"
                />
-               <div className="grid grid-cols-2 gap-4">
+               <div className="grid grid-cols-2 gap-8">
                   <NewsCard
                      image="../aot.jpg"
                      title="Attack On Titan"
@@ -196,11 +196,11 @@ export default async function Index() {
                </div>
             </div>
             <div className="flex items-center justify-center">
-               <a href="/" className="block w-max">
+               <Link href="/" className="block w-max">
                   <Button className="border-[#705100] text-[#705100] hover:bg-[#705100] hover:text-white px-10 py-2">
                      See all News
                   </Button>
-               </a>
+               </Link>
             </div>
          </section>
          {/* end */}

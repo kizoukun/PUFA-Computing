@@ -19,7 +19,6 @@ export default function NewsCard({
    return (
       <article className="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg">
         <img
-          alt="Office"
           src={image}
           className="absolute inset-0 h-full w-full object-cover"
         />
