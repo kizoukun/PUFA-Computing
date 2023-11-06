@@ -1,5 +1,4 @@
-
-import a from "next/link";
+import Link from "next/link";
 import NavbarDropdown from "./NavbarDropdown";
 
 export default function Navbar() {
@@ -27,9 +26,9 @@ export default function Navbar() {
          <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-24 items-center justify-between">
                <div className="flex items-center gap-12 lg:divide-x-2 lg:divide-black">
-                  <a className=" text-teal-600 inline" href="/">
+                  <Link className=" text-teal-600 inline" href="/">
                      <img src="../logo.png" width="130" height="80" />
-                  </a>
+                  </Link>
                   <div className="font-bold px-7 hidden lg:block">
                      <div className="flex flex-col items-center">
                         <div className="flex-grow text-sm font-normal tracking-[.11em]">
@@ -47,19 +46,19 @@ export default function Navbar() {
                   <nav aria-label="Global">
                      <ul className="flex items-center gap-6 text-md font-medium text-black">
                         <li>
-                           <a href="/">Home</a>
+                           <Link href="/">Home</Link>
                         </li>
 
                         <li>
-                           <a href="/events">Events</a>
+                           <Link href="/events">Events</Link>
                         </li>
 
                         <li>
-                           <a href="/news">News</a>
+                           <Link href="/news">News</Link>
                         </li>
 
                         <li>
-                           <a href="/merch">Merch</a>
+                           <Link href="/merch">Merch</Link>
                         </li>
                         {NavbarDropdownItems.map((item) => (
                            <NavbarDropdown
@@ -70,7 +69,7 @@ export default function Navbar() {
                         ))}
 
                         <li>
-                           <a href="/contact">Contact</a>
+                           <Link href="/contact">Contact</Link>
                         </li>
                      </ul>
                   </nav>
@@ -78,20 +77,20 @@ export default function Navbar() {
 
                <div className="flex items-center gap-4">
                   <div className="sm:flex sm:gap-4">
-                     <a
+                     <Link
                         className="block rounded-md bg-white px-2 md:px-5 py-2.5 text-sm font-medium text-black hover:text-white hover:bg-[#0C8CE9] border-2 border-[#0C8CE9] duration-300"
                         href="/auth/signin"
                      >
                         Sign in
-                     </a>
+                     </Link>
 
                      <div className="hidden sm:flex">
-                        <a
+                        <Link
                            className={`block rounded-md px-5 py-2.5 text-sm font-medium hover:text-black text-white duration-300 bg-[#0C8CE9] hover:bg-white border-2 border-[#0C8CE9]`}
                            href="/auth/signup"
                         >
                            Sign up
-                        </a>
+                        </Link>
                      </div>
                   </div>
 
