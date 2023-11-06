@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-interface NewsCardProps {
+interface NewsCardBigProps {
    image: string;
    title: string;
    description: string;
@@ -9,16 +9,17 @@ interface NewsCardProps {
 
 }
 
-export default function NewsCard({
+export default function NewsCardBig({
    image,
    title,
    description,
    time,
-}: NewsCardProps) {
+}: NewsCardBigProps) {
    
    return (
       <article className="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg">
         <img
+          alt="Office"
           src={image}
           className="absolute inset-0 h-full w-full object-cover"
         />

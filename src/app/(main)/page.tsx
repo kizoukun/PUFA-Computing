@@ -5,6 +5,10 @@ import Button from "@/components/Button";
 import CardStoreUp from "@/components/CardStoreUp";
 import CardStoreDown from "@/components/CardStoreDown";
 import EventSection from "@/components/event/EventSection";
+import Faq from "@/components/Faq";
+import CompreciationCard from "@/components/CompreciationCard";
+import NewsCard from "@/components/news/NewsCard";
+import NewsCardBig from "@/components/news/NewsCardBig";
 
 export default async function Index() {
    return (
@@ -20,7 +24,7 @@ export default async function Index() {
             />
          </div>
          <section
-            id="intro"
+            id="introduction"
             className="container mx-auto  -mt-24 sm:-mt-32 md:-mt-48 lg:-mt-64 xl:-mt-96"
          >
             <img
@@ -141,7 +145,104 @@ export default async function Index() {
                The latest news about research, technology, achievements, and
                campus life
             </h3>
-            <EventSection />
+         </section>
+         {/* end */}
+
+         {/* news */}
+         <section
+            id="news"
+            className="max-w-7xl max-h-xl space-y-8 mx-auto p-5 my-32 text-center"
+         >
+            <h2 className="text-2xl font-bold">
+               <span className="border-l-8 border-l-[#705100] mr-4"></span>
+               Computing News
+            </h2>
+            <h3 className="">
+               The latest news about research, technology, achievements, and
+               campus life
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-justify">
+               <NewsCardBig
+                  image="../aot.jpg"
+                  title="Attack On Titan"
+                  description="AOT DEBEST"
+                  time="10 november"
+               />
+               <div className="grid grid-cols-2 gap-8">
+                  <NewsCard
+                     image="../aot.jpg"
+                     title="Attack On Titan"
+                     description="AOT DEBEST"
+                     time="10 november"
+                  />
+                  <NewsCard
+                     image="../aot.jpg"
+                     title="Attack On Titan"
+                     description="AOT DEBEST"
+                     time="10 november"
+                  />
+                  <NewsCard
+                     image="../aot.jpg"
+                     title="Attack On Titan"
+                     description="AOT DEBEST"
+                     time="10 november"
+                  />
+                  <NewsCard
+                     image="../aot.jpg"
+                     title="Attack On Titan"
+                     description="AOT DEBEST"
+                     time="10 november"
+                  />
+               </div>
+            </div>
+            <div className="flex items-center justify-center">
+               <Link href="/" className="block w-max">
+                  <Button className="border-[#705100] text-[#705100] hover:bg-[#705100] hover:text-white px-10 py-2">
+                     See all News
+                  </Button>
+               </Link>
+            </div>
+         </section>
+         {/* end */}
+
+         {/* compreciacion */}
+
+         <section
+            id="compreciacion"
+            className="max-w-7xl max-h-xl space-y-8 mx-auto p-5 my-32 text-center"
+         >
+            <h2 className="text-2xl font-bold">
+               <span className="border-l-8 border-l-[#02ABF3] mr-4"></span>
+               Compreciation
+            </h2>
+            <h3 className="">Appreciation to Computizen’s best projects.</h3>
+
+            <div className="grid grid-cols-2 gap-2 gap-y-6">
+               <CompreciationCard
+                  major="IT"
+                  title="Shingeki No Kyojin"
+                  description="Hajime Isayama"
+                  image="../aot.jpg"
+               />
+               <CompreciationCard
+                  major="IS"
+                  title="Shingeki No Kyojin"
+                  description="Hajime Isayama"
+                  image="../aot.jpg"
+               />
+               <CompreciationCard
+                  major="ID"
+                  title="Shingeki No Kyojin"
+                  description="Hajime Isayama"
+                  image="../aot.jpg"
+               />
+               <CompreciationCard
+                  major="VCD"
+                  title="Shingeki No Kyojin"
+                  description="Hajime Isayama"
+                  image="../aot.jpg"
+               />
+            </div>
          </section>
          {/* end */}
 
@@ -155,7 +256,7 @@ export default async function Index() {
                Computing Store
             </h2>
 
-            <section className="container mx-auto p-10 md:py-20 px-0 md:p-20 md:px-0">
+            <div className="container mx-auto p-10 md:py-20 px-0 md:p-20 md:px-0">
                <div className="grid lg:grid-cols-2 2xl:grid-cols-4 grid-cols-1 gap-10 antialiased">
                   <CardStoreUp
                      image="../anagatalogo.jpeg"
@@ -189,163 +290,39 @@ export default async function Index() {
                      bgColor="bg-red-100"
                   />
                </div>
-            </section>
+            </div>
             <div className="flex items-center justify-center">
                <Link href="/" className="block w-max">
-                  <Button className="border-[#705100] text-[#705100] hover:bg-[#705100] hover:text-white px-10 py-2">
-                     See all merchandise
+                  <Button className="border-[#02ABF3] text-[#02ABF3] hover:bg-[#02ABF3] hover:text-white px-10 py-2">
+                     See all items
                   </Button>
                </Link>
             </div>
          </section>
-         {/* end */}
 
-         {/* news */}
+         {/* Faq */}
          <section
-            id="news"
-            className="max-w-7xl max-h-xl space-y-8 mx-auto p-5 my-32 text-center"
+            id="faq"
+            className="max-w-7xl max-h-xl space-y-8 mx-auto p-5 my-32"
          >
-            <h2 className="text-2xl font-bold">
-               <span className="border-l-8 border-l-[#705100] mr-4"></span>
-               Computing News
-            </h2>
-            <h3 className="">
-               The latest news about research, technology, achievements, and
-               campus life
-            </h3>
-            <section className="container mx-auto p-10 md:py-20 px-0 md:p-10 md:px-0">
-               <section className="p-5 md:p-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10">
-                  <article className="p-10 min-h-116 max-w-xl w-full bg-gray-200 rounded-xl text-gray-600 transform duration-500 hover:-translate-y-1 cursor-pointer">
-                     <h1 className="mt-5 text-2xl md:text-3xl font-light leading-snug min-h-33">
-                        One small step for man one giant leap for mankind
-                     </h1>
-                     <div className="mt-20">
-                        <span className="text-xl">Moonlanding - </span>
-                        <span className="font-bold text-xl">
-                           Neil Armstrong
-                        </span>
-                     </div>
-                     <div className="mt-16 flex justify-between">
-                        <span className="p-3 pl-0 font-bold">Story</span>
-                        <span className="p-3  border-2 border-gray-500 rounded-md text-base hover:bg-black hover:border-gray-200 cursor-pointer hover:text-white ">
-                           Paid Membership
-                        </span>
-                     </div>
-                  </article>
+            <div className="container flex flex-col items-justify px-4 py-8 mx-auto md:p-8 border border-black bg-white rounded-lg">
+               <div>
+                  <h2 className="text-2xl font-semibold sm:text-4xl">
+                     Frequently Asked Questions
+                  </h2>
+               </div>
+               <div className="space-y-4 mt-8 mb-6">
+                  <Faq
+                     status="open"
+                     title="Kukurukuurkrurkurkrkrurkrkruk?"
+                     content="lorem ipsum skdskdsj asdjnaskdjahsfj asljkashdaslfhd dfjlasdfhdjlcbd dsfjkadsfhdsjfbdsc dsfbdsjfbdsjbdsc dsjfdsjdscbdsc dsc jdkfhdslkcbzd"
+                  />
 
-                  <article
-                     className="min-h-116 bg-orange-600 max-w-xl w-full rounded-xl text-gray-100 bg-cover bg-center transform duration-500 hover:-translate-y-1 cursor-pointer"
-                     style={{
-                        backgroundImage:
-                           "url(https://images.unsplash.com/photo-1614527333177-d27e9e29ff98?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=950&q=80)",
-                     }}
-                  >
-                     <div className="bg-black bg-opacity-60 p-10 rounded-xl h-full">
-                        <h1 className="mt-5 text-3xl text-gray-100 leading-snug  min-h-33">
-                           One small step for man one giant leap for mankind
-                        </h1>
-                        <div className="mt-20">
-                           <span className="text-xl">Moonlanding - </span>
-                           <span className="font-bold text-xl">
-                              Neil Armstrong
-                           </span>
-                        </div>
-                        <div className="mt-16 flex justify-between ">
-                           <span className="p-3 pl-0 font-bold">Travel</span>
-                           <span className="p-3  border-2 border-gray-200 rounded-md text-base hover:bg-gray-200 hover:border-gray-200 cursor-pointer hover:text-black ">
-                              Paid Membership
-                           </span>
-                        </div>
-                     </div>
-                  </article>
-
-                  <article className="p-10 min-h-116 max-w-3xl w-full bg-purple-600 rounded-xl text-gray-100 xl:col-span-2 transform duration-500 hover:-translate-y-1 cursor-pointer">
-                     <h1 className="mt-5 text-5xl font-light text-gray-100 leading-snug  min-h-33">
-                        One small step for man one giant leap for mankind
-                     </h1>
-                     <div className="mt-20">
-                        <span className="text-xl">Moonlanding - </span>
-                        <span className="font-bold text-xl">
-                           Neil Armstrong
-                        </span>
-                     </div>
-                     <div className="mt-16 flex justify-between ">
-                        <span className="p-3 pl-0 font-bold">Quotes</span>
-                        <span className="p-3  border-2 border-gray-200 rounded-md text-base hover:bg-gray-200 hover:border-gray-200 cursor-pointer hover:text-black ">
-                           Paid Membership
-                        </span>
-                     </div>
-                  </article>
-
-                  <article
-                     className="p-10 min-h-116 max-w-3xl w-full rounded-xl text-gray-100 xl:col-span-2 bg-center bg-cover transform duration-500 hover:-translate-y-1 cursor-pointer"
-                     style={{
-                        backgroundImage:
-                           "url(https://images.unsplash.com/photo-1559827291-72ee739d0d9a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80)",
-                     }}
-                  >
-                     <h1 className="mt-5 text-4xl text-gray-100 leading-snug  min-h-33">
-                        One small step for man one giant leap for mankind
-                     </h1>
-                     <div className="mt-20">
-                        <span className="text-xl">Moonlanding - </span>
-                        <span className="font-bold text-xl">
-                           Neil Armstrong
-                        </span>
-                     </div>
-                     <div className="mt-16 flex justify-between ">
-                        <span className="p-3 pl-0 font-bold">Travel Guide</span>
-                        <span className="p-3 px-5 bg-gray-200  rounded-md text-base hover:bg-orange-600 cursor-pointer hover:text-white text-black ">
-                           Paid Membership
-                        </span>
-                     </div>
-                  </article>
-
-                  <article className="p-10 min-h-116 max-w-xl w-full bg-cyan-600 rounded-xl text-gray-100 transform duration-500 hover:-translate-y-1 cursor-pointer">
-                     <h1 className="mt-5 text-3xl text-gray-100 leading-snug  min-h-33">
-                        One small step for man one giant leap for mankind
-                     </h1>
-                     <div className="mt-20">
-                        <span className="text-xl">Moonlanding - </span>
-                        <span className="font-bold text-xl">
-                           Neil Armstrong
-                        </span>
-                     </div>
-                     <div className="mt-16 flex justify-between ">
-                        <span className="p-3 pl-0">Story</span>
-                        <span className="p-3  border-2 border-gray-200 rounded-md text-base hover:bg-gray-200 hover:border-gray-200 cursor-pointer hover:text-black ">
-                           Paid Membership
-                        </span>
-                     </div>
-                  </article>
-
-                  <article className="flex flex-col-reverse p-10 min-h-116 max-w-xl w-full bg-orange-600 rounded-xl text-gray-100 transform duration-500 hover:-translate-y-1 cursor-pointer">
-                     <h1 className="mt-10 text-3xl text-gray-100 leading-snug  min-h-33">
-                        One small step for man one giant leap for mankind
-                     </h1>
-                     <div className="mt-24">
-                        <span className="text-xl">Moonlanding - </span>
-                        <span className="font-bold text-xl">
-                           Neil Armstrong
-                        </span>
-                     </div>
-                     <div className="mt-4 flex justify-between ">
-                        <span className="p-3 pl-0">Story</span>
-                        <span className="p-3  border-2 border-gray-200 rounded-md text-base hover:bg-gray-200 hover:border-gray-200 cursor-pointer hover:text-black ">
-                           Paid Membership
-                        </span>
-                     </div>
-                  </article>
-               </section>
-            </section>
-            <div className="flex items-center justify-center">
-               <Link href="/" className="block w-max">
-                  <Button className="border-[#705100] text-[#705100] hover:bg-[#705100] hover:text-white px-10 py-2">
-                     See all News
-                  </Button>
-               </Link>
+                  <Faq title="ayam itu apa ?" content="ikan bilis" />
+               </div>
             </div>
          </section>
+
          {/* end */}
       </div>
    );

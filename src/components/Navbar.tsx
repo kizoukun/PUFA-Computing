@@ -34,7 +34,7 @@ export default function Navbar() {
                         <div className="flex-grow text-sm font-normal tracking-[.11em]">
                            President University
                            <div className="flex-grow text-sm font-normal tracking-[.205em]">
-                              Major Association
+                              Faculty Association
                            </div>
                         </div>
                         <div className="font-semibold mt-1">COMPUTING</div>
