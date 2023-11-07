@@ -1,35 +1,44 @@
 import Link from "next/link";
 
-interface ProductCardProps {
-    title: string;
-    image?: string;
-    price: number;
+interface Product {
+   name: string;
+   price: number;
+   imageUrl: string;
+   title: string;
 }
 
-export default function ProductCard({ title, image, price }: ProductCardProps) {
-    return (
-        <li>
-            <Link href="#" className="group block overflow-hidden">
-                <img
-                    src={`${image}`}
-                    alt={`This is an image of ${title}`}
-                    className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-                />
+interface ProductCardProps {
+   Products: Array<Product>;
+}
 
-                <div className="relative bg-white pt-3">
-                    <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                        {title}
-                    </h3>
+export default function ProductCard({ Products }: ProductCardProps) {
+   return (
+      <>
+         {Products.map((product, index) => (
+            <li key={index}>
+               <Link href={`/merch/${index}`} className="group block overflow-hidden">
+                  <img
+                     src={`${product.imageUrl}`}
+                     alt={`This is an image of ${product.title}`}
+                     className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+                  />
 
-                    <p className="mt-2">
+                  <div className="relative bg-white pt-3">
+                     <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
+                        {product.name}
+                     </h3>
+
+                     <p className="mt-2">
                         <span className="sr-only">Regular Price</span>
 
                         <span className="tracking-wider text-gray-900">
-                            £{price.toFixed(2)} GBP
+                           Rp {product.price.toFixed(2)}
                         </span>
-                    </p>
-                </div>
-            </Link>
-        </li>
-    );
+                     </p>
+                  </div>
+               </Link>
+            </li>
+         ))}
+      </>
+   );
 }

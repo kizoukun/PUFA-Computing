@@ -3,7 +3,44 @@ import SideBarMerch from "@/components/SideBarMerch";
 import Link from "next/link";
 
 export default function MerchPage() {
-
+   const Product = [
+      {
+         imageUrl: "../aot.jpg",
+         name: "T-Shirt",
+         price: 100000,
+         title: "bgst",
+      },
+      {
+         imageUrl: "../aot.jpg",
+         name: "T-Shirt",
+         price: 100000,
+         title: "bgst",
+      },
+      {
+         imageUrl: "../aot.jpg",
+         name: "T-Shirt",
+         price: 100000,
+         title: "bgst",
+      },
+      {
+         imageUrl: "../aot.jpg",
+         name: "T-Shirt",
+         price: 100000,
+         title: "bgst",
+      },
+      {
+         imageUrl: "../aot.jpg",
+         name: "T-Shirt",
+         price: 100000,
+         title: "bgst",
+      },
+      {
+         imageUrl: "../aot.jpg",
+         name: "T-Shirt",
+         price: 100000,
+         title: "bgst",
+      },
+   ];
    return (
       <section>
          <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
@@ -48,12 +85,8 @@ export default function MerchPage() {
 
                <div className="lg:col-span-3">
                   <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                     <ProductCard
-                     title="ayam"
-                     image="../aot.jpg"
-                     price={10000}/>
+                     <ProductCard Products={Product} />
                   </ul>
-                  
                </div>
             </div>
          </div>
