@@ -7,10 +7,10 @@ export default async function MainLayout({
    children: React.ReactNode;
 }) {
    return (
-      <>
+      <div className="scroll-smooth">
          <Navbar />
          <div className="bg-[#FBFBFB]">{children}</div>
          <Footer />
-      </>
+      </div>
    );
 }

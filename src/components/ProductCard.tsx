@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 interface Product {
-   name: string;
    price: number;
    imageUrl: string;
    title: string;
@@ -16,7 +15,10 @@ export default function ProductCard({ Products }: ProductCardProps) {
       <>
          {Products.map((product, index) => (
             <li key={index}>
-               <Link href={`/merch/${index}`} className="group block overflow-hidden">
+               <Link
+                  href={`/merch/${index}`}
+                  className="group block overflow-hidden"
+               >
                   <img
                      src={`${product.imageUrl}`}
                      alt={`This is an image of ${product.title}`}
@@ -25,7 +27,7 @@ export default function ProductCard({ Products }: ProductCardProps) {
 
                   <div className="relative bg-white pt-3">
                      <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                        {product.name}
+                        {product.title}
                      </h3>
 
                      <p className="mt-2">

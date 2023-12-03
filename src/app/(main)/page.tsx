@@ -9,6 +9,7 @@ import Faq from "@/components/Faq";
 import CompreciationCard from "@/components/CompreciationCard";
 import NewsCard from "@/components/news/NewsCard";
 import NewsCardBig from "@/components/news/NewsCardBig";
+import StudyProgCard from "@/components/StudyProgCard";
 
 export default async function Index() {
    return (
@@ -54,37 +55,41 @@ export default async function Index() {
          {/* programs */}
          <section
             id="programs"
-            className="max-w-3xl space-y-8 mx-auto p-5 my-32 text-center"
+            className="max-w-7xl space-y-8 mx-auto p-5 my-32 text-center"
          >
             <h2 className="text-2xl font-bold">
                <span className="border-l-8 border-l-[#0C8CE9] mr-4"></span>
-               Study Programs in the Faculty of Computing
+               Study Programs
             </h2>
-            <h3 className="">
-               The Faculty of Computing has two study programs that produce
+            <h3 className="max-w-xl mx-auto ">
+               The Faculty of Computing has four study programs that produce
                qualified student graduates in their fields.
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-               <div className="bg-white hover:bg-gradient-to-b hover:from-white hover:via-white hover:to-[#54A8E2] transition-all duration-300 shadow-lg rounded-lg p-3">
-                  <p>Informatics</p>
-                  <hr className="mt-4 mb-12 border border-[#00357C] w-16 mx-auto" />
-                  <p className="my-16">
-                     Informatics study program that will produce qualified
-                     graduates in the field of educators who are experts in
-                     Informatics.
-                  </p>
-                  <Button className="w-max mx-auto my-4">See Details</Button>
-               </div>
-               <div className="bg-white hover:bg-gradient-to-b hover:from-white hover:via-white hover:to-[#54A8E2] shadow-lg rounded-lg p-3">
-                  <p>Information System</p>
-                  <hr className="mt-4 mb-12 border border-[#00357C] w-16 mx-auto" />
-                  <p className="my-16">
-                     Informatics study program that will produce qualified
-                     graduates in the field of educators who are experts in
-                     Informatics.
-                  </p>
-                  <Button className="w-max mx-auto my-4">See Details</Button>
-               </div>
+            <div className="flex flex-col-2 gap-16">
+               <StudyProgCard
+                  title="Informatics"
+                  article="Informatics study program that will produce qualified
+               graduates in the field of educators who are experts in
+               Informatics."
+               />
+               <StudyProgCard
+                  title="Information System"
+                  article="Informatics study program that will produce qualified
+               graduates in the field of educators who are experts in
+               Informatics."
+               />
+               <StudyProgCard
+                  title="Visual Communication Design"
+                  article="Informatics study program that will produce qualified
+               graduates in the field of educators who are experts in
+               Informatics."
+               />
+               <StudyProgCard
+                  title="Interior Design"
+                  article="Informatics study program that will produce qualified
+               graduates in the field of educators who are experts in
+               Informatics."
+               />
             </div>
          </section>
          {/* end */}
@@ -212,36 +217,18 @@ export default async function Index() {
             className="max-w-7xl max-h-xl space-y-8 mx-auto p-5 my-32 text-center"
          >
             <h2 className="text-2xl font-bold">
-               <span className="border-l-8 border-l-[#02ABF3] mr-4"></span>
+               <span className="border-l-8 border-l-[#AF95FF] mr-4"></span>
                Compreciation
             </h2>
             <h3 className="">Appreciation to Computizen’s best projects.</h3>
 
-            <div className="grid grid-cols-2 gap-2 gap-y-6">
-               <CompreciationCard
-                  major="IT"
-                  title="Shingeki No Kyojin"
-                  description="Hajime Isayama"
-                  image="../aot.jpg"
-               />
-               <CompreciationCard
-                  major="IS"
-                  title="Shingeki No Kyojin"
-                  description="Hajime Isayama"
-                  image="../aot.jpg"
-               />
-               <CompreciationCard
-                  major="ID"
-                  title="Shingeki No Kyojin"
-                  description="Hajime Isayama"
-                  image="../aot.jpg"
-               />
-               <CompreciationCard
-                  major="VCD"
-                  title="Shingeki No Kyojin"
-                  description="Hajime Isayama"
-                  image="../aot.jpg"
-               />
+            <div></div>
+            <div className="flex items-center justify-center">
+               <Link href="/" className="block w-max">
+                  <Button className="border-[#AF95FF] text-[#AF95FF] hover:bg-transparent hover:text-[#AF95FF] px-10 py-2">
+                     See all items
+                  </Button>
+               </Link>
             </div>
          </section>
          {/* end */}
@@ -318,6 +305,9 @@ export default async function Index() {
                      content="lorem ipsum skdskdsj asdjnaskdjahsfj asljkashdaslfhd dfjlasdfhdjlcbd dsfjkadsfhdsjfbdsc dsfbdsjfbdsjbdsc dsjfdsjdscbdsc dsc jdkfhdslkcbzd"
                   />
 
+                  <Faq title="ayam itu apa ?" content="ikan bilis" />
+                  <Faq title="ayam itu apa ?" content="ikan bilis" />
+                  <Faq title="ayam itu apa ?" content="ikan bilis" />
                   <Faq title="ayam itu apa ?" content="ikan bilis" />
                </div>
             </div>
