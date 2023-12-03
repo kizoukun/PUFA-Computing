@@ -95,15 +95,17 @@ export default async function Index() {
          {/* cabinet */}
          <section
             id="cabinet"
-            className="max-w-3xl space-y-8 mx-auto p-5 my-32 text-center"
+            className="max-w-6xl mx-auto p-5 my-32 text-center"
          >
             <h2 className="text-2xl font-bold">
                <span className="border-l-8 border-l-[#1FA820] mr-4"></span>
                CABINET 2023/2024
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+
+
+            <div className="grid grid-cols-1 md:grid-cols-6 md:py-[6rem] gap-16 md:gap-5">
                {/* logo anagata */}
-               <div className="p-1 shadow-lg">
+               <div className="p-1 rounded-xl aspect-square shadow-lg h-[20rem] mt-5 md:mt-0 md:col-span-2">
                   <img
                      className=" mx-auto"
                      src="../anagatalogo.jpeg"
@@ -111,27 +113,32 @@ export default async function Index() {
                   />
                </div>
                {/* cabinet content */}
-               <div className="p-0.5 rounded-md bg-[#1FA820]">
-                  <div className="rounded-md bg-white pt-20 sm:p-6">
-                     <div className="text-[#353535]">
+               <div className="p-0.5 md:px-10 rounded-xl bg-white  md:mt-0 mb-5 md:flex sm:p-6 border-[#1FA820] border-2 md:col-span-4 h-[20rem]">
+                  <div className="text-[#353535] md:flex md:flex-col md:justify-center py-10 md:py-5 px-10">
+
+                     <div className="flex gap-5 md:gap-5">
                         <p className="mt-0.5 text-2xl text-left font-bold">
                            ANAGATA CABINET
                         </p>
-                        {/* content */}
-                        <div className="mt-10 text-xl font-bold text-justify">
-                           <p className="mb-4">
-                              “One Team, One Vision, One for Computing”
-                           </p>
-                           <p className="">
-                              We are attempting to be a bridge for the Computing
-                              Faculty in a more positive way by growing together
-                              with us.
-                           </p>
-                        </div>
+                        <div className="bg-[#1FA820] w-[13rem] h-[1.5px] self-center"></div>
+                     </div>
+
+                     {/* content */}
+                     <div className="mt-10 text-xl font-bold text-justify">
+                        <p className="mb-4">
+                        “One Team, One Vision, One for Computing”
+                        </p>
+                        <p className="text-gray-700">
+                           We are attempting to be a bridge for the Computing
+                           Faculty in a more positive way by growing together
+                           with us.
+                        </p>
                      </div>
                   </div>
                </div>
             </div>
+            {/* button kthx */}
+            <button className="rounded-xl text-[#1FA820] border-2 border-[#1FA820] py-3 px-10 hover:bg-[#1FA820] hover:text-white transition ease-in-out duration-300">See Our Cabinet</button>
          </section>
          {/* end */}
 
@@ -145,8 +152,7 @@ export default async function Index() {
                Computing Events
             </h2>
             <h3 className="">
-               The latest news about research, technology, achievements, and
-               campus life
+               Discover the latest updates on events in  our faculty.
             </h3>
          </section>
          {/* end */}
