@@ -8,6 +8,7 @@ import CompreciationCard from "@/components/CompreciationCard";
 import NewsCard from "@/components/news/NewsCard";
 import NewsCardBig from "@/components/news/NewsCardBig";
 import StudyProgCard from "@/components/StudyProgCard";
+import CardStore from "@/components/store/CardStore";
 
 export default async function Index() {
    return (
@@ -226,7 +227,10 @@ export default async function Index() {
             </h2>
             <h3 className="">Appreciation to Computizen’s best projects.</h3>
 
-            <div></div>
+            <div>
+
+            </div>
+
             <div className="flex items-center justify-center">
                <Link href="/" className="block w-max">
                   <Button className="border-[#AF95FF] text-[#AF95FF] hover:bg-transparent hover:text-[#AF95FF] px-10 py-2">
@@ -250,8 +254,8 @@ export default async function Index() {
 
 
             <div className="container mx-auto p-10 md:py-20 px-0 md:p-20 md:px-0">
-               <div className="grid lg:grid-cols-2 2xl:grid-cols-4 grid-cols-1 gap-10 antialiased">
-                  
+               <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
+                  <CardStore/>
                </div>
             </div>
             <div className="flex items-center justify-center">
