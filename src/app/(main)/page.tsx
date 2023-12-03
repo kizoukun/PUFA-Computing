@@ -2,8 +2,6 @@ import Image from "next/image";
 import BGImage from "@/assets/backgroundimg.png";
 import Link from "next/link";
 import Button from "@/components/Button";
-import CardStoreUp from "@/components/CardStoreUp";
-import CardStoreDown from "@/components/CardStoreDown";
 import EventSection from "@/components/event/EventSection";
 import Faq from "@/components/Faq";
 import CompreciationCard from "@/components/CompreciationCard";
@@ -239,48 +237,20 @@ export default async function Index() {
             className="max-w-7xl space-y-8 mx-auto p-5 my-32 text-center"
          >
             <h2 className="text-2xl font-bold">
-               <span className="border-l-8 border-l-[#1FA820] mr-4"></span>
+               <span className="border-l-8 border-l-[#BA704F] mr-4"></span>
                Computing Store
             </h2>
+            <h3 className="">Special merchandise for all Computizens</h3>
+
 
             <div className="container mx-auto p-10 md:py-20 px-0 md:p-20 md:px-0">
                <div className="grid lg:grid-cols-2 2xl:grid-cols-4 grid-cols-1 gap-10 antialiased">
-                  <CardStoreUp
-                     image="../anagatalogo.jpeg"
-                     number="01"
-                     title="adasd"
-                     description="adasdads"
-                     bgColor="bg-red-100"
-                  />
-
-                  <CardStoreDown
-                     image="../anagatalogo.jpeg"
-                     number="01"
-                     title="adasd"
-                     description="adasdads"
-                     bgColor="bg-red-100"
-                  />
-
-                  <CardStoreUp
-                     image="../anagatalogo.jpeg"
-                     number="01"
-                     title="adasd"
-                     description="adasdads"
-                     bgColor="bg-red-100"
-                  />
-
-                  <CardStoreDown
-                     image="../anagatalogo.jpeg"
-                     number="01"
-                     title="adasd"
-                     description="adasdads"
-                     bgColor="bg-red-100"
-                  />
+                  
                </div>
             </div>
             <div className="flex items-center justify-center">
                <Link href="/" className="block w-max">
-                  <Button className="border-[#02ABF3] text-[#02ABF3] hover:bg-[#02ABF3] hover:text-white px-10 py-2">
+                  <Button className="border-[#BA704F] text-[#BA704F] hover:bg-[#BA704F] hover:text-white px-10 py-2">
                      See all items
                   </Button>
                </Link>

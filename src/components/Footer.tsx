@@ -44,12 +44,12 @@ export default function Footer() {
 
                <div className="md:ml-auto flex flex-col justify-center mt-6 space-y-3 md:space-y-0 space-x-5 md:flex-row">
                   <Link href="https://www.linkedin.com/company/pumacomputing/">
-                     <FaLinkedin size={25} className="text-[#DADADA] hover:text-gray-600 transition-colors duration-300" />
+                     <FaLinkedin size={25} className="text-[#DADADA] hover:text-gray-500 transition-colors duration-300" />
                   </Link>
                   <Link href="https://www.instagram.com/pufacomputing">
-                     <FaInstagram size={25} className="text-[#DADADA] hover:text-gray-600 transition-colors duration-300" />
+                     <FaInstagram size={25} className="text-[#DADADA] hover:text-gray-500 transition-colors duration-300" />
                   </Link>
-                  <FaGithub size={25} className="text-[#DADADA] hover:text-gray-600 transition-colors duration-300" />
+                  <FaGithub size={25} className="text-[#DADADA] hover:text-gray-500 transition-colors duration-300" />
                </div>
             </div>
          </div>
