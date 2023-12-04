@@ -1,3 +1,5 @@
+import LogoEvent from "@/components/event/LogoOrganizationEventPage";
+
 export default function EventsPage() {
    return (
       <div>
@@ -21,7 +23,7 @@ export default function EventsPage() {
                {/* card  */}
                <div className="inline-flex items-center mt-5">
                   <div className="border-[#E50D0D] border rounded-lg w-[32rem] h-[17rem] relative flex">
-                     <div className="w-[50%] text-black text-right">           
+                     <div className="w-[50%] text-black text-right">
                         <p>asdadsda</p>
                      </div>
                      <div className="w-[50%] text-black text-left pl-48">
@@ -78,26 +80,28 @@ export default function EventsPage() {
             <div className="border-t-2 border-b-2 border-gray-200 h-[16rem] flex items-center justify-between px-[10rem]">
                <div className="flex items-center justify-center">
                   <div className="flex items-center justify-center gap-[8rem]">
-                     <div className="flex flex-col gap-5 items-center justify-center">
-                        <div className="w-[100px] h-[100px] bg-black rounded-xl"></div>
-                        <div>logoText.xyz</div>
-                     </div>
-                     <div className="flex flex-col gap-5 items-center justify-center">
-                        <div className="w-[100px] h-[100px] bg-black rounded-xl"></div>
-                        <div>logoText.xyz</div>
-                     </div>
-                     <div className="flex flex-col gap-5 items-center justify-center">
-                        <div className="w-[100px] h-[100px] bg-black rounded-xl"></div>
-                        <div>logoText.xyz</div>
-                     </div>
-                     <div className="flex flex-col gap-5 items-center justify-center">
-                        <div className="w-[100px] h-[100px] bg-black rounded-xl"></div>
-                        <div>logoText.xyz</div>
-                     </div>
-                     <div className="flex flex-col gap-5 items-center justify-center">
-                        <div className="w-[100px] h-[100px] bg-black rounded-xl"></div>
-                        <div>logoText.xyz</div>
-                     </div>
+                     {/* logo  */}
+                     <LogoEvent
+                        image="../logo/PUFA_Computing.png"
+                        title="PUFA Computing"
+                     />
+
+                     <LogoEvent
+                        image="../logo/PUMA_IT.png"
+                        title="PUMA Informatics"
+                     />
+                     <LogoEvent
+                        image="../logo/PUMA_IS.png"
+                        title="PUMA Information System"
+                     />
+                     <LogoEvent
+                        image="../logo/PUMA_VCD.png"
+                        title="PUMA Visual Design Communication"
+                     />
+                     <LogoEvent
+                        image="../logo/PUMA_ID.png"
+                        title="PUMA Interior Design"
+                     />
                   </div>
                </div>
             </div>
@@ -109,7 +113,7 @@ export default function EventsPage() {
             <div className="flex flex-col gap-10">
                {/* 1 */}
                <div className="flex justify-between items-center gap-[2.5rem] ">
-                  <div className="h-[19rem] w-[15rem] bg-red-400 rounded-xl"></div>
+                  <div className="h-[19rem] w-[15rem] bg-red-400 rounded-xl bg-cover" style={{ backgroundImage: 'url("../anagatalogo.jpeg")' }}></div>
                   <div className="h-[19rem] w-[15rem] bg-red-400 rounded-xl"></div>
                   <div className="h-[19rem] w-[15rem] bg-red-400 rounded-xl"></div>
                   <div className="h-[19rem] w-[15rem] bg-red-400 rounded-xl"></div>
