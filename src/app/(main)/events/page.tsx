@@ -1,7 +1,8 @@
-import EventCardPage from "@/components/event/EventCardPage"; 
+import EventCardPage from "@/components/event/EventCardPage";
 
-// import componentnya 
-import LogoEvent from "@/components/event/LogoOrganizationEventPage";
+// import componentnya
+import LogoOrganizationEventPage from "@/components/event/LogoOrganizationEventPage";
+import PosterCardEventPage from "@/components/event/PosterCardEventPage";
 
 export default function EventsPage() {
    return (
@@ -70,24 +71,24 @@ export default function EventsPage() {
                <div className="flex items-center justify-center">
                   <div className="flex items-center justify-center gap-[8rem]">
                      {/* logo  */}
-                     <LogoEvent
+                     <LogoOrganizationEventPage
                         image="../logo/PUFA_Computing.png"
                         title="PUFA Computing"
                      />
 
-                     <LogoEvent
+                     <LogoOrganizationEventPage
                         image="../logo/PUMA_IT.png"
                         title="PUMA Informatics"
                      />
-                     <LogoEvent
+                     <LogoOrganizationEventPage
                         image="../logo/PUMA_IS.png"
                         title="PUMA Information System"
                      />
-                     <LogoEvent
+                     <LogoOrganizationEventPage
                         image="../logo/PUMA_VCD.png"
                         title="PUMA Visual Design Communication"
                      />
-                     <LogoEvent
+                     <LogoOrganizationEventPage
                         image="../logo/PUMA_ID.png"
                         title="PUMA Interior Design"
                      />
@@ -99,31 +100,67 @@ export default function EventsPage() {
          {/* all events part */}
          <section className="px-[10rem] py-[5rem]">
             <h1 className="text-[1.2rem] font-bold mb-[5rem]">All Events</h1>
-            <div className="flex flex-col gap-10">
-               {/* 1 */}
-               <div className="flex justify-between items-center gap-[2.5rem] ">
-                  <div
-                     className="h-[19rem] w-[15rem] bg-red-400 rounded-xl bg-cover"
-                     style={{ backgroundImage: 'url("../anagatalogo.jpeg")' }}
-                  ></div>
-                  <div className="h-[19rem] w-[15rem] bg-red-400 rounded-xl"></div>
-                  <div className="h-[19rem] w-[15rem] bg-red-400 rounded-xl"></div>
-                  <div className="h-[19rem] w-[15rem] bg-red-400 rounded-xl"></div>
-               </div>
-               {/* 2 */}
-               <div className="flex justify-between items-center gap-[2.5rem] ">
-                  <div className="h-[19rem] w-[15rem] bg-red-400 rounded-xl"></div>
-                  <div className="h-[19rem] w-[15rem] bg-red-400 rounded-xl"></div>
-                  <div className="h-[19rem] w-[15rem] bg-red-400 rounded-xl"></div>
-                  <div className="h-[19rem] w-[15rem] bg-red-400 rounded-xl"></div>
-               </div>
-               {/* 3 */}
-               <div className="flex justify-between items-center gap-[2.5rem] ">
-                  <div className="h-[19rem] w-[15rem] bg-red-400 rounded-xl"></div>
-                  <div className="h-[19rem] w-[15rem] bg-red-400 rounded-xl"></div>
-                  <div className="h-[19rem] w-[15rem] bg-red-400 rounded-xl"></div>
-                  <div className="h-[19rem] w-[15rem] bg-red-400 rounded-xl"></div>
-               </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+               <PosterCardEventPage
+                  link="/news"
+                  image="../anagatalogo.jpeg"
+                  alt="logo"
+               />
+               <PosterCardEventPage
+                  link="/news"
+                  image="../events/compsphere_2023.png"
+                  alt="logo"
+               />
+               <PosterCardEventPage
+                  link="/news"
+                  image="../anagatalogo.jpeg"
+                  alt="logo"
+               />
+               <PosterCardEventPage
+                  link="/news"
+                  image="../anagatalogo.jpeg"
+                  alt="logo"
+               />
+               <PosterCardEventPage
+                  link="/news"
+                  image="../anagatalogo.jpeg"
+                  alt="logo"
+               />
+               <PosterCardEventPage
+                  link="/news"
+                  image="../anagatalogo.jpeg"
+                  alt="logo"
+               />
+               <PosterCardEventPage
+                  link="/news"
+                  image="../anagatalogo.jpeg"
+                  alt="logo"
+               />
+               <PosterCardEventPage
+                  link="/news"
+                  image="../anagatalogo.jpeg"
+                  alt="logo"
+               />
+               <PosterCardEventPage
+                  link="/news"
+                  image="../anagatalogo.jpeg"
+                  alt="logo"
+               />
+               <PosterCardEventPage
+                  link="/news"
+                  image="../anagatalogo.jpeg"
+                  alt="logo"
+               />
+               <PosterCardEventPage
+                  link="/news"
+                  image="../anagatalogo.jpeg"
+                  alt="logo"
+               />
+               <PosterCardEventPage
+                  link="/news"
+                  image="../anagatalogo.jpeg"
+                  alt="logo"
+               />
             </div>
          </section>
 

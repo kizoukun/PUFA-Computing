@@ -1,14 +1,14 @@
 import React from "react";
 
-interface LogoEventProps{
+interface LogoOrganizationEventPageProps{
     image: string;
     title: string; 
 }
 
-export default function LogoEvent({
+export default function LogoOrganizationEventPage({
     image,
     title
-}:LogoEventProps) {
+}:LogoOrganizationEventPageProps) {
    return (
          <div className="flex flex-col gap-5 items-center justify-center">
             <div className="w-[100px] h-[100px] bg-transparent rounded-xl">
