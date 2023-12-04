@@ -13,7 +13,7 @@ export default function NewsPage() {
       </section>
 
     {/* // computing news content */}
-      <section className="px-[10rem] py-[2.5rem]">
+      <section className="px-[10rem] py-[3rem]">
         <h1 className="font-black mb-5 tracking-wide text-[1.2rem]">Latest</h1>
 
         {/* the big news card */}
