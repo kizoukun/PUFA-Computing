@@ -13,7 +13,7 @@ export default function CardSecondaryNewsPage({
 }: CardSecondaryNewsPageProps) {
    return (
       <div className="border-2 rounded-lg h-[25rem] w-[50%] flex flex-col">
-         <div className="bg-blue-400 h-[65%]">
+         <div className="h-[65%]">
             <img
                className="w-full h-full object-cover bg-center"
                src={image}

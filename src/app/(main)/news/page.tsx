@@ -1,3 +1,4 @@
+import CardNormalNewsPage from "@/components/news/CardNormalNewsPage";
 import CardSecondaryNewsPage from "@/components/news/CardSecondaryNewsPage";
 import React from "react";
 
@@ -60,139 +61,80 @@ export default function NewsPage() {
                   title="Implementation of Artificial Intelligence in Foreign
                Language Learning App Duolingo"
                   date="November 26, 2023"
-                  image="../anagatalogo.jpeg"
+                  image="../news/AI.png"
                />
             </div>
          </section>
 
-         {/* the 6 box news computing idk */}
+         {/* All news*/}
          <section className="px-[10rem] py-[4rem]">
             <h1 className="font-bold text-[1.2rem] mb-5">All News</h1>
 
-            <div className="flex gap-10 my-[3.5rem]">
-               <div className="border-2 rounded-lg  w-[33%] h-[21rem] flex flex-col">
-                  <div className="bg-green-400 h-[60%]"></div>
-                  <div className="h-[40%] flex flex-col px-4 py-2 justify-between">
-                     <div className="border-[#FF6F22] border rounded-3xl text-[#FF6F22] text-[0.8rem] px-2 w-[6rem] flex justify-center">
-                        Informatics
-                     </div>
-                     <h1 className="font-bold">
-                        Implementation of Artificial Intelligence in Foreign
-                        Language Learning App Duolingo
-                     </h1>
-                     <p className="text-[0.8rem]">November 26, 2023</p>
-                  </div>
-               </div>
-               <div className="border-2 rounded-lg  w-[33%] h-[21rem] flex flex-col">
-                  <div className="bg-green-400 h-[60%]"></div>
-                  <div className="h-[40%] flex flex-col px-4 py-2 justify-between">
-                     <div className="border-[#FF6F22] border rounded-3xl text-[#FF6F22] text-[0.8rem] px-2 w-[6rem] flex justify-center">
-                        Informatics
-                     </div>
-                     <h1 className="font-bold">
-                        Implementation of Artificial Intelligence in Foreign
-                        Language Learning App Duolingo
-                     </h1>
-                     <p className="text-[0.8rem]">November 26, 2023</p>
-                  </div>
-               </div>
-               <div className="border-2 rounded-lg  w-[33%] h-[21rem] flex flex-col">
-                  <div className="bg-green-400 h-[60%]"></div>
-                  <div className="h-[40%] flex flex-col px-4 py-2 justify-between">
-                     <div className="border-[#FF6F22] border rounded-3xl text-[#FF6F22] text-[0.8rem] px-2 w-[6rem] flex justify-center">
-                        Informatics
-                     </div>
-                     <h1 className="font-bold">
-                        Implementation of Artificial Intelligence in Foreign
-                        Language Learning App Duolingo
-                     </h1>
-                     <p className="text-[0.8rem]">November 26, 2023</p>
-                  </div>
-               </div>
-            </div>
-
-            <div className="flex gap-10 my-[3.5rem]">
-               <div className="border-2 rounded-lg  w-[33%] h-[21rem] flex flex-col">
-                  <div className="bg-green-400 h-[60%]"></div>
-                  <div className="h-[40%] flex flex-col px-4 py-2 justify-between">
-                     <div className="border-[#FF6F22] border rounded-3xl text-[#FF6F22] text-[0.8rem] px-2 w-[6rem] flex justify-center">
-                        Informatics
-                     </div>
-                     <h1 className="font-bold">
-                        Implementation of Artificial Intelligence in Foreign
-                        Language Learning App Duolingo
-                     </h1>
-                     <p className="text-[0.8rem]">November 26, 2023</p>
-                  </div>
-               </div>
-               <div className="border-2 rounded-lg  w-[33%] h-[21rem] flex flex-col">
-                  <div className="bg-green-400 h-[60%]"></div>
-                  <div className="h-[40%] flex flex-col px-4 py-2 justify-between">
-                     <div className="border-[#FF6F22] border rounded-3xl text-[#FF6F22] text-[0.8rem] px-2 w-[6rem] flex justify-center">
-                        Informatics
-                     </div>
-                     <h1 className="font-bold">
-                        Implementation of Artificial Intelligence in Foreign
-                        Language Learning App Duolingo
-                     </h1>
-                     <p className="text-[0.8rem]">November 26, 2023</p>
-                  </div>
-               </div>
-               <div className="border-2 rounded-lg  w-[33%] h-[21rem] flex flex-col">
-                  <div className="bg-green-400 h-[60%]"></div>
-                  <div className="h-[40%] flex flex-col px-4 py-2 justify-between">
-                     <div className="border-[#FF6F22] border rounded-3xl text-[#FF6F22] text-[0.8rem] px-2 w-[6rem] flex justify-center">
-                        Informatics
-                     </div>
-                     <h1 className="font-bold">
-                        Implementation of Artificial Intelligence in Foreign
-                        Language Learning App Duolingo
-                     </h1>
-                     <p className="text-[0.8rem]">November 26, 2023</p>
-                  </div>
-               </div>
-            </div>
-
-            <div className="flex gap-10 my-[3.5rem]">
-               <div className="border-2 rounded-lg  w-[33%] h-[21rem] flex flex-col">
-                  <div className="bg-green-400 h-[60%]"></div>
-                  <div className="h-[40%] flex flex-col px-4 py-2 justify-between">
-                     <div className="border-[#FF6F22] border rounded-3xl text-[#FF6F22] text-[0.8rem] px-2 w-[6rem] flex justify-center">
-                        Informatics
-                     </div>
-                     <h1 className="font-bold">
-                        Implementation of Artificial Intelligence in Foreign
-                        Language Learning App Duolingo
-                     </h1>
-                     <p className="text-[0.8rem]">November 26, 2023</p>
-                  </div>
-               </div>
-               <div className="border-2 rounded-lg  w-[33%] h-[21rem] flex flex-col">
-                  <div className="bg-green-400 h-[60%]"></div>
-                  <div className="h-[40%] flex flex-col px-4 py-2 justify-between">
-                     <div className="border-[#FF6F22] border rounded-3xl text-[#FF6F22] text-[0.8rem] px-2 w-[6rem] flex justify-center">
-                        Informatics
-                     </div>
-                     <h1 className="font-bold">
-                        Implementation of Artificial Intelligence in Foreign
-                        Language Learning App Duolingo
-                     </h1>
-                     <p className="text-[0.8rem]">November 26, 2023</p>
-                  </div>
-               </div>
-               <div className="border-2 rounded-lg  w-[33%] h-[21rem] flex flex-col">
-                  <div className="bg-green-400 h-[60%]"></div>
-                  <div className="h-[40%] flex flex-col px-4 py-2 justify-between">
-                     <div className="border-[#FF6F22] border rounded-3xl text-[#FF6F22] text-[0.8rem] px-2 w-[6rem] flex justify-center">
-                        Informatics
-                     </div>
-                     <h1 className="font-bold">
-                        Implementation of Artificial Intelligence in Foreign
-                        Language Learning App Duolingo
-                     </h1>
-                     <p className="text-[0.8rem]">November 26, 2023</p>
-                  </div>
-               </div>
+            {/* card  */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 my-[3.5rem]">
+               <CardNormalNewsPage
+                  image="../news/duolingo.png"
+                  date="November 26, 2023"
+                  major="Informatics"
+                  title="Implementation of Artificial Intelligence in Foreign
+               Language Learning App Duolingo"
+               />
+               <CardNormalNewsPage
+                  image="../news/duolingo.png"
+                  date="November 26, 2023"
+                  major="Informatics"
+                  title="Implementation of Artificial Intelligence in Foreign
+               Language Learning App Duolingo"
+               />
+               <CardNormalNewsPage
+                  image="../news/duolingo.png"
+                  date="November 26, 2023"
+                  major="Informatics"
+                  title="Implementation of Artificial Intelligence in Foreign
+               Language Learning App Duolingo"
+               />
+               <CardNormalNewsPage
+                  image="../news/duolingo.png"
+                  date="November 26, 2023"
+                  major="Informatics"
+                  title="Implementation of Artificial Intelligence in Foreign
+               Language Learning App Duolingo"
+               />
+               <CardNormalNewsPage
+                  image="../news/duolingo.png"
+                  date="November 26, 2023"
+                  major="Informatics"
+                  title="Implementation of Artificial Intelligence in Foreign
+               Language Learning App Duolingo"
+               />
+               <CardNormalNewsPage
+                  image="../news/duolingo.png"
+                  date="November 26, 2023"
+                  major="Informatics"
+                  title="Implementation of Artificial Intelligence in Foreign
+               Language Learning App Duolingo"
+               />
+               <CardNormalNewsPage
+                  image="../news/duolingo.png"
+                  date="November 26, 2023"
+                  major="Informatics"
+                  title="Implementation of Artificial Intelligence in Foreign
+               Language Learning App Duolingo"
+               />
+               <CardNormalNewsPage
+                  image="../news/duolingo.png"
+                  date="November 26, 2023"
+                  major="Informatics"
+                  title="Implementation of Artificial Intelligence in Foreign
+               Language Learning App Duolingo"
+               />
+               <CardNormalNewsPage
+                  image="../news/duolingo.png"
+                  date="November 26, 2023"
+                  major="Informatics"
+                  title="Implementation of Artificial Intelligence in Foreign
+               Language Learning App Duolingo"
+               />
             </div>
          </section>
 
