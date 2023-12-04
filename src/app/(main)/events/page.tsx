@@ -19,28 +19,54 @@ export default function EventsPage() {
             {/* card section */}
             <div className="h-auto flex w-auto items-center justify-between mt-16">
                {/* card  */}
-               <div className="inline-flex items-center mt-5">
+              <div className="inline-flex items-center mt-5">
                   <div className="border-[#E50D0D] border rounded-lg w-[32rem] h-[17rem] relative flex">
-                     <div className="w-[50%] text-black text-right">           
-                        <p>asdadsda</p>
-                     </div>
-                     <div className="w-[50%] text-black text-left pl-48">
-                        <p>asdadsda</p>
-                     </div>
+                    <div className="w-[48%]">   
+                          {/* DO NOT EDIT  */}
+                    </div>
+                    <div className="w-[52%] py-4 px-2 flex flex-col justify-between">
+                        <h1 className="font-bold text-[1.4rem]">Compshere 2023</h1>
+                        <h2>Open for All!</h2>
+                        <div className="font-light text-[0.8rem]">
+                          <p>Hello everyone!</p>
+                          <p>We are from Web Dev WeKaWeKaDotCom. We are so excited to announce our WeKaWeKa project!</p>
+                        </div>
+                        <div className="flex justify-between">
+                          <p className="text-[0.8rem] font-bold">PUMA IT</p>
+                          <div className="text-[#E50D0D] border-[#E50D0D] border rounded-2xl px-2 text-[0.8rem]">
+                            <p>Upcoming</p>
+                          </div>
+                        </div>
+                    </div>
                   </div>
                   <div className="bg-red-400 rounded-lg h-[19rem] w-[15rem] absolute">
-                     <img
+                    <img
                         className="w-full h-full object-cover rounded-lg"
                         src="../events/compsphere_2023.png"
                         alt=""
-                     />
+                    />
                   </div>
-               </div>
+              </div>
 
                <div className="inline-flex items-center mt-5">
-                  <div className="border-[#E50D0D] border rounded-lg w-[32rem] h-[17rem] relative flex">
-                     <div className="w-[50%]"></div>
-                     <div className="w-[50%]"></div>
+               <div className="border-[#E50D0D] border rounded-lg w-[32rem] h-[17rem] relative flex">
+                    <div className="w-[48%]">   
+                          {/* DO NOT EDIT  */}
+                    </div>
+                    <div className="w-[52%] py-4 px-2 flex flex-col justify-between">
+                        <h1 className="font-bold text-[1.4rem]">Compshere 2023</h1>
+                        <h2>Open for All!</h2>
+                        <div className="font-light text-[0.8rem]">
+                          <p>Hello everyone!</p>
+                          <p>We are from Web Dev WeKaWeKaDotCom. We are so excited to announce our WeKaWeKa project!</p>
+                        </div>
+                        <div className="flex justify-between">
+                          <p className="text-[0.8rem] font-bold">PUMA IT</p>
+                          <div className="text-[#E50D0D] border-[#E50D0D] border rounded-2xl px-2 text-[0.8rem]">
+                            <p>Upcoming</p>
+                          </div>
+                        </div>
+                    </div>
                   </div>
                   <div className="bg-red-400 rounded-lg h-[19rem] w-[15rem] absolute">
                      <img
@@ -54,18 +80,61 @@ export default function EventsPage() {
 
             <div className="h-auto flex w-auto items-center justify-between mt-16">
                <div className="inline-flex items-center mt-5">
-                  <div className="border-[#E50D0D] border rounded-lg w-[32rem] h-[17rem] relative flex">
-                     <div className="w-[50%]"></div>
-                     <div className="w-[50%]"></div>
+               <div className="border-[#E50D0D] border rounded-lg w-[32rem] h-[17rem] relative flex">
+                    <div className="w-[48%]">   
+                          {/* DO NOT EDIT  */}
+                    </div>
+                    <div className="w-[52%] py-4 px-2 flex flex-col justify-between">
+                        <h1 className="font-bold text-[1.4rem]">Compshere 2023</h1>
+                        <h2>Open for All!</h2>
+                        <div className="font-light text-[0.8rem]">
+                          <p>Hello everyone!</p>
+                          <p>We are from Web Dev WeKaWeKaDotCom. We are so excited to announce our WeKaWeKa project!</p>
+                        </div>
+                        <div className="flex justify-between">
+                          <p className="text-[0.8rem] font-bold">PUMA IT</p>
+                          <div className="text-[#E50D0D] border-[#E50D0D] border rounded-2xl px-2 text-[0.8rem]">
+                            <p>Upcoming</p>
+                          </div>
+                        </div>
+                    </div>
                   </div>
-                  <div className="bg-red-400 rounded-lg h-[19rem] w-[15rem] absolute"></div>
+                  <div className="bg-red-400 rounded-lg h-[19rem] w-[15rem] absolute">
+                  <img
+                        className="w-full h-full object-cover rounded-lg"
+                        src="../events/compsphere_2023.png"
+                        alt=""
+                    />
+                  </div>
                </div>
+
                <div className="inline-flex items-center mt-5">
-                  <div className="border-[#E50D0D] border rounded-lg w-[32rem] h-[17rem] relative flex">
-                     <div className="w-[50%]"></div>
-                     <div className="w-[50%]"></div>
+               <div className="border-[#E50D0D] border rounded-lg w-[32rem] h-[17rem] relative flex">
+                    <div className="w-[48%]">   
+                          {/* DO NOT EDIT  */}
+                    </div>
+                    <div className="w-[52%] py-4 px-2 flex flex-col justify-between">
+                        <h1 className="font-bold text-[1.4rem]">Compshere 2023</h1>
+                        <h2>Open for All!</h2>
+                        <div className="font-light text-[0.8rem]">
+                          <p>Hello everyone!</p>
+                          <p>We are from Web Dev WeKaWeKaDotCom. We are so excited to announce our WeKaWeKa project!</p>
+                        </div>
+                        <div className="flex justify-between">
+                          <p className="text-[0.8rem] font-bold">PUMA IT</p>
+                          <div className="text-[#E50D0D] border-[#E50D0D] border rounded-2xl px-2 text-[0.8rem]">
+                            <p>Upcoming</p>
+                          </div>
+                        </div>
+                    </div>
                   </div>
-                  <div className="bg-red-400 rounded-lg h-[19rem] w-[15rem] absolute"></div>
+                  <div className="bg-red-400 rounded-lg h-[19rem] w-[15rem] absolute">
+                  <img
+                        className="w-full h-full object-cover rounded-lg"
+                        src="../events/compsphere_2023.png"
+                        alt=""
+                    />
+                  </div>
                </div>
             </div>
          </section>
