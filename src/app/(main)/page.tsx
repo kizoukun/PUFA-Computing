@@ -9,6 +9,7 @@ import CompreciationCard from "@/components/CompreciationCard";
 import NewsCard from "@/components/news/NewsCard";
 import NewsCardBig from "@/components/news/NewsCardBig";
 import StudyProgCard from "@/components/StudyProgCard";
+import VCDStudyProgCard from "@/components/VCDStudyProgCard";
 import CardStore from "@/components/store/CardStore";
 
 export default async function Index() {
@@ -78,7 +79,7 @@ export default async function Index() {
                graduates in the field of educators who are experts in
                Informatics."
                />
-               <StudyProgCard
+               <VCDStudyProgCard
                   title="Visual Communication Design"
                   article="Informatics study program that will produce qualified
                graduates in the field of educators who are experts in

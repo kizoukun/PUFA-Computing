@@ -15,11 +15,11 @@ export default function CardStore({
 }: CardStoreProps) {
    return (
       <Link href="/">
-         <div className="max-w-xs aspect-square p-3 rounded-2xl shadow-md hover:shadow-lg hover:shadow-[#BA704F] transition duration-300 ease-in-out border border-[#BA704F]">
+         <div className="max-w-xs aspect-square p-3 rounded-2xl shadow-md hover:shadow-lg hover:shadow-[#BA704F] transition duration-300 ease-in-out border border-[#BA704F] hover:scale-105">
             <img
                src={image}
                alt={`${title}'s images`}
-               className="object-cover object-center rounded-md aspect-square hover:scale-105 transition duration-500"
+               className="object-cover object-center rounded-md aspect-square "
             />
             <div className="mt-3 mb-2">
                <h2 className="text-xl font-semibold tracking-wide text-left">
