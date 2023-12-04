@@ -3,6 +3,7 @@ import BGImage from "@/assets/backgroundimg.png";
 import Link from "next/link";
 import Button from "@/components/Button";
 import EventSection from "@/components/event/EventSection";
+import MerchImage from "@/assets/merch.png";
 import Faq from "@/components/Faq";
 import CompreciationCard from "@/components/CompreciationCard";
 import NewsCard from "@/components/news/NewsCard";
@@ -221,9 +222,7 @@ export default async function Index() {
             </h2>
             <h3 className="">Appreciation to Computizen’s best projects.</h3>
 
-            <div>
-
-            </div>
+            <div></div>
 
             <div className="flex items-center justify-center">
                <Link href="/" className="block w-max">
@@ -246,14 +245,32 @@ export default async function Index() {
             </h2>
             <h3 className="">Special merchandise for all Computizens</h3>
 
-
-            <div className="container mx-auto p-10 md:py-20 px-0 md:p-20 md:px-0">
-               <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
-                  <CardStore/>
+            <div className="container mx-auto p-10 md:py-10 px-0 md:p-20 md:px-0">
+               <div className="flex justify-center">
+                  <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
+                     <CardStore
+                        image="../store/merch.png"
+                        title="Computing Varsity"
+                        category="Jacket"
+                        price={343}
+                     />
+                     <CardStore
+                        image="../store/merch.png"
+                        title="Computing Varsity"
+                        category="Jacket"
+                        price={343}
+                     />
+                     <CardStore
+                        image="../store/merch.png"
+                        title="Computing Varsity"
+                        category="Jacket"
+                        price={343}
+                     />
+                  </div>
                </div>
             </div>
             <div className="flex items-center justify-center">
-               <Link href="/" className="block w-max">
+               <Link href="/merch" className="block w-max">
                   <Button className="border-[#BA704F] text-[#BA704F] hover:bg-[#BA704F] hover:text-white px-10 py-2">
                      See all items
                   </Button>
