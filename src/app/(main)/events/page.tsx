@@ -103,7 +103,12 @@ export default function EventsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                <PosterCardEventPage
                   link="/news"
-                  image="../anagatalogo.jpeg"
+                  image="../events/compsphere_2023.png"
+                  alt="logo"
+               />
+               <PosterCardEventPage
+                  link="/news"
+                  image="../events/sospro_2023.png"
                   alt="logo"
                />
                <PosterCardEventPage
@@ -113,52 +118,47 @@ export default function EventsPage() {
                />
                <PosterCardEventPage
                   link="/news"
-                  image="../anagatalogo.jpeg"
+                  image="../events/sospro_2023.png"
                   alt="logo"
                />
                <PosterCardEventPage
                   link="/news"
-                  image="../anagatalogo.jpeg"
+                  image="../events/compsphere_2023.png"
                   alt="logo"
                />
                <PosterCardEventPage
                   link="/news"
-                  image="../anagatalogo.jpeg"
+                  image="../events/sospro_2023.png"
                   alt="logo"
                />
                <PosterCardEventPage
                   link="/news"
-                  image="../anagatalogo.jpeg"
+                  image="../events/compsphere_2023.png"
                   alt="logo"
                />
                <PosterCardEventPage
                   link="/news"
-                  image="../anagatalogo.jpeg"
+                  image="../events/sospro_2023.png"
                   alt="logo"
                />
                <PosterCardEventPage
                   link="/news"
-                  image="../anagatalogo.jpeg"
+                  image="../events/compsphere_2023.png"
                   alt="logo"
                />
                <PosterCardEventPage
                   link="/news"
-                  image="../anagatalogo.jpeg"
+                  image="../events/sospro_2023.png"
                   alt="logo"
                />
                <PosterCardEventPage
                   link="/news"
-                  image="../anagatalogo.jpeg"
+                  image="../events/compsphere_2023.png"
                   alt="logo"
                />
                <PosterCardEventPage
                   link="/news"
-                  image="../anagatalogo.jpeg"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="../anagatalogo.jpeg"
+                  image="../events/sospro_2023.png"
                   alt="logo"
                />
             </div>
