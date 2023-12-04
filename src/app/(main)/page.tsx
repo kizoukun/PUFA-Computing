@@ -108,9 +108,9 @@ export default async function Index() {
 
             <div className="grid grid-cols-1 md:grid-cols-6 md:py-[6rem] gap-16 md:gap-5">
                {/* logo anagata */}
-               <div className="p-1 rounded-xl aspect-square shadow-lg h-[20rem] mt-5 md:mt-0 md:col-span-2">
+               <div className="p-1 rounded-xl aspect-square shadow-lg h-[20rem] mt-5 md:mt-0 md:col-span-2" >
                   <img
-                     className=" mx-auto"
+                     className=" mx-auto object-cover"
                      src="../anagatalogo.jpeg"
                      alt="PUMA Photo"
                   />
