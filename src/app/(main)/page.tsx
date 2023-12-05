@@ -12,6 +12,8 @@ import StudyProgCard from "@/components/StudyProgCard";
 import VCDStudyProgCard from "@/components/VCDStudyProgCard";
 import CardStore from "@/components/store/CardStore";
 import EventCardCompleted from "@/components/event/EventCardCompleted";
+import EventCardPage from "@/components/event/EventCardPage";
+import EventCardSection from "@/components/event/EventCardSection";
 
 export default async function Index() {
    return (
@@ -73,12 +75,14 @@ export default async function Index() {
                   article="Informatics study program that will produce qualified
                graduates in the field of educators who are experts in
                Informatics."
+                  link=""
                />
                <StudyProgCard
                   title="Information System"
                   article="Informatics study program that will produce qualified
                graduates in the field of educators who are experts in
                Informatics."
+                  link=""
                />
                <VCDStudyProgCard
                   title="Visual Communication Design"
@@ -91,6 +95,7 @@ export default async function Index() {
                   article="Informatics study program that will produce qualified
                graduates in the field of educators who are experts in
                Informatics."
+                  link="news"
                />
             </div>
          </section>
@@ -158,6 +163,28 @@ export default async function Index() {
             <h3 className="">
                Discover the latest updates on events in our faculty.
             </h3>
+
+            <div className="flex flex-col justify-center gap-7 items-center md:flex-row">
+               <EventCardSection
+                  title="Computing Social Project 2023"
+                  details="Holla Everyone!! 🙌🏻 We are from PUMA COMPUTING 2023 are so excited to announce that Social Project 2023 .."
+                  major="PUMA IT"
+                  status="Upcoming"
+                  participant="with Rumah Tahfidz Taman Qur’ani"
+                  image="sospro_2023.png"
+               />
+              <EventCardSection
+                  title="Computing Social Project 2023"
+                  details="Holla Everyone!! 🙌🏻 We are from PUMA COMPUTING 2023 are so excited to announce that Social Project 2023 .."
+                  major="PUMA IT"
+                  status="Upcoming"
+                  participant="with Rumah Tahfidz Taman Qur’ani"
+                  image="/compsphere_2023.png"
+               />
+            </div>
+            <div className="flex flex-col justify-center gap-7 items-center md:flex-row">
+            {/* <EventCardCompleted/> */}
+            </div>
          </section>
          {/* end */}
 
@@ -229,30 +256,6 @@ export default async function Index() {
                Compreciation
             </h2>
             <h3 className="">Appreciation to Computizen’s best projects.</h3>
-
-            <div className="p-0.5 rounded-md border-2 border-[#AF95FF]">
-               <div className="rounded-md pt-20 sm:p-6">
-                  <div className="text-justify">
-                     <p className="text-[#353535] font-bold text-xl">
-                        Student Analysis Using Python
-                     </p>
-                     <p className="text-[#AF95FF]">
-                        Muhammad, Ilham, and Pratama
-                     </p>
-                     {/* content */}
-                     <div className="mt-4 text-md font-extralight text-justify">
-                        a student analysis system that can help us to see our
-                        performance in campus and give the recommendation for
-                        the further ...
-                     </div>
-                     <div className="mt-4 flex flex-rows gap-1 justify-between">
-                        <div className="whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs text-[#AF95FF] border border-[#AF95FF]">
-                           Python
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
 
             <div className="flex items-center justify-center">
                <Link href="/" className="block w-max">

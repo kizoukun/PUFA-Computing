@@ -17,7 +17,9 @@ export default function StudyProgCard({
          <p>{title}</p>
          <hr className="mt-4 mb-12 border border-[#3C99DC] w-16 mx-auto" />
          <p className="my-16 hidden md:block">{article}</p>
-         <Button className="w-max mx-auto my-4">See Details</Button>
+         <Link href={link || "/"}>
+            <Button className="w-max mx-auto my-4">See Details</Button>
+         </Link>
       </div>
    );
 }

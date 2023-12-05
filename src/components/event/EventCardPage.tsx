@@ -28,18 +28,25 @@
 
 import React from "react";
 
-interface EventCardPageProps{
-    title: string;
-    details: string;
-    status: string;
-    participant: string;
-    major: string;
-    image: string;
+interface EventCardPageProps {
+   title: string;
+   details: string;
+   status: string;
+   participant: string;
+   major: string;
+   image: string;
 }
 
-export default function EventCardPage({title,details,status,major,participant,image}:EventCardPageProps) {
+export default function EventCardPage({
+   title,
+   details,
+   status,
+   major,
+   participant,
+   image,
+}: EventCardPageProps) {
    return (
-      <div className="inline-flex items-center mt-5">
+      <div className="inline-flex items-center mt-5 text-left">
          <div className="border-[#E50D0D] border rounded-lg w-[32rem] h-[17rem] relative flex">
             <div className="w-[48%]">{/* DO NOT EDIT */}</div>
             <div className="w-[52%] py-4 px-2 flex flex-col justify-between">
