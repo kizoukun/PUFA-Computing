@@ -11,6 +11,7 @@ import NewsCardBig from "@/components/news/NewsCardBig";
 import StudyProgCard from "@/components/StudyProgCard";
 import VCDStudyProgCard from "@/components/VCDStudyProgCard";
 import CardStore from "@/components/store/CardStore";
+import EventCardCompleted from "@/components/event/EventCardCompleted";
 
 export default async function Index() {
    return (
@@ -66,7 +67,7 @@ export default async function Index() {
                The Faculty of Computing has four study programs that produce
                qualified student graduates in their fields.
             </h3>
-            <div className="flex flex-col-2 gap-16">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
                <StudyProgCard
                   title="Informatics"
                   article="Informatics study program that will produce qualified
@@ -105,10 +106,9 @@ export default async function Index() {
                CABINET 2023/2024
             </h2>
 
-
             <div className="grid grid-cols-1 md:grid-cols-6 md:py-[6rem] gap-16 md:gap-5">
                {/* logo anagata */}
-               <div className="p-1 rounded-xl aspect-square shadow-lg h-[20rem] mt-5 md:mt-0 md:col-span-2" >
+               <div className="p-1 rounded-xl aspect-square shadow-lg h-[20rem] mt-5 md:mt-0 md:col-span-2">
                   <img
                      className=" mx-auto object-cover"
                      src="../anagatalogo.jpeg"
@@ -118,7 +118,6 @@ export default async function Index() {
                {/* cabinet content */}
                <div className="p-0.5 md:px-10 rounded-xl bg-white  md:mt-0 mb-5 md:flex sm:p-6 border-[#1FA820] border-2 md:col-span-4 h-[20rem]">
                   <div className="text-[#353535] md:flex md:flex-col md:justify-center py-10 md:py-5 px-10">
-
                      <div className="flex gap-5 md:gap-5">
                         <p className="mt-0.5 text-2xl text-left font-bold">
                            ANAGATA CABINET
@@ -129,7 +128,7 @@ export default async function Index() {
                      {/* content */}
                      <div className="mt-10 text-xl font-bold text-justify">
                         <p className="mb-4">
-                        “One Team, One Vision, One for Computing”
+                           “One Team, One Vision, One for Computing”
                         </p>
                         <p className="text-gray-700">
                            We are attempting to be a bridge for the Computing
@@ -141,7 +140,9 @@ export default async function Index() {
                </div>
             </div>
             {/* button kthx */}
-            <button className="rounded-xl text-[#1FA820] border-2 border-[#1FA820] py-3 px-10 hover:bg-[#1FA820] hover:text-white transition ease-in-out duration-300">See Our Cabinet</button>
+            <button className="rounded-xl text-[#1FA820] border-2 border-[#1FA820] py-3 px-10 hover:bg-[#1FA820] hover:text-white transition ease-in-out duration-300">
+               See Our Cabinet
+            </button>
          </section>
          {/* end */}
 
@@ -155,7 +156,7 @@ export default async function Index() {
                Computing Events
             </h2>
             <h3 className="">
-               Discover the latest updates on events in  our faculty.
+               Discover the latest updates on events in our faculty.
             </h3>
          </section>
          {/* end */}
@@ -229,7 +230,29 @@ export default async function Index() {
             </h2>
             <h3 className="">Appreciation to Computizen’s best projects.</h3>
 
-            <div></div>
+            <div className="p-0.5 rounded-md border-2 border-[#AF95FF]">
+               <div className="rounded-md pt-20 sm:p-6">
+                  <div className="text-justify">
+                     <p className="text-[#353535] font-bold text-xl">
+                        Student Analysis Using Python
+                     </p>
+                     <p className="text-[#AF95FF]">
+                        Muhammad, Ilham, and Pratama
+                     </p>
+                     {/* content */}
+                     <div className="mt-4 text-md font-extralight text-justify">
+                        a student analysis system that can help us to see our
+                        performance in campus and give the recommendation for
+                        the further ...
+                     </div>
+                     <div className="mt-4 flex flex-rows gap-1 justify-between">
+                        <div className="whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs text-[#AF95FF] border border-[#AF95FF]">
+                           Python
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
 
             <div className="flex items-center justify-center">
                <Link href="/" className="block w-max">
