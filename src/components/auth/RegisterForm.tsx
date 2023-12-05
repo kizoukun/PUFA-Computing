@@ -62,21 +62,21 @@ export default function RegisterForm() {
           alt=""
         /> */}
             <img
-               className="w-auto h-32 sm:h-48 rounded-lg mx-auto mt-8"
+               className="mx-auto mt-8 h-32 w-auto rounded-lg sm:h-48"
                src="../PUComputing.png"
                alt=""
             />
 
-            <h1 className="mt-3 text-2xl font-semibold text-black capitalize sm:text-3xl text-center">
+            <h1 className="mt-3 text-center text-2xl font-semibold capitalize text-black sm:text-3xl">
                sign Up
             </h1>
 
             {/* Name */}
-            <div className="relative flex items-center mt-8 gap-2">
+            <div className="relative mt-8 flex items-center gap-2">
                <div>
                   <label
                      htmlFor="firstName"
-                     className="block text-left text-white capitalize "
+                     className="block text-left capitalize text-white "
                   >
                      {" "}
                      first name
@@ -85,7 +85,7 @@ export default function RegisterForm() {
                      type="text"
                      value={first_name}
                      onChange={(e) => setFirstName(e.target.value)}
-                     className="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border rounded-lg"
+                     className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
                      placeholder="Ilham"
                      required
                   />
@@ -93,7 +93,7 @@ export default function RegisterForm() {
                <div>
                   <label
                      htmlFor="lastName"
-                     className="block text-left text-white capitalilze"
+                     className="capitalilze block text-left text-white"
                   >
                      last name
                   </label>
@@ -101,7 +101,7 @@ export default function RegisterForm() {
                      type="text"
                      value={last_name}
                      onChange={(e) => setLastName(e.target.value)}
-                     className="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border rounded-lg"
+                     className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
                      placeholder="Pratama"
                      required
                   />
@@ -117,7 +117,7 @@ export default function RegisterForm() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border rounded-lg"
+                  className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
                   placeholder="ilhampratama@example.com"
                   required
                />
@@ -135,7 +135,7 @@ export default function RegisterForm() {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border rounded-lg"
+                  className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
                   placeholder="password"
                   required
                />
@@ -146,11 +146,11 @@ export default function RegisterForm() {
                <div className="mt-2">
                   <label
                      htmlFor="password"
-                     className="block text-left text-white capitalize"
+                     className="block text-left capitalize text-white"
                   >
                      Choose your role
                   </label>
-                  <div className="relative flex items-center mt-4 justify-center gap-2">
+                  <div className="relative mt-4 flex items-center justify-center gap-2">
                      <div className="flex-grow">
                         <input
                            type="radio"
@@ -200,7 +200,7 @@ export default function RegisterForm() {
                      <input
                         type="text"
                         inputMode="numeric"
-                        className="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border rounded-lg"
+                        className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
                         placeholder="0110333333"
                         value={nim}
                         onChange={(e) => setNim(e.target.value)}
@@ -221,7 +221,7 @@ export default function RegisterForm() {
                      </label>
                      <input
                         type="number"
-                        className="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border rounded-lg"
+                        className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
                         placeholder="2024"
                         required
                         value={year}
@@ -243,7 +243,7 @@ export default function RegisterForm() {
                      </label>
                      <input
                         type="text"
-                        className="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border rounded-lg"
+                        className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
                         placeholder="Universitas Perdana Mentri"
                         required
                         // value={institution}
@@ -254,10 +254,10 @@ export default function RegisterForm() {
             </div>
 
             <div className="mt-6">
-               {error && <p className="text-red-500 my-2">{error}</p>}
+               {error && <p className="my-2 text-red-500">{error}</p>}
                <button
                   type="submit"
-                  className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+                  className="w-full transform rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-300 hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
                >
                   Register
                </button>

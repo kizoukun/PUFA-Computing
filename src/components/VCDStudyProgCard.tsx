@@ -4,21 +4,22 @@ import Button from "@/components/Button";
 interface VCDStudyProgCardProps {
    title: string;
    article: string;
-   link ?: string;
+   link?: string;
 }
 
-export default function VCDStudyProgCard({title,article,link}:VCDStudyProgCardProps) {
+export default function VCDStudyProgCard({
+   title,
+   article,
+   link,
+}: VCDStudyProgCardProps) {
    return (
-      <div className="bg-white hover:bg-gradient-to-b hover:from-white hover:via-white hover:to-[#54A8E2] transition-all duration-300 shadow-lg rounded-lg p-3">
+      <div className="rounded-lg bg-white p-3 shadow-lg transition-all duration-300 hover:bg-gradient-to-b hover:from-white hover:via-white hover:to-[#54A8E2]">
          <p className="text-2xl md:text-base">{title}</p>
-    <hr className="mt-4 mb-12 border border-[#3C99DC] w-16 mx-auto" />
-    {/* Hide the article on small screens (mobile) */}
-    <p className="my-16 hidden md:block">
-        {article}
-    </p>
-    <Button className="w-max mx-auto my-4">See Details</Button>
-</div>
-
+         <hr className="mx-auto mb-12 mt-4 w-16 border border-[#3C99DC]" />
+         {/* Hide the article on small screens (mobile) */}
+         <p className="my-16 hidden md:block">{article}</p>
+         <Button className="mx-auto my-4 w-max">See Details</Button>
+      </div>
    );
 }
 

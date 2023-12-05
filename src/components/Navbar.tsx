@@ -22,14 +22,14 @@ export default function Navbar() {
       },
    ];
    return (
-      <header className="sticky bg-white shadow-md top-0 z-50">
+      <header className="sticky top-0 z-50 bg-white shadow-md">
          <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-24 items-center justify-between">
                <div className="flex items-center gap-12 lg:divide-x-2 lg:divide-black">
-                  <Link className=" text-teal-600 inline" href="/">
+                  <Link className="inline text-teal-600" href="/">
                      <img src="../logo.png" width="130" height="80" />
                   </Link>
-                  <div className="font-bold px-7 hidden lg:block">
+                  <div className="hidden px-7 font-bold lg:block">
                      <div className="flex flex-col items-center">
                         <div className="flex-grow text-sm font-normal tracking-widest">
                            President University
@@ -37,14 +37,14 @@ export default function Navbar() {
                               Faculty Association
                            </div>
                         </div>
-                        <div className="font-semibold mt-1">COMPUTING</div>
+                        <div className="mt-1 font-semibold">COMPUTING</div>
                      </div>
                   </div>
                </div>
 
                <div className="hidden md:block">
                   <nav aria-label="Global">
-                     <ul className="flex items-center gap-6 text-md font-medium text-black">
+                     <ul className="text-md flex items-center gap-6 font-medium text-black">
                         <li>
                            <Link href="/">Home</Link>
                         </li>
@@ -78,7 +78,7 @@ export default function Navbar() {
                <div className="flex items-center gap-4">
                   <div className="sm:flex sm:gap-4">
                      <Link
-                        className="block rounded-md bg-white px-2 md:px-5 py-2.5 text-sm font-medium text-black hover:text-white hover:bg-[#0C8CE9] border-2 border-[#0C8CE9] duration-300"
+                        className="block rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5"
                         href="/auth/signin"
                      >
                         Sign in
@@ -86,7 +86,7 @@ export default function Navbar() {
 
                      <div className="hidden sm:flex">
                         <Link
-                           className={`block rounded-md px-5 py-2.5 text-sm font-medium hover:text-black text-white duration-300 bg-[#0C8CE9] hover:bg-white border-2 border-[#0C8CE9]`}
+                           className={`block rounded-md border-2 border-[#0C8CE9] bg-[#0C8CE9] px-5 py-2.5 text-sm font-medium text-white duration-300 hover:bg-white hover:text-black`}
                            href="/auth/signup"
                         >
                            Sign up

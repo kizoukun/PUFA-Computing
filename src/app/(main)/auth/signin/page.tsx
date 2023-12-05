@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default async function LoginPage() {
    return (
-      <div className="container flex items-center justify-center min-h-screen px-6 mx-auto">
+      <div className="container mx-auto flex min-h-screen items-center justify-center px-6">
          <LoginForm />
       </div>
    );

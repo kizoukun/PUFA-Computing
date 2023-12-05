@@ -36,22 +36,22 @@ export default function CardStore({
 }: CardStoreProps) {
    return (
       <Link href="/">
-         <div className="max-w-xs aspect-square p-3 rounded-2xl shadow-md hover:shadow-lg hover:shadow-[#BA704F] transition duration-300 ease-in-out border border-[#BA704F] hover:scale-105">
+         <div className="aspect-square max-w-xs rounded-2xl border border-[#BA704F] p-3 shadow-md transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-[#BA704F]">
             <img
                src={image}
                alt={`${title}'s cover`}
-               className="object-cover object-center rounded-md aspect-square "
+               className="aspect-square rounded-md object-cover object-center "
             />
-            <div className="mt-3 mb-2">
-               <h2 className="text-xl font-semibold tracking-wide text-left">
+            <div className="mb-2 mt-3">
+               <h2 className="text-left text-xl font-semibold tracking-wide">
                   {title}
                </h2>
                <div className="flex justify-start">
-                  <div className="text-left inline-block border text-sm border-[#BA704F] text-[#BA704F] px-3 rounded-2xl m-2">
+                  <div className="m-2 inline-block rounded-2xl border border-[#BA704F] px-3 text-left text-sm text-[#BA704F]">
                      {category}
                   </div>
                </div>
-               <h2 className="text-xl font-semibold tracki text-left">
+               <h2 className="tracki text-left text-xl font-semibold">
                   Rp {price.toFixed(3)}
                </h2>
             </div>

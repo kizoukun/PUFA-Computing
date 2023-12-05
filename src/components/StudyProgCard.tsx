@@ -32,12 +32,12 @@ export default function StudyProgCard({
    link,
 }: StudyProgCardProps) {
    return (
-      <div className="bg-white hover:bg-gradient-to-b hover:from-white hover:via-white hover:to-[#54A8E2] transition-all duration-300 shadow-lg rounded-lg p-3">
+      <div className="rounded-lg bg-white p-3 shadow-lg transition-all duration-300 hover:bg-gradient-to-b hover:from-white hover:via-white hover:to-[#54A8E2]">
          <p className="text-2xl md:text-base">{title}</p>
-         <hr className="mt-4 mb-12 border border-[#3C99DC] w-16 mx-auto" />
+         <hr className="mx-auto mb-12 mt-4 w-16 border border-[#3C99DC]" />
          <p className="my-16 hidden md:block">{article}</p>
          <Link href={link || "/"}>
-            <Button className="w-max mx-auto my-4">See Details</Button>
+            <Button className="mx-auto my-4 w-max">See Details</Button>
          </Link>
       </div>
    );

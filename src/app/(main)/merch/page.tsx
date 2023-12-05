@@ -46,8 +46,7 @@ export default function MerchPage() {
                <p className="mt-4 max-w-md text-gray-500">
                   Discover the Future of Computing with PUFA
                   <br />
-                  <span className="text-[#5F9EA0] font-semibold tracking-wider">
-                     {" "}
+                  <span className="font-semibold tracking-wider text-[#5F9EA0]">
                      Your Ultimate Merchandise Destination!
                   </span>
                </p>

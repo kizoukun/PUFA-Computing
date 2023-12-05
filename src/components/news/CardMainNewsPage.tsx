@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function CardMainNewsPage() {
-  return (
-    <div>CardMainNewsPage</div>
-  )
+   return <div>CardMainNewsPage</div>;
 }

@@ -6,5 +6,5 @@ export default function Seperator({
 }: {
    className?: React.HTMLAttributes<HTMLHRElement>["className"];
 }) {
-   return <hr className={cn("border border-black my-2", className)} />;
+   return <hr className={cn("my-2 border border-black", className)} />;
 }
