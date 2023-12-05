@@ -1,4 +1,3 @@
-
 /**
  * CardSecondaryNewsPage component represents a card for displaying secondary news in a news page.
  *
@@ -34,20 +33,20 @@ export default function CardSecondaryNewsPage({
    date,
 }: CardSecondaryNewsPageProps) {
    return (
-      <div className="border-2 rounded-lg h-[25rem] w-[50%] flex flex-col">
-         <div className="h-[65%]">
+      <div className="flex flex-col rounded-lg border-2">
+         <div>
             <img
-               className="w-full h-full object-cover bg-center"
+               className="h-48 w-full bg-center object-cover"
                src={image}
                alt={`${title}'s image`}
             />
          </div>
-         <div className="h-[45%] flex flex-col justify-between px-2 py-2">
-            <div className="border-[#FF6F22] border rounded-3xl text-[#FF6F22] text-[0.8rem] px-2 w-[6rem] flex justify-center">
+         <div className="flex h-[45%] flex-col justify-between space-y-4 px-2 py-2">
+            <div className="flex w-[6rem] justify-center rounded-3xl border border-[#FF6F22] px-2 text-[0.8rem] text-[#FF6F22]">
                {major}
             </div>
-            <h1 className="font-bold text-[1.2rem]">{title}</h1>
-            <p className="font-light text-[0.9rem]">{date}</p>
+            <h1 className="text-[1.2rem] font-bold">{title}</h1>
+            <p className="text-[0.9rem] font-light">{date}</p>
          </div>
       </div>
    );

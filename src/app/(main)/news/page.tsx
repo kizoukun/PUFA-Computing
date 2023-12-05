@@ -6,7 +6,7 @@ export default function NewsPage() {
    return (
       <div>
          {/* // title gray thingy */}
-         <section className="p-10 px-[10rem] bg-gray-100">
+         <section className="mx-auto max-w-7xl bg-gray-100 p-10">
             <div className="flex flex-col border-l-4 border-[#FF6F22] pl-5">
                <h1 className="text-[2rem] font-black">Computing News</h1>
                <p className="text-[0.8rem]">
@@ -17,20 +17,26 @@ export default function NewsPage() {
          </section>
 
          {/* // computing news content */}
-         <section className="px-[10rem] py-[3rem]">
-            <h1 className="font-black mb-5 tracking-wide text-[1.2rem]">
+         <section className="mx-auto max-w-7xl p-5 py-[3rem] md:p-10">
+            <h1 className="mb-5 text-[1.2rem] font-black tracking-wide">
                Latest
             </h1>
 
             {/* the big news card */}
-            <div className="rounded-lg border-2 h-[25rem] w-auto flex mb-10">
-               <div className="bg-red-400 w-[50%]"></div>
-               <div className="p-8 w-[50%] flex flex-col justify-between">
-                  <h1 className="text-[1.5rem] font-bold">
+            <div className="mb-10 flex w-full flex-col rounded-lg border-2 sm:flex-row">
+               <div>
+                  <img
+                     src="../news/duolingo.png"
+                     alt="duolingo"
+                     className="h-full w-[64rem] rounded-l-lg object-cover"
+                  />
+               </div>
+               <div className="flex flex-col justify-between space-y-4 p-3 md:p-8">
+                  <h1 className="text-base font-bold md:text-lg lg:text-[1.5rem]">
                      Implementation of Artificial Intelligence in Foreign
                      Language Learning App Duolingo
                   </h1>
-                  <p className="text-[1.2rem]">
+                  <p className="text-sm md:text-base lg:text-[1.2rem]">
                      In the current era, it is important for us to learn a
                      foreign language which will be useful in the future.
                      Nowadays, learning a foreign language is not as difficult
@@ -39,7 +45,7 @@ export default function NewsPage() {
                   <div className="flex justify-between">
                      <p className="text-[0.8rem]">November 26, 2023</p>
                      {/* the informatics tag */}
-                     <div className="border-[#FF6F22] border-2 rounded-xl text-[#FF6F22] px-2">
+                     <div className="rounded-xl border-2 border-[#FF6F22] px-2 text-[#FF6F22]">
                         Informatics
                      </div>
                   </div>
@@ -47,7 +53,7 @@ export default function NewsPage() {
             </div>
 
             {/* the smallies */}
-            <div className="flex gap-10">
+            <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
                <CardSecondaryNewsPage
                   major="Informatics"
                   title="Implementation of Artificial Intelligence in Foreign
@@ -67,11 +73,11 @@ export default function NewsPage() {
          </section>
 
          {/* All news*/}
-         <section className="px-[10rem] py-[4rem]">
-            <h1 className="font-bold text-[1.2rem] mb-5">All News</h1>
+         <section className="mx-auto max-w-7xl p-5 py-[4rem] md:p-10">
+            <h1 className="mb-5 text-[1.2rem] font-bold">All News</h1>
 
             {/* card  */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 my-[3.5rem]">
+            <div className="my-[3.5rem] grid grid-cols-1 gap-10 md:grid-cols-3">
                <CardNormalNewsPage
                   image="../news/duolingo.png"
                   date="November 26, 2023"
@@ -139,19 +145,17 @@ export default function NewsPage() {
          </section>
 
          {/* pagination thing */}
-         <section className="px-[10rem] py-[4rem]">
+         <section className="mx-auto max-w-7xl p-5 py-[4rem]  md:p-10">
             <div className="flex justify-between border-t-2 border-gray-100 py-2 text-gray-400">
                <div>
                   <button>Previous</button>
                </div>
-               <div className="flex gap-8">
-                  <button className="border-t-2 border-[#3C99DC] text-[#3C99DC] w-[1.5rem]">
+               <div className="flex gap-3">
+                  <button className="w-[1.5rem] border-t-2 border-[#3C99DC] text-[#3C99DC]">
                      1
                   </button>
                   <button>2</button>
-                  <button>3</button>
                   <button>...</button>
-                  <button>8</button>
                   <button>9</button>
                   <button>10</button>
                </div>
