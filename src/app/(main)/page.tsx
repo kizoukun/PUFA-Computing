@@ -57,7 +57,7 @@ export default async function Index() {
             className="mx-auto my-32 max-w-7xl space-y-8 p-5 text-center"
          >
             <h2 className="text-2xl font-bold">
-               <span className="mr-4 border-l-8 border-l-[#0C8CE9]"></span>
+               <span className="mr-4 border-l-4 border-l-[#0C8CE9]"></span>
                Study Programs
             </h2>
             <h3 className="mx-auto max-w-xl ">
@@ -102,7 +102,7 @@ export default async function Index() {
             className="mx-auto my-32 max-w-6xl p-5 text-center"
          >
             <h2 className="text-2xl font-bold">
-               <span className="mr-4 border-l-8 border-l-[#1FA820]"></span>
+               <span className="mr-4 border-l-4 border-l-[#1FA820]"></span>
                CABINET 2023/2024
             </h2>
 
@@ -119,18 +119,18 @@ export default async function Index() {
                <div className="mb-5 h-[20rem] rounded-xl border-2  border-[#1FA820] bg-white p-0.5 sm:p-6 md:col-span-4 md:mt-0 md:flex md:px-10">
                   <div className="px-10 py-10 text-[#353535] md:flex md:flex-col md:justify-center md:py-5">
                      <div className="flex gap-5 md:gap-5">
-                        <p className="mt-0.5 text-left text-2xl font-bold">
+                        <p className="mt-0.5 text-left text-2xl font-bold text-[#353535]">
                            ANAGATA CABINET
                         </p>
                         <div className="h-[1.5px] w-[13rem] self-center bg-[#1FA820]"></div>
                      </div>
 
                      {/* content */}
-                     <div className="mt-10 text-justify text-xl font-bold">
-                        <p className="mb-4">
+                     <div className="mt-10 text-justify text-md md:text-xl font-bold">
+                        <p className="mb-4 text-[#353535]">
                            “One Team, One Vision, One for Computing”
                         </p>
-                        <p className="text-gray-700">
+                        <p className="text-[#515151]">
                            We are attempting to be a bridge for the Computing
                            Faculty in a more positive way by growing together
                            with us.
@@ -153,7 +153,7 @@ export default async function Index() {
             className="max-w-8xl mx-auto my-32 space-y-8 p-5 text-center"
          >
             <h2 className="text-2xl font-bold">
-               <span className="mr-4 border-l-8 border-l-[#E50D0D]"></span>
+               <span className="mr-4 border-l-4 border-l-[#E50D0D]"></span>
                Computing Events
             </h2>
             <h3 className="">
@@ -170,7 +170,7 @@ export default async function Index() {
             className="max-h-xl mx-auto my-32 max-w-7xl space-y-8 p-5 text-center"
          >
             <h2 className="text-2xl font-bold">
-               <span className="mr-4 border-l-8 border-l-[#705100]"></span>
+               <span className="mr-4 border-l-4 border-l-[#FF6F22]"></span>
                Computing News
             </h2>
             <h3 className="">
@@ -213,7 +213,7 @@ export default async function Index() {
             </div>
             <div className="flex items-center justify-center">
                <Link href="/" className="block w-max">
-                  <Button className="border-[#705100] px-10 py-2 text-[#705100] hover:bg-[#705100] hover:text-white">
+                  <Button className="border-[#FF6F22] px-10 py-2 text-[#FF6F22] hover:bg-[#FF6F22] hover:text-white">
                      See all News
                   </Button>
                </Link>
@@ -228,14 +228,14 @@ export default async function Index() {
             className="max-h-xl mx-auto my-32 max-w-7xl space-y-8 p-5 text-center"
          >
             <h2 className="text-2xl font-bold">
-               <span className="mr-4 border-l-8 border-l-[#AF95FF]"></span>
+               <span className="mr-4 border-l-4 border-l-[#AF95FF]"></span>
                Compreciation
             </h2>
             <h3 className="">Appreciation to Computizen’s best projects.</h3>
 
             <div className="flex items-center justify-center">
                <Link href="/" className="block w-max">
-                  <Button className="border-[#AF95FF] px-10 py-2 text-[#AF95FF] hover:bg-transparent hover:text-[#AF95FF]">
+                  <Button className="border-[#AF95FF] px-10 py-2 text-[#AF95FF] hover:bg-[#AF95FF] hover:text-white">
                      See all items
                   </Button>
                </Link>
@@ -249,7 +249,7 @@ export default async function Index() {
             className="mx-auto my-32 max-w-7xl space-y-8 p-5 text-center"
          >
             <h2 className="text-2xl font-bold">
-               <span className="mr-4 border-l-8 border-l-[#BA704F]"></span>
+               <span className="mr-4 border-l-4 border-l-[#BA704F]"></span>
                Computing Store
             </h2>
             <h3 className="">Special merchandise for all Computizens</h3>

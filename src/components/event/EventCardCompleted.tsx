@@ -13,18 +13,18 @@ export default function EventCardCompleted({ events }: { events: Event[] }) {
       .slice(0, 3); // Limit to 3 completed events
 
    return (
-      <div className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-10 md:grid-cols-3">
+      <div className="mx-auto mt- grid max-w-5xl grid-cols-1 gap-10 md:grid-cols-3">
          {completedEvents.map((event) => (
             <div
                key={event.id}
-               className="flex flex-col justify-between rounded-md border-2 border-[#E50D0D] bg-white p-0.5 pt-20 text-[#353535] sm:p-6"
+               className="flex flex-col justify-between rounded-md border-2 border-[#E50D0D] bg-white p-2 md:p-5   py-5 text-[#353535]"
             >
                <p className="mt-0.5 pb-1 text-justify text-2xl font-bold">
                   {event.title}
                </p>
-               <hr className="border-2 border-[#E50D0D]" />
                {/* content */}
-               <div className="text-md mt-4 text-justify font-extralight">
+               <div className="text-md text-justify font-extralight">
+               <hr className="border-2 border-[#E50D0D]" />
                   {event.description}
                </div>
                <div className="mt-4 flex flex-wrap justify-between gap-1">
@@ -34,7 +34,7 @@ export default function EventCardCompleted({ events }: { events: Event[] }) {
                   </div>
                   <Link
                      href={event.link}
-                     className="group inline-flex items-center gap-1 text-sm font-medium text-black"
+                     className="group inline-flex items-center gap-1 text-sm font-medium hover:bg text-black"
                   >
                      Read more
                   </Link>
