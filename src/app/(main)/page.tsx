@@ -159,8 +159,8 @@ export default async function Index() {
             <h3 className="">
                Discover the latest updates on events in our faculty.
             </h3>
-            <EventSection />
             <div className="flex flex-col items-center justify-center gap-7 md:flex-row"></div>
+            <EventSection />
          </section>
          {/* end */}
 

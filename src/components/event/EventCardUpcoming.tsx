@@ -9,8 +9,6 @@ export default function EventCardUpcoming({ events }: { events: Event[] }) {
         .sort((a, b) => new Date(a.end_date).getTime() - new Date(b.end_date).getTime()
         );
 
-    console.log('Current Date', currentDate)
-    console.log('Upcoming Event', upcomingEvents);
     return (
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14">
             {upcomingEvents.map((event) => (
