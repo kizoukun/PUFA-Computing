@@ -1,5 +1,30 @@
 import React from "react";
 
+/**
+ * EventCardSection component represents a card for displaying information about an event.
+ *
+ * @component
+ * @example
+ * // Example usage of EventCardSection component
+ * <EventCardSection
+ *    title="Tech Symposium 2023"
+ *    details="Join us for an exciting symposium on the latest in technology."
+ *    status="Upcoming"
+ *    participant="John Doe, Jane Smith"
+ *    major="Computer Science"
+ *    image="tech-symposium-2023.jpg"
+ * />
+ *
+ * @param {Object} props - The component props.
+ * @param {string} props.title - The title of the event.
+ * @param {string} props.details - Details or description of the event.
+ * @param {string} props.status - The status of the event (e.g., Upcoming, Ongoing).
+ * @param {string} props.participant - Participants or speakers in the event.
+ * @param {string} props.major - The major or category of the event.
+ * @param {string} props.image - The path to the image representing the event.
+ * @returns {JSX.Element} React component
+ */
+
 interface EventCardSectionProps {
    title: string;
    details: string;

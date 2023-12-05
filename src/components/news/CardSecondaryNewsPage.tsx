@@ -1,3 +1,25 @@
+
+/**
+ * CardSecondaryNewsPage component represents a card for displaying secondary news in a news page.
+ *
+ * @component
+ * @example
+ * // Example usage of CardSecondaryNewsPage component
+ * <CardSecondaryNewsPage
+ *    major="Science"
+ *    image="/path/to/news-image.jpg"
+ *    title="New Scientific Discoveries in Space Exploration"
+ *    date="December 18, 2023"
+ * />
+ *
+ * @param {Object} props - The component props.
+ * @param {string} props.major - The major or category of the news.
+ * @param {string} props.image - The path to the news image.
+ * @param {string} props.title - The title or headline of the news.
+ * @param {string} props.date - The date when the news was published.
+ * @returns {JSX.Element} React component
+ */
+
 interface CardSecondaryNewsPageProps {
    major: string;
    image: string;

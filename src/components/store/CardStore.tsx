@@ -1,5 +1,26 @@
 import Link from "next/link";
 
+/**
+ * CardStore component represents a card for displaying information about a product in a store.
+ *
+ * @component
+ * @example
+ * // Example usage of CardStore component
+ * <CardStore
+ *    image="/path/to/product.jpg"
+ *    title="Product Title"
+ *    category="Electronics"
+ *    price={1500000}
+ * />
+ *
+ * @param {Object} props - The component props.
+ * @param {string} [props.image] - The path to the product image.
+ * @param {string} props.title - The title or name of the product.
+ * @param {string} props.category - The category or type of the product.
+ * @param {number} props.price - The price of the product.
+ * @returns {JSX.Element} React component
+ */
+
 interface CardStoreProps {
    image?: string;
    title: string;

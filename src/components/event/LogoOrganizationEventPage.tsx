@@ -1,5 +1,22 @@
 import React from "react";
 
+/**
+ * LogoOrganizationEventPage component displays an organization's logo and title.
+ *
+ * @component
+ * @example
+ * // Example usage of LogoOrganizationEventPage component
+ * <LogoOrganizationEventPage
+ *    image="path/to/image.jpg"
+ *    title="Event Organization Name"
+ * />
+ *
+ * @param {Object} props - The component props.
+ * @param {string} props.image - The path to the organization's logo image.
+ * @param {string} props.title - The title or name of the organization.
+ * @returns {JSX.Element} React component
+ */
+
 interface LogoOrganizationEventPageProps{
     image: string;
     title: string; 

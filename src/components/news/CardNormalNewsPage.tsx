@@ -1,5 +1,27 @@
 import React from "react";
 
+
+/**
+ * CardNormalNewsPage component represents a card for displaying normal news in a news page.
+ *
+ * @component
+ * @example
+ * // Example usage of CardNormalNewsPage component
+ * <CardNormalNewsPage
+ *    image="/path/to/news-image.jpg"
+ *    major="Technology"
+ *    title="Exciting Developments in AI Technology"
+ *    date="December 15, 2023"
+ * />
+ *
+ * @param {Object} props - The component props.
+ * @param {string} props.image - The path to the news image.
+ * @param {string} props.major - The major or category of the news.
+ * @param {string} props.title - The title or headline of the news.
+ * @param {string} props.date - The date when the news was published.
+ * @returns {JSX.Element} React component
+ */
+
 interface CardNormalNewsPageProps {
    image: string;
    major: string;

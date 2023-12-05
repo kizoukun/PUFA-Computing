@@ -1,3 +1,21 @@
+/**
+ * Faq component represents a frequently asked question with a toggleable answer.
+ *
+ * @component
+ * @example
+ * // Example usage of Faq component
+ * <Faq
+ *    title="How to use this feature?"
+ *    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+ *    status="open"
+ * />
+ *
+ * @param {Object} props - The component props.
+ * @param {string} props.title - The title of the frequently asked question.
+ * @param {string} props.content - The content or answer to the frequently asked question.
+ * @param {string} [props.status] - The optional status indicating whether the answer is open or closed.
+ * @returns {JSX.Element} React component
+ */
 
 interface FaqProps {
    title: string;

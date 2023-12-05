@@ -1,6 +1,25 @@
 import Link from "next/link";
 import Button from "@/components/Button";
 
+/**
+ * StudyProgCard component represents a card for displaying information about a study program.
+ *
+ * @component
+ * @example
+ * // Example usage of StudyProgCard component
+ * <StudyProgCard
+ *    title="Computer Science"
+ *    article="Explore the fascinating world of computer science and its applications."
+ *    link="/study-programs/computer-science"
+ * />
+ *
+ * @param {Object} props - The component props.
+ * @param {string} props.title - The title of the study program.
+ * @param {string} props.article - A brief description or article about the study program.
+ * @param {string} [props.link] - The optional link to navigate to when the "See Details" button is clicked.
+ * @returns {JSX.Element} React component
+ */
+
 interface StudyProgCardProps {
    title: string;
    article: string;
