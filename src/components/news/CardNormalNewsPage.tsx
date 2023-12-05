@@ -1,6 +1,5 @@
 import React from "react";
 
-
 /**
  * CardNormalNewsPage component represents a card for displaying normal news in a news page.
  *
@@ -36,16 +35,16 @@ export default function CardNormalNewsPage({
    date,
 }: CardNormalNewsPageProps) {
    return (
-      <div className="border-2 rounded-lg h-[21rem] flex flex-col">
-         <div className="h-[60%]">
+      <div className="flex flex-col rounded-lg border-2">
+         <div>
             <img
-               className="w-full h-full object-cover bg-center"
+               className="h-full w-full bg-center object-cover"
                src={image}
                alt={`${title}'s image`}
             />
          </div>
-         <div className="h-[40%] flex flex-col px-4 py-2 justify-between">
-            <div className="border-[#FF6F22] border rounded-3xl text-[#FF6F22] text-[0.8rem] px-2 w-[6rem] flex justify-center">
+         <div className="flex h-[40%] flex-col justify-between px-4 py-2">
+            <div className="flex w-[6rem] justify-center rounded-3xl border border-[#FF6F22] px-2 text-[0.8rem] text-[#FF6F22]">
                {major}
             </div>
             <h1 className="font-bold">{title}</h1>
