@@ -8,7 +8,7 @@ import NewsCardBig from "@/components/news/NewsCardBig";
 import StudyProgCard from "@/components/StudyProgCard";
 import VCDStudyProgCard from "@/components/VCDStudyProgCard";
 import CardStore from "@/components/store/CardStore";
-import EventCardSection from "@/components/event/EventCardSection";
+import EventCardPage from "@/components/event/EventCardPage";
 
 export default async function Index() {
    return (
@@ -159,23 +159,27 @@ export default async function Index() {
                Discover the latest updates on events in our faculty.
             </h3>
 
-            <div className="flex flex-col items-center justify-center gap-7 md:flex-row">
-               <EventCardSection
+            <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 lg:grid-cols-2">
+               <EventCardPage
                   title="Computing Social Project 2023"
-                  details="Holla Everyone!! 🙌🏻 We are from PUMA COMPUTING 2023 are so excited to announce that Social Project 2023 .."
-                  major="PUMA IT"
+                  participant="Public"
                   status="Upcoming"
-                  participant="with Rumah Tahfidz Taman Qur’ani"
-                  image="sospro_2023.png"
-               />
-               <EventCardSection
-                  title="Computing Social Project 2023"
-                  details="Holla Everyone!! 🙌🏻 We are from PUMA COMPUTING 2023 are so excited to announce that Social Project 2023 .."
                   major="PUMA IT"
+                  image="/events/sospro_2023.png"
+               >
+                  Holla Everyone!! 🙌🏻 We are from PUMA COMPUTING 2023 are so
+                  excited to announce that Social Project 2023 ..
+               </EventCardPage>
+               <EventCardPage
+                  title="Compsphere 2023"
+                  participant="Public"
                   status="Upcoming"
-                  participant="with Rumah Tahfidz Taman Qur’ani"
-                  image="/compsphere_2023.png"
-               />
+                  major="PUMA IT"
+                  image="/events/compsphere_2023.png"
+               >
+                  Holla Everyone!! 🙌🏻 We are from PUMA COMPUTING 2023 are so
+                  excited to announce that Social Project 2023 ..
+               </EventCardPage>
             </div>
             <div className="flex flex-col items-center justify-center gap-7 md:flex-row">
                {/* <EventCardCompleted/> */}
