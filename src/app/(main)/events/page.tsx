@@ -13,8 +13,8 @@ export default async function EventsPage() {
    return (
       <div>
          {/* // title */}
-         <section className="max-w-7xl bg-[#F2F2F2] p-10">
-            <div className="flex flex-col border-l-4 border-[#FF6F22] pl-5">
+         <section className="bg-[#F2F2F2] p-10">
+            <div className="mx-auto flex max-w-7xl flex-col border-l-4 border-[#FF6F22] pl-5 ">
                <h1 className="text-[2rem] font-black">Computing Events</h1>
                <p className="text-[0.8rem]">
                   The latest news about research, technology, achievements, and
