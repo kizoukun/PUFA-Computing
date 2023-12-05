@@ -19,22 +19,22 @@ import Link from "next/link";
  * @returns {JSX.Element} React component
  */
 
-interface PosterCardEventPageProps{
-  link: string;
-  image: string;
-  alt: string;
+interface PosterCardEventPageProps {
+   link: string;
+   image: string;
+   alt: string;
 }
 
 export default function PosterCardEventPage({
-  link,
-  image,
-  alt
-}:PosterCardEventPageProps) {
+   link,
+   image,
+   alt,
+}: PosterCardEventPageProps) {
    return (
-      <Link href={`${link}`}>
-         <div className="h-[19rem] w-[15rem] rounded-xl hover:scale-105 hover:shadow-md transition duration-300">
+      <Link href={`${link}`} className="block w-full">
+         <div className="rounded-xl transition duration-300 hover:scale-105 hover:shadow-md">
             <img
-               className="w-full h-full object-cover bg-center rounded-xl"
+               className="h-full w-full rounded-xl bg-center object-cover"
                src={image}
                alt={alt}
             />

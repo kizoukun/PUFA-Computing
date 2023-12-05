@@ -26,49 +26,49 @@
  * />
  */
 
+import Image from "next/image";
 import React from "react";
 
 interface EventCardPageProps {
    title: string;
-   details: string;
    status: string;
    participant: string;
    major: string;
    image: string;
+   children: React.ReactNode;
 }
 
 export default function EventCardPage({
    title,
-   details,
    status,
    major,
    participant,
    image,
+   children,
 }: EventCardPageProps) {
    return (
-      <div className="inline-flex items-center mt-5 text-left">
-         <div className="border-[#E50D0D] border rounded-lg w-[32rem] h-[17rem] relative flex">
-            <div className="w-[48%]">{/* DO NOT EDIT */}</div>
-            <div className="w-[52%] py-4 px-2 flex flex-col justify-between">
-               <h1 className="font-bold text-[1.4rem]">{title}</h1>
-               <h2>{participant}</h2>
-               <div className="font-light text-[0.8rem]">
-                  <p>{details}</p>
-               </div>
-               <div className="flex justify-between">
-                  <p className="text-[0.8rem] font-bold">{major}</p>
-                  <div className="text-[#E50D0D] border-[#E50D0D] border rounded-2xl px-2 text-[0.8rem]">
-                     <p>{status}</p>
-                  </div>
+      <div className="flex gap-4 rounded-[15px] border-[0.5px] border-[#E50D0D] md:gap-8">
+         <div>
+            <Image
+               src={image}
+               className="h-full w-96 scale-110 rounded-[15px]"
+               alt="Event"
+               width={384}
+               height={256}
+            />
+         </div>
+         <div className="flex flex-col justify-between space-y-4 p-2 md:p-5">
+            <p className="text-lg font-bold">{title}</p>
+            <p className="font-bold">{participant}</p>
+            <p className="text-sm md:text-base">{children}</p>
+            <div className="flex justify-between">
+               <p className="text-[16px] font-bold">{major}</p>
+               <div>
+                  <button className="rounded-[10px] border border-[#E50D0D] px-2">
+                     {status}
+                  </button>
                </div>
             </div>
-         </div>
-         <div className="bg-red-400 rounded-lg h-[19rem] w-[15rem] absolute">
-            <img
-               className="w-full h-full object-cover rounded-lg"
-               src={image}
-               alt={`${title}'s image`}
-            />
          </div>
       </div>
    );
