@@ -160,9 +160,7 @@ export default async function Index() {
                Discover the latest updates on events in our faculty.
             </h3>
             <EventSection />
-            <div className="flex flex-col items-center justify-center gap-7 md:flex-row">
-               {/* <EventCardCompleted/> */}
-            </div>
+            <div className="flex flex-col items-center justify-center gap-7 md:flex-row"></div>
          </section>
          {/* end */}
 
