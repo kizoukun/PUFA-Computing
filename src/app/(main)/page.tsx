@@ -8,7 +8,7 @@ import NewsCardBig from "@/components/news/NewsCardBig";
 import StudyProgCard from "@/components/StudyProgCard";
 import VCDStudyProgCard from "@/components/VCDStudyProgCard";
 import CardStore from "@/components/store/CardStore";
-import EventCardPage from "@/components/event/EventCardPage";
+import EventSection from "@/components/event/EventSection";
 
 export default async function Index() {
    return (
@@ -147,6 +147,7 @@ export default async function Index() {
          {/* end */}
 
          {/* event */}
+
          <section
             id="event"
             className="max-w-8xl mx-auto my-32 space-y-8 p-5 text-center"
@@ -158,29 +159,7 @@ export default async function Index() {
             <h3 className="">
                Discover the latest updates on events in our faculty.
             </h3>
-
-            <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 lg:grid-cols-2">
-               <EventCardPage
-                  title="Computing Social Project 2023"
-                  participant="Public"
-                  status="Upcoming"
-                  major="PUMA IT"
-                  image="/events/sospro_2023.png"
-               >
-                  Holla Everyone!! 🙌🏻 We are from PUMA COMPUTING 2023 are so
-                  excited to announce that Social Project 2023 ..
-               </EventCardPage>
-               <EventCardPage
-                  title="Compsphere 2023"
-                  participant="Public"
-                  status="Upcoming"
-                  major="PUMA IT"
-                  image="/events/compsphere_2023.png"
-               >
-                  Holla Everyone!! 🙌🏻 We are from PUMA COMPUTING 2023 are so
-                  excited to announce that Social Project 2023 ..
-               </EventCardPage>
-            </div>
+            <EventSection />
             <div className="flex flex-col items-center justify-center gap-7 md:flex-row">
                {/* <EventCardCompleted/> */}
             </div>
