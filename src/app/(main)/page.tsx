@@ -9,6 +9,7 @@ import StudyProgCard from "@/components/StudyProgCard";
 import VCDStudyProgCard from "@/components/VCDStudyProgCard";
 import CardStore from "@/components/store/CardStore";
 import EventCardSection from "@/components/event/EventCardSection";
+import EventCardCompleted from "@/components/event/EventCardCompleted";
 
 export default async function Index() {
    return (
@@ -178,7 +179,7 @@ export default async function Index() {
                />
             </div>
             <div className="flex flex-col items-center justify-center gap-7 md:flex-row">
-               {/* <EventCardCompleted/> */}
+               
             </div>
          </section>
          {/* end */}

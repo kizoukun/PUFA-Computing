@@ -39,7 +39,7 @@ export default function CardStore({
          <div className="max-w-xs aspect-square p-3 rounded-2xl shadow-md hover:shadow-lg hover:shadow-[#BA704F] transition duration-300 ease-in-out border border-[#BA704F] hover:scale-105">
             <img
                src={image}
-               alt={`${title}'s image`}
+               alt={`${title}'s cover`}
                className="object-cover object-center rounded-md aspect-square "
             />
             <div className="mt-3 mb-2">

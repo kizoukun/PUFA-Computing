@@ -52,7 +52,7 @@ export default function EventCardPage({
             <Image
                src={image}
                className="h-full w-96 scale-110 rounded-[15px]"
-               alt="Event"
+               alt={`${title}'s poster`}
                width={384}
                height={256}
             />
@@ -62,7 +62,7 @@ export default function EventCardPage({
             <p className="font-bold">{participant}</p>
             <p className="text-sm md:text-base">{children}</p>
             <div className="flex justify-between">
-               <p className="text-[16px] font-bold">{major}</p>
+               <p className="text-[16px] font-bold ">{major}</p>
                <div>
                   <button className="rounded-[10px] border border-[#E50D0D] px-2">
                      {status}
