@@ -42,7 +42,7 @@ export default function Footer() {
                   </div>
                </div>
 
-               <div className="mt-6 flex flex-col justify-center space-x-5 space-y-3 md:ml-auto md:flex-row md:space-y-0">
+               <div className="mt-6 flex flex-row items-center justify-center space-x-4 md:ml-auto md:flex-row md:space-y-0">
                   <Link href="https://www.linkedin.com/company/pumacomputing/">
                      <FaLinkedin
                         size={25}
@@ -59,7 +59,7 @@ export default function Footer() {
                      size={25}
                      className="text-[#DADADA] transition-colors duration-300 hover:text-gray-500"
                   />
-               </div>
+                  </div>
             </div>
          </div>
       </footer>

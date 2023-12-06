@@ -10,7 +10,7 @@ export default async function MainLayout({
       <div className="scroll-smooth">
          <Navbar />
          <div className="bg-[#FBFBFB]">{children}</div>
-         {/* <Footer /> */}
+         <Footer />
       </div>
    );
 }
