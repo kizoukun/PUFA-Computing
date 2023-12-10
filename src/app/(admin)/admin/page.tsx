@@ -1,3 +1,9 @@
+import UploadFile from "./UploadFile";
+
 export default async function AdminIndex() {
-   return <div>Hello Admin</div>;
+   return (
+      <div>
+         <UploadFile />
+      </div>
+   );
 }
