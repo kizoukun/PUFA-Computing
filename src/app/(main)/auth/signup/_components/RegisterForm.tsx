@@ -4,6 +4,12 @@ import { Register } from "@/services/api/auth";
 import { AxiosError, AxiosResponse } from "axios";
 import User from "@/models/user";
 
+type ErrorResponse = {
+   success: boolean;
+   message: string;
+   data: {};
+};
+
 export default function RegisterForm() {
    // Role
    const [selectedRole, setSelectedRole] = useState("Student");
@@ -12,27 +18,29 @@ export default function RegisterForm() {
       setSelectedRole(e.target.value);
    };
 
-   const [first_name, setFirstName] = useState("");
-   const [last_name, setLastName] = useState("");
-   const [email, setEmail] = useState("");
-   const [password, setPassword] = useState("");
-   const [nim, setNim] = useState("");
-   const [year, setYear] = useState("");
    const [error, setError] = useState("");
 
    // Handle Register
-   const handleRegister = async (e: React.FormEvent) => {
+   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
+
+      const formData = new FormData(e.target as HTMLFormElement);
+
       setError("");
       try {
          const user: User = {
-            first_name,
-            last_name,
-            email,
-            password,
-            nim,
-            year,
+            first_name: formData.get("firstName") as string,
+            last_name: formData.get("lastName") as string,
+            email: formData.get("email") as string,
+            password: formData.get("password") as string,
          };
+
+         if (selectedRole === "Student") {
+            user.student_id = formData.get("studentId") as string;
+            user.year = formData.get("batch") as string;
+         } else {
+            user.institution = formData.get("institution") as string;
+         }
 
          const res: AxiosResponse = await Register(user);
 
@@ -41,14 +49,15 @@ export default function RegisterForm() {
       } catch (error) {
          // Handle errors here
          if (error instanceof AxiosError) {
-            if (error.response?.status === 400) {
-               // setError("Invalid credentials");
-               setError(error.response?.data?.error ?? "Failed to Login");
-            } else {
-               setError("Register failed");
+            if (error.code == "ERR_NETWORK") {
+               setError("Network Error");
+               return;
             }
+            const errorResponse = error?.response?.data as ErrorResponse;
+            if (!errorResponse.success)
+               setError(errorResponse.message ?? "Failed to Register");
          } else {
-            setError("An error occurred");
+            setError("Register failed");
          }
       }
    };
@@ -56,21 +65,6 @@ export default function RegisterForm() {
    return (
       <div>
          <form onSubmit={handleRegister} className="w-full max-w-md">
-            {/* <img
-          className="w-auto h-4 sm:h-8 mx-auto my-8"
-          src="https://merakiui.com/images/logo.svg"
-          alt=""
-        /> */}
-            <img
-               className="mx-auto mt-8 h-32 w-auto rounded-lg sm:h-48"
-               src="../PUComputing.png"
-               alt=""
-            />
-
-            <h1 className="mt-3 text-center text-2xl font-semibold capitalize text-black sm:text-3xl">
-               sign Up
-            </h1>
-
             {/* Name */}
             <div className="relative mt-8 flex items-center gap-2">
                <div>
@@ -83,10 +77,9 @@ export default function RegisterForm() {
                   </label>
                   <input
                      type="text"
-                     value={first_name}
-                     onChange={(e) => setFirstName(e.target.value)}
                      className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
                      placeholder="Ilham"
+                     name="firstName"
                      required
                   />
                </div>
@@ -99,10 +92,9 @@ export default function RegisterForm() {
                   </label>
                   <input
                      type="text"
-                     value={last_name}
-                     onChange={(e) => setLastName(e.target.value)}
                      className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
                      placeholder="Pratama"
+                     name="lastName"
                      required
                   />
                </div>
@@ -115,10 +107,9 @@ export default function RegisterForm() {
                </label>
                <input
                   type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
                   className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
                   placeholder="ilhampratama@example.com"
+                  name="email"
                   required
                />
             </div>
@@ -133,10 +124,9 @@ export default function RegisterForm() {
                </label>
                <input
                   type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
                   className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
                   placeholder="password"
+                  name="password"
                   required
                />
             </div>
@@ -202,9 +192,8 @@ export default function RegisterForm() {
                         inputMode="numeric"
                         className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
                         placeholder="0110333333"
-                        value={nim}
-                        onChange={(e) => setNim(e.target.value)}
                         pattern="[0-9]*"
+                        name="studentId"
                         required
                      />
                   </div>
@@ -223,9 +212,8 @@ export default function RegisterForm() {
                         type="number"
                         className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
                         placeholder="2024"
+                        name="batch"
                         required
-                        value={year}
-                        onChange={(e) => setYear(e.target.value)}
                      />
                   </div>
                )}
@@ -246,6 +234,7 @@ export default function RegisterForm() {
                         className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
                         placeholder="Universitas Perdana Mentri"
                         required
+                        name="institution"
                         // value={institution}
                         // onChange={(e) => setInstitution(e.target.value)}
                      />

@@ -3,8 +3,14 @@ import React, { useState } from "react";
 import { Login } from "@/services/api/auth";
 import { AxiosError } from "axios";
 
+type ErrorResponse = {
+   success: boolean;
+   message: string;
+   data: {};
+};
+
 export default function LoginForm() {
-   const [email, setEmail] = useState("");
+   const [username, setUsername] = useState("");
    const [password, setPassword] = useState("");
    const [error, setError] = useState("");
 
@@ -12,12 +18,17 @@ export default function LoginForm() {
       e.preventDefault();
       setError("");
       try {
-         const result = await Login(email, password);
+         const result = await Login(username, password);
          // handl successful login
       } catch (error: any) {
-         //handle error
-         if (error?.response?.status === 400) {
-            setError(error.response?.data?.error ?? "Failed to Login");
+         if (error instanceof AxiosError) {
+            if (error.code == "ERR_NETWORK") {
+               setError("Network Error");
+               return;
+            }
+            const errorResponse = error?.response?.data as ErrorResponse;
+            if (!errorResponse.success)
+               setError(errorResponse.message ?? "Failed to Login");
          } else {
             setError("Login failed");
          }
@@ -25,25 +36,15 @@ export default function LoginForm() {
    };
 
    return (
-      <form onSubmit={(e) => e.preventDefault} className="w-full max-w-md">
-         <img
-            className="mx-auto my-8 h-32 w-auto rounded-lg sm:h-48"
-            src="../PUComputing.png"
-            alt=""
-         />
-
-         <h1 className="mt-3 text-center text-2xl font-semibold capitalize text-gray-100 sm:text-3xl">
-            Sign In
-         </h1>
-
+      <form onSubmit={(e) => e.preventDefault}>
          <div className="relative mt-8 flex items-center">
             <span className="absolute"></span>
             <input
                type="email"
                className="block w-full rounded-lg border bg-white px-10 py-3 text-gray-700 focus:border-blue-400  focus:outline-none focus:ring-blue-300"
                placeholder="Email address"
-               value={email}
-               onChange={(e) => setEmail(e.target.value)}
+               value={username}
+               onChange={(e) => setUsername(e.target.value)}
             />
          </div>
 

@@ -5,8 +5,9 @@ interface User {
    email: string;
    password: string;
    role_id?: number;
-   nim: string;
-   year: string;
+   student_id?: string;
+   year?: string;
+   institution?: string;
 }
 
 export default User;
