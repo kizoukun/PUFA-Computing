@@ -10,7 +10,9 @@ export default async function EventSection() {
 
    return (
       <div className="">
-         <EventCardUpcoming events={events} />
+         <div>
+            <EventCardUpcoming events={events} />
+         </div>
          <EventCardCompleted events={events} />
 
          {/* button */}

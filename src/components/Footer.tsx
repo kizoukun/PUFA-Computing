@@ -31,7 +31,7 @@ export default function Footer() {
                   </button>
                </div>
             </div>
-            <hr className="my-4 border-gray-200 dark:border-gray-700" />
+            <hr className="my-4" />
             <div className="md:-mx-3 md:flex md:items-center md:justify-between">
                <div className="dark:text-white md:mx-3 xl:text-sm">
                   <div className="text-sm font-normal tracking-widest text-[#9CA3AF]">
@@ -59,7 +59,7 @@ export default function Footer() {
                      size={25}
                      className="text-[#DADADA] transition-colors duration-300 hover:text-gray-500"
                   />
-                  </div>
+               </div>
             </div>
          </div>
       </footer>

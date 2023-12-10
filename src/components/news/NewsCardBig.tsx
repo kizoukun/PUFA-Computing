@@ -16,7 +16,7 @@ export default function NewsCardBig({
 }: NewsCardBigProps) {
   return (
     <Link href={"/"}>
-      <article className="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg h-full">
+      <article className="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg h-full ">
         <img
           alt="Office"
           src={image}

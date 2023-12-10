@@ -28,12 +28,12 @@ export default async function Index() {
             className="container mx-auto -mt-24 sm:-mt-32 md:-mt-48 lg:-mt-64 xl:-mt-96"
          >
             <img
-               className=" mx-auto"
-               src="../fotoheader.png"
+               className="mx-auto aspect-video h-96 my-5 rounded-2xl"
+               src="../member.jpg"
                alt="PUMA Photo"
             />
             <div className="space-y-2 px-8 text-justify md:px-24">
-               <p className="text-xl">
+               <p className="text-xl ">
                   PUMA Computing is President University Major Association of
                   Computing. Members of PUMA Computing consist of students from
                   the IT (Information Technology) and IS (Information System)
@@ -159,6 +159,7 @@ export default async function Index() {
             <h3 className="">
                Discover the latest updates on events in our faculty.
             </h3>
+            
             <div className="flex flex-col items-center justify-center gap-7 md:flex-row"></div>
             <EventSection />
          </section>
@@ -233,6 +234,9 @@ export default async function Index() {
             </h2>
             <h3 className="">Appreciation to Computizen’s best projects.</h3>
 
+            <div>
+               
+            </div>
             <div className="flex items-center justify-center">
                <Link href="/" className="block w-max">
                   <Button className="border-[#AF95FF] px-10 py-2 text-[#AF95FF] hover:bg-[#AF95FF] hover:text-white">
