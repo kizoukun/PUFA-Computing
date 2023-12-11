@@ -1,12 +1,12 @@
 import EventCardPage from "@/components/event/EventCardPage";
-
 // import componentnya
-import LogoOrganizationEventPage from "@/components/event/LogoOrganizationEventPage";
 import PosterCardEventPage from "@/components/event/PosterCardEventPage";
 import { Metadata } from "next";
+import Link from "next/link";
+import { IoIosArrowForward } from "react-icons/io";
 
 export const metadata: Metadata = {
-   title: "Events",
+   title: "PUMA IT Events",
 };
 
 export default async function EventsPage() {
@@ -15,7 +15,14 @@ export default async function EventsPage() {
          {/* // title */}
          <section className="bg-[#F2F2F2] p-10">
             <div className="mx-auto flex max-w-7xl flex-col border-l-4 border-[#FF6F22] pl-5 ">
-               <h1 className="text-[2rem] text-black font-extrabold">Computing Events</h1>
+               <h1 className="text-[2rem] font-extrabold text-black">
+                  <div className="flex items-center">
+                     <Link href="../events" className="hover:underline">
+                        Computing Events
+                     </Link>
+                     <IoIosArrowForward className="ml-2" /> PUMA Informatics
+                  </div>
+               </h1>
                <p className="text-[0.8rem]">
                   The latest news about research, technology, achievements, and
                   campus life.
@@ -25,7 +32,7 @@ export default async function EventsPage() {
 
          {/* event highlights */}
          <section className="mx-auto max-w-7xl p-10">
-            <h1 className="mb-5 text-[1.2rem] font-bold">Highlights</h1>
+            <h1 className="mb-5 text-[1.2rem] font-bold">Upcoming</h1>
 
             {/* card section */}
             <div className="mt-16 grid grid-cols-1 gap-16 lg:grid-cols-2">
@@ -55,67 +62,9 @@ export default async function EventsPage() {
             </div>
          </section>
 
-         <section className="mt-[5rem]">
-            <h1 className="mx-auto mb-10 max-w-7xl p-10 text-[1.2rem] font-bold">
-               Event Categories
-            </h1>
-            <hr className="border-t-2 border-gray-200" />
-            <div className="mx-auto max-w-7xl p-10">
-               <div className="grid grid-cols-2	 gap-[8rem] md:grid-cols-3 lg:grid-cols-5">
-                  <LogoOrganizationEventPage
-                     image="../logo/PUFA_Computing.png"
-                     title="PUFA Computing"
-                     link="events/pufa-computing"
-                  />
-
-                  <LogoOrganizationEventPage
-                     image="../logo/PUMA_IT.png"
-                     title="PUMA Informatics"
-                     link="events/puma-it"
-                  />
-                  <LogoOrganizationEventPage
-                     image="../logo/PUMA_IS.png"
-                     title="PUMA Information System"
-                     link="events/puma-is"
-                  />
-                  <LogoOrganizationEventPage
-                     image="../logo/PUMA_VCD.png"
-                     title="PUMA Visual Design Communication"
-                     link="events/puma-vcd"
-                  />
-                  <LogoOrganizationEventPage
-                     image="../logo/PUMA_ID.png"
-                     title="PUMA Interior Design"
-                     link="events/puma-id"
-                  />
-               </div>
-            </div>
-            <hr className="border-t-2 border-gray-200" />
-         </section>
-
          <section className="mx-auto max-w-7xl px-10 py-[5rem]">
             <h1 className="mb-[5rem] text-[1.2rem] font-bold">All Events</h1>
             <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/compsphere_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/sospro_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/compsphere_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/sospro_2023.png"
-                  alt="logo"
-               />
                <PosterCardEventPage
                   link="/news"
                   image="/events/compsphere_2023.png"

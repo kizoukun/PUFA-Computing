@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 /**
@@ -20,22 +21,26 @@ import React from "react";
 interface LogoOrganizationEventPageProps {
    image: string;
    title: string;
+   link: string;
 }
 
 export default function LogoOrganizationEventPage({
    image,
    title,
+   link
 }: LogoOrganizationEventPageProps) {
    return (
-      <div className="flex flex-col items-center justify-center gap-5">
-         <div className="h-[100px] w-[100px] rounded-xl bg-transparent">
-            <img
-               className="h-full w-full rounded-lg object-cover"
-               src={image}
-               alt={`${title}'s image`}
-            />
+      <Link href={`${link}`}>
+         <div className="flex flex-col items-center justify-center gap-5 hover:scale-110 duration-300 hover:shadow-2xl">
+            <div className="h-[100px] w-[100px] rounded-xl bg-transparent">
+               <img
+                  className="h-full w-full rounded-lg object-cover"
+                  src={image}
+                  alt={`${title}'s image`}
+               />
+            </div>
+            <div className="text-center text-sm font-bold">{title}</div>
          </div>
-         <div className="text-center text-sm font-bold">{title}</div>
-      </div>
+      </Link>
    );
 }

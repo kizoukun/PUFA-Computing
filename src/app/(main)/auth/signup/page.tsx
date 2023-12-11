@@ -18,7 +18,7 @@ export default async function RegisterPage() {
             />
 
             <h1 className="mt-3 text-center text-2xl font-semibold capitalize text-black sm:text-3xl">
-               Sign In
+               Sign Up
             </h1>
             <RegisterForm />
          </div>
