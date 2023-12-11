@@ -14,15 +14,28 @@ export default function LoginForm() {
    const [password, setPassword] = useState("");
    const [error, setError] = useState("");
 
+   // Regular expression for basic email validation
+   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+   const isEmailValid = (email: string) => {
+      return emailRegex.test(email);
+   };
+
    const handleLogin = async (e: React.FormEvent) => {
       e.preventDefault();
       setError("");
+
+      if (!isEmailValid(username)) {
+         setError("Please enter a valid email address");
+         return;
+      }
+
       try {
          const result = await Login(username, password);
-         // handl successful login
+         // handle successful login
       } catch (error: any) {
          if (error instanceof AxiosError) {
-            if (error.code == "ERR_NETWORK") {
+            if (error.code === "ERR_NETWORK") {
                setError("Network Error");
                return;
             }
@@ -34,13 +47,12 @@ export default function LoginForm() {
          }
       }
    };
-
    return (
       <form onSubmit={(e) => e.preventDefault}>
          <div className="relative mt-8 flex items-center">
             <span className="absolute"></span>
             <input
-               type="email"
+               type="text"
                className="block w-full rounded-lg border bg-white px-10 py-3 text-gray-700 focus:border-blue-400  focus:outline-none focus:ring-blue-300"
                placeholder="Email address"
                value={username}
