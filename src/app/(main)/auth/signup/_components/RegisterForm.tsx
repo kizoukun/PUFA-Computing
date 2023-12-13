@@ -7,108 +7,117 @@ import User from "@/models/user";
 
 // Type for error response
 type ErrorResponse = {
-  success: boolean;
-  message: string;
-  data: {};
+   success: boolean;
+   message: string;
+   data: {};
 };
 
 // RegisterForm component
 export default function RegisterForm() {
-  // State variables
-  const [selectedRole, setSelectedRole] = useState("Student");
-  const [error, setError] = useState("");
+   // State variables
+   const [selectedRole, setSelectedRole] = useState("Student");
+   const [error, setError] = useState("");
 
-  // validation/regex
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-  const studentIdRegex = /^\d{11,}$/;
+   // validation/regex
+   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+   const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+   const studentIdRegex = /^\d{11,}$/;
 
-  // Function to check 
-  const isEmailValid = (email: string) => {
-    return emailRegex.test(email);
-  };
-  const isPasswordValid = (password: string) => {
-   return passwordRegex.test(password);
- };
-  const isStudentIdValid = (studentId: string) => {
-   return studentIdRegex.test(studentId);
- };
+   // Function to check
+   const isEmailValid = (email: string) => {
+      return emailRegex.test(email);
+   };
+   const isPasswordValid = (password: string) => {
+      return passwordRegex.test(password);
+   };
+   const isStudentIdValid = (studentId: string) => {
+      return studentIdRegex.test(studentId);
+   };
 
-  // Event handler for role change
-  const handleRoleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedRole(e.target.value);
-  };
+   // Event handler for role change
+   const handleRoleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setSelectedRole(e.target.value);
+   };
 
-  // Event handler for registration
-  const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+   // Event handler for registration
+   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
 
-    const formData = new FormData(e.target as HTMLFormElement);
+      const formData = new FormData(e.target as HTMLFormElement);
 
-    setError("");
-    const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
-    const studentId = formData.get("studentId") as string;
+      setError("");
+      const email = formData.get("email") as string;
+      const password = formData.get("password") as string;
+      const studentId = formData.get("studentId") as string;
 
-    // Check if the entered email is valid
-    if (!isEmailValid(email)) {
-      Swal.fire({
-        icon: "error",
-        title: "Invalid Email",
-        text: "Please enter a valid email address",
-      });
-      return;
-    }
-    // Check if the password valid
-    if (!isPasswordValid(password)) {
-      Swal.fire({
-        icon: "error",
-        title: "Invalid Password",
-        text: "Password must be at least 8 characters long and contain at least 1 numeric digit.",
-      });
-      return;
-    }
-    if (!isStudentIdValid(studentId)) {
-      Swal.fire({
-        icon: "error",
-        title: "Invalid Student ID",
-        text: "Student ID must be at least 12 characters long and contain numeric digit.",
-      });
-      return;
-    }
-
-    try {
-      // Construct user object based on form data
-      const user: User = {
-        first_name: formData.get("firstName") as string,
-        last_name: formData.get("lastName") as string,
-        email,
-        password: formData.get("password") as string,
-        student_id: selectedRole === "Student" ? (formData.get("studentId") as string) : undefined,
-        year: selectedRole === "Student" ? (formData.get("batch") as string) : undefined,
-        institution: selectedRole === "Institution" ? (formData.get("institution") as string) : undefined,
-      };
-
-      // Send registration request
-      const res: AxiosResponse = await Register(user);
-
-      // Handle the response or perform any necessary actions here
-      console.log(res); // You can log the response or update your UI accordingly
-    } catch (error) {
-      // Handle errors here
-      if (error instanceof AxiosError) {
-        if (error.code === "ERR_NETWORK") {
-          setError("Network Error");
-          return;
-        }
-        const errorResponse = error?.response?.data as ErrorResponse;
-        if (!errorResponse.success)
-          setError(errorResponse.message ?? "Failed to Register");
-      } else {
-        setError("Register failed");
+      // Check if the entered email is valid
+      if (!isEmailValid(email)) {
+         Swal.fire({
+            icon: "error",
+            title: "Invalid Email",
+            text: "Please enter a valid email address",
+         });
+         return;
       }
-    }
-  };
+      // Check if the password valid
+      if (!isPasswordValid(password)) {
+         Swal.fire({
+            icon: "error",
+            title: "Invalid Password",
+            text: "Password must be at least 8 characters long and contain at least 1 numeric digit.",
+         });
+         return;
+      }
+      if (!isStudentIdValid(studentId)) {
+         Swal.fire({
+            icon: "error",
+            title: "Invalid Student ID",
+            text: "Student ID must be at least 12 characters long and contain numeric digit.",
+         });
+         return;
+      }
+
+      try {
+         // Construct user object based on form data
+         const user: User = {
+            first_name: formData.get("firstName") as string,
+            last_name: formData.get("lastName") as string,
+            email,
+            password: formData.get("password") as string,
+            student_id:
+               selectedRole === "Student"
+                  ? (formData.get("studentId") as string)
+                  : undefined,
+            year:
+               selectedRole === "Student"
+                  ? (formData.get("batch") as string)
+                  : undefined,
+            institution:
+               selectedRole === "Institution"
+                  ? (formData.get("institution") as string)
+                  : undefined,
+         };
+
+         // Send registration request
+         const res: AxiosResponse = await Register(user);
+
+         // Handle the response or perform any necessary actions here
+         console.log(res); // You can log the response or update your UI accordingly
+      } catch (error) {
+         // Handle errors here
+         if (error instanceof AxiosError) {
+            if (error.code === "ERR_NETWORK") {
+               setError("Network Error");
+               return;
+            }
+            const errorResponse = error?.response?.data as ErrorResponse;
+            if (!errorResponse.success)
+               setError(errorResponse.message ?? "Failed to Register");
+         } else {
+            setError("Register failed");
+         }
+      }
+   };
 
    return (
       <div>
