@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Login } from "@/services/api/auth";
+import Swal from "sweetalert2";
 import { AxiosError } from "axios";
 
 type ErrorResponse = {
@@ -26,8 +27,12 @@ export default function LoginForm() {
       setError("");
 
       if (!isEmailValid(username)) {
-         setError("Please enter a valid email address");
-         return;
+         Swal.fire({
+            icon: "error",
+            title: "Invalid Email",
+            text: "Please enter a valid email address",
+          });
+          return;
       }
 
       try {
