@@ -1,66 +1,114 @@
 "use client";
-import { FormEventHandler, useState } from "react";
+import React, { useState } from "react";
 import { Register } from "@/services/api/auth";
+import Swal from "sweetalert2";
 import { AxiosError, AxiosResponse } from "axios";
 import User from "@/models/user";
 
+// Type for error response
 type ErrorResponse = {
-   success: boolean;
-   message: string;
-   data: {};
+  success: boolean;
+  message: string;
+  data: {};
 };
 
+// RegisterForm component
 export default function RegisterForm() {
-   // Role
-   const [selectedRole, setSelectedRole] = useState("Student");
+  // State variables
+  const [selectedRole, setSelectedRole] = useState("Student");
+  const [error, setError] = useState("");
 
-   const handleRoleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      setSelectedRole(e.target.value);
-   };
+  // validation/regex
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+  const studentIdRegex = /^\d{11,}$/;
 
-   const [error, setError] = useState("");
+  // Function to check 
+  const isEmailValid = (email: string) => {
+    return emailRegex.test(email);
+  };
+  const isPasswordValid = (password: string) => {
+   return passwordRegex.test(password);
+ };
+  const isStudentIdValid = (studentId: string) => {
+   return studentIdRegex.test(studentId);
+ };
 
-   // Handle Register
-   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
+  // Event handler for role change
+  const handleRoleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedRole(e.target.value);
+  };
 
-      const formData = new FormData(e.target as HTMLFormElement);
+  // Event handler for registration
+  const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-      setError("");
-      try {
-         const user: User = {
-            first_name: formData.get("firstName") as string,
-            last_name: formData.get("lastName") as string,
-            email: formData.get("email") as string,
-            password: formData.get("password") as string,
-         };
+    const formData = new FormData(e.target as HTMLFormElement);
 
-         if (selectedRole === "Student") {
-            user.student_id = formData.get("studentId") as string;
-            user.year = formData.get("batch") as string;
-         } else {
-            user.institution = formData.get("institution") as string;
-         }
+    setError("");
+    const email = formData.get("email") as string;
+    const password = formData.get("password") as string;
+    const studentId = formData.get("studentId") as string;
 
-         const res: AxiosResponse = await Register(user);
+    // Check if the entered email is valid
+    if (!isEmailValid(email)) {
+      Swal.fire({
+        icon: "error",
+        title: "Invalid Email",
+        text: "Please enter a valid email address",
+      });
+      return;
+    }
+    // Check if the password valid
+    if (!isPasswordValid(password)) {
+      Swal.fire({
+        icon: "error",
+        title: "Invalid Password",
+        text: "Password must be at least 8 characters long and contain at least 1 numeric digit.",
+      });
+      return;
+    }
+    if (!isStudentIdValid(studentId)) {
+      Swal.fire({
+        icon: "error",
+        title: "Invalid Student ID",
+        text: "Student ID must be at least 12 characters long and contain numeric digit.",
+      });
+      return;
+    }
 
-         // Handle the response or perform any necessary actions here
-         console.log(res); // You can log the response or update your UI accordingly
-      } catch (error) {
-         // Handle errors here
-         if (error instanceof AxiosError) {
-            if (error.code == "ERR_NETWORK") {
-               setError("Network Error");
-               return;
-            }
-            const errorResponse = error?.response?.data as ErrorResponse;
-            if (!errorResponse.success)
-               setError(errorResponse.message ?? "Failed to Register");
-         } else {
-            setError("Register failed");
-         }
+    try {
+      // Construct user object based on form data
+      const user: User = {
+        first_name: formData.get("firstName") as string,
+        last_name: formData.get("lastName") as string,
+        email,
+        password: formData.get("password") as string,
+        student_id: selectedRole === "Student" ? (formData.get("studentId") as string) : undefined,
+        year: selectedRole === "Student" ? (formData.get("batch") as string) : undefined,
+        institution: selectedRole === "Institution" ? (formData.get("institution") as string) : undefined,
+      };
+
+      // Send registration request
+      const res: AxiosResponse = await Register(user);
+
+      // Handle the response or perform any necessary actions here
+      console.log(res); // You can log the response or update your UI accordingly
+    } catch (error) {
+      // Handle errors here
+      if (error instanceof AxiosError) {
+        if (error.code === "ERR_NETWORK") {
+          setError("Network Error");
+          return;
+        }
+        const errorResponse = error?.response?.data as ErrorResponse;
+        if (!errorResponse.success)
+          setError(errorResponse.message ?? "Failed to Register");
+      } else {
+        setError("Register failed");
       }
-   };
+    }
+  };
 
    return (
       <div>
@@ -106,7 +154,7 @@ export default function RegisterForm() {
                   Email
                </label>
                <input
-                  type="email"
+                  type="text"
                   className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
                   placeholder="ilhampratama@example.com"
                   name="email"
@@ -192,7 +240,6 @@ export default function RegisterForm() {
                         inputMode="numeric"
                         className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
                         placeholder="0110333333"
-                        pattern="[0-9]*"
                         name="studentId"
                         required
                      />
