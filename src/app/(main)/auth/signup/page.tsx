@@ -1,6 +1,7 @@
 import Image from "next/image";
 import RegisterForm from "./_components/RegisterForm";
 import { Metadata } from "next";
+import { motion } from "framer-motion";
 import PUComputing from "@/assets/PUComputing.png";
 
 export const metadata: Metadata = {

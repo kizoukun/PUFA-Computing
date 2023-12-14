@@ -9,6 +9,7 @@ import StudyProgCard from "@/components/StudyProgCard";
 import VCDStudyProgCard from "@/components/VCDStudyProgCard";
 import CardStore from "@/components/store/CardStore";
 import EventSection from "@/components/event/EventSection";
+import CompreciationCard from "@/components/CompreciationCard";
 
 export default async function Index() {
    return (
@@ -28,7 +29,7 @@ export default async function Index() {
             className="container mx-auto -mt-24 sm:-mt-32 md:-mt-48 lg:-mt-64 xl:-mt-96"
          >
             <img
-               className="mx-auto aspect-video h-96 my-5 rounded-2xl"
+               className="mx-auto my-5 aspect-video h-96 rounded-2xl"
                src="../member.jpg"
                alt="PUMA Photo"
             />
@@ -126,7 +127,7 @@ export default async function Index() {
                      </div>
 
                      {/* content */}
-                     <div className="mt-10 text-justify text-md md:text-xl font-bold">
+                     <div className="text-md mt-10 text-justify font-bold md:text-xl">
                         <p className="mb-4 text-[#353535]">
                            “One Team, One Vision, One for Computing”
                         </p>
@@ -159,7 +160,7 @@ export default async function Index() {
             <h3 className="">
                Discover the latest updates on events in our faculty.
             </h3>
-            
+
             <div className="flex flex-col items-center justify-center gap-7 md:flex-row"></div>
             <EventSection />
          </section>
@@ -234,7 +235,28 @@ export default async function Index() {
             </h2>
             <h3 className="">Appreciation to Computizen’s best projects.</h3>
 
-            <div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+               <CompreciationCard
+                  date="September 11, 2023"
+                  title="Student Analysis Using Python"
+                  name="Paman, and Aleph"
+                  description="a student analysis system that can help us to see our performance in campus and give the recommendation for the further ..."
+                  major="Informatics"
+               />
+               <CompreciationCard
+                  date="September 11, 2023"
+                  title="Student Analysis Using Python"
+                  name="Paman, and Aleph"
+                  description="a student analysis system that can help us to see our performance in campus and give the recommendation for the further ..."
+                  major="Informatics"
+               />
+               <CompreciationCard
+                  date="September 11, 2023"
+                  title="Student Analysis Using Python"
+                  name="Paman, and Aleph"
+                  description="a student analysis system that can help us to see our performance in campus and give the recommendation for the further ..."
+                  major="Informatics"
+               />
                
             </div>
             <div className="flex items-center justify-center">
