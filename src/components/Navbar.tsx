@@ -1,7 +1,13 @@
+"use client"
+
 import Link from "next/link";
+import { useState } from 'react';
 import NavbarDropdown from "./NavbarDropdown";
 
 export default function Navbar() {
+
+   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
    const NavbarDropdownItems = [
       {
          title: "Information",
@@ -44,9 +50,9 @@ export default function Navbar() {
 
                <div className="hidden md:block">
                   <nav aria-label="Global">
-                     <ul className="text-md flex items-center gap-6 font-medium text-black">
-                        <li>
-                           <Link href="/">Home</Link>
+                     <ul className="text-md flex items-center gap-6 font-medium text-black ">
+                        <li >
+                           <Link href="/" className="">Home</Link>
                         </li>
 
                         <li>
@@ -115,6 +121,7 @@ export default function Navbar() {
                </div>
             </div>
          </div>
+
       </header>
    );
 }

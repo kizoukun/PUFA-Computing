@@ -235,7 +235,7 @@ export default async function Index() {
             </h2>
             <h3 className="">Appreciation to Computizen’s best projects.</h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
                <CompreciationCard
                   date="September 11, 2023"
                   title="Student Analysis Using Python"
@@ -257,7 +257,6 @@ export default async function Index() {
                   description="a student analysis system that can help us to see our performance in campus and give the recommendation for the further ..."
                   major="Informatics"
                />
-               
             </div>
             <div className="flex items-center justify-center">
                <Link href="/" className="block w-max">
