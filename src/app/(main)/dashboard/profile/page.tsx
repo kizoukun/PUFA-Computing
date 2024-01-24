@@ -1,11 +1,29 @@
+import Button from "@/components/Button";
 import Input from "@/components/Input";
+import Selects from "@/components/Selects";
+import React from "react";
 import Seperator from "@/components/Seperator";
 
 export default async function DashboardProfilePage() {
+   const Major = [
+      { value: "informatics", label: "Informatics" },
+      { value: "information System", label: "Information System" },
+      {
+         value: "visual communication design",
+         label: "Visual Communication Design",
+      },
+      { value: "interior design", label: "Interior Design" },
+   ];
+
+   const Batch = [
+      { value: "2023", label: "2023" },
+      { value: "2022", label: "2022" },
+      { value: "2021", label: "2021" },
+   ];
    return (
-      <div className="grid grid-cols-1 gap-5 lg:grid-cols-2 p-4">
+      <div className="grid grid-cols-1 gap-5 p-4 lg:grid-cols-2">
          <div>
-            <div className="rounded-lg bg-white">
+            <div className="rounded-lg bg-white border-[#CBCBCB] border">
                <div className="p-3">
                   <p className="text-[16px] font-[500]">Personal Information</p>
                </div>
@@ -13,49 +31,49 @@ export default async function DashboardProfilePage() {
                <div className="space-y-4 p-3">
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                      <Input
-                        type="text"
+                        htmlFor="full-name"
                         label="Full Name"
-                        htmlFor="full_name"
-                        placeholder="Nama mu"
+                        type="text"
+                        placeholder="Muhammad Ilham Pratama"
                      />
                      <Input
-                        type="text"
-                        label="Full Name"
-                        htmlFor="full_name"
-                        placeholder="Nama mu"
+                        htmlFor="phone-number"
+                        label="Phone Number"
+                        type="number"
+                        placeholder="0851"
                      />
                   </div>
                   <div>
                      <Input
-                        type="text"
-                        label="Full Name"
-                        htmlFor="full_name"
-                        placeholder="Nama mu"
+                        htmlFor="email-address"
+                        label="Email Address"
+                        type="email"
+                        placeholder="ipe@gmail.com"
                      />
                   </div>
                   <div>
-                     <Input
-                        type="text"
-                        label="Full Name"
-                        htmlFor="full_name"
-                        placeholder="Nama mu"
+                     <Selects
+                        htmlFor="major"
+                        label="Major"
+                        defaults={["informatics"]}
+                        options={Major}
                      />
                   </div>
                   <div>
-                     <Input
-                        type="text"
-                        label="Full Name"
-                        htmlFor="full_name"
-                        placeholder="Nama mu"
+                     <Selects
+                        htmlFor="batch"
+                        label="Batch"
+                        defaults={["2023"]}
+                        options={Batch}
                      />
                   </div>
-                  <div>
-                     <Input
-                        type="text"
-                        label="Full Name"
-                        htmlFor="full_name"
-                        placeholder="Nama mu"
-                     />
+                  <div className="mt-6 flex justify-end space-x-2">
+                     <Button className="border-[#02ABF3] px-8 py-2 text-[#02ABF3] hover:bg-[#02ABF3] hover:text-white">
+                        Cancel
+                     </Button>
+                     <Button className="border-[#02ABF3] bg-[#02ABF3] px-8 py-2 text-white hover:bg-white hover:text-[#02ABF3]">
+                        Save
+                     </Button>
                   </div>
                </div>
             </div>
@@ -66,20 +84,62 @@ export default async function DashboardProfilePage() {
                   <p className="text-[16px] font-[500]">Profile Photos</p>
                </div>
                <Seperator className="border-gray-100" />
-               <div className="space-y-4 p-3">
-                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                     <Input
-                        type="text"
-                        label="Full Name"
-                        htmlFor="full_name"
-                        placeholder="Nama mu"
-                     />
-                     <Input
-                        type="text"
-                        label="Full Name"
-                        htmlFor="full_name"
-                        placeholder="Nama mu"
-                     />
+               <div className="flex flex-col items-center">
+                  <div className="mb-4">
+                     <div className="relative grid grid-cols-2">
+                        <img
+                           src="https://source.unsplash.com/50x50/?portrait"
+                           alt=""
+                           className="h-12 w-12 rounded-full border"
+                        />
+                        <div className="mb-6">
+                           <Button>Edit your photo</Button>
+                           <Button className="text-red-500">Delete</Button>
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                     <label
+                        htmlFor="dropzone-file"
+                        className="mx-auto mt-2 flex w-full max-w-lg cursor-pointer flex-col items-center rounded-xl border-2 border-dashed border-gray-300 bg-white p-5 text-center dark:border-gray-700 dark:bg-gray-900"
+                     >
+                        <svg
+                           xmlns="http://www.w3.org/2000/svg"
+                           fill="none"
+                           viewBox="0 0 24 24"
+                           stroke-width="1.5"
+                           stroke="currentColor"
+                           className="h-8 w-8 text-gray-500 dark:text-gray-400"
+                        >
+                           <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z"
+                           />
+                        </svg>
+
+                        <h2 className="mt-1 font-medium tracking-wide text-gray-700 dark:text-gray-200">
+                           Add Profile Picture
+                        </h2>
+
+                        <p className="mt-2 text-xs tracking-wide text-gray-500 dark:text-gray-400">
+                           Upload or darg & drop your file SVG, PNG, or JPG.{" "}
+                        </p>
+
+                        <input
+                           id="dropzone-file"
+                           type="file"
+                           className="hidden"
+                        />
+                     </label>
+                  </div>
+                  <div className="mt-6 flex justify-end space-x-2">
+                     <Button className="border-[#02ABF3] px-8 py-2 text-[#02ABF3] hover:bg-[#02ABF3] hover:text-white">
+                        Cancel
+                     </Button>
+                     <Button className="border-[#02ABF3] bg-[#02ABF3] px-8 py-2 text-white hover:bg-white hover:text-[#02ABF3]">
+                        Save
+                     </Button>
                   </div>
                </div>
             </div>
