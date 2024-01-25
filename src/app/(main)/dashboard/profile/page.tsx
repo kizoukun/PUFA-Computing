@@ -23,12 +23,12 @@ export default async function DashboardProfilePage() {
    return (
       <div className="grid grid-cols-1 gap-5 p-4 lg:grid-cols-2">
          <div>
-            <div className="rounded-lg bg-white border-[#CBCBCB] border">
-               <div className="p-3">
+            <div className="rounded-lg bg-white border-[#CBCBCB] border shadow-lg">
+               <div className="mt-2 py-3 px-6">
                   <p className="text-[16px] font-[500]">Personal Information</p>
                </div>
                <Seperator className="border-gray-100" />
-               <div className="space-y-4 p-3">
+               <div className="space-y-6 mt-2 py-3 px-6 pb-6">
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                      <Input
                         htmlFor="full-name"
@@ -67,7 +67,7 @@ export default async function DashboardProfilePage() {
                         options={Batch}
                      />
                   </div>
-                  <div className="mt-6 flex justify-end space-x-2">
+                  <div className="mt-16 flex justify-end space-x-2">
                      <Button className="border-[#02ABF3] px-8 py-2 text-[#02ABF3] hover:bg-[#02ABF3] hover:text-white">
                         Cancel
                      </Button>
@@ -79,29 +79,31 @@ export default async function DashboardProfilePage() {
             </div>
          </div>
          <div>
-            <div className="rounded-lg bg-white">
-               <div className="p-3">
-                  <p className="text-[16px] font-[500]">Profile Photos</p>
+            <div className="rounded-lg bg-white border-[#CBCBCB] border shadow-lg">
+               <div className="mt-2 py-3 px-6">
+                  <p className="text-[16px] font-[500]">Profile Photo</p>
                </div>
                <Seperator className="border-gray-100" />
-               <div className="flex flex-col items-center">
+               <div className="p-6">
                   <div className="mb-4">
-                     <div className="relative grid grid-cols-2">
-                        <img
+                     <div className="flex gap-3">
+                        <div className="">
+                           <img
                            src="https://source.unsplash.com/50x50/?portrait"
                            alt=""
-                           className="h-12 w-12 rounded-full border"
-                        />
-                        <div className="mb-6">
-                           <Button>Edit your photo</Button>
-                           <Button className="text-red-500">Delete</Button>
+                           className="h-14 w-14 rounded-full"
+                           />
+                        </div>
+                        <div className="flex flex-col gap-1 items-start">
+                           <button className="font-medium">Edit your photo</button>
+                           <button className="font-light text-[0.9rem] text-gray-600">Delete</button>
                         </div>
                      </div>
                   </div>
                   <div>
                      <label
                         htmlFor="dropzone-file"
-                        className="mx-auto mt-2 flex w-full max-w-lg cursor-pointer flex-col items-center rounded-xl border-2 border-dashed border-[#02ABF3] bg-white p-5 text-center dark:border-gray-700 dark:bg-gray-900"
+                        className="mx-auto mt-2 flex w-full max-w-xl cursor-pointer flex-col items-center rounded-xl border-2 border-dashed border-[#02ABF3] bg-white p-16 text-center dark:border-gray-700 dark:bg-gray-900"
                      >
                         <svg
                            xmlns="http://www.w3.org/2000/svg"
