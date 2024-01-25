@@ -101,7 +101,7 @@ export default async function DashboardProfilePage() {
                   <div>
                      <label
                         htmlFor="dropzone-file"
-                        className="mx-auto mt-2 flex w-full max-w-lg cursor-pointer flex-col items-center rounded-xl border-2 border-dashed border-gray-300 bg-white p-5 text-center dark:border-gray-700 dark:bg-gray-900"
+                        className="mx-auto mt-2 flex w-full max-w-lg cursor-pointer flex-col items-center rounded-xl border-2 border-dashed border-[#02ABF3] bg-white p-5 text-center dark:border-gray-700 dark:bg-gray-900"
                      >
                         <svg
                            xmlns="http://www.w3.org/2000/svg"

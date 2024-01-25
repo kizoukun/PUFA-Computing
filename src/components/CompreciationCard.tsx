@@ -18,7 +18,7 @@ export default function CompreciationCard({
 }: CompreciationCardProps) {
   return (
     <section>
-      <article className="hover:animate-background rounded-xl border-2 border-[#AF95FF] p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s]">
+      <article className="rounded-xl border-2 border-[#AF95FF] p-0.5 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
         <div className="rounded-[10px] bg-white p-4 sm:p-6">
           <h3 className="mt-0.5 text-justify text-[23px] sm:text-[20px] font-semibold text-[#353535]">
             {title}

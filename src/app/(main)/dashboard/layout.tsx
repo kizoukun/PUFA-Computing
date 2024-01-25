@@ -118,7 +118,7 @@ export default async function DashboardLayout({
          <aside className="fixed bottom-0 left-0 top-0 mt-[100px] h-screen min-w-[200px] overflow-y-auto bg-white">
             <div className="p-3">
                <p className="text-lg font-bold">Dashboard</p>
-               <div className="mt-4 space-y-3">
+               <div className="mt-4 space-y-6">
                   {LINKS.map((link, index) => (
                      <Link
                         key={index}

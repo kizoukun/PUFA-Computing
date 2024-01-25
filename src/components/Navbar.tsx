@@ -8,9 +8,9 @@ export default function Navbar() {
 
    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-   const NavbarDropdownItems = [
+   const NavbarOthers = [
       {
-         title: "Information",
+         title: "Others",
          items: [
             {
                title: "About Us",
@@ -27,6 +27,31 @@ export default function Navbar() {
          ],
       },
    ];
+
+   const NavbarPuma = [
+      {
+         title: "PUMA",
+         items: [
+            {
+               title: "PUMA Informatics",
+               href: "/puma-informatics",
+            },
+            {
+               title: "PUMA IS",
+               href: "/puma-is",
+            },
+            {
+               title: "PUMA ID",
+               href: "/puma-id",
+            },
+            {
+               title: "PUMA VCD",
+               href: "/puma-vcd",
+            },
+         ],
+      },
+   ];
+
    return (
       <header className="sticky top-0 z-50 bg-white shadow-md">
          <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -63,10 +88,7 @@ export default function Navbar() {
                            <Link href="/news">News</Link>
                         </li>
 
-                        <li>
-                           <Link href="/merch">Merch</Link>
-                        </li>
-                        {NavbarDropdownItems.map((item) => (
+                        {NavbarPuma.map((item) => (
                            <NavbarDropdown
                               title={item.title}
                               items={item.items}
@@ -74,9 +96,13 @@ export default function Navbar() {
                            />
                         ))}
 
-                        <li>
-                           <Link href="/contact">Contact</Link>
-                        </li>
+                        {NavbarOthers.map((item) => (
+                           <NavbarDropdown
+                              title={item.title}
+                              items={item.items}
+                              key={item.title}
+                           />
+                        ))}
                      </ul>
                   </nav>
                </div>
