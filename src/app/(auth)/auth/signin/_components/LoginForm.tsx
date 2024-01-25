@@ -4,6 +4,10 @@ import { Login } from "@/services/api/auth";
 import Swal from "sweetalert2";
 import { AxiosError } from "axios";
 
+interface LoginFormProps {
+   onLoginSuccess: (access_token: string, userId: string) => void;
+}
+
 type ErrorResponse = {
    success: boolean;
    message: string;
@@ -27,17 +31,22 @@ export default function LoginForm() {
       setError("");
 
       if (!isEmailValid(username)) {
-         Swal.fire({
+         await Swal.fire({
             icon: "error",
             title: "Invalid Email",
             text: "Please enter a valid email address",
-          });
+         });
           return;
       }
 
       try {
-         const result = await Login(username, password);
-         // handle successful login
+         const response = await Login(username, password);
+
+         if (response.data.success) {
+            successLogin(response.data);
+         } else {
+            setError(response.data.message || "test");
+         }
       } catch (error: any) {
          if (error instanceof AxiosError) {
             if (error.code === "ERR_NETWORK") {
@@ -52,6 +61,21 @@ export default function LoginForm() {
          }
       }
    };
+
+   const successLogin = (data: any) => {
+      const access_token = data?.data?.attributes?.access_token;
+      const userId = data?.user_id;
+
+      if (!access_token || !userId) {
+         setError("Failed to Login");
+         return;
+      }
+
+      localStorage.setItem("access_token", access_token);
+      localStorage.setItem("userId", userId);
+      window.location.href = "/";
+   }
+
    return (
       <form onSubmit={(e) => e.preventDefault}>
          <div className="relative mt-8 flex items-center">
