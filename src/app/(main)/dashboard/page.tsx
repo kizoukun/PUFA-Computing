@@ -1,7 +1,20 @@
-import React from 'react'
+"use client"
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
-export default function page() {
+const Page = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    // Redirect to /profile when the component mounts
+    router.push('/dashboard/profile');
+  }, [router]);
+
   return (
-    <div>page</div>
-  )
-}
+    <div>
+      
+    </div>
+  );
+};
+
+export default Page;
