@@ -1,11 +1,10 @@
 import axios from "axios";
-
-const API_URL = "http://api.dev.irfansaf.com/api/v1/user";
+import { API_USER } from "@/config/config";
 
 // User
 export async function GetUserProfile() {
    try {
-      const response = await axios.get(`${API_URL}/:id`);
+      const response = await axios.get(`${API_USER}/:id`);
       return response.data;
    } catch (error) {
       console.log(error);
@@ -15,7 +14,7 @@ export async function GetUserProfile() {
 
 export async function UpdateUserProfile() {
    try {
-      const response = await axios.put(`${API_URL}/user/update`);
+      const response = await axios.put(`${API_USER}/update`);
       return response.data;
    } catch (error) {
       console.log(error);
@@ -25,7 +24,7 @@ export async function UpdateUserProfile() {
 
 export async function DeleteUserProfile() {
    try {
-      const response = await axios.delete(`${API_URL}/user/delete`);
+      const response = await axios.delete(`${API_USER}/delete`);
       return response.data;
    } catch (error) {
       console.log(error);
@@ -35,7 +34,7 @@ export async function DeleteUserProfile() {
 
 export async function Logout() {
    try {
-      const response = await axios.post(`${API_URL}/logout`);
+      const response = await axios.post(`${API_USER}`);
       return response.data;
    } catch (error) {
       console.log(error);
@@ -46,7 +45,7 @@ export async function Logout() {
 // Admin
 export async function GetUser() {
    try {
-      const response = await axios.get(`${API_URL}/user`);
+      const response = await axios.get(`${API_USER}`);
       return response.data;
    } catch (error) {
       console.log(error);

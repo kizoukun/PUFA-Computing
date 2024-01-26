@@ -1,11 +1,11 @@
 import axios from "axios";
 import Event from "../../models/event";
+import { API_EVENT } from "@/config/config";
 
 /**
  * The base URL of the API endpoint for events.
  * @type {string}
  */
-const API_URL = "http://api.dev.irfansaf.com/event/";
 
 /**
  * Fetches a list of events from the specified API endpoint.
@@ -16,10 +16,10 @@ const API_URL = "http://api.dev.irfansaf.com/event/";
 export const fetchEvents = async (): Promise<Event[]> => {
    try {
       // Make a GET request to the API endpoint.
-      const response = await axios.get(API_URL);
+      const response = await axios.get(API_EVENT);
 
       // Extract event data from the response.
-      const eventData = response.data?.data?.attributes || [];
+      const eventData = response.data?.events || [];
 
       // Return the array of Event objects.
       return eventData as Event[];

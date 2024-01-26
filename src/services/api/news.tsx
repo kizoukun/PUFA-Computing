@@ -1,11 +1,10 @@
 import axios from "axios";
 import News from "../../models/news";
-
-const API_URL = "http://api.dev.irfansaf.com/news/";
+import { API_NEWS } from "@/config/config";
 
 export const fetchNews = async (): Promise<News[]> => {
    try {
-      const response = await axios.get(API_URL);
+      const response = await axios.get(API_NEWS);
       const newsData = response.data?.data?.attributes || [];
       return newsData as News[];
    } catch (error) {
