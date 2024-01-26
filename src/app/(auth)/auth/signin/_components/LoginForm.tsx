@@ -27,53 +27,49 @@ export default function LoginForm() {
    };
 
    const handleLogin = async (e: React.FormEvent) => {
-      e.preventDefault();
-      setError("");
-
-      if (!isEmailValid(username)) {
-         await Swal.fire({
-            icon: "error",
-            title: "Invalid Email",
-            text: "Please enter a valid email address",
-         });
-          return;
-      }
-
       try {
+         e.preventDefault();
+         if (!isEmailValid(username)) {
+            setError("Please enter a valid email address");
+            return;
+         }
+
          const response = await Login(username, password);
 
-         if (response.data.success) {
-            successLogin(response.data);
-         } else {
-            setError(response.data.message || "test");
-         }
-      } catch (error: any) {
-         if (error instanceof AxiosError) {
-            if (error.code === "ERR_NETWORK") {
-               setError("Network Error");
-               return;
+         if (response.status === 200) {
+            const data = await response.json();
+            console.log(data);
+
+            if(data.success) {
+               successLogin(data);
+            } else {
+               setError(data.message);
             }
-            const errorResponse = error?.response?.data as ErrorResponse;
-            if (!errorResponse.success)
-               setError(errorResponse.message ?? "Failed to Login");
          } else {
-            setError("Login failed");
+            setError(`Failed to Login: ${response.statusText}`);
+         }
+      } catch (error) {
+         const err = error as AxiosError<ErrorResponse>;
+         if (err.response) {
+            setError(err.response.data.message);
+         } else {
+            setError(err.message);
          }
       }
-   };
+   }
 
    const successLogin = (data: any) => {
-      const access_token = data?.data?.attributes?.access_token;
-      const userId = data?.user_id;
-
-      if (!access_token || !userId) {
-         setError("Failed to Login");
-         return;
-      }
-
-      localStorage.setItem("access_token", access_token);
-      localStorage.setItem("userId", userId);
-      window.location.href = "/";
+      Swal.fire({
+         icon: "success",
+         title: "Login Success",
+         text: "You are now logged in",
+         showConfirmButton: false,
+         timer: 2000,
+      }).then(() => {
+         localStorage.setItem("access_token", data.data.attributes.access_token);
+         localStorage.setItem("userId", data.data.userId);
+         window.location.href = "/dashboard";
+      });
    }
 
    return (

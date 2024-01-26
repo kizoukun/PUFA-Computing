@@ -1,18 +1,54 @@
-import axios, { AxiosResponse } from "axios";
-import User from "../../models/user";
-
 import { API_LOGIN } from "@/config/config";
-import { API_REGISTER } from "@/config/config";
 
-export async function Login(username: string, password: string): Promise<AxiosResponse> {
-   return axios.post(`${API_LOGIN}`, {
-      username,
-      password,
+const setAuthHeader = () => {
+   const token = localStorage.getItem("access_token");
+   if (token) {
+      return { Authorization: `Bearer ${token}` };
+   }
+   return {};
+}
+
+export async function Login(
+   username: string,
+   password: string
+): Promise<Response> {
+   setAuthHeader();
+   return fetch(API_LOGIN, {
+      method: "POST",
+      headers: {
+         "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+         username,
+         password,
+      }),
    });
 }
 
-export async function Register(user: User): Promise<AxiosResponse> {
-   return axios.post(`${API_REGISTER}`, {
-      user,
+export async function Logout(): Promise<Response> {
+   return fetch(API_LOGIN, {
+      method: "DELETE",
+      headers: {
+         "Content-Type": "application/json",
+      },
+   });
+}
+
+export async function Register(
+   username: string,
+   password: string,
+   email: string
+): Promise<Response> {
+   setAuthHeader();
+   return fetch(API_LOGIN, {
+      method: "POST",
+      headers: {
+         "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+         username,
+         password,
+         email,
+      }),
    });
 }
