@@ -27,7 +27,7 @@ export default function EventDetails({
             <div className="grid gap-4 rounded-xl border border-[#CBCBCB] p-2">
                <h1 className="text-md font-semibold lg:text-2xl">{title}</h1>
                <div>
-                  <p className="text-justify">{content}</p>
+                  {content.split("\n").map(text => <p className="text-justify">{text}<br/></p>)}
                </div>
                <div className="flex items-center justify-center">
                   <Button className="border-[#353535] w-5/6 py-2 text-[#353535] hover:bg-[#353535] hover:text-white">

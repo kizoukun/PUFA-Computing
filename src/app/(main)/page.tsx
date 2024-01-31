@@ -10,8 +10,12 @@ import VCDStudyProgCard from "@/components/VCDStudyProgCard";
 import CardStore from "@/components/store/CardStore";
 import EventSection from "@/components/event/EventSection";
 import CompreciationCard from "@/components/CompreciationCard";
+import { fetchNews } from "@/services/api/news";
+
 
 export default async function Index() {
+   const events = await fetchNews();
+
    return (
       <div className="min-h-screen">
          <div>
@@ -146,6 +150,7 @@ export default async function Index() {
             </button>
          </section>
          {/* end */}
+         
 
          {/* event */}
 

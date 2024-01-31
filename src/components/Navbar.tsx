@@ -1,12 +1,14 @@
 "use client"
 
 import Link from "next/link";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import NavbarDropdown from "./NavbarDropdown";
+import { access } from "fs";
 
 export default function Navbar() {
 
    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+   const [isLoggedIn, setIsLogggedIn] = useState(false)
 
    const NavbarOthers = [
       {
@@ -51,6 +53,19 @@ export default function Navbar() {
          ],
       },
    ];
+
+   useEffect (() => {
+      const userToken = localStorage.getItem('access_token');
+      setIsLogggedIn(!!userToken);
+   }, []);
+
+   const handleLogout = () => {
+      
+      localStorage.removeItem('access_token');
+      localStorage.removeItem('userId');
+      setIsLogggedIn(false);
+      
+    };
 
    return (
       <header className="sticky top-0 z-50 bg-white shadow-md">
@@ -108,24 +123,39 @@ export default function Navbar() {
                </div>
 
                <div className="flex items-center gap-4">
-                  <div className="sm:flex sm:gap-4">
-                     <Link
-                        className="block rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5"
-                        href="/auth/signin"
-                     >
-                        Sign in
-                     </Link>
+               <div className="sm:flex sm:gap-4">
+                     {/* Conditionally render "Sign in" and "Sign up" buttons or user icon */}
+                     {isLoggedIn ? (
+                        <div className="flex items-center gap-4">
+                           {/* Add your user icon component here */}
 
-                     <div className="hidden sm:flex">
-                        <Link
-                           className={`block rounded-md border-2 border-[#0C8CE9] bg-[#0C8CE9] px-5 py-2.5 text-sm font-medium text-white duration-300 hover:bg-white hover:text-black`}
-                           href="/auth/signup"
-                        >
-                           Sign up
-                        </Link>
-                     </div>
+                           <button
+                              onClick={handleLogout}
+                              className="block rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5"
+                           >
+                              Logout
+                           </button>
+                        </div>
+                     ) : (
+                        <div className="hidden sm:flex">
+                           <Link
+                              className="block rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5"
+                              href="/auth/signin"
+                           >
+                              Sign in
+                           </Link>
+
+                           <Link
+                              className={`block rounded-md border-2 border-[#0C8CE9] bg-[#0C8CE9] px-5 py-2.5 text-sm font-medium text-white duration-300 hover:bg-white hover:text-black`}
+                              href="/auth/signup"
+                           >
+                              Sign up
+                           </Link>
+                        </div>
+                     )}
                   </div>
-
+                  
+                  {/* Mobile view  */}
                   <div className="block md:hidden">
                      <button className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
                         <svg

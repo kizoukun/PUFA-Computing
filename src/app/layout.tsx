@@ -1,4 +1,3 @@
-import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { Poppins } from "next/font/google";
@@ -22,7 +21,6 @@ export default function RootLayout({
    return (
       <html lang="en">
          <body className={poppins.className}>
-            <NextTopLoader height={3} showSpinner={false} />
             {children}
          </body>
       </html>
