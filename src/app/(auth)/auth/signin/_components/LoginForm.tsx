@@ -40,13 +40,19 @@ export default function LoginForm() {
       }
 
       try {
-         const response = await Login(username, password);
+         // const response = await Login(username, password);
 
-         if (response.data.success) {
-            successLogin(response.data);
-         } else {
-            setError(response.data.message || "test");
-         }
+         // if (response.data.success) {
+         //    successLogin(response.data);
+         // } else {
+         //    setError(response.data.message || "test");
+         // }
+
+         //fake login until api finish
+         localStorage.setItem("access_token","123")
+         localStorage.setItem("userId","2")
+         window.location.href = "/";
+
       } catch (error: any) {
          if (error instanceof AxiosError) {
             if (error.code === "ERR_NETWORK") {

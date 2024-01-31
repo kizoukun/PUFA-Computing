@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://api.dev.irfansaf.com/api/v1/user";
+const API_URL = "http://api.irfansaf.com/api/v1/user";
 
 // User
 export async function GetUserProfile() {

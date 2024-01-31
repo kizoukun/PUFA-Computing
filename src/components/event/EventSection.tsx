@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { fetchEvents } from "@/services/api/event";
 import Link from "next/link";
 import Button from "@/components/Button";
@@ -17,7 +17,7 @@ export default async function EventSection() {
 
          {/* button */}
          <div className="mt-4 flex items-center justify-center">
-            <Link href="/" className="block w-max">
+            <Link href="/events" className="block w-max">
                <Button className="border-[#E50D0D] px-10 py-2 text-[#E50D0D] hover:bg-[#E50D0D] hover:text-white">
                   See all Events
                </Button>
