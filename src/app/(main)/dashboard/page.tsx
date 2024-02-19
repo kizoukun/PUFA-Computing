@@ -6,7 +6,7 @@ const Page = () => {
   const router = useRouter();
 
   useEffect(() => {
-    // Redirect to /profile when the component mounts
+    
     router.push('/dashboard/profile');
   }, [router]);
 

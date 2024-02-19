@@ -33,20 +33,26 @@ export default function LoginForm() {
             setError("Please enter a valid email address");
             return;
          }
-
+   
          const response = await Login(username, password);
-
+   
          if (response.status === 200) {
             const data = await response.json();
             console.log(data);
-
-            if(data.success) {
+   
+            if (data.success) {
                successLogin(data);
             } else {
                setError(data.message);
             }
          } else {
-            setError(`Failed to Login: ${response.statusText}`);
+            const data = await response.json();
+            if (response.status === 404 || data.message === "no rows in result set") {
+               // User account not found
+               showAccountNotFoundAlert();
+            } else {
+               setError(`Failed to Login: ${data.message || response.statusText}`);
+            }
          }
       } catch (error) {
          const err = error as AxiosError<ErrorResponse>;
@@ -57,8 +63,18 @@ export default function LoginForm() {
          }
       }
    }
+   
+   const showAccountNotFoundAlert = () => {
+      Swal.fire({
+         icon: "error",
+         title: "Account Not Found",
+         text: "The provided email address and password combination does not match any existing account.",
+      });
+   }
+   
+   
 
-   const successLogin = (data: any) => {
+   const successLogin = (access: any) => {
       Swal.fire({
          icon: "success",
          title: "Login Success",
@@ -66,9 +82,9 @@ export default function LoginForm() {
          showConfirmButton: false,
          timer: 2000,
       }).then(() => {
-         localStorage.setItem("access_token", data.data.attributes.access_token);
-         localStorage.setItem("userId", data.data.userId);
-         window.location.href = "/dashboard";
+         localStorage.setItem("access_token", access.data.attributes.access_token);
+         localStorage.setItem("userId", access.data.userId);
+         window.location.href = "/dashboard/profile";
       });
    }
 

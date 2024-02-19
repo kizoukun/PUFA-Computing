@@ -1,10 +1,30 @@
+"use client";
+import { access } from "fs";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
-export default async function DashboardLayout({
+export default function DashboardLayout({
    children,
 }: {
    children: React.ReactNode;
 }) {
+   const router = useRouter();
+const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+useEffect(() => {
+   const userToken = localStorage.getItem("access_token");
+   setIsLoggedIn(!!userToken);
+
+   if (!isLoggedIn) {
+      // Redirect to login page if not logged in
+      router.push("/auth/signin");
+   } else {
+      // User is logged in, redirect to profile page
+      router.push("/dashboard/profile");
+   }
+}, [isLoggedIn, router]);
+
    const LINKS = [
       {
          name: "Profile",
