@@ -51,7 +51,7 @@ export default function page() {
                <div className="flex flex-col gap-2 mb-6">
                   <h1 className="text-[1.1rem] font-bold">Message:</h1>
                   <p className="text-[0.9rem]">Anything else you want to let us know:</p>
-                  <textarea name="" id="" cols="30" rows="10" noresize className="rounded-lg border-2 p-2 resize-none"></textarea>
+                  {/* <textarea name="" id="" cols="30" rows="10" noresize className="rounded-lg border-2 p-2 resize-none"></textarea> */}
                </div>
 
                <button className="flex self-center rounded-lg py-6 px-[16rem] border-2 border-gray-300 shadow-sm hover:bg-[#0C8CE9] hover:text-white transition-all duration-300 hover:border-white">Submit</button>
@@ -70,8 +70,6 @@ export default function page() {
                   <AspirationCard/>
                   <AspirationCard/>
                   <AspirationCard/>
-
-                  
 
                </div>
             </div>
