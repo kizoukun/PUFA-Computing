@@ -29,25 +29,29 @@ export default function Navbar() {
       },
    ];
 
-   const NavbarPuma = [
+   const NavbarOrganizations = [
       {
-         title: "PUMA",
+         title: "Organizations",
          items: [
             {
+               title: "PUFA Computing",
+               href: "/organizations/pufa-computing",
+            },
+            {
                title: "PUMA Informatics",
-               href: "/puma-informatics",
+               href: "/organizations/puma-informatics",
             },
             {
                title: "PUMA IS",
-               href: "/puma-is",
+               href: "/organizations/puma-is",
             },
             {
                title: "PUMA ID",
-               href: "/puma-id",
+               href: "/organizations/puma-id",
             },
             {
                title: "PUMA VCD",
-               href: "/puma-vcd",
+               href: "/organizations/puma-vcd",
             },
          ],
       },
@@ -103,7 +107,7 @@ export default function Navbar() {
                            <Link href="/news">News</Link>
                         </li>
 
-                        {NavbarPuma.map((item) => (
+                        {NavbarOrganizations.map((item) => (
                            <NavbarDropdown
                               title={item.title}
                               items={item.items}
