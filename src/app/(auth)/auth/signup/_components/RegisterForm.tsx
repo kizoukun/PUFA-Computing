@@ -4,6 +4,7 @@ import { Register } from "@/services/api/auth";
 import Swal from "sweetalert2";
 import { AxiosError, AxiosResponse } from "axios";
 import User from "@/models/user";
+import Seperator from "@/components/Seperator";
 
 // Type for error response
 type ErrorResponse = {
@@ -15,7 +16,7 @@ type ErrorResponse = {
 // RegisterForm component
 export default function RegisterForm() {
    // State variables
-   const [selectedRole, setSelectedRole] = useState("Student");
+   const [SelectedRole, setSelectedRole] = useState("Student");
    const [error, setError] = useState("");
 
    // validation/regex
@@ -35,12 +36,12 @@ export default function RegisterForm() {
    };
 
    // Event handler for role change
-   const handleRoleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+   const HandleRoleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       setSelectedRole(e.target.value);
    };
 
    // Event handler for registration
-   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
+   const HandleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
       const formData = new FormData(e.target as HTMLFormElement);
@@ -85,15 +86,15 @@ export default function RegisterForm() {
             email,
             password: formData.get("password") as string,
             student_id:
-               selectedRole === "Student"
+               SelectedRole === "computing"
                   ? (formData.get("studentId") as string)
                   : undefined,
             year:
-               selectedRole === "Student"
+               SelectedRole === "computing"
                   ? (formData.get("batch") as string)
                   : undefined,
             institution:
-               selectedRole === "Institution"
+               SelectedRole === "Institution"
                   ? (formData.get("institution") as string)
                   : undefined,
          };
@@ -110,9 +111,9 @@ export default function RegisterForm() {
                setError("Network Error");
                return;
             }
-            const errorResponse = error?.response?.data as ErrorResponse;
-            if (!errorResponse.success)
-               setError(errorResponse.message ?? "Failed to Register");
+            const ErrorResponse = error?.response?.data as ErrorResponse;
+            if (!ErrorResponse.success)
+               setError(ErrorResponse.message ?? "Failed to Register");
          } else {
             setError("Register failed");
          }
@@ -120,83 +121,82 @@ export default function RegisterForm() {
    };
 
    return (
+      <section className="mx-auto max-w-6xl rounded-md bg-white bg-opacity-40 p-6 shadow-md">
+   <div>
+      <div className="flex flex-col md:flex-row items-center justify-between">
+         <div className="mb-4 md:mb-0 md:mr-10 text-[#353535]">
+            <p className="text-base font-normal md:text-lg text-center md:text-left">
+               Hello, Computizens!
+            </p>
+            <p className="text-lg font-semibold md:text-lg">
+               Let’s Create an Account
+            </p>
+         </div>
+         <div className="flex space-x-2">
+            <img
+               src="../logo/PUFA_Computing.png"
+               alt="PUFA Computing Logo"
+               className="h-12 w-12 md:h-16 md:w-16"
+            />
+            <img
+               src="../PU.png"
+               alt="PU Logo"
+               className="h-12 w-12 md:h-16 md:w-16"
+            />
+         </div>
+      </div>
+      <div className="my-4">
+         <div className="border-[#D1D5DB] border-t"></div>
+      </div>
+   </div>
+   <form onSubmit={HandleRegister} className="w-full max-w-md">
+      {/* Name */}
+      <div className="mb-4 md:flex md:space-x-2">
+         <div className="md:w-1/2">
+            <input
+               type="text"
+               className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
+               placeholder="Ilham"
+               name="firstName"
+               required
+            />
+         </div>
+         <div className="md:w-1/2">
+            <input
+               type="text"
+               className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
+               placeholder="Pratama"
+               name="lastName"
+               required
+            />
+         </div>
+      </div>
+
+      {/* Email */}
+      <div className="mb-4">
+         <input
+            type="text"
+            className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
+            placeholder="ilhampratama@example.com"
+            name="email"
+            required
+         />
+      </div>
+
+      {/* Password */}
+      <div className="mb-4">
+         <input
+            type="password"
+            className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
+            placeholder="password"
+            name="password"
+            required
+         />
+      </div>
+
       <div>
-         <form onSubmit={handleRegister} className="w-full max-w-md">
-            {/* Name */}
-            <div className="relative mt-8 flex items-center gap-2">
-               <div>
-                  <label
-                     htmlFor="firstName"
-                     className="block text-left capitalize text-white "
-                  >
-                     {" "}
-                     first name
-                  </label>
-                  <input
-                     type="text"
-                     className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
-                     placeholder="Ilham"
-                     name="firstName"
-                     required
-                  />
-               </div>
-               <div>
-                  <label
-                     htmlFor="lastName"
-                     className="capitalilze block text-left text-white"
-                  >
-                     last name
-                  </label>
-                  <input
-                     type="text"
-                     className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
-                     placeholder="Pratama"
-                     name="lastName"
-                     required
-                  />
-               </div>
-            </div>
-
-            {/* Email */}
-            <div className="mt-2">
-               <label htmlFor="email" className="block text-left text-white ">
-                  Email
-               </label>
-               <input
-                  type="text"
-                  className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
-                  placeholder="ilhampratama@example.com"
-                  name="email"
-                  required
-               />
-            </div>
-
-            {/* Password */}
-            <div className="mt-2">
-               <label
-                  htmlFor="password"
-                  className="block text-left text-white "
-               >
-                  Password
-               </label>
-               <input
-                  type="password"
-                  className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
-                  placeholder="password"
-                  name="password"
-                  required
-               />
-            </div>
-
-            <div>
                {/* Choose */}
                <div className="mt-2">
-                  <label
-                     htmlFor="password"
-                     className="block text-left capitalize text-white"
-                  >
-                     Choose your role
-                  </label>
                   <div className="relative mt-4 flex items-center justify-center gap-2">
                      <div className="flex-grow">
                         <input
@@ -205,8 +205,8 @@ export default function RegisterForm() {
                            value="Student"
                            id="Student"
                            className="peer hidden"
-                           checked={selectedRole === "Student"}
-                           onChange={handleRoleChange}
+                           checked={SelectedRole === "Student"}
+                           onChange={HandleRoleChange}
                         />
                         <label
                            htmlFor="Student"
@@ -222,8 +222,8 @@ export default function RegisterForm() {
                            value="Institution"
                            id="Institution"
                            className="peer hidden"
-                           checked={selectedRole === "Institution"}
-                           onChange={handleRoleChange}
+                           checked={SelectedRole === "Institution"}
+                           onChange={HandleRoleChange}
                         />
                         <label
                            htmlFor="Institution"
@@ -236,19 +236,13 @@ export default function RegisterForm() {
                </div>
 
                {/* Student ID */}
-               {selectedRole === "Student" && (
+               {SelectedRole === "Student" && (
                   <div className="mt-2">
-                     <label
-                        htmlFor="studentId"
-                        className="block text-left text-white"
-                     >
-                        Student ID
-                     </label>
                      <input
                         type="text"
                         inputMode="numeric"
                         className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
-                        placeholder="0110333333"
+                        placeholder="Student ID"
                         name="studentId"
                         required
                      />
@@ -256,18 +250,12 @@ export default function RegisterForm() {
                )}
 
                {/* Batch */}
-               {selectedRole === "Student" && (
+               {SelectedRole === "Student" && (
                   <div className="mt-2">
-                     <label
-                        htmlFor="Batch"
-                        className="block text-left text-white"
-                     >
-                        Batch
-                     </label>
                      <input
                         type="number"
                         className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
-                        placeholder="2024"
+                        placeholder="Batch"
                         name="batch"
                         required
                      />
@@ -277,7 +265,7 @@ export default function RegisterForm() {
 
             {/* Institution */}
             <div>
-               {selectedRole != "Student" && (
+               {SelectedRole != "Student" && (
                   <div className="mt-2">
                      <label
                         htmlFor="institution"
@@ -298,16 +286,17 @@ export default function RegisterForm() {
                )}
             </div>
 
-            <div className="mt-6">
-               {error && <p className="my-2 text-red-500">{error}</p>}
-               <button
-                  type="submit"
-                  className="w-full transform rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-300 hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
-               >
-                  Register
-               </button>
-            </div>
-         </form>
+      <div className="mt-6">
+         {error && <p className="my-2 text-red-500">{error}</p>}
+         <button
+            type="submit"
+            className="w-full transform rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-300 hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+         >
+            Register
+         </button>
       </div>
+   </form>
+</section>
+
    );
 }
