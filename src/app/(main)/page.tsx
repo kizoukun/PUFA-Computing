@@ -89,6 +89,7 @@ export default async function Index() {
                   article="Informatics study program that will produce qualified
                graduates in the field of educators who are experts in
                Informatics."
+                  link=""
                />
                <StudyProgCard
                   title="Interior Design"
@@ -124,7 +125,7 @@ export default async function Index() {
                   />
                </div>
                {/* cabinet content */}
-               <div className="mb-5 h-[20rem] rounded-xl border-2  border-[#1FA820] bg-white p-0.5 sm:p-6 md:col-span-4 md:mt-0 md:flex md:px-10">
+               <div className="mb-0 h-[20rem] rounded-xl border-2  border-[#1FA820] bg-white p-0.5 sm:p-6 md:col-span-4 md:mt-0 md:flex md:px-10">
                   <div className="px-10 py-10 text-[#353535] md:flex md:flex-col md:justify-center md:py-5">
                      <div className="flex gap-5 md:gap-5">
                         <p className="mt-0.5 text-left text-2xl font-bold text-[#353535]">
