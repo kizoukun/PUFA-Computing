@@ -1,5 +1,6 @@
 import Image from "next/image";
 import BGImage from "@/assets/backgroundimg.png";
+import AnagataLogo from "@/assets/anagatalogo.jpeg";
 import Link from "next/link";
 import Button from "@/components/Button";
 import Faq from "@/components/Faq";
@@ -11,7 +12,6 @@ import CardStore from "@/components/store/CardStore";
 import EventSection from "@/components/event/EventSection";
 import CompreciationCard from "@/components/CompreciationCard";
 import { fetchNews } from "@/services/api/news";
-
 
 export default async function Index() {
    const events = await fetchNews();
@@ -26,6 +26,7 @@ export default async function Index() {
                height="0"
                sizes="100vw"
                className="h-auto w-full"
+               priority={true}
             />
          </div>
          <section
@@ -33,7 +34,7 @@ export default async function Index() {
             className="container mx-auto -mt-24 sm:-mt-32 md:-mt-48 lg:-mt-64 xl:-mt-96"
          >
             <img
-               className="mx-auto my-5 aspect-video h-96 rounded-2xl"
+               className="mx-auto my-5 aspect-video h-48 md:h-96 rounded-2xl"
                src="../member.jpg"
                alt="PUMA Photo"
             />
@@ -115,10 +116,13 @@ export default async function Index() {
             <div className="grid grid-cols-1 gap-16 md:grid-cols-6 md:gap-5 md:py-[6rem]">
                {/* logo anagata */}
                <div className="mt-5 aspect-square h-[20rem] rounded-xl p-1 shadow-lg md:col-span-2 md:mt-0">
-                  <img
-                     className=" mx-auto object-cover"
-                     src="../anagatalogo.jpeg"
+                  <Image
+                     className=" mx-auto object-cover "
+                     src={AnagataLogo}
+                     width="0"
+                     height="0"
                      alt="PUMA Photo"
+                     loading="lazy"
                   />
                </div>
                {/* cabinet content */}
@@ -146,12 +150,13 @@ export default async function Index() {
                </div>
             </div>
             {/* button kthx */}
-            <button className="rounded-xl border-2 border-[#1FA820] px-10 py-3 text-[#1FA820] transition duration-300 ease-in-out hover:bg-[#1FA820] hover:text-white">
-               See Our Cabinet
-            </button>
+            <Link href="/" className="flex justify-center">
+               <Button className="border-[#1FA820] px-10 py-2 text-[#1FA820] hover:bg-[#1FA820] hover:text-white">
+                  See all News
+               </Button>
+            </Link>
          </section>
          {/* end */}
-         
 
          {/* event */}
 
@@ -285,7 +290,7 @@ export default async function Index() {
             </h2>
             <h3 className="">Special merchandise for all Computizens</h3>
 
-            <div className="container mx-auto p-10 px-0 md:p-20 md:px-0 md:py-10">
+            <div className="container mx-auto p-10 md:p-20 md:py-10">
                <div className="flex justify-center">
                   <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
                      <CardStore
