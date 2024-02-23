@@ -27,7 +27,6 @@ export default function Footer() {
                      disabled
                      title="This feature is not available yet"
                   />
-
                   <button disabled title="This feature is not available yet" className="w-full transform rounded-lg border border-sky-500 text-sky-500 px-6 py-2.5 text-sm font-medium tracking-wider transition-colors duration-300 hover:bg-sky-500 hover:text-white focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-80 md:mx-4 md:w-auto disabled:opacity-50 cursor-not-allowed">
                      Subscribe
                   </button>

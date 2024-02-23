@@ -6,7 +6,7 @@ export default function NewsPage() {
    return (
       <div>
          {/* // title gray thingy */}
-         <section className="mx-auto max-w-7xl bg-gray-100 p-10">
+         <section className="mx-auto max-w-7xl bg-[#F2F2F2] p-10">
             <div className="flex flex-col border-l-4 border-[#FF6F22] pl-5">
                <h1 className="text-[2rem] font-black">Computing News</h1>
                <p className="text-[0.8rem]">
