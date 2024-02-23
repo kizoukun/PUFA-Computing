@@ -3,7 +3,7 @@ import { access } from "fs";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import Footer from "@/components/Footer";
+import { FiMenu, FiX} from "react-icons/fi";
 
 export default function DashboardLayout({
    children,
@@ -11,20 +11,24 @@ export default function DashboardLayout({
    children: React.ReactNode;
 }) {
    const router = useRouter();
-const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-useEffect(() => {
-   const userToken = localStorage.getItem("access_token");
-   setIsLoggedIn(!!userToken);
-
-   if (!isLoggedIn) {
-      // Redirect to login page if not logged in
-      router.push("/auth/signin");
-   } else {
-      // User is logged in, redirect to profile page
-      router.push("/dashboard/profile");
+   const [isLoggedIn, setIsLoggedIn] = useState(false);
+   const [isMenuOpen, setIsMenuOpen] = useState(true);
+   const toggleMenu = () => {
+      setIsMenuOpen(!isMenuOpen);
    }
-}, [isLoggedIn, router]);
+
+   useEffect(() => {
+      const userToken = localStorage.getItem("access_token");
+      setIsLoggedIn(!!userToken);
+
+      if (!isLoggedIn) {
+         // Redirect to login page if not logged in
+         router.push("/auth/signin");
+      } else {
+         // User is logged in, redirect to profile page
+         router.push("/dashboard/profile");
+      }
+   }, [isLoggedIn, router]);
 
    const LINKS = [
       {
@@ -135,29 +139,39 @@ useEffect(() => {
    ];
 
    return (
-      <div>
-         <aside className="fixed bottom-0 left-0 top-0 mt-[100px] h-screen min-w-[200px] overflow-y-auto bg-white">
-            <div className="p-3">
+      <div className="flex h-screen">
+         {/* Sidebar */}
+         <aside
+            className={`fixed top-0 bottom-0 left-0 h-screen mt-[100px] min-w-[200px] overflow-w-auto w-64 bg-white shadow-lg z-10 ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out`}>
+            <div className="flex items-center justify-between p-3">
                <p className="text-lg font-bold">Dashboard</p>
-               <div className="mt-4 space-y-6">
-                  {LINKS.map((link, index) => (
-                     <Link
-                        key={index}
-                        className=" flex items-center text-[14px]"
-                        href={link.link}
-                     >
-                        {link.icon && <span className="mr-2">{link.icon}</span>}
-                        {link.name}
-                     </Link>
-                  ))}
-               </div>
+               {/* Toggle button beside the title */}
+            </div>
+            <div className="mt-4 space-y-6 ml-2">
+               {LINKS.map((link, index) => (
+                  <Link
+                     key={index}
+                     className=" flex items-center text-[14px]"
+                     href={link.link}
+                  >
+                     {link.icon && <span className="mr-2">{link.icon}</span>}
+                     {link.name}
+                  </Link>
+               ))}
             </div>
          </aside>
-         <main className="ml-[200px] p-3">{children}</main>
 
-         {/*exclude Footer component from the layout*/}
+         {/* Main content */}
+         <main className={`flex-1 overflow-y-auto p-4 transition-transform duration-300 ease-in-out ${isMenuOpen ? 'ml-64' : 'ml-0'}`}>
+            {children}
+         </main>
 
-
+         {/* Toggle button */}
+         <button className="fixed bottom-4 left-4 bg-sky-500 text-white p-2 rounded-full shadow-md z-30"
+                 onClick={toggleMenu}>
+            {isMenuOpen ? <FiX /> : <FiMenu />}
+         </button>
       </div>
+
    );
 }
