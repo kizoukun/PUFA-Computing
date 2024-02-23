@@ -5,6 +5,9 @@ import Button from "@/components/Button";
 import EventCardUpcoming from "@/components/event/EventCardUpcoming";
 import EventCardCompleted from "@/components/event/EventCardCompleted";
 
+export const revalidate = 0;
+export const dynamic = "force-dynamic";
+
 export default async function EventSection() {
    const events = await fetchEvents();
 

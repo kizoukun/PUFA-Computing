@@ -11,10 +11,12 @@ import VCDStudyProgCard from "@/components/VCDStudyProgCard";
 import CardStore from "@/components/store/CardStore";
 import EventSection from "@/components/event/EventSection";
 import CompreciationCard from "@/components/CompreciationCard";
-import { fetchNews } from "@/services/api/news";
+import { Suspense } from "react";
+
+export const revalidate = 3600;
+export const dynamic = "force-dynamic";
 
 export default async function Index() {
-   const events = await fetchNews();
 
    return (
       <div className="min-h-screen">
@@ -172,7 +174,9 @@ export default async function Index() {
             </h3>
 
             <div className="flex flex-col items-center justify-center gap-7 md:flex-row"></div>
-            <EventSection />
+				<Suspense fallback={<div>Loading...</div>}>
+            	<EventSection />
+				</Suspense>
          </section>
          {/* end */}
 

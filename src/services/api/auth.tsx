@@ -35,9 +35,8 @@ export async function Logout(): Promise<Response> {
 }
 
 export async function Register(
-   username: string,
-   password: string,
-   email: string
+   email: string,
+   password: string
 ): Promise<Response> {
    setAuthHeader();
    return fetch(API_LOGIN, {
@@ -46,7 +45,6 @@ export async function Register(
          "Content-Type": "application/json",
       },
       body: JSON.stringify({
-         username,
          password,
          email,
       }),

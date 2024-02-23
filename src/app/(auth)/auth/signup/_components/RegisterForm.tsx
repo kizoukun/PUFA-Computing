@@ -100,7 +100,7 @@ export default function RegisterForm() {
          };
 
          // Send registration request
-         const res: AxiosResponse = await Register(user);
+         const res: Response = await Register(user.email, user.password);
 
          // Handle the response or perform any necessary actions here
          console.log(res); // You can log the response or update your UI accordingly
