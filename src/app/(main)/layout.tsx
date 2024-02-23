@@ -6,6 +6,7 @@ export default async function MainLayout({
 }: {
    children: React.ReactNode;
 }) {
+
    return (
       <div className="scroll-smooth">
          <Navbar />
