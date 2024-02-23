@@ -22,11 +22,12 @@ export default function Footer() {
                   <input
                      id="email"
                      type="text"
-                     className="rounded-md border bg-white px-4 py-2 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 "
+                     className="rounded-md border bg-white px-4 py-2 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 disabled:opacity-50 cursor-not-allowed"
                      placeholder="Email Address"
+                     disabled
+                     title="This feature is not available yet"
                   />
-
-                  <button className="w-full transform rounded-lg border border-sky-500 text-sky-500 px-6 py-2.5 text-sm font-medium tracking-wider transition-colors duration-300 hover:bg-sky-500 hover:text-white focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-80 md:mx-4 md:w-auto">
+                  <button disabled title="This feature is not available yet" className="w-full transform rounded-lg border border-sky-500 text-sky-500 px-6 py-2.5 text-sm font-medium tracking-wider transition-colors duration-300 hover:bg-sky-500 hover:text-white focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-80 md:mx-4 md:w-auto disabled:opacity-50 cursor-not-allowed">
                      Subscribe
                   </button>
                </div>
@@ -59,10 +60,12 @@ export default function Footer() {
                         className="text-[#DADADA] transition-colors duration-300 hover:text-gray-500"
                      />
                   </Link>
-                  <FaGithub
-                     size={25}
-                     className="text-[#DADADA] transition-colors duration-300 hover:text-gray-500"
-                  />
+                  <Link href="https://github.com/PUFA-Computing">
+                     <FaGithub
+                        size={25}
+                        className="text-[#DADADA] transition-colors duration-300 hover:text-gray-500"
+                     />
+                  </Link>
                </div>
             </div>
          </div>
