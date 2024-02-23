@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { fetchEvents } from "@/services/api/event";
 import Link from "next/link";
 import Button from "@/components/Button";
@@ -10,6 +9,8 @@ export const dynamic = "force-dynamic";
 
 export default async function EventSection() {
    const events = await fetchEvents();
+
+	if(!events) return <div>Failed to fetch data...</div>
 
    return (
       <div className="">
