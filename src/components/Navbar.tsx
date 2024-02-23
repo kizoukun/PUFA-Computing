@@ -29,14 +29,10 @@ export default function Navbar() {
       },
    ];
 
-   const NavbarOrganizations = [
+   const NavbarPuma = [
       {
-         title: "Organizations",
+         title: "PUMA",
          items: [
-            {
-               title: "PUFA Computing",
-               href: "/organizations/pufa-computing",
-            },
             {
                title: "PUMA Informatics",
                href: "/organizations/puma-informatics",
@@ -107,7 +103,7 @@ export default function Navbar() {
                            <Link href="/news">News</Link>
                         </li>
 
-                        {NavbarOrganizations.map((item) => (
+                        {NavbarPuma.map((item) => (
                            <NavbarDropdown
                               title={item.title}
                               items={item.items}
