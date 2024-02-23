@@ -1,6 +1,6 @@
 import Image from "next/image";
 import BGImage from "@/assets/backgroundimg.png";
-import AnagataLogo from "@/assets/anagatalogo.jpeg";
+import AnagataLogo from "@/assets/anagatalogo.svg";
 import Link from "next/link";
 import Button from "@/components/Button";
 import Faq from "@/components/Faq";
@@ -26,7 +26,6 @@ export default async function Index() {
                height="0"
                sizes="100vw"
                className="h-auto w-full"
-               priority={true}
             />
          </div>
          <section
