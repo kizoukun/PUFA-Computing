@@ -1,5 +1,6 @@
-"use client"
-import { useState } from "react";
+"use client";
+import React, { useState } from "react";
+import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io";
 
 export default function AspirationCard() {
    const [showAdminReply, setShowAdminReply] = useState(false);
@@ -8,12 +9,24 @@ export default function AspirationCard() {
    const toggleAdminReply = () => {
       setShowAdminReply(!showAdminReply);
    };
+   // like icon
+   const [liked, setLiked] = useState(false);
 
+   const toggleLike = () => {
+      setLiked(!liked);
+   };
    return (
-      <div className="flex flex-col gap-4 rounded-lg border-2 border-gray-300 px-4 py-6">
-         <div className="flex justify-between">
-            <h1 className="text-lg font-bold">Enrollment</h1>
-            <button onClick={toggleAdminReply}>
+      <div className="flex flex-col gap-4 rounded-lg border-2 border-gray-300 p-4 md:p-6">
+         <div className="flex flex-row justify-between">
+            <h1 className="text-lg font-bold capitalize md:text-xl">
+               Enrollment sdasd
+            </h1>
+            <button
+               onClick={toggleAdminReply}
+               className={`md:ml-auto ${
+                  showAdminReply ? "rotate-180 duration-300" : ""
+               }`}
+            >
                <svg
                   width="12"
                   height="8"
@@ -31,24 +44,40 @@ export default function AspirationCard() {
                </svg>
             </button>
          </div>
-         <p className="text-sm">
-            Testing testing testing testing testing testing testing testing
-            testing testing testing testing testing.
+         <p className="text-[16px] font-[400] text-[#6B7280]">
+            Masa gua udah enroll tp ga di approve” coo masa harus samperin
+            dosennya lgi sihh yang bener aja rugi dongg
          </p>
-         {/* Tampilkan bagian balasan admin hanya jika showAdminReply true */}
          {showAdminReply && (
-            <p className="text-sm">Admin: sorry ya, tidak akan dilayanin.</p>
+            <p className="text-[16px] font-[400] text-[#111827]">
+               {" "}
+               Admin :{" "}
+               <span className="text-[16px] font-[400] text-[#6B7280]">
+                  {" "}
+                  Untuk permasalah itu sendiri akan kami tampung terlebih
+                  dahalu, sehingga kedepannya akan aman
+               </span>
+            </p>
          )}
          <div className="flex flex-col">
-            <p className="text-sm font-bold">Anonymous</p>
-            <div className="flex justify-between">
-               <div className="flex gap-2 text-sm">
-                  <p>To: Puma IT</p>
-                  <p>Feb 14, 3099</p>
+            <p className="text-[14px] font-semibold text-[#111827]">
+               Anonymous
+            </p>
+            <div className="flex flex-col gap-2 text-sm md:flex-row md:justify-between">
+               <div className="text-[#6B7280]">
+                  <p>
+                     To: Puma IT <span> · </span> <span>Feb 14, 3099</span>
+                  </p>
                </div>
                <div className="flex gap-2 text-sm">
-                  <p>7</p>
-                  {/* <div>logo heart</div> */}
+                  {/* <p>7</p> */}
+                  <div onClick={toggleLike} className="cursor-pointer">
+                     {liked ? (
+                        <IoIosHeart className="h-8 w-8 text-[#E50D0D] transition" />
+                     ) : (
+                        <IoIosHeartEmpty className="h-8 w-8 text-[#6B7280] transition" />
+                     )}
+                  </div>
                </div>
             </div>
          </div>

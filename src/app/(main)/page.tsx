@@ -153,7 +153,7 @@ export default async function Index() {
             {/* button kthx */}
             <Link href="/" className="flex justify-center">
                <Button className="border-[#1FA820] px-10 py-2 text-[#1FA820] hover:bg-[#1FA820] hover:text-white">
-                  See all News
+                  See Our Cabinet
                </Button>
             </Link>
          </section>

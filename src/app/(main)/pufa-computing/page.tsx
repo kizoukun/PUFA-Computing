@@ -46,7 +46,7 @@ export default function Page() {
             <h1 className="flex justify-center p-8 text-2xl font-bold text-[#353535] md:p-20 md:text-4xl lg:text-5xl">
                VISIONS & MISSIONS
             </h1>
-            <p className="mx-auto max-w-6xl text-center text-base font-semibold text-[#376853] md:text-lg lg:text-xl">
+            <p className="mx-auto px-10 text-justify text-base font-semibold text-[#376853] md:max-w-6xl md:p-0 md:text-center md:text-lg lg:text-xl ">
                PUFA Computing as a bridge for students in the Computing Faculty,
                and makes PUFA Computing more responsive, progressive,
                professional, and inspiring to become a strong bridge as a forum
@@ -56,7 +56,7 @@ export default function Page() {
                faculty, lecturers, and students.
             </p>
 
-            <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 py-10 md:grid-cols-3">
+            <div className="mx-auto grid max-w-4xl grid-cols-1 gap-12 py-10 md:grid-cols-3">
                <VisionAndMissionCard
                   image="/icon-pufa/explore.svg"
                   title="EXPLORE"
@@ -75,7 +75,7 @@ export default function Page() {
             </div>
          </section>
 
-            {/* division  */}
+         {/* division  */}
          <section className="bg-white">
             <h1 className="flex justify-center p-8 text-2xl font-bold text-[#353535] md:p-20 md:text-4xl lg:text-5xl">
                DIVISION
