@@ -6,10 +6,12 @@ export default function NewsPage() {
    return (
       <div>
          {/* // title gray thingy */}
-         <section className="mx-auto max-w-7xl bg-[#F2F2F2] p-10">
-            <div className="flex flex-col border-l-4 border-[#FF6F22] pl-5">
-               <h1 className="text-[2rem] font-black">Computing News</h1>
-               <p className="text-[0.8rem]">
+         <section className="bg-[#F2F2F2] p-10">
+            <div className="mx-auto flex max-w-7xl flex-col border-l-4 border-[#FF6F22] pl-5 ">
+               <h1 className="text-[35px] font-[700] text-[#353535]">
+                  Computing News
+               </h1>
+               <p className="text-[#353535] text-sm font-[500]">
                   The latest news about research, technology, achievements, and
                   campus life.
                </p>

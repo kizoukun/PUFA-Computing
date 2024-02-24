@@ -1,3 +1,15 @@
+/**
+ * Navbar Component
+ *
+ * The Navbar component represents the navigation bar of the website, including links, dropdowns, and user authentication options.
+ *
+ * @component
+ * @example
+ * // Usage of the Navbar component in another React component or page
+ * import Navbar from 'path/to/Navbar';
+ * // Render the component
+ * <Navbar />;
+ */
 "use client";
 
 import Link from "next/link";
@@ -5,10 +17,17 @@ import { useState, useEffect } from "react";
 import NavbarDropdown from "./NavbarDropdown";
 import { access } from "fs";
 
+/**
+ * Navbar Component
+ *
+ * @returns {JSX.Element} - React element representing the Navbar.
+ */
 export default function Navbar() {
+   // State for mobile menu and user authentication
    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
    const [isLoggedIn, setIsLogggedIn] = useState(false);
 
+   // Navigation links for PUMA and Others sections
    const NavbarOthers = [
       {
          title: "Others",
@@ -54,10 +73,16 @@ export default function Navbar() {
    ];
 
    useEffect(() => {
+      // Check user authentication on component mount
       const userToken = localStorage.getItem("access_token");
       setIsLogggedIn(!!userToken);
    }, []);
 
+   /**
+    * Handle Logout
+    *
+    * Function to handle user logout.
+    */
    const handleLogout = () => {
       localStorage.removeItem("access_token");
       localStorage.removeItem("userId");
@@ -70,6 +95,7 @@ export default function Navbar() {
          <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-24 items-center justify-between">
                <div className="flex items-center gap-12 lg:divide-x-2 lg:divide-black">
+                  {/* Logo and site title */}
                   <Link className="inline text-teal-600" href="/">
                      <img src="../logo.png" width="130" height="80" />
                   </Link>
@@ -77,15 +103,24 @@ export default function Navbar() {
                      <div className="flex flex-col items-center">
                         <div className="flex-grow text-sm font-normal tracking-widest">
                            President University
-                           <div className="flex-grow text-sm font-normal tracking-widest">
+                           <p
+                              className=" text-sm font-normal"
+                              style={{ letterSpacing: "0.11em" }}
+                           >
                               Faculty Association
+                           </p>
+                           <div
+                              className="text-center text-[19px] font-[700]"
+                              style={{ letterSpacing: "0.33em" }}
+                           >
+                              COMPUTING
                            </div>
                         </div>
-                        <div className="mt-1 font-semibold">COMPUTING</div>
                      </div>
                   </div>
                </div>
 
+               {/* Navigation links */}
                <div className="hidden md:block">
                   <nav aria-label="Global">
                      <ul className="text-md flex items-center gap-6 font-medium text-black ">
@@ -103,6 +138,7 @@ export default function Navbar() {
                            <Link href="/news">News</Link>
                         </li>
 
+                        {/* Dropdowns for PUMA and Others sections */}
                         {NavbarPuma.map((item) => (
                            <NavbarDropdown
                               title={item.title}
@@ -118,9 +154,12 @@ export default function Navbar() {
                               key={item.title}
                            />
                         ))}
+
+                        {/* Conditional rendering based on user authentication */}
                         {isLoggedIn ? (
                            <li>
-                              <button className="hover:scale-125 duration-300">
+                              <button className="duration-300 hover:scale-125">
+                                 {/* User icon or other user-related content */}
                                  <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="26"
@@ -141,12 +180,17 @@ export default function Navbar() {
                   </nav>
                </div>
 
+               {/* User authentication and mobile view toggle */}
                <div className="flex items-center gap-4">
                   <div className="sm:flex sm:gap-4">
                      {/* Conditionally render "Sign in" and "Sign up" buttons or user icon */}
                      {isLoggedIn ? (
                         <div className="flex items-center gap-4">
-                           <img alt="" className="w-12 h-12 rounded-full ri ri dark:bg-gray-500 ri ri" src="https://source.unsplash.com/40x40/?portrait?1" />
+                           <img
+                              alt=""
+                              className="ri ri ri ri h-12 w-12 rounded-full dark:bg-gray-500"
+                              src="https://source.unsplash.com/40x40/?portrait?1"
+                           />
                            <button
                               onClick={handleLogout}
                               className="block rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5"
@@ -173,7 +217,7 @@ export default function Navbar() {
                      )}
                   </div>
 
-                  {/* Mobile view  */}
+                  {/* Mobile view toggle button */}
                   <div className="block md:hidden">
                      <button className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
                         <svg

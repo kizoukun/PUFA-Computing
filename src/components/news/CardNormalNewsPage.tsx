@@ -35,7 +35,7 @@ export default function CardNormalNewsPage({
    date,
 }: CardNormalNewsPageProps) {
    return (
-      <div className="flex flex-col rounded-lg border-2">
+      <div className="flex flex-col rounded-lg border-2 hover:scale-110 hover:shadow-xl duration-300">
          <div>
             <img
                className="h-full w-full bg-center object-cover"

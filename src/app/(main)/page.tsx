@@ -77,28 +77,28 @@ export default async function Index() {
                   article="Informatics study program that will produce qualified
                graduates in the field of educators who are experts in
                Informatics."
-                  link=""
+                  link="/major/informatics"
                />
                <StudyProgCard
                   title="Information System"
                   article="Informatics study program that will produce qualified
                graduates in the field of educators who are experts in
                Informatics."
-                  link=""
+                  link="/major/information-system"
                />
                <VCDStudyProgCard
                   title="Visual Communication Design"
                   article="Informatics study program that will produce qualified
                graduates in the field of educators who are experts in
                Informatics."
-                  link=""
+                  link="/major/visual-communication-design"
                />
                <StudyProgCard
                   title="Interior Design"
                   article="Informatics study program that will produce qualified
                graduates in the field of educators who are experts in
                Informatics."
-                  link="news"
+                  link="/major/interior-design"
                />
             </div>
          </section>

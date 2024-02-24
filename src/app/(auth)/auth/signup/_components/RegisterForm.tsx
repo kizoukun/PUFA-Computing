@@ -122,79 +122,79 @@ export default function RegisterForm() {
 
    return (
       <section className="mx-auto max-w-6xl rounded-md bg-white bg-opacity-40 p-6 shadow-md">
-   <div>
-      <div className="flex flex-col md:flex-row items-center justify-between">
-         <div className="mb-4 md:mb-0 md:mr-10 text-[#353535]">
-            <p className="text-base font-normal md:text-lg text-center md:text-left">
-               Hello, Computizens!
-            </p>
-            <p className="text-lg font-semibold md:text-lg">
-               Let’s Create an Account
-            </p>
+         <div>
+            <div className="flex flex-col items-center justify-between md:flex-row">
+               <div className="mb-4 text-[#353535] md:mb-0 md:mr-10">
+                  <p className="text-center text-base font-normal md:text-left md:text-lg">
+                     Hello, Computizens!
+                  </p>
+                  <p className="text-lg font-semibold md:text-lg">
+                     Let’s Create an Account
+                  </p>
+               </div>
+               <div className="flex space-x-2">
+                  <img
+                     src="../logo/PUFA_Computing.png"
+                     alt="PUFA Computing Logo"
+                     className="h-12 w-12 md:h-16 md:w-16"
+                  />
+                  <img
+                     src="../PU.png"
+                     alt="PU Logo"
+                     className="h-12 w-12 md:h-16 md:w-16"
+                  />
+               </div>
+            </div>
+            <div className="my-4">
+               <div className="border-t border-[#D1D5DB]"></div>
+            </div>
          </div>
-         <div className="flex space-x-2">
-            <img
-               src="../logo/PUFA_Computing.png"
-               alt="PUFA Computing Logo"
-               className="h-12 w-12 md:h-16 md:w-16"
-            />
-            <img
-               src="../PU.png"
-               alt="PU Logo"
-               className="h-12 w-12 md:h-16 md:w-16"
-            />
-         </div>
-      </div>
-      <div className="my-4">
-         <div className="border-[#D1D5DB] border-t"></div>
-      </div>
-   </div>
-   <form onSubmit={HandleRegister} className="w-full max-w-md">
-      {/* Name */}
-      <div className="mb-4 md:flex md:space-x-2">
-         <div className="md:w-1/2">
-            <input
-               type="text"
-               className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
-               placeholder="Ilham"
-               name="firstName"
-               required
-            />
-         </div>
-         <div className="md:w-1/2">
-            <input
-               type="text"
-               className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
-               placeholder="Pratama"
-               name="lastName"
-               required
-            />
-         </div>
-      </div>
+         <form onSubmit={HandleRegister} className="w-full max-w-md">
+            {/* Name */}
+            <div className="mb-4 md:flex md:space-x-2">
+               <div className="md:w-1/2">
+                  <input
+                     type="text"
+                     className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
+                     placeholder="Ilham"
+                     name="firstName"
+                     required
+                  />
+               </div>
+               <div className="md:w-1/2">
+                  <input
+                     type="text"
+                     className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
+                     placeholder="Pratama"
+                     name="lastName"
+                     required
+                  />
+               </div>
+            </div>
 
-      {/* Email */}
-      <div className="mb-4">
-         <input
-            type="text"
-            className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
-            placeholder="ilhampratama@example.com"
-            name="email"
-            required
-         />
-      </div>
+            {/* Email */}
+            <div className="mb-4">
+               <input
+                  type="text"
+                  className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
+                  placeholder="ilhampratama@example.com"
+                  name="email"
+                  required
+               />
+            </div>
 
-      {/* Password */}
-      <div className="mb-4">
-         <input
-            type="password"
-            className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
-            placeholder="password"
-            name="password"
-            required
-         />
-      </div>
+            {/* Password */}
+            <div className="mb-4">
+               <input
+                  type="password"
+                  className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
+                  placeholder="password"
+                  name="password"
+                  required
+               />
+            </div>
 
-      <div>
+            <div>
                {/* Choose */}
                <div className="mt-2">
                   <div className="relative mt-4 flex items-center justify-center gap-2">
@@ -286,17 +286,16 @@ export default function RegisterForm() {
                )}
             </div>
 
-      <div className="mt-6">
-         {error && <p className="my-2 text-red-500">{error}</p>}
-         <button
-            type="submit"
-            className="w-full transform rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-300 hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
-         >
-            Register
-         </button>
-      </div>
-   </form>
-</section>
-
+            <div className="mt-6">
+               {error && <p className="my-2 text-red-500">{error}</p>}
+               <button
+                  type="submit"
+                  className="w-full transform rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-300 hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+               >
+                  Register
+               </button>
+            </div>
+         </form>
+      </section>
    );
 }
