@@ -18,7 +18,7 @@ interface LectureCardProps {
    /**
     * The position or title of the lecturer.
     */
-   position: string;
+   position ?: string;
 }
 
 /**
@@ -38,9 +38,9 @@ interface LectureCardProps {
  */
 const LectureCard: React.FC<LectureCardProps> = ({ image, name, position }) => {
    return (
-      <div>
+      <div className="duration-300 hover:scale-110 hover:shadow-xl rounded-xl p-2">
          <Image
-            className="aspect-square rounded-lg object-cover"
+            className="aspect-[3/4] rounded-lg"
             src={image}
             alt={`${name}'s photo`}
             width={1920}

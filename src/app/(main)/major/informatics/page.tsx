@@ -96,26 +96,28 @@ export default function StudyProgramPage() {
             </p>
          </div>
 
-         <div className="grid grid-cols-2 py-10">
-            <p className="px-10 py-2 text-[20px] font-[600] text-[#2F2F2F] md:px-0">
-               Future Field and Career
-            </p>
+         <div className="grid grid-cols-2">
+            <div>
+               <p className="px-10 py-2 text-[20px] font-[600] text-[#2F2F2F] md:px-0">
+                  Future Field and Career
+               </p>
+               {/* List of professions */}
+               <ListCard content={professions} />
+            </div>
+            <div>
+               {/* Toggle switch for Vision and Mission */}
+               <ToggleSwitch
+                  selectedContent={selectedContent}
+                  handleToggleChange={handleToggleChange}
+               />
 
-            {/* Toggle switch for Vision and Mission */}
-            <ToggleSwitch
-               selectedContent={selectedContent}
-               handleToggleChange={handleToggleChange}
-            />
-
-            {/* List of professions */}
-            <ListCard content={professions} />
-
-            {/* Content based on the selected toggle */}
-            <ListVisionAndMissionCard
-               selectedContent={selectedContent}
-               visionContent={visionContent}
-               missionContent={missionContent}
-            />
+               {/* Content based on the selected toggle */}
+               <ListVisionAndMissionCard
+                  selectedContent={selectedContent}
+                  visionContent={visionContent}
+                  missionContent={missionContent}
+               />
+            </div>
          </div>
 
          {/* lecture */}
@@ -139,49 +141,39 @@ export default function StudyProgramPage() {
             <div className="grid grid-cols-2 gap-6 md:grid-cols-3 md:py-2 lg:grid-cols-5">
                <LectureCard
                   image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
-                  name="Ir. Rila Mandala, M.Eng., Ph.D."
-                  position="Dean School of Computing"
+                  name="Prof. Dr. Ir. Wiranto Herry Utomo, M.Kom"
                />
                <LectureCard
                   image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
-                  name="Cutifa Safitri, Ph.D."
-                  position="Head of Study Programme"
+                  name="Dr. Andreas Yumarma"
                />
                <LectureCard
                   image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
                   name="Ir. Rila Mandala, M.Eng., Ph.D."
-                  position="Dean School of Computing"
                />
                <LectureCard
                   image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
                   name="Cutifa Safitri, Ph.D."
-                  position="Head of Study Programme"
                />
                <LectureCard
                   image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
                   name="Ir. Rila Mandala, M.Eng., Ph.D."
-                  position="Dean School of Computing"
                />
                <LectureCard
                   image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
                   name="Cutifa Safitri, Ph.D."
-                  position="Head of Study Programme"
                />
                <LectureCard
                   image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
                   name="Ir. Rila Mandala, M.Eng., Ph.D."
-                  position="Dean School of Computing"
                />
                <LectureCard
                   image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
                   name="Cutifa Safitri, Ph.D."
-                  position="Head of Study Programme"
                />
-               
                <LectureCard
                   image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
                   name="Cutifa Safitri, Ph.D."
-                  position="Head of Study Programme"
                />
             </div>
          </div>
