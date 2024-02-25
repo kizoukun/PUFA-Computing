@@ -177,11 +177,7 @@ export default function StudyProgramPage() {
                   name="Cutifa Safitri, Ph.D."
                   position="Head of Study Programme"
                />
-               <LectureCard
-                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
-                  name="Ir. Rila Mandala, M.Eng., Ph.D."
-                  position="Dean School of Computing"
-               />
+               
                <LectureCard
                   image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
                   name="Cutifa Safitri, Ph.D."
