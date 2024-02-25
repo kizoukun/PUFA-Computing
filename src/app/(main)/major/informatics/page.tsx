@@ -124,7 +124,7 @@ export default function StudyProgramPage() {
                Lecturer
             </h1>
             {/* dean and head of study program */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12 lg:grid-cols-4">
                <LectureCard
                   image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
                   name="Ir. Rila Mandala, M.Eng., Ph.D."
@@ -136,8 +136,8 @@ export default function StudyProgramPage() {
                   position="Head of Study Programme"
                />
             </div>
-            <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-5 md:py-2">
-            <LectureCard
+            <div className="grid grid-cols-2 gap-6 md:grid-cols-3 md:py-2 lg:grid-cols-5">
+               <LectureCard
                   image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
                   name="Ir. Rila Mandala, M.Eng., Ph.D."
                   position="Dean School of Computing"
@@ -147,7 +147,7 @@ export default function StudyProgramPage() {
                   name="Cutifa Safitri, Ph.D."
                   position="Head of Study Programme"
                />
-            <LectureCard
+               <LectureCard
                   image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
                   name="Ir. Rila Mandala, M.Eng., Ph.D."
                   position="Dean School of Computing"
@@ -157,7 +157,7 @@ export default function StudyProgramPage() {
                   name="Cutifa Safitri, Ph.D."
                   position="Head of Study Programme"
                />
-            <LectureCard
+               <LectureCard
                   image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
                   name="Ir. Rila Mandala, M.Eng., Ph.D."
                   position="Dean School of Computing"
@@ -167,7 +167,7 @@ export default function StudyProgramPage() {
                   name="Cutifa Safitri, Ph.D."
                   position="Head of Study Programme"
                />
-            <LectureCard
+               <LectureCard
                   image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
                   name="Ir. Rila Mandala, M.Eng., Ph.D."
                   position="Dean School of Computing"
@@ -177,7 +177,7 @@ export default function StudyProgramPage() {
                   name="Cutifa Safitri, Ph.D."
                   position="Head of Study Programme"
                />
-            <LectureCard
+               <LectureCard
                   image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
                   name="Ir. Rila Mandala, M.Eng., Ph.D."
                   position="Dean School of Computing"
