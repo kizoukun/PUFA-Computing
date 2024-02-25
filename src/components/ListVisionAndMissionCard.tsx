@@ -1,4 +1,3 @@
-// ContentSection.tsx
 
 import React from "react";
 
@@ -16,9 +15,11 @@ const ListVisionAndMissionCard: React.FC<ListVisionAndMissionProps> = ({
    const contentToDisplay =
       selectedContent === "vision" ? visionContent : missionContent;
 
+   const listClassName = selectedContent === "vision" ? "space-y-2 px-10 py-2 text-justify text-[#6B7280]" : "list-disc space-y-2 px-10 py-2 text-justify text-[#6B7280]";
+
    return (
       <div className="rounded-2xl border border-[#3C99DC] bg-white py-2">
-         <ul className="list-disc space-y-2 px-10 py-2 text-justify text-[#6B7280]">
+         <ul className={listClassName}>
             {contentToDisplay.map((item, index) => (
                <li key={index}>{item}</li>
             ))}

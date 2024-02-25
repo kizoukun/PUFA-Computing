@@ -17,6 +17,8 @@ import Banner from "@/assets/banner/banner-informatics.png";
 import React, { useState } from "react";
 import ListCard from "@/components/ListCard";
 import ListVisionAndMissionCard from "@/components/ListVisionAndMissionCard";
+import LectureCard from "@/components/LectureCard";
+import ToggleSwitch from "@/components/ToggleSwitch";
 
 /**
  * Study Program Page Component
@@ -40,14 +42,16 @@ export default function StudyProgramPage() {
 
    // Vision and Mission content
    const visionContent: string[] = [
+      "Becoming the center of excellence for informatics higher education and research in Indonesia, able to compete globally, and play an active role in supporting the industry.",
+   ];
+
+   const missionContent: string[] = [
       "To perform high-quality education and teaching in informatics that focuses in the field of informatics or other relevant sectors",
       "To carry out research and improvement in science and in the development of science, tools, or technology related to the study of informatics.",
       "To carry out social service and empowerment in the field of informatics or other relevant sectors.",
       "To cooperate with industries, companies, government, and other institutions in the field of informatics or other relevant sectors.",
       "To promote the spirit of entrepreneurship for students focusing on Startup Business related to and supported by information technology.",
    ];
-
-   const missionContent: string[] = ["ayam goreng sedap"];
 
    // List of professions
    const professions: string[] = [
@@ -98,36 +102,10 @@ export default function StudyProgramPage() {
             </p>
 
             {/* Toggle switch for Vision and Mission */}
-            <label
-               htmlFor="switchOption"
-               className="inline-flex cursor-pointer items-center rounded-md p-2 text-gray-800 dark:text-gray-800"
-            >
-               <input
-                  id="switchOption"
-                  type="checkbox"
-                  className="peer hidden"
-                  onChange={handleToggleChange}
-                  checked={selectedContent === "mission"}
-               />
-               <span
-                  className={`px-4 py-2 ${
-                     selectedContent === "vision"
-                        ? "bg-blue-400"
-                        : "bg-gray-300 dark:bg-blue-400"
-                  }`}
-               >
-                  Vision
-               </span>
-               <span
-                  className={`px-4 py-2 ${
-                     selectedContent === "mission"
-                        ? "bg-blue-400 dark:bg-gray-300"
-                        : "bg-gray-300"
-                  }`}
-               >
-                  Mission
-               </span>
-            </label>
+            <ToggleSwitch
+               selectedContent={selectedContent}
+               handleToggleChange={handleToggleChange}
+            />
 
             {/* List of professions */}
             <ListCard content={professions} />
@@ -146,7 +124,70 @@ export default function StudyProgramPage() {
                Lecturer
             </h1>
             {/* dean and head of study program */}
-            <div className="grid grid-cols-2"></div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+               <LectureCard
+                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
+                  name="Ir. Rila Mandala, M.Eng., Ph.D."
+                  position="Dean School of Computing"
+               />
+               <LectureCard
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Cutifa Safitri, Ph.D."
+                  position="Head of Study Programme"
+               />
+            </div>
+            <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-5 md:py-2">
+            <LectureCard
+                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
+                  name="Ir. Rila Mandala, M.Eng., Ph.D."
+                  position="Dean School of Computing"
+               />
+               <LectureCard
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Cutifa Safitri, Ph.D."
+                  position="Head of Study Programme"
+               />
+            <LectureCard
+                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
+                  name="Ir. Rila Mandala, M.Eng., Ph.D."
+                  position="Dean School of Computing"
+               />
+               <LectureCard
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Cutifa Safitri, Ph.D."
+                  position="Head of Study Programme"
+               />
+            <LectureCard
+                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
+                  name="Ir. Rila Mandala, M.Eng., Ph.D."
+                  position="Dean School of Computing"
+               />
+               <LectureCard
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Cutifa Safitri, Ph.D."
+                  position="Head of Study Programme"
+               />
+            <LectureCard
+                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
+                  name="Ir. Rila Mandala, M.Eng., Ph.D."
+                  position="Dean School of Computing"
+               />
+               <LectureCard
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Cutifa Safitri, Ph.D."
+                  position="Head of Study Programme"
+               />
+            <LectureCard
+                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
+                  name="Ir. Rila Mandala, M.Eng., Ph.D."
+                  position="Dean School of Computing"
+               />
+               <LectureCard
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Cutifa Safitri, Ph.D."
+                  position="Head of Study Programme"
+               />
+            </div>
          </div>
       </section>
    );
