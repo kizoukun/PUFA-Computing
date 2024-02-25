@@ -15,6 +15,8 @@
 import Image from "next/image";
 import Banner from "@/assets/banner/banner-informatics.png";
 import React, { useState } from "react";
+import ListCard from "@/components/ListCard";
+import ListVisionAndMissionCard from "@/components/ListVisionAndMissionCard";
 
 /**
  * Study Program Page Component
@@ -37,7 +39,7 @@ export default function StudyProgramPage() {
    };
 
    // Vision and Mission content
-   const visionContent = [
+   const visionContent: string[] = [
       "To perform high-quality education and teaching in informatics that focuses in the field of informatics or other relevant sectors",
       "To carry out research and improvement in science and in the development of science, tools, or technology related to the study of informatics.",
       "To carry out social service and empowerment in the field of informatics or other relevant sectors.",
@@ -45,10 +47,10 @@ export default function StudyProgramPage() {
       "To promote the spirit of entrepreneurship for students focusing on Startup Business related to and supported by information technology.",
    ];
 
-   const missionContent = ["ayam goreng sedap"];
+   const missionContent: string[] = ["ayam goreng sedap"];
 
    // List of professions
-   const professions = [
+   const professions: string[] = [
       "Professional IT",
       "Professional Programmer",
       "Database Engineer",
@@ -128,24 +130,14 @@ export default function StudyProgramPage() {
             </label>
 
             {/* List of professions */}
-            <ul className="list-disc space-y-2 px-4 py-2 text-[#6B7280]">
-               {professions.map((profession, index) => (
-                  <li key={index}>{profession}</li>
-               ))}
-            </ul>
+            <ListCard content={professions} />
 
             {/* Content based on the selected toggle */}
-            <div className="rounded-2xl border border-[#3C99DC] bg-white py-2">
-               <ul className="list-disc space-y-2 px-10 py-2 text-justify text-[#6B7280]">
-                  {selectedContent === "vision"
-                     ? visionContent.map((item, index) => (
-                          <li key={index}>{item}</li>
-                       ))
-                     : missionContent.map((item, index) => (
-                          <li key={index}>{item}</li>
-                       ))}
-               </ul>
-            </div>
+            <ListVisionAndMissionCard
+               selectedContent={selectedContent}
+               visionContent={visionContent}
+               missionContent={missionContent}
+            />
          </div>
 
          {/* lecture */}
