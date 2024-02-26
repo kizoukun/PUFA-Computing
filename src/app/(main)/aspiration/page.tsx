@@ -20,7 +20,7 @@ export default function page() {
 
          {/* aspirations box  */}
          <section
-            className="bg-cover bg-center px-4 py-8 md:px-[10rem] md:py-16"
+            className="bg-cover bg-repeat bg-center px-4 py-8 md:px-[10rem] md:py-16"
             style={{ backgroundImage: `url('/doodle.svg')` }}
          >
             <div className="flex flex-col rounded-lg border bg-white px-4 py-4 opacity-90 shadow-lg md:px-8 md:py-8">
@@ -90,9 +90,9 @@ export default function page() {
                Aspirations Library
             </h1>
          </section>
+
          {/* aspirations library */}
          <section className="mb-6 flex flex-col items-center md:mb-10 ">
-         <CiSearch />
             <input
                type="text"
                className="absolute w-[60%] translate-y-[-30px] rounded-lg border-2 border-gray-300 p-4 duration-300 hover:scale-110"
