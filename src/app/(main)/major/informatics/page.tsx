@@ -82,7 +82,7 @@ export default function StudyProgramPage() {
             <h1 className="px-10 py-2 text-[20px] font-[600] text-[#2F2F2F] md:px-0">
                About Study Program
             </h1>
-            <p className="px-10 py-2 text-justify text-[20px] font-[400] text-[#6B7280] md:px-0">
+            <p className="px-10 py-2 text-justify text-[16px] md:text-[20px] font-[400] text-[#6B7280] md:px-0">
                Informatics are concerned with issues related to advocating for
                users and meeting their needs within an organizational and
                societal context through the selection, creation, application,
@@ -96,7 +96,7 @@ export default function StudyProgramPage() {
             </p>
          </div>
 
-         <div className="grid grid-cols-2">
+         <div className="grid grid-cols-1 md:grid-cols-2">
             <div>
                <p className="px-10 py-2 text-[20px] font-[600] text-[#2F2F2F] md:px-0">
                   Future Field and Career

@@ -1,4 +1,3 @@
-
 import React from "react";
 
 interface ListVisionAndMissionProps {
@@ -15,7 +14,9 @@ const ListVisionAndMissionCard: React.FC<ListVisionAndMissionProps> = ({
    const contentToDisplay =
       selectedContent === "vision" ? visionContent : missionContent;
 
-   const listClassName = selectedContent === "vision" ? "space-y-2 px-10 py-2 text-justify text-[#6B7280]" : "list-disc space-y-2 px-10 py-2 text-justify text-[#6B7280]";
+   const listClassName = selectedContent === "vision"
+      ? "space-y-2 px-10 py-2 text-justify text-[#6B7280] md:px-6 md:text-sm lg:text-base"
+      : "list-disc space-y-2 px-10 py-2 text-justify text-[#6B7280] md:px-6 md:text-sm lg:text-base";
 
    return (
       <div className="rounded-2xl border border-[#3C99DC] bg-white py-2">
