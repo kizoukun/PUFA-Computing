@@ -129,47 +129,15 @@ export default function StudyProgramPage() {
                   position="Dean School of Computing"
                />
                <LectureCard
-                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
-                  name="Cutifa Safitri, Ph.D."
+                  image="/lecture/information system/Rikip Ginanjar, M.Sc..png"
+                  name="Rikip Ginanjar, M.Sc."
                   position="Head of Study Programme"
                />
             </div>
             <div className="grid grid-cols-2 gap-6 md:grid-cols-3 md:py-2 lg:grid-cols-5">
                <LectureCard
-                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
-                  name="Prof. Dr. Ir. Wiranto Herry Utomo, M.Kom"
-               />
-               <LectureCard
-                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
-                  name="Dr. Andreas Yumarma"
-               />
-               <LectureCard
-                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
-                  name="Ir. Rila Mandala, M.Eng., Ph.D."
-               />
-               <LectureCard
-                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
-                  name="Cutifa Safitri, Ph.D."
-               />
-               <LectureCard
-                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
-                  name="Ir. Rila Mandala, M.Eng., Ph.D."
-               />
-               <LectureCard
-                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
-                  name="Cutifa Safitri, Ph.D."
-               />
-               <LectureCard
-                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
-                  name="Ir. Rila Mandala, M.Eng., Ph.D."
-               />
-               <LectureCard
-                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
-                  name="Cutifa Safitri, Ph.D."
-               />
-               <LectureCard
-                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
-                  name="Cutifa Safitri, Ph.D."
+                  image="/lecture/information system/Sandy Darmowinoto, B.Sc.(Hons), M.IT..png"
+                  name="Sandy Darmowinoto, B.Sc.(Hons), M.IT."
                />
             </div>
          </div>
