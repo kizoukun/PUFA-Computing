@@ -11,7 +11,7 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({
 }) => {
    return (
       <div className="pb-2">
-         <label  el
+         <label 
             htmlFor="switchOption"
             className="inline-flex cursor-pointer items-center rounded-full p-2 gap-1 px-4 text-gray-800"
          >
