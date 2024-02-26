@@ -82,7 +82,8 @@ export default function StudyProgramPage() {
             <h1 className="px-10 py-2 text-[20px] font-[600] text-[#2F2F2F] md:px-0">
                About Study Program
             </h1>
-            <p className="px-10 py-2 text-justify text-[20px] font-[400] text-[#6B7280] md:px-0">
+            <p className="px-10 py-2 text-justify text-[16px] font-[400] text-[#6B7280] md:px-0 md:text-[20px]">
+               {" "}
                Informatics are concerned with issues related to advocating for
                users and meeting their needs within an organizational and
                societal context through the selection, creation, application,
@@ -96,26 +97,29 @@ export default function StudyProgramPage() {
             </p>
          </div>
 
-         <div className="grid grid-cols-2 py-10">
-            <p className="px-10 py-2 text-[20px] font-[600] text-[#2F2F2F] md:px-0">
-               Future Field and Career
-            </p>
+         <div className="grid grid-cols-1 py-10 md:grid-cols-2">
+            <div>
+               <p className="px-10 py-2 text-[20px] font-[600] text-[#2F2F2F] md:px-0">
+                  Future Field and Career
+               </p>
+               {/* List of professions */}
+               <ListCard content={professions} />
+            </div>
 
-            {/* Toggle switch for Vision and Mission */}
-            <ToggleSwitch
-               selectedContent={selectedContent}
-               handleToggleChange={handleToggleChange}
-            />
+            <div>
+               {/* Toggle switch for Vision and Mission */}
+               <ToggleSwitch
+                  selectedContent={selectedContent}
+                  handleToggleChange={handleToggleChange}
+               />
 
-            {/* List of professions */}
-            <ListCard content={professions} />
-
-            {/* Content based on the selected toggle */}
-            <ListVisionAndMissionCard
-               selectedContent={selectedContent}
-               visionContent={visionContent}
-               missionContent={missionContent}
-            />
+               {/* Content based on the selected toggle */}
+               <ListVisionAndMissionCard
+                  selectedContent={selectedContent}
+                  visionContent={visionContent}
+                  missionContent={missionContent}
+               />
+            </div>
          </div>
 
          {/* lecture */}
@@ -124,7 +128,7 @@ export default function StudyProgramPage() {
                Lecturer
             </h1>
             {/* dean and head of study program */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12 lg:grid-cols-4">
                <LectureCard
                   image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
                   name="Ir. Rila Mandala, M.Eng., Ph.D."
@@ -136,8 +140,8 @@ export default function StudyProgramPage() {
                   position="Head of Study Programme"
                />
             </div>
-            <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-5 md:py-2">
-            <LectureCard
+            <div className="grid grid-cols-2 gap-6 md:grid-cols-3 md:py-2 lg:grid-cols-5">
+               <LectureCard
                   image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
                   name="Ir. Rila Mandala, M.Eng., Ph.D."
                   position="Dean School of Computing"
@@ -147,7 +151,7 @@ export default function StudyProgramPage() {
                   name="Cutifa Safitri, Ph.D."
                   position="Head of Study Programme"
                />
-            <LectureCard
+               <LectureCard
                   image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
                   name="Ir. Rila Mandala, M.Eng., Ph.D."
                   position="Dean School of Computing"
@@ -157,7 +161,7 @@ export default function StudyProgramPage() {
                   name="Cutifa Safitri, Ph.D."
                   position="Head of Study Programme"
                />
-            <LectureCard
+               <LectureCard
                   image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
                   name="Ir. Rila Mandala, M.Eng., Ph.D."
                   position="Dean School of Computing"
@@ -167,7 +171,7 @@ export default function StudyProgramPage() {
                   name="Cutifa Safitri, Ph.D."
                   position="Head of Study Programme"
                />
-            <LectureCard
+               <LectureCard
                   image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
                   name="Ir. Rila Mandala, M.Eng., Ph.D."
                   position="Dean School of Computing"
@@ -177,7 +181,7 @@ export default function StudyProgramPage() {
                   name="Cutifa Safitri, Ph.D."
                   position="Head of Study Programme"
                />
-            <LectureCard
+               <LectureCard
                   image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
                   name="Ir. Rila Mandala, M.Eng., Ph.D."
                   position="Dean School of Computing"

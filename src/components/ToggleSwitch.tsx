@@ -10,9 +10,10 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({
    handleToggleChange,
 }) => {
    return (
+         <div className="pb-2">
          <label
             htmlFor="switchOption"
-            className="inline-flex cursor-pointer items-center rounded-full border  border-gray-300 p-2 text-gray-800 transition-all dark:border-gray-700 dark:text-gray-800"
+            className="inline-flex cursor-pointer items-center rounded-full p-2 px-4 text-gray-800"
          >
             <input
                id="switchOption"
@@ -22,24 +23,25 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({
                checked={selectedContent === "mission"}
             />
             <span
-               className={`flex h-full w-1/2 items-center justify-center rounded-full text-lg font-medium ${
+               className={`flex h-full W-3/4 items-center justify-center text-lg rounded-xl font-medium ${
                   selectedContent === "vision"
-                     ? "bg-blue-400 text-white"
-                     : "bg-gray-300 text-gray-600 dark:bg-gray-700 dark:text-gray-300"
+                     ? "bg-blue-400 text-white px-5"
+                     : "bg-gray-300 text-gray-600 px-5"
                }`}
             >
                Vision
             </span>
             <span
-               className={`flex h-full w-1/2 items-center justify-center rounded-full text-lg font-medium ${
+               className={`flex h-full w-3/4 items-center justify-center text-lg rounded-xl font-medium ${
                   selectedContent === "mission"
-                     ? "bg-blue-400 text-white dark:bg-gray-300"
-                     : "bg-gray-300 text-gray-600 dark:bg-gray-700 dark:text-gray-300"
+                     ? "bg-blue-400 text-white px-5"
+                     : "bg-gray-300 text-gray-600 px-5"
                }`}
             >
                Mission
             </span>
          </label>
+      </div>
    );
 };
 
