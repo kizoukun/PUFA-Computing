@@ -1,0 +1,939 @@
+[33mcommit 4a90038c89d8cd9622153c0649ad41d7efaff6fa[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/majordetails[m[33m, [m[1;31morigin/feature/majordetails[m[33m)[m
+Author: Alden Sayidina <aldraddd01@gmail.com>
+Date:   Mon Feb 26 22:19:15 2024 +0700
+
+    added anagata cabinet at cabinet
+
+[33mcommit fd41f6a89779c8646238e3ed3d37fe9a642b22ab[m
+Author: Alden Sayidina <aldraddd01@gmail.com>
+Date:   Mon Feb 26 21:26:42 2024 +0700
+
+    added a toggle switch on inspiration box
+
+[33mcommit b4685a6e7468816dcc9feea477b5306edf355075[m
+Author: Alden Sayidina <aldraddd01@gmail.com>
+Date:   Mon Feb 26 21:10:45 2024 +0700
+
+    fixed aspiration section
+
+[33mcommit b74882dc2e3de0f9bbd72f498f166e70f12d503c[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Mon Feb 26 19:30:27 2024 +0700
+
+    add responsive
+
+[33mcommit 0c6144f100fe6db3fc1017b04e568fc7395262af[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Sun Feb 25 20:17:11 2024 +0700
+
+    grid fix
+
+[33mcommit 80b6074a8759718f4885924126dce40741086bea[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Sun Feb 25 19:03:18 2024 +0700
+
+    test new branch
+
+[33mcommit d988a3756cef49b44cb97d7c5da9e4f586de1be9[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Sun Feb 25 18:39:12 2024 +0700
+
+    page
+
+[33mcommit d4f5b962ba6bb819cfa23fc5d70f39707da16ba3[m[33m ([m[1;31morigin/feature/aspirations[m[33m, [m[1;32mfeature/aspirations[m[33m)[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Sun Feb 25 18:37:04 2024 +0700
+
+    update major/informatics page
+
+[33mcommit a0670b97b623716939a8c50ae0b6b966924a6363[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Sun Feb 25 14:54:06 2024 +0700
+
+    add new card for vision and mission, add list card
+
+[33mcommit 43aef5055f052390c230655cf69aa41b5aae08e8[m[33m ([m[1;31morigin/development[m[33m)[m
+Merge: f4ece0a 7c0522d
+Author: Irfan Saf <31769113+irfansaf@users.noreply.github.com>
+Date:   Sun Feb 25 13:42:17 2024 +0700
+
+    Merge pull request #6 from PUFA-Computing/feature/aspirations
+    
+    Feature/aspirations
+
+[33mcommit f4ece0a18096cd33fa3e611438edf9e435dbd3ec[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Sun Feb 25 00:54:34 2024 +0700
+
+    add new page and fix navbar
+
+[33mcommit 36dcebe630cccfa5c4fbfbe34229fae56a88359a[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Sat Feb 24 19:14:19 2024 +0700
+
+    fix aspirations design
+
+[33mcommit 50ea496848949561e6d6bf10ffdc1d2d0a1a5ccb[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Fri Feb 23 23:29:00 2024 +0700
+
+    Fix some error in production caused to leak
+
+[33mcommit 7e0c4f902d3a3a996f797d02a7dc8342a8984041[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Fri Feb 23 23:16:15 2024 +0700
+
+    fix all build error
+
+[33mcommit 7c0522d087a9653e14fcea1ca4dd0a6b4eba3463[m
+Merge: 16398a6 8ef6e98
+Author: Irfan Saf <irfansaf7@gmail.com>
+Date:   Fri Feb 23 19:04:43 2024 +0700
+
+    disabled footer button and input
+
+[33mcommit 16398a6b26c550e2b5f3cb962b6c075cc7c8c87b[m
+Author: Irfan Saf <irfansaf7@gmail.com>
+Date:   Fri Feb 23 18:27:53 2024 +0700
+
+    fix: sidebar toggle open and closed
+
+[33mcommit 2c4872e4d7107e8fed1fc81c36b3de9a30460b3a[m
+Author: Irfan Saf <irfansaf7@gmail.com>
+Date:   Fri Feb 23 17:53:20 2024 +0700
+
+    fix: Dashboard Events
+
+[33mcommit e0aecadd1a2efb449d9ef1b332b83dd02aa72df0[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Fri Feb 23 15:50:30 2024 +0700
+
+    add pufa page
+
+[33mcommit 0958cdc60f96b89ffb42e652c03bc3f3afb9d06a[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Fri Feb 23 10:12:31 2024 +0700
+
+    update page
+
+[33mcommit 28106a9887b45252870209294b93a02ca2082643[m
+Merge: 23023c8 8ef6e98
+Author: Irfan Saf <31769113+irfansaf@users.noreply.github.com>
+Date:   Fri Feb 23 19:01:51 2024 +0700
+
+    Fix Home
+    
+    fix(home): VCDProgStudyCard not same as others, disabled footer input…
+
+[33mcommit 8ef6e98afe0eb03bff1d415b2f4093ed14ed6baa[m
+Merge: 89a7620 23023c8
+Author: Irfan Saf <31769113+irfansaf@users.noreply.github.com>
+Date:   Fri Feb 23 19:01:22 2024 +0700
+
+    Merge branch 'development' into feature/aspirations
+
+[33mcommit 89a76202198dde02116dd85d1546c0a960a0aebc[m
+Author: Irfan Saf <irfansaf7@gmail.com>
+Date:   Fri Feb 23 18:56:53 2024 +0700
+
+    fix(home): VCDProgStudyCard not same as others, disabled footer input and button
+
+[33mcommit 23023c8c93de6f8e121c2f8d57e91105c18ca72a[m
+Merge: a191f97 e8362c0
+Author: Irfan Saf <31769113+irfansaf@users.noreply.github.com>
+Date:   Fri Feb 23 18:30:16 2024 +0700
+
+    Merge pull request #4 from PUFA-Computing/fix/dashboard-events
+    
+    Fix: Dashboard Events
+
+[33mcommit e8362c042f7cfac2b3d57d85a5fba294476f3856[m
+Author: Irfan Saf <irfansaf7@gmail.com>
+Date:   Fri Feb 23 18:27:53 2024 +0700
+
+    fix: sidebar toggle open and closed
+
+[33mcommit 7a277f2e9bef6b0669eccdd52d249b1f92a842cb[m
+Author: Irfan Saf <irfansaf7@gmail.com>
+Date:   Fri Feb 23 17:53:20 2024 +0700
+
+    fix: Dashboard Events
+
+[33mcommit a191f97d6f575f42deff5b50c7e425884ec486cf[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Fri Feb 23 15:50:30 2024 +0700
+
+    add pufa page
+
+[33mcommit e155f1246e4877b3d07567d5161ac4066cccd8a5[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Fri Feb 23 10:12:31 2024 +0700
+
+    update page
+
+[33mcommit 3249ff40d034f792c4304d22269f98c16f6d6713[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Wed Feb 21 13:54:40 2024 +0700
+
+    responsive and fix auth
+
+[33mcommit 2921d9b64c86b2f79201cb372ef9e53cda47129b[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Tue Feb 20 13:57:17 2024 +0700
+
+    add organizations page
+
+[33mcommit f4548aafa3d04cd3c7f18127ef9dabb75bcecdf4[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Tue Feb 20 13:40:45 2024 +0700
+
+    add
+
+[33mcommit 82486b19e17e3258cb46f25ad7858e99fe6441d3[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Mon Feb 19 09:32:01 2024 +0700
+
+    fix auth and dashboard
+
+[33mcommit ffcb0ed8c8613e0dd6e5d942a101b7e1abf38934[m
+Author: Alden Sayidina <aldraddd01@gmail.com>
+Date:   Sat Feb 17 00:47:13 2024 +0700
+
+    added aspirations section
+
+[33mcommit 425a680945ec38a68b7a56e2da27613d77118b51[m
+Merge: d005763 47a843c
+Author: Irfan Saf <irfansaf7@gmail.com>
+Date:   Wed Jan 31 20:13:16 2024 +0700
+
+    Merge branch 'master' into development
+    
+    # Conflicts:
+    #       src/app/(auth)/auth/signin/_components/LoginForm.tsx
+    #       src/config/config.ts
+    #       src/services/api/event.tsx
+    #       src/services/api/news.tsx
+    #       src/services/api/user.tsx
+
+[33mcommit 47a843ca7c82790a00fa61fc66bbf88cd2ae241d[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Wed Jan 31 19:24:05 2024 +0700
+
+    update api, login
+
+[33mcommit d00576390435204ce1d80c5184082eeb9a9e3b32[m
+Author: Irfan Saf <irfansaf7@gmail.com>
+Date:   Fri Jan 26 23:23:23 2024 +0700
+
+    fix(env): rename env
+
+[33mcommit a0bce2db5f438916224f5249f213cb97d8020ff1[m
+Author: Irfan Saf <irfansaf7@gmail.com>
+Date:   Fri Jan 26 21:18:41 2024 +0700
+
+    fix(signin): remove axios, using fetch and working login
+
+[33mcommit 5ea71ebb9a43d53dd3a4f61347647e56f5a03363[m
+Author: Irfan Saf <irfansaf7@gmail.com>
+Date:   Fri Jan 26 19:41:25 2024 +0700
+
+    refactor(API URL): adding config.ts to refactoring the API URL
+
+[33mcommit bbfac10c9e47a8810370b6708634cd4e8bce05f8[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Fri Jan 26 09:15:37 2024 +0700
+
+    redirect /auth to home
+
+[33mcommit 76adfcfacd53cf780e58748fef2dfbd64ab0d669[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Fri Jan 26 01:07:45 2024 +0700
+
+    add redirect from /dashboard to /dashboard/profile
+
+[33mcommit 2db2eee227a7fe1745e69a9c0135239427815dcf[m
+Author: Alden Sayidina <aldraddd01@gmail.com>
+Date:   Thu Jan 25 18:04:43 2024 +0700
+
+    fixed the profile photo section at dashboard
+
+[33mcommit 03c3469ace7d2f3a932652cacb47d8e1c904d957[m
+Author: Irfan Saf <irfansaf7@gmail.com>
+Date:   Thu Jan 25 14:03:10 2024 +0700
+
+    refactor(auth): separate modul auth
+
+[33mcommit 8d775af798778e834c23d823ed1c19ce85c07c3d[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Thu Jan 25 14:01:13 2024 +0700
+
+    add page
+
+[33mcommit 7ce64ad0f3ab37bfc0777a2e92838ba75a124232[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Thu Jan 25 00:17:40 2024 +0700
+
+    add tables
+
+[33mcommit 58f175925a9d7b90de79080fabf392bd3887c4d7[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Tue Jan 23 14:54:13 2024 +0700
+
+    minor update at profile
+
+[33mcommit fef90eabb5d1bf0f049d6683f5356313666a6c0e[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Sat Jan 20 14:06:09 2024 +0700
+
+    Add dashboard layout and profile page components
+
+[33mcommit f5af2797aafd933fe589f994a2d261252435aed8[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Thu Jan 18 01:30:05 2024 +0700
+
+    add new component, and page
+
+[33mcommit 553be6e568f291ab50302032fd24a1381231c671[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Thu Jan 11 20:27:22 2024 +0700
+
+    add event details page before register
+
+[33mcommit 31c45d1f00527d02cc9866ebf333d3e5d41c3ad0[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Fri Dec 15 04:39:44 2023 +0700
+
+    add compreciation card
+
+[33mcommit dd3457de1199b55b82d9779be6aaa64e8c6fec8d[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Wed Dec 13 13:58:54 2023 +0700
+
+    prettier at register
+
+[33mcommit 8d10d20a34303345692476ea18596ea1e126584f[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Wed Dec 13 13:56:06 2023 +0700
+
+    add email, student id, password regex and swal at registration form
+
+[33mcommit a367d213686d678230240e94953e093b851d4700[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Wed Dec 13 12:45:48 2023 +0700
+
+    add regex and swal on sign in, biar keren
+
+[33mcommit a5170b4eeb68e62f0820d6bd2852630cf0c2f4bc[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Wed Dec 13 11:40:40 2023 +0700
+
+    add page major
+
+[33mcommit c88559ac51adc333278bb133d66574065f7fa305[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Mon Dec 11 14:03:39 2023 +0700
+
+    add events details page
+
+[33mcommit 827e134e80786f134bcf01dccd994da75acefc09[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Mon Dec 11 13:05:33 2023 +0700
+
+    add email regex
+
+[33mcommit 2b791d3301e99b2bd60e7cf473a40f9f8fc084d8[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Sun Dec 10 23:32:25 2023 +0700
+
+    change photo
+
+[33mcommit 0fd0a60022c8c319e38ac6b791123766596c1885[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Sun Dec 10 13:00:24 2023 +0700
+
+    fix(auth): many things error, before push please do test first.
+
+[33mcommit 0c150e159ab2e4e4a332152fb906d0bc2591a5b4[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Sun Dec 10 09:01:00 2023 +0700
+
+    just a way to test image upload
+
+[33mcommit 9de48aae1cecc3a570e1f06667d63534a0dc6cc5[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Wed Dec 6 11:33:14 2023 +0700
+
+    responsive footer icon
+
+[33mcommit affa9be55fef2d29a464142ecfb57ea7ebfdb94c[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Wed Dec 6 01:22:53 2023 +0700
+
+    minor update responsive at anagata cabinet card
+
+[33mcommit b95c6351004bbda02d4715503f2b87614ec17b95[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Tue Dec 5 18:46:46 2023 +0700
+
+    fix(*): fix prettier all files
+
+[33mcommit 3c52d6dda5779315d9630c0c153226d9646f78cf[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Tue Dec 5 18:45:40 2023 +0700
+
+    add responsive text on progstudycard
+
+[33mcommit 92b97bde8c2c5d9fe47ce154661944bb208a3c39[m
+Merge: 1d4511e bc12ab7
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Tue Dec 5 18:17:47 2023 +0700
+
+    Merge branch 'master' of https://github.com/PUFA-Computing/Frontend
+
+[33mcommit 1d4511eb4d19b0c3aa1e9376ad77da45ab1e1729[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Tue Dec 5 18:16:27 2023 +0700
+
+    fix(event): event section
+
+[33mcommit bc12ab71d435e1440ae8dad5fd150017ecb58aac[m
+Merge: 0043127 c67fe11
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Tue Dec 5 18:01:17 2023 +0700
+
+    Merge branch 'master' of https://github.com/PUMA-Computing/PUMA-Front
+
+[33mcommit 00431277b9942ea1ff5b361141c665956b5f9928[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Tue Dec 5 18:01:00 2023 +0700
+
+    create news folder
+
+[33mcommit c67fe117bc73699fcd2f56701920e8394e9f98b5[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Tue Dec 5 18:00:50 2023 +0700
+
+    fix(news): little responsiveness
+
+[33mcommit 659b6707de6b2dddc68f76f284fdf4255f8462cb[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Tue Dec 5 14:11:44 2023 +0700
+
+    fix(logo, landing): change logo it, and fix events
+
+[33mcommit aacc5e4bc0c68d6bbf9743ed333588c96ed9aa74[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Tue Dec 5 13:51:08 2023 +0700
+
+    fix(events): hero not centered
+
+[33mcommit e6478ba917f71cdabb359d80f5531537e079e0ab[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Tue Dec 5 13:47:41 2023 +0700
+
+    fix(events): page rework (responsive)
+
+[33mcommit 8b93b15ffa867a7f17884a2fab6fd7f5aa194804[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Tue Dec 5 13:13:41 2023 +0700
+
+    feat(package): update all package DONT FORGET TO REINSTALL
+
+[33mcommit d7b95fa4c8535d141ead0b556d2048c51970c7d1[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Tue Dec 5 13:08:50 2023 +0700
+
+    feat(prettier): add prettier tailwind, DONT FORGET TO REINSTALL NODE_MODULES
+
+[33mcommit bb9710f11cb1f92c0dc92c4528e9d5ef90d91c94[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Tue Dec 5 11:04:54 2023 +0700
+
+    add some documentation how to use the component
+
+[33mcommit 24763c73f51a7f3129319fbe72338af59096f4af[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Tue Dec 5 10:32:59 2023 +0700
+
+    add card at event section home, still not responsive
+
+[33mcommit 92c44484587751cde235b48c417fbfabf46d5b69[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Tue Dec 5 08:57:47 2023 +0700
+
+    card study program responsive
+
+[33mcommit b3bf93bac839bc0b80fa4dffe7dc44c7744a16d9[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Tue Dec 5 01:00:26 2023 +0700
+
+    add new page
+
+[33mcommit 2ef72b91cb0442a2e40e2efe080de4f069934b71[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Tue Dec 5 00:54:43 2023 +0700
+
+    add card news to component
+
+[33mcommit 05cf9ca0184272d97de66320719d551b9717db3b[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Tue Dec 5 00:41:30 2023 +0700
+
+    minor update
+
+[33mcommit 4316750892c21bc31321c8ae27dd1dd122f672ff[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Tue Dec 5 00:30:20 2023 +0700
+
+    add component
+
+[33mcommit a6bb89db6c1eb31962aafddbe0437c78988ec759[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Mon Dec 4 21:15:00 2023 +0700
+
+    add component card at event section + documentation
+
+[33mcommit d688a2451ac1032545dbdf398180c898baab9b35[m
+Merge: 91d32bc 57dc89e
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Mon Dec 4 19:04:01 2023 +0700
+
+    Merge branch 'master' of https://github.com/PUMA-Computing/PUMA-Front
+
+[33mcommit 91d32bc4d6348778b492c4c641d24bd2de45ba0f[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Mon Dec 4 19:01:49 2023 +0700
+
+    add card events
+
+[33mcommit 57dc89efcd62f41d3c5f982c42043ed5ebcc9284[m
+Author: Alden Sayidina <aldraddd01@gmail.com>
+Date:   Mon Dec 4 19:00:56 2023 +0700
+
+    card event fix
+
+[33mcommit 940c50fa66633032fe0404c77ee4dcb794fc9e87[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Mon Dec 4 18:35:43 2023 +0700
+
+    card event
+
+[33mcommit 7af4189c530173c57a8932e7ca233cfaa55fa60a[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Mon Dec 4 17:59:32 2023 +0700
+
+    update minor
+
+[33mcommit 20aa1424df40bdb2406114e2944a31bdd3ed97b9[m
+Author: Alden Sayidina <aldraddd01@gmail.com>
+Date:   Mon Dec 4 17:35:55 2023 +0700
+
+    added event details + pagination
+
+[33mcommit 4fa4c4744a4f35375b0b442a8b838b7782444c73[m
+Merge: 1889165 4ed5395
+Author: Alden Sayidina <aldraddd01@gmail.com>
+Date:   Mon Dec 4 16:48:28 2023 +0700
+
+    merging changes
+
+[33mcommit 18891659a6626fbc4f759c4962e39f8c911bcf98[m
+Author: Alden Sayidina <aldraddd01@gmail.com>
+Date:   Mon Dec 4 16:32:37 2023 +0700
+
+    added the computing news + pagination
+
+[33mcommit 4ed5395fa7d82ca0cfc89160d495d5c6c7f986d5[m
+Author: Alden Sayidina <aldraddd01@gmail.com>
+Date:   Mon Dec 4 16:32:37 2023 +0700
+
+    edited the news page details 1
+
+[33mcommit a82221444c1e3a0e0c07deb115b2992e8227c79d[m
+Merge: a2f2034 6230a56
+Author: Alden Sayidina <aldraddd01@gmail.com>
+Date:   Mon Dec 4 14:56:25 2023 +0700
+
+    Merge branch 'master' of https://github.com/PUFA-Computing/Frontend
+
+[33mcommit 6230a5664a030a7987936a5f2cbd2b0d968cf700[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Mon Dec 4 14:11:50 2023 +0700
+
+    minor update cardStore
+
+[33mcommit 23b44692e122ace41cb9e21a4dead6beabb49724[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Mon Dec 4 12:39:50 2023 +0700
+
+    add card at store section
+
+[33mcommit a2f2034b50d01b4302c77eef5afa1f23ec9a5588[m
+Merge: c394a51 005482e
+Author: Alden Sayidina <aldraddd01@gmail.com>
+Date:   Sun Dec 3 23:01:05 2023 +0700
+
+    Merge branch 'master' of https://github.com/PUFA-Computing/Frontend
+
+[33mcommit c394a51a29a44071ae93d35e79118fd587f986ee[m
+Author: Alden Sayidina <aldraddd01@gmail.com>
+Date:   Sun Dec 3 17:43:21 2023 +0700
+
+    fixed the cabinet section
+
+[33mcommit 005482e22b91c288c950e3dd46ac7ca351664961[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Sun Dec 3 22:51:03 2023 +0700
+
+    add CardStore
+
+[33mcommit 1896d9d11ee5d648aa49a1ad2f60c33328bf37fd[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Sun Dec 3 15:53:55 2023 +0700
+
+    delete card store
+
+[33mcommit 91ef604cfc1d97950da8ac3a859b5aaa6187c929[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Sun Dec 3 15:14:53 2023 +0700
+
+    fix footer
+
+[33mcommit 223646b15c5f91549dae996807f337c61e1b3f8c[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Tue Nov 7 11:59:37 2023 +0700
+
+    merch site update mapping
+
+[33mcommit 37c12cff1dcdce6cf31747573cc9960d6cc881c9[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Tue Nov 7 10:44:22 2023 +0700
+
+    fix merch page
+
+[33mcommit 1f3c228eef4282277dcf658ee1e5e745fde899cb[m
+Merge: 4147446 7d335b5
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Mon Nov 6 18:06:36 2023 +0700
+
+    Merge branch 'master' of https://github.com/PUFA-Computing/Frontend
+
+[33mcommit 4147446d15544122bf21e66193fd4c3454050169[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Mon Nov 6 18:06:32 2023 +0700
+
+    fix(package): update all dependencies
+
+[33mcommit 7d335b5b879ca97fafa7aeb0d392d771552f1a48[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Mon Nov 6 17:27:22 2023 +0700
+
+    Navbar Link
+
+[33mcommit 6d106ea4e5a91ece3f418f2f2426b8dc1fa20faf[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Mon Nov 6 14:05:31 2023 +0700
+
+    check
+
+[33mcommit dd07470e0f3f1487b170dd3662ff60b2f4475504[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Sat Nov 4 17:58:35 2023 +0700
+
+    add NewsCard at Computing News
+
+[33mcommit 11f1677f9ff297c1188d8e5e3747211f86b70949[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Sat Nov 4 16:52:44 2023 +0700
+
+    label compreciacion bgcolor update  according major
+
+[33mcommit 957d5ea82c4e9aa238aec4a02e942cc4d9142223[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Sat Nov 4 16:32:30 2023 +0700
+
+    fix footer
+
+[33mcommit 833baa605251ce1e8f35e4f5ceeed2b7f83fbb2a[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Sat Nov 4 08:53:02 2023 +0700
+
+    update major design
+
+[33mcommit d852b6cb01d030fcb32a7b6cf382aef2ef839f9c[m
+Author: Yudistira <kizoukungaming@gmail.com>
+Date:   Mon Oct 30 11:52:20 2023 +0700
+
+    fix(image): disable telemetry
+
+[33mcommit dc89295a2add49b97b84ae6e38d032337e40973d[m
+Author: Yudistira <kizoukungaming@gmail.com>
+Date:   Mon Oct 30 11:39:52 2023 +0700
+
+    fix(image): build to be standalone
+
+[33mcommit 6114eddab3ca8c4a6032dca39bec145c4052630b[m
+Author: Yudistira <kizoukungaming@gmail.com>
+Date:   Mon Oct 30 11:33:16 2023 +0700
+
+    fix(registerform): Fix Register form
+
+[33mcommit 4765a1c34014324e63f5d833f671d33eb0796d01[m
+Author: Yudistira <kizoukungaming@gmail.com>
+Date:   Mon Oct 30 11:23:18 2023 +0700
+
+    feat(image): Automatically create docker image
+
+[33mcommit a316ff978a1cef724d62ef5d39dccc354ae3e6ef[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Sat Oct 28 18:24:11 2023 +0700
+
+    fix(index): Remove unused import
+
+[33mcommit 4b45264c9f3e5b5c02bf9f0cda4dc2b9e95af66c[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Fri Oct 13 21:52:12 2023 +0700
+
+    feat(merch): Merch Detail Page
+
+[33mcommit 3df572c94697208f12d4ed2d7504a0ba6f0a1956[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Fri Oct 6 18:41:13 2023 +0700
+
+    feat(merch): WIP Merch Page Shop
+
+[33mcommit 0c01e9341b387177b8a38b352e552664e3b97033[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Fri Oct 6 18:29:57 2023 +0700
+
+    fix(navbar): Fix navbar dropdown, make it componen
+
+[33mcommit d8af3d97f8888baf7af40e6bbfbd78bc71a36c60[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Fri Oct 6 18:20:50 2023 +0700
+
+    fix(package): Update all package
+
+[33mcommit f6c6e18ecbc0d688fe99d7860172fc67570e9980[m
+Author: Irfan Saf <irfansaf7@gmail.com>
+Date:   Fri Oct 6 10:17:41 2023 +0700
+
+    fix(event): event card display fixed
+
+[33mcommit d26c3aeced3f5e344f371daa063a80d9a7315638[m
+Author: Irfan Saf <irfansaf7@gmail.com>
+Date:   Thu Oct 5 23:23:09 2023 +0700
+
+    fix(news): fetching news fix
+
+[33mcommit 2af5d506de1ecde7b8d82566a01fe3efc21bbbd8[m
+Author: Irfan Saf <irfansaf7@gmail.com>
+Date:   Thu Oct 5 23:14:29 2023 +0700
+
+    fix: events fetching
+
+[33mcommit 848eaaca9e259ce03f11fd1984ff7537ababbc26[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Thu Oct 5 19:32:52 2023 +0700
+
+    error api event hehe
+
+[33mcommit fd7bef88b9016a48d5e6e86cb6ea9ade6cad3ba1[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Sat Sep 23 12:31:50 2023 +0700
+
+    register logo
+
+[33mcommit dd1dc985557f31bcbc7f27ddc2cbddfc1eac1575[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Fri Sep 22 21:45:43 2023 +0700
+
+    add news card
+
+[33mcommit cbc4a10c904faa588495ddad84bb84abf1e5a77f[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Fri Sep 22 15:30:07 2023 +0700
+
+    navbar update
+
+[33mcommit 2941ce0f36ebdda40ae2f30325b43da35711eb05[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Fri Sep 22 14:18:49 2023 +0700
+
+    update landing page
+
+[33mcommit 806c280f221ebbc140ce8f8f0d6385df228e2ca9[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Thu Sep 21 20:12:21 2023 +0700
+
+    card at event section solved
+
+[33mcommit 189cea822cbce7ab594407fa3a47c85ac2a83408[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Thu Sep 21 15:59:05 2023 +0700
+
+    add card component, but still cant use
+
+[33mcommit 282efb5a7cd71541538368bafac33c7c303e4dee[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Thu Sep 21 15:44:13 2023 +0700
+
+    add card at event section
+
+[33mcommit 2f82863aed11d730718c2c1b415e372bcd91aeca[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Thu Sep 21 15:15:38 2023 +0700
+
+    fix button on landing page
+
+[33mcommit b56891052025efa571439b9ce5976f9da03505a9[m
+Merge: 92d3949 e67cec8
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Thu Sep 21 14:52:18 2023 +0700
+
+    Merge branch 'master' of https://github.com/PUMA-Computing/PUMA-Front
+
+[33mcommit 92d3949f368a70914a8d92ace5b1e0b45c54bb1d[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Thu Sep 21 14:44:39 2023 +0700
+
+    add section landing page
+
+[33mcommit e67cec8eb54f2a7ad0de519f31cb47868c1f2439[m
+Author: Yudistira <kizoukungaming@gmail.com>
+Date:   Thu Sep 21 08:59:02 2023 +0700
+
+    add link to button
+
+[33mcommit 9a3e42f293e875202ea57112da77ec59c5c5ca7e[m
+Author: Yudistira <kizoukungaming@gmail.com>
+Date:   Thu Sep 21 08:11:12 2023 +0700
+
+    programs section
+
+[33mcommit 9beb1c90eca43764feb65c2ae24f50aff5e1e0f3[m
+Author: Yudistira <kizoukungaming@gmail.com>
+Date:   Wed Sep 20 11:03:14 2023 +0700
+
+    landing page
+
+[33mcommit 86db95504652939fba050ab436040fac5a16a8fa[m
+Author: Yudistira <kizoukungaming@gmail.com>
+Date:   Wed Sep 20 10:29:00 2023 +0700
+
+    fix navbar
+
+[33mcommit 30774e70a01f37175e10119b8ba4556f1ba71a44[m
+Author: Yudistira <kizoukungaming@gmail.com>
+Date:   Tue Sep 19 19:56:27 2023 +0700
+
+    error handling
+
+[33mcommit bd46e453d818fa7456fb5cbb26f2d65c445a5e2c[m
+Author: Yudistira <kizoukungaming@gmail.com>
+Date:   Tue Sep 19 19:08:17 2023 +0700
+
+    Error Handling
+
+[33mcommit 1076a699237fd92b57239de71aa3dd445ff54cfa[m
+Author: Yudistira <kizoukungaming@gmail.com>
+Date:   Tue Sep 19 19:00:33 2023 +0700
+
+    fix auth should not be reloading
+
+[33mcommit aa20fc2753cdbb66c87836d97b666e83e79899d4[m
+Author: Yudistira <kizoukungaming@gmail.com>
+Date:   Tue Sep 19 18:51:45 2023 +0700
+
+    top loader, navbar sticky
+
+[33mcommit 32df75faf5cab9ee7d09cb6f8be91817b8a70140[m
+Merge: 58d155e d0600b9
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Thu Sep 14 20:25:36 2023 +0700
+
+    navbar + landing page
+
+[33mcommit 58d155e1fa58e23c1f26ccbec9296167e91251d6[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Thu Sep 14 20:22:37 2023 +0700
+
+    navbar + landing page
+
+[33mcommit d0600b905eb0bd81fd0f776e4c2a78ae7360209c[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Thu Sep 14 14:56:00 2023 +0700
+
+    set prettier for better readability npm install
+
+[33mcommit 38963e682511fa11a87144d3ce56d09bd3c12717[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Wed Sep 13 23:11:38 2023 +0700
+
+    add navbar, fix register
+
+[33mcommit 86a3c18ee1418501f905c078f165d118baae75ee[m
+Author: Irfan Saf <irfansaf7@gmail.com>
+Date:   Wed Sep 13 17:43:23 2023 +0700
+
+    Fix Handle Register
+
+[33mcommit 3c2c7ed4930e0a993c4bd0c94a207677f044d80e[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Wed Sep 13 00:06:57 2023 +0700
+
+    update register, but still double input into database
+
+[33mcommit cb46d3afd54fb00e8105a8b6c67aaa13926f6621[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Tue Sep 12 18:59:06 2023 +0700
+
+    Login Error
+
+[33mcommit d86e5f66d1e84a9c9f0a28fed05ff4875de0c38a[m
+Author: Yudistira <kizoukungaming@gmail.com>
+Date:   Tue Sep 12 13:00:56 2023 +0700
+
+    fix tailwind not working
+
+[33mcommit 059c253eba3f0c1bf9d719a8d902982e1e75bdbd[m
+Author: Yudistira <kizoukungaming@gmail.com>
+Date:   Tue Sep 12 12:44:19 2023 +0700
+
+    refractor, tailwind not working on login.tsx??
+
+[33mcommit 034090303720ea2512edda95e627f9007235e324[m
+Author: PamanAleph <alieffirmandabisnis@gmail.com>
+Date:   Tue Sep 12 00:13:08 2023 +0700
+
+    error in useState
+
+[33mcommit 81d1f55f13433a83efa4290f95731662f880465b[m
+Author: Irfan Saf <irfansaf7@gmail.com>
+Date:   Mon Sep 11 23:16:35 2023 +0700
+
+    Create Services API User & Auth
+
+[33mcommit a1c94e1d09974cb3deb1edc09596927c836c6a30[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Mon Sep 11 21:30:35 2023 +0700
+
+    fix(layout): Error: Objects are not valid as
+
+[33mcommit b2658ea28a39082f56be0077017f62eb4ebc790c[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Mon Sep 11 21:29:55 2023 +0700
+
+    differentiate main layout and admin layout
+
+[33mcommit 1188963533379035dee070dbcded8d9525c1bd3b[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Mon Sep 11 21:25:49 2023 +0700
+
+    remove not needed
+
+[33mcommit c482dd276342921a5ad79ded355605d851d6bf66[m
+Author: kizoukun <kizoukungaming@gmail.com>
+Date:   Mon Sep 11 21:15:53 2023 +0700
+
+    Initial commit from Create Next App
