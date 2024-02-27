@@ -37,12 +37,12 @@ export default function Page() {
          </section>
 
          {/* logo philosophy  */}
-         <section className="flex flex-col items-center justify-center bg-white px-20 py-20">
+         <section className="flex flex-col items-center justify-center bg-white px-20 pb-12">
             <h1 className="flex justify-center p-8 text-2xl font-bold text-[#353535] md:p-14 md:text-4xl lg:text-5xl">
                LOGO PHILOSOPHY
             </h1>
 
-            <div className="flex flex-col gap-16 max-w-5xl">
+            <div className="max-w-5xl flex-col gap-16 hidden md:block">
                <div className="relative left-[-2rem] flex gap-4">
                   <Image
                      alt="Letter A"
@@ -145,165 +145,197 @@ export default function Page() {
                DIVISION
             </h1>
 
-            <div className="flex items-center justify-center gap-12 pb-20">
-               <div className="flex flex-col gap-14">
-                  <Link
-                     href="/anagata/bod"
-                     className="rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
-                  >
-                     <div className="flex items-center justify-end gap-2">
-                        <h1 className="">BOARD OF DIRECTOR</h1>
-                        <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
-                     </div>
-                     <p className="">
-                        is a representative of the highest division consisting
-                        of <br />
-                        Chairperson, Vice Chairperson, Secretary and Treasurer.
-                     </p>
-                  </Link>
-
-                  <Link
-                     href="/anagata/bod"
-                     className="relative right-10 rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
-                  >
-                     <div className="flex items-center justify-end gap-2">
-                        <h1 className="">BOARD OF DIRECTOR</h1>
-                        <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
-                     </div>
-                     <p className="">
-                        is a representative of the highest division consisting
-                        of <br />
-                        Chairperson, Vice Chairperson, Secretary and Treasurer.
-                     </p>
-                  </Link>
-
-                  <Link
-                     href="/anagata/bod"
-                     className="relative right-20 rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
-                  >
-                     <div className="flex items-center justify-end gap-2">
-                        <h1 className="">BOARD OF DIRECTOR</h1>
-                        <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
-                     </div>
-                     <p className="">
-                        is a representative of the highest division consisting
-                        of <br />
-                        Chairperson, Vice Chairperson, Secretary and Treasurer.
-                     </p>
-                  </Link>
-
-                  <Link
-                     href="/anagata/bod"
-                     className="relative right-10 rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
-                  >
-                     <div className="flex items-center justify-end gap-2">
-                        <h1 className="">BOARD OF DIRECTOR</h1>
-                        <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
-                     </div>
-                     <p className="">
-                        is a representative of the highest division consisting
-                        of <br />
-                        Chairperson, Vice Chairperson, Secretary and Treasurer.
-                     </p>
-                  </Link>
-
-                  <Link
-                     href="/anagata/bod"
-                     className="rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
-                  >
-                     <div className="flex items-center justify-end gap-2">
-                        <h1 className="">BOARD OF DIRECTOR</h1>
-                        <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
-                     </div>
-                     <p className="">
-                        is a representative of the highest division consisting
-                        of <br />
-                        Chairperson, Vice Chairperson, Secretary and Treasurer.
-                     </p>
-                  </Link>
+            <div className="md:hidden">
+               {" "}
+               <div className="grid grid-cols-2 md:grid-cols-4">
+                  <VisionAndMissionCard
+                     image="/icon-pufa/embrace.svg"
+                     title="EMBRACE"
+                     details="To strengthen relationships with faculty, PUFA Computing members, Computizens, PUSB, PUSC, all PUMA, Academic Communities, Alumni, and CnC."
+                  />
+                  <VisionAndMissionCard
+                     image="/icon-pufa/embrace.svg"
+                     title="EMBRACE"
+                     details="To strengthen relationships with faculty, PUFA Computing members, Computizens, PUSB, PUSC, all PUMA, Academic Communities, Alumni, and CnC."
+                  />
+                  <VisionAndMissionCard
+                     image="/icon-pufa/embrace.svg"
+                     title="EMBRACE"
+                     details="To strengthen relationships with faculty, PUFA Computing members, Computizens, PUSB, PUSC, all PUMA, Academic Communities, Alumni, and CnC."
+                  />
                </div>
+            </div>
+            <div className="hidden md:block">
+               <div className="flex items-center justify-center gap-12 pb-20">
+                  <div className="flex flex-col gap-14">
+                     <Link
+                        href="/anagata/bod"
+                        className="rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
+                     >
+                        <div className="flex items-center justify-end gap-2">
+                           <h1 className="">BOARD OF DIRECTOR</h1>
+                           <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
+                        </div>
+                        <p className="">
+                           is a representative of the highest division
+                           consisting of <br />
+                           Chairperson, Vice Chairperson, Secretary and
+                           Treasurer.
+                        </p>
+                     </Link>
 
-               <Image
-                  src="/logo/PUFA_Computing.png"
-                  alt="Logo PUFA Computing"
-                  width={1920}
-                  height={1080}
-                  className="h-[250px] w-[250px] rounded-3xl duration-300 hover:scale-110 hover:shadow-xl"
-               />
+                     <Link
+                        href="/anagata/bod"
+                        className="relative right-10 rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
+                     >
+                        <div className="flex items-center justify-end gap-2">
+                           <h1 className="">BOARD OF DIRECTOR</h1>
+                           <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
+                        </div>
+                        <p className="">
+                           is a representative of the highest division
+                           consisting of <br />
+                           Chairperson, Vice Chairperson, Secretary and
+                           Treasurer.
+                        </p>
+                     </Link>
 
-               <div className="flex flex-col gap-14">
-                  <Link
-                     href="anagata/bod"
-                     className="rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
-                  >
-                     <div className="flex flex-row-reverse items-center justify-end gap-2">
-                        <h1 className="">BOARD OF DIRECTOR</h1>
-                        <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
-                     </div>
-                     <p className="">
-                        is a representative of the highest division consisting
-                        of <br />
-                        Chairperson, Vice Chairperson, Secretary and Treasurer.
-                     </p>
-                  </Link>
+                     <Link
+                        href="/anagata/bod"
+                        className="relative right-20 rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
+                     >
+                        <div className="flex items-center justify-end gap-2">
+                           <h1 className="">BOARD OF DIRECTOR</h1>
+                           <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
+                        </div>
+                        <p className="">
+                           is a representative of the highest division
+                           consisting of <br />
+                           Chairperson, Vice Chairperson, Secretary and
+                           Treasurer.
+                        </p>
+                     </Link>
 
-                  <Link
-                     href="/anagata/bod"
-                     className="relative left-10 rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
-                  >
-                     <div className="flex flex-row-reverse items-center justify-end gap-2">
-                        <h1 className="">BOARD OF DIRECTOR</h1>
-                        <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
-                     </div>
-                     <p className="">
-                        is a representative of the highest division consisting
-                        of <br />
-                        Chairperson, Vice Chairperson, Secretary and Treasurer.
-                     </p>
-                  </Link>
+                     <Link
+                        href="/anagata/bod"
+                        className="relative right-10 rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
+                     >
+                        <div className="flex items-center justify-end gap-2">
+                           <h1 className="">BOARD OF DIRECTOR</h1>
+                           <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
+                        </div>
+                        <p className="">
+                           is a representative of the highest division
+                           consisting of <br />
+                           Chairperson, Vice Chairperson, Secretary and
+                           Treasurer.
+                        </p>
+                     </Link>
 
-                  <Link
-                     href="/anagata/bod"
-                     className="relative left-20 rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
-                  >
-                     <div className="flex flex-row-reverse items-center justify-end gap-2">
-                        <h1 className="">BOARD OF DIRECTOR</h1>
-                        <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
-                     </div>
-                     <p className="">
-                        is a representative of the highest division consisting
-                        of <br />
-                        Chairperson, Vice Chairperson, Secretary and Treasurer.
-                     </p>
-                  </Link>
-                  <Link
-                     href="/anagata/bod"
-                     className="relative left-10 rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
-                  >
-                     <div className="flex flex-row-reverse items-center justify-end gap-2">
-                        <h1 className="">BOARD OF DIRECTOR</h1>
-                        <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
-                     </div>
-                     <p className="">
-                        is a representative of the highest division consisting
-                        of <br />
-                        Chairperson, Vice Chairperson, Secretary and Treasurer.
-                     </p>
-                  </Link>
-                  <Link
-                     href="/anagata/bod"
-                     className="rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
-                  >
-                     <div className="flex flex-row-reverse items-center justify-end gap-2">
-                        <h1 className="">BOARD OF DIRECTOR</h1>
-                        <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
-                     </div>
-                     <p className="">
-                        is a representative of the highest division consisting
-                        of <br />
-                        Chairperson, Vice Chairperson, Secretary and Treasurer.
-                     </p>
-                  </Link>
+                     <Link
+                        href="/anagata/bod"
+                        className="rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
+                     >
+                        <div className="flex items-center justify-end gap-2">
+                           <h1 className="">BOARD OF DIRECTOR</h1>
+                           <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
+                        </div>
+                        <p className="">
+                           is a representative of the highest division
+                           consisting of <br />
+                           Chairperson, Vice Chairperson, Secretary and
+                           Treasurer.
+                        </p>
+                     </Link>
+                  </div>
+
+                  <Image
+                     src="/logo/PUFA_Computing.png"
+                     alt="Logo PUFA Computing"
+                     width={1920}
+                     height={1080}
+                     className="h-[250px] w-[250px] rounded-3xl duration-300 hover:scale-110 hover:shadow-xl"
+                  />
+
+                  <div className="flex flex-col gap-14">
+                     <Link
+                        href="anagata/bod"
+                        className="rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
+                     >
+                        <div className="flex flex-row-reverse items-center justify-end gap-2">
+                           <h1 className="">BOARD OF DIRECTOR</h1>
+                           <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
+                        </div>
+                        <p className="">
+                           is a representative of the highest division
+                           consisting of <br />
+                           Chairperson, Vice Chairperson, Secretary and
+                           Treasurer.
+                        </p>
+                     </Link>
+
+                     <Link
+                        href="/anagata/bod"
+                        className="relative left-10 rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
+                     >
+                        <div className="flex flex-row-reverse items-center justify-end gap-2">
+                           <h1 className="">BOARD OF DIRECTOR</h1>
+                           <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
+                        </div>
+                        <p className="">
+                           is a representative of the highest division
+                           consisting of <br />
+                           Chairperson, Vice Chairperson, Secretary and
+                           Treasurer.
+                        </p>
+                     </Link>
+
+                     <Link
+                        href="/anagata/bod"
+                        className="relative left-20 rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
+                     >
+                        <div className="flex flex-row-reverse items-center justify-end gap-2">
+                           <h1 className="">BOARD OF DIRECTOR</h1>
+                           <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
+                        </div>
+                        <p className="">
+                           is a representative of the highest division
+                           consisting of <br />
+                           Chairperson, Vice Chairperson, Secretary and
+                           Treasurer.
+                        </p>
+                     </Link>
+                     <Link
+                        href="/anagata/bod"
+                        className="relative left-10 rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
+                     >
+                        <div className="flex flex-row-reverse items-center justify-end gap-2">
+                           <h1 className="">BOARD OF DIRECTOR</h1>
+                           <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
+                        </div>
+                        <p className="">
+                           is a representative of the highest division
+                           consisting of <br />
+                           Chairperson, Vice Chairperson, Secretary and
+                           Treasurer.
+                        </p>
+                     </Link>
+                     <Link
+                        href="/anagata/bod"
+                        className="rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
+                     >
+                        <div className="flex flex-row-reverse items-center justify-end gap-2">
+                           <h1 className="">BOARD OF DIRECTOR</h1>
+                           <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
+                        </div>
+                        <p className="">
+                           is a representative of the highest division
+                           consisting of <br />
+                           Chairperson, Vice Chairperson, Secretary and
+                           Treasurer.
+                        </p>
+                     </Link>
+                  </div>
                </div>
             </div>
          </section>
