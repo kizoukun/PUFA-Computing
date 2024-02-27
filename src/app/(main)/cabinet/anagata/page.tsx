@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Logo from "@/assets/anagatalogo.svg";
-import VisionAndMissionCard from "@/components/VisionAndMissionCard";
+import CardWithImage from "@/components/CardWithImage";
 import TimelineComponent from "@/components/TimelineComponent";
 import Link from "next/link";
 
@@ -42,7 +42,27 @@ export default function Page() {
                LOGO PHILOSOPHY
             </h1>
 
-            <div className="max-w-5xl flex-col gap-16 hidden md:block">
+            <div className="block md:hidden">
+               <div className="grid grid-cols-1">
+               <CardWithImage
+                  image="/logo/letter_a.svg"
+                  title="Letter A"
+                  details="To strengthen relationships with faculty, PUFA Computing members, Computizens, PUSB, PUSC, all PUMA, Academic Communities, Alumni, and CnC."
+               />
+               <CardWithImage
+                  image="/logo/bridge.svg"
+                  title="EMBRACE"
+                  details="To strengthen relationships with faculty, PUFA Computing members, Computizens, PUSB, PUSC, all PUMA, Academic Communities, Alumni, and CnC."
+               />
+               <CardWithImage
+                  image="/logo/sun.svg"
+                  title="EMBRACE"
+                  details="To strengthen relationships with faculty, PUFA Computing members, Computizens, PUSB, PUSC, all PUMA, Academic Communities, Alumni, and CnC."
+               />
+               </div>
+            </div>
+
+            <div className="hidden max-w-5xl flex-col gap-16 md:block">
                <div className="relative left-[-2rem] flex gap-4">
                   <Image
                      alt="Letter A"
@@ -121,17 +141,17 @@ export default function Page() {
             </p>
 
             <div className="mx-auto grid max-w-4xl grid-cols-1 gap-12 py-10 md:grid-cols-3">
-               <VisionAndMissionCard
+               <CardWithImage
                   image="/icon-pufa/explore.svg"
                   title="EXPLORE"
                   details="Encouraging the exploration and development of innovation in every change in PUFA Computing."
                />
-               <VisionAndMissionCard
+               <CardWithImage
                   image="/icon-pufa/enhance.svg"
                   title="ENHANCE"
                   details="Providing the best forum for aspirations, connections, information, and activities in the academic and non-academic fields by prioritizing the interests of the faculty of computing."
                />
-               <VisionAndMissionCard
+               <CardWithImage
                   image="/icon-pufa/embrace.svg"
                   title="EMBRACE"
                   details="To strengthen relationships with faculty, PUFA Computing members, Computizens, PUSB, PUSC, all PUMA, Academic Communities, Alumni, and CnC."
@@ -148,17 +168,17 @@ export default function Page() {
             <div className="md:hidden">
                {" "}
                <div className="grid grid-cols-2 md:grid-cols-4">
-                  <VisionAndMissionCard
+                  <CardWithImage
                      image="/icon-pufa/embrace.svg"
                      title="EMBRACE"
                      details="To strengthen relationships with faculty, PUFA Computing members, Computizens, PUSB, PUSC, all PUMA, Academic Communities, Alumni, and CnC."
                   />
-                  <VisionAndMissionCard
+                  <CardWithImage
                      image="/icon-pufa/embrace.svg"
                      title="EMBRACE"
                      details="To strengthen relationships with faculty, PUFA Computing members, Computizens, PUSB, PUSC, all PUMA, Academic Communities, Alumni, and CnC."
                   />
-                  <VisionAndMissionCard
+                  <CardWithImage
                      image="/icon-pufa/embrace.svg"
                      title="EMBRACE"
                      details="To strengthen relationships with faculty, PUFA Computing members, Computizens, PUSB, PUSC, all PUMA, Academic Communities, Alumni, and CnC."
@@ -338,7 +358,6 @@ export default function Page() {
                   </div>
                </div>
             </div>
-
          </section>
 
          <section className="bg-[#F2F2F2]">
@@ -378,66 +397,66 @@ export default function Page() {
                               }}
                            ></div>
 
-                        {/* Left Border */}
-                        <div
-                           className="border-2-2 border-yellow-555 absolute h-full border"
-                           style={{
-                              left: "50%",
-                              border: "2px solid #FFC100",
-                              borderRadius: "1%",
-                           }}
-                        ></div>
-                        <div className="left-timeline mb-8 flex w-full flex-row-reverse items-center justify-between">
-                           <div className="order-1 w-5/12"></div>
-                           <div className="order-1 w-5/12 px-1 py-4 text-right">
-                              <p className="mb-3 text-base text-yellow-300">
-                                 November 2023
-                              </p>
-                              <h4 className="mb-3 text-lg font-bold md:text-2xl">
-                                Compbraints
-                              </h4>
-                              <p className="text-sm leading-snug text-gray-50 text-opacity-100 md:text-base">
-                                 Pick your favourite event(s) and register in
-                                 that event by filling the form corresponding to
-                                 that event. Its that easy :
-                              </p>
+                           {/* Left Border */}
+                           <div
+                              className="border-2-2 border-yellow-555 absolute h-full border"
+                              style={{
+                                 left: "50%",
+                                 border: "2px solid #FFC100",
+                                 borderRadius: "1%",
+                              }}
+                           ></div>
+                           <div className="left-timeline mb-8 flex w-full flex-row-reverse items-center justify-between">
+                              <div className="order-1 w-5/12"></div>
+                              <div className="order-1 w-5/12 px-1 py-4 text-right">
+                                 <p className="mb-3 text-base text-yellow-300">
+                                    November 2023
+                                 </p>
+                                 <h4 className="mb-3 text-lg font-bold md:text-2xl">
+                                    Compbraints
+                                 </h4>
+                                 <p className="text-sm leading-snug text-gray-50 text-opacity-100 md:text-base">
+                                    Pick your favourite event(s) and register in
+                                    that event by filling the form corresponding
+                                    to that event. Its that easy :
+                                 </p>
+                              </div>
                            </div>
-                        </div>
-                        <div className="right-timeline mb-8 flex w-full items-center justify-between">
-                           <div className="order-1 w-5/12"></div>
-                           <div className="order-1  w-5/12 px-1 py-4 text-left">
-                              <p className="mb-3 text-base text-yellow-300">
-                                 December 2023
-                              </p>
-                              <h4 className="mb-3 text-lg font-bold md:text-2xl">
-                                 Compshadow I Welcoming
-                              </h4>
-                              <p className="text-sm leading-snug text-gray-50 text-opacity-100 md:text-base">
-                                 Participate online. The links for your
-                                 registered events will be sent to you via email
-                                 and whatsapp groups. Use those links and show
-                                 your talent.
-                              </p>
+                           <div className="right-timeline mb-8 flex w-full items-center justify-between">
+                              <div className="order-1 w-5/12"></div>
+                              <div className="order-1  w-5/12 px-1 py-4 text-left">
+                                 <p className="mb-3 text-base text-yellow-300">
+                                    December 2023
+                                 </p>
+                                 <h4 className="mb-3 text-lg font-bold md:text-2xl">
+                                    Compshadow I Welcoming
+                                 </h4>
+                                 <p className="text-sm leading-snug text-gray-50 text-opacity-100 md:text-base">
+                                    Participate online. The links for your
+                                    registered events will be sent to you via
+                                    email and whatsapp groups. Use those links
+                                    and show your talent.
+                                 </p>
+                              </div>
                            </div>
-                        </div>
-                        <div className="left-timeline mb-8 flex w-full flex-row-reverse items-center justify-between">
-                           <div className="order-1 w-5/12"></div>
-                           <div className="order-1 w-5/12 px-1 py-4 text-right">
-                              <p className="mb-3 text-base text-yellow-300">
-                                 {" "}
-                                 February 2024
-                              </p>
-                              <h4 className="mb-3 text-lg font-bold md:text-2xl">
-                                 CSGO
-                              </h4>
-                              <p className="text-sm leading-snug text-gray-50 text-opacity-100 md:text-base">
-                                 The ultimate genius will be revealed by our
-                                 judging panel on 10th May, 2021 and the resukts
-                                 will be announced on the whatsapp groups and
-                                 will be mailed to you.
-                              </p>
+                           <div className="left-timeline mb-8 flex w-full flex-row-reverse items-center justify-between">
+                              <div className="order-1 w-5/12"></div>
+                              <div className="order-1 w-5/12 px-1 py-4 text-right">
+                                 <p className="mb-3 text-base text-yellow-300">
+                                    {" "}
+                                    February 2024
+                                 </p>
+                                 <h4 className="mb-3 text-lg font-bold md:text-2xl">
+                                    CSGO
+                                 </h4>
+                                 <p className="text-sm leading-snug text-gray-50 text-opacity-100 md:text-base">
+                                    The ultimate genius will be revealed by our
+                                    judging panel on 10th May, 2021 and the
+                                    resukts will be announced on the whatsapp
+                                    groups and will be mailed to you.
+                                 </p>
+                              </div>
                            </div>
-                        </div>
 
                            <div className="right-timeline mb-8 flex w-full items-center justify-between">
                               <div className="order-1 w-5/12"></div>
