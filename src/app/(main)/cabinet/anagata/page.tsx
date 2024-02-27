@@ -37,14 +37,20 @@ export default function Page() {
          </section>
 
          {/* logo philosophy  */}
-         <section className="bg-white flex flex-col justify-center items-center px-20 py-20">
+         <section className="flex flex-col items-center justify-center bg-white px-20 py-20">
             <h1 className="flex justify-center p-8 text-2xl font-bold text-[#353535] md:p-14 md:text-4xl lg:text-5xl">
                LOGO PHILOSOPHY
             </h1>
 
-            <div className="flex flex-col gap-16">
+            <div className="flex flex-col gap-16 max-w-5xl">
                <div className="relative left-[-2rem] flex gap-4">
-                  <div className="h-[150px] w-[150px] rounded-lg bg-green-400"></div>
+                  <Image
+                     alt="Letter A"
+                     width={1920}
+                     height={1080}
+                     src="/logo/letter_a.svg"
+                     className="h-[150px] w-[150px] rounded-lg"
+                  />
 
                   <h1 className="self-center rounded-lg border-2 border-orange-400 px-4 py-2 text-[1.2rem] font-bold text-green-600">
                      LETTER "A"
@@ -57,28 +63,43 @@ export default function Page() {
                </div>
 
                <div className="relative left-[2rem] flex gap-4">
-                  <div className="h-[150px] w-[150px] rounded-lg bg-green-400"></div>
+                  <Image
+                     alt="Bridge & 25 Pillars"
+                     width={1920}
+                     height={1080}
+                     src="/logo/bridge.svg"
+                     className="h-[150px] w-[150px] rounded-lg"
+                  />
 
-                  <h1 className="self-center rounded-lg border-2 border-orange-400 px-4 py-2 text-[1.2rem] font-bold text-green-600">
+                  <h1 className="self-center rounded-lg border-2 border-orange-400 px-10 py-2 text-[1.2rem] font-bold text-green-600">
                      BRIDGES & 25 PILLARS
                   </h1>
 
                   <h1 className="self-center text-[1.2rem] font-bold text-green-600">
-                     Our letter "A" that represents our cabinet name is
-                     "ANAGATA".
+                     A bridge means PUFA Computing as an intermediary for
+                     computing faculty to achieve a bright future. 25 Pillars
+                     which means 25 people consisting of a combination of BoD,
+                     HoD, and VoD.
                   </h1>
                </div>
 
                <div className="relative left-[-2rem] flex gap-4">
-                  <div className="h-[150px] w-[150px] rounded-lg bg-green-400"></div>
+                  <Image
+                     alt="Sun"
+                     width={1920}
+                     height={1080}
+                     src="/logo/sun.svg"
+                     className="h-[150px] w-[150px] rounded-lg"
+                  />
 
                   <h1 className="self-center rounded-lg border-2 border-orange-400 px-4 py-2 text-[1.2rem] font-bold text-green-600">
                      SUN
                   </h1>
 
                   <h1 className="self-center text-[1.2rem] font-bold text-green-600">
-                     Our letter "A" that represents our cabinet name is
-                     "ANAGATA".
+                     The brilliant sun represents a bright future for the
+                     computing faculty, with 9 sides of sunshine representing
+                     the 9 divisions of PUFA Computing.
                   </h1>
                </div>
             </div>
@@ -223,36 +244,37 @@ export default function Page() {
                TIMELINE
             </h1>
             <div className="bg-black text-white">
-            <div className="container mx-auto  flex flex-col items-start  md:flex-row">
-               <div className="sticky mt-2 flex w-full flex-col px-8 md:top-36 md:mt-12 lg:w-1/3">
-                  <p className="tracking-loose ml-2 uppercase text-yellow-300">
-                     Working Process
-                  </p>
-                  <p className="mb-2 text-3xl leading-normal md:text-4xl md:leading-relaxed">
-                     Working Process of Fest
-                  </p>
-                  <p className="mb-4 text-sm text-gray-50 md:text-base">
-                     Here’s your guide to the tech fest 2021 process. Go through
-                     all the steps to know the exact process of the fest.
-                  </p>
-                  <Link
-                     href="/events"
-                     className="mr-auto rounded border border-yellow-300 bg-transparent px-4 py-2 text-yellow-300 shadow hover:border-transparent hover:bg-yellow-300 hover:text-white hover:shadow-lg"
-                  >
-                     Explore Now
-                  </Link>
-               </div>
-               <div className="sticky ml-0 md:ml-12 lg:w-2/3">
-                  <div className="container mx-auto h-full w-full">
-                     <div className="wrap relative h-full overflow-hidden p-10">
-                        <div
-                           className="border-2-2 border-yellow-555 absolute h-full border"
-                           style={{
-                              right: "50%",
-                              border: "2px solid #FFC100",
-                              borderRadius: "1%",
-                           }}
-                        ></div>
+               <div className="container mx-auto  flex flex-col items-start  md:flex-row">
+                  <div className="sticky mt-2 flex w-full flex-col px-8 md:top-36 md:mt-12 lg:w-1/3">
+                     <p className="tracking-loose ml-2 uppercase text-yellow-300">
+                        Event Timeline
+                     </p>
+                     <p className="mb-2 text-3xl leading-normal md:text-4xl md:leading-relaxed">
+                        Working Process of Fest
+                     </p>
+                     <p className="mb-4 text-sm text-gray-50 md:text-base">
+                        Here’s your guide to the tech fest 2021 process. Go
+                        through all the steps to know the exact process of the
+                        fest.
+                     </p>
+                     <Link
+                        href="/events"
+                        className="mr-auto rounded border border-yellow-300 bg-transparent px-4 py-2 text-yellow-300 shadow hover:border-transparent hover:bg-yellow-300 hover:text-white hover:shadow-lg"
+                     >
+                        Explore Now
+                     </Link>
+                  </div>
+                  <div className="sticky ml-0 md:ml-12 lg:w-2/3">
+                     <div className="container mx-auto h-full w-full">
+                        <div className="wrap relative h-full overflow-hidden p-10">
+                           <div
+                              className="border-2-2 border-yellow-555 absolute h-full border"
+                              style={{
+                                 right: "50%",
+                                 border: "2px solid #FFC100",
+                                 borderRadius: "1%",
+                              }}
+                           ></div>
 
                         {/* Left Border */}
                         <div
@@ -270,7 +292,7 @@ export default function Page() {
                                  November 2023
                               </p>
                               <h4 className="mb-3 text-lg font-bold md:text-2xl">
-                                 Compbraints
+                                Compbraints
                               </h4>
                               <p className="text-sm leading-snug text-gray-50 text-opacity-100 md:text-base">
                                  Pick your favourite event(s) and register in
@@ -315,39 +337,37 @@ export default function Page() {
                            </div>
                         </div>
 
-                        <div className="right-timeline mb-8 flex w-full items-center justify-between">
-                           <div className="order-1 w-5/12"></div>
+                           <div className="right-timeline mb-8 flex w-full items-center justify-between">
+                              <div className="order-1 w-5/12"></div>
 
-                           <div className="order-1  w-5/12 px-1 py-4">
-                              <p className="mb-3 text-base text-yellow-300">
-                                 March 2024
-                              </p>
-                              <ul className="list-disc">
-
-                              <li className="mb-3 text-left  text-lg font-bold md:text-2xl">
-                                 Social Project
-                              </li>
-                              <li className="mb-3 text-left  text-lg font-bold md:text-2xl">
-                                 Compstud
-                                 </li>
-                              </ul>
-                              <p className="text-sm leading-snug text-gray-50 text-opacity-100 md:text-base">
-                                 The winners will be contacted by our team for
-                                 their addresses and the winning goodies will be
-                                 sent at their addresses.
-                              </p>
+                              <div className="order-1  w-5/12 px-1 py-4">
+                                 <p className="mb-3 text-base text-yellow-300">
+                                    March 2024
+                                 </p>
+                                 <ul className="list-disc">
+                                    <li className="mb-3 text-left  text-lg font-bold md:text-2xl">
+                                       Social Project
+                                    </li>
+                                    <li className="mb-3 text-left  text-lg font-bold md:text-2xl">
+                                       Compstud
+                                    </li>
+                                 </ul>
+                                 <p className="text-sm leading-snug text-gray-50 text-opacity-100 md:text-base">
+                                    The winners will be contacted by our team
+                                    for their addresses and the winning goodies
+                                    will be sent at their addresses.
+                                 </p>
+                              </div>
                            </div>
                         </div>
-                        
+                        <img
+                           className="mx-auto -mt-36 md:-mt-36"
+                           src="https://user-images.githubusercontent.com/54521023/116968861-ef21a000-acd2-11eb-95ac-a34b5b490265.png"
+                        />
                      </div>
-                     <img
-                        className="mx-auto -mt-36 md:-mt-36"
-                        src="https://user-images.githubusercontent.com/54521023/116968861-ef21a000-acd2-11eb-95ac-a34b5b490265.png"
-                     />
                   </div>
                </div>
             </div>
-         </div>
          </section>
       </div>
    );
