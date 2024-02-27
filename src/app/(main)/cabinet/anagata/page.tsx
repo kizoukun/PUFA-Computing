@@ -4,6 +4,7 @@ import Logo from "@/assets/anagatalogo.svg";
 import CardWithImage from "@/components/CardWithImage";
 import TimelineComponent from "@/components/TimelineComponent";
 import Link from "next/link";
+import LogoPhilosophyCard from "@/components/LogoPhilosophyCard";
 
 export default function Page() {
    return (
@@ -43,22 +44,27 @@ export default function Page() {
             </h1>
 
             <div className="block md:hidden">
-               <div className="grid grid-cols-1">
-               <CardWithImage
-                  image="/logo/letter_a.svg"
-                  title="Letter A"
-                  details="To strengthen relationships with faculty, PUFA Computing members, Computizens, PUSB, PUSC, all PUMA, Academic Communities, Alumni, and CnC."
-               />
-               <CardWithImage
-                  image="/logo/bridge.svg"
-                  title="EMBRACE"
-                  details="To strengthen relationships with faculty, PUFA Computing members, Computizens, PUSB, PUSC, all PUMA, Academic Communities, Alumni, and CnC."
-               />
-               <CardWithImage
-                  image="/logo/sun.svg"
-                  title="EMBRACE"
-                  details="To strengthen relationships with faculty, PUFA Computing members, Computizens, PUSB, PUSC, all PUMA, Academic Communities, Alumni, and CnC."
-               />
+               <div className="grid grid-cols-1 gap-y-10">
+                  <LogoPhilosophyCard
+                     image="/logo/letter_a.svg"
+                     title="Letter A"
+                     description="To strengthen relationships with faculty, PUFA Computing members, Computizens, PUSB, PUSC, all PUMA, Academic Communities, Alumni, and CnC."
+                  />
+                  <LogoPhilosophyCard
+                     image="/logo/bridge.svg"
+                     title="Bridge & 25 Pillars"
+                     description=" A bridge means PUFA Computing as an intermediary for
+                     computing faculty to achieve a bright future. 25 Pillars
+                     which means 25 people consisting of a combination of BoD,
+                     HoD, and VoD."
+                  />
+                  <LogoPhilosophyCard
+                     image="/logo/sun.svg"
+                     title="SUN"
+                     description="The brilliant sun represents a bright future for the
+                     computing faculty, with 9 sides of sunshine representing
+                     the 9 divisions of PUFA Computing."
+                  />
                </div>
             </div>
 
@@ -72,11 +78,11 @@ export default function Page() {
                      className="h-[150px] w-[150px] rounded-lg"
                   />
 
-                  <h1 className="self-center rounded-lg border-2 border-orange-400 px-4 py-2 text-[1.2rem] font-bold text-green-600">
+                  <h1 className="self-center rounded-lg border-2 border-[#F6931A] px-4 py-2 text-[1.2rem] font-bold text-[#376853]">
                      LETTER "A"
                   </h1>
 
-                  <h1 className="self-center text-[1.2rem] font-bold text-green-600">
+                  <h1 className="self-center text-[1.2rem] font-bold text-[#376853]">
                      Our letter "A" that represents our cabinet name is
                      "ANAGATA".
                   </h1>
@@ -91,11 +97,11 @@ export default function Page() {
                      className="h-[150px] w-[150px] rounded-lg"
                   />
 
-                  <h1 className="self-center rounded-lg border-2 border-orange-400 px-10 py-2 text-[1.2rem] font-bold text-green-600">
+                  <h1 className="self-center rounded-lg border-2 border-[#F6931A] px-10 py-2 text-[1.2rem] font-bold text-[#376853]">
                      BRIDGES & 25 PILLARS
                   </h1>
 
-                  <h1 className="self-center text-[1.2rem] font-bold text-green-600">
+                  <h1 className="self-center text-[1.2rem] font-bold text-[#376853]">
                      A bridge means PUFA Computing as an intermediary for
                      computing faculty to achieve a bright future. 25 Pillars
                      which means 25 people consisting of a combination of BoD,
@@ -112,11 +118,11 @@ export default function Page() {
                      className="h-[150px] w-[150px] rounded-lg"
                   />
 
-                  <h1 className="self-center rounded-lg border-2 border-orange-400 px-4 py-2 text-[1.2rem] font-bold text-green-600">
+                  <h1 className="self-center rounded-lg border-2 border-[#F6931A] px-4 py-2 text-[1.2rem] font-bold text-[#376853]">
                      SUN
                   </h1>
 
-                  <h1 className="self-center text-[1.2rem] font-bold text-green-600">
+                  <h1 className="self-center text-[1.2rem] font-bold text-[#376853]">
                      The brilliant sun represents a bright future for the
                      computing faculty, with 9 sides of sunshine representing
                      the 9 divisions of PUFA Computing.
