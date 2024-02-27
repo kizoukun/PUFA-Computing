@@ -151,7 +151,7 @@ export default async function Index() {
                </div>
             </div>
             {/* button kthx */}
-            <Link href="/" className="flex justify-center">
+            <Link href="/cabinet" className="flex justify-center">
                <Button className="border-[#1FA820] px-10 py-2 text-[#1FA820] hover:bg-[#1FA820] hover:text-white">
                   See Our Cabinet
                </Button>

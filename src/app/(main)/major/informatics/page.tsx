@@ -15,6 +15,10 @@
 import Image from "next/image";
 import Banner from "@/assets/banner/banner-informatics.png";
 import React, { useState } from "react";
+import ListCard from "@/components/ListCard";
+import ListVisionAndMissionCard from "@/components/ListVisionAndMissionCard";
+import LectureCard from "@/components/LectureCard";
+import ToggleSwitch from "@/components/ToggleSwitch";
 
 /**
  * Study Program Page Component
@@ -37,7 +41,11 @@ export default function StudyProgramPage() {
    };
 
    // Vision and Mission content
-   const visionContent = [
+   const visionContent: string[] = [
+      "Becoming the center of excellence for informatics higher education and research in Indonesia, able to compete globally, and play an active role in supporting the industry.",
+   ];
+
+   const missionContent: string[] = [
       "To perform high-quality education and teaching in informatics that focuses in the field of informatics or other relevant sectors",
       "To carry out research and improvement in science and in the development of science, tools, or technology related to the study of informatics.",
       "To carry out social service and empowerment in the field of informatics or other relevant sectors.",
@@ -45,10 +53,8 @@ export default function StudyProgramPage() {
       "To promote the spirit of entrepreneurship for students focusing on Startup Business related to and supported by information technology.",
    ];
 
-   const missionContent = ["ayam goreng sedap"];
-
    // List of professions
-   const professions = [
+   const professions: string[] = [
       "Professional IT",
       "Professional Programmer",
       "Database Engineer",
@@ -76,7 +82,7 @@ export default function StudyProgramPage() {
             <h1 className="px-10 py-2 text-[20px] font-[600] text-[#2F2F2F] md:px-0">
                About Study Program
             </h1>
-            <p className="px-10 py-2 text-justify text-[20px] font-[400] text-[#6B7280] md:px-0">
+            <p className="px-10 py-2 text-justify text-[16px] md:text-[20px] font-[400] text-[#6B7280] md:px-0">
                Informatics are concerned with issues related to advocating for
                users and meeting their needs within an organizational and
                societal context through the selection, creation, application,
@@ -90,61 +96,27 @@ export default function StudyProgramPage() {
             </p>
          </div>
 
-         <div className="grid grid-cols-2 py-10">
-            <p className="px-10 py-2 text-[20px] font-[600] text-[#2F2F2F] md:px-0">
-               Future Field and Career
-            </p>
-
-            {/* Toggle switch for Vision and Mission */}
-            <label
-               htmlFor="switchOption"
-               className="inline-flex cursor-pointer items-center rounded-md p-2 text-gray-800 dark:text-gray-800"
-            >
-               <input
-                  id="switchOption"
-                  type="checkbox"
-                  className="peer hidden"
-                  onChange={handleToggleChange}
-                  checked={selectedContent === "mission"}
+         <div className="grid grid-cols-1 md:grid-cols-2">
+            <div>
+               <p className="px-10 py-2 text-[20px] font-[600] text-[#2F2F2F] md:px-0">
+                  Future Field and Career
+               </p>
+               {/* List of professions */}
+               <ListCard content={professions} />
+            </div>
+            <div>
+               {/* Toggle switch for Vision and Mission */}
+               <ToggleSwitch
+                  selectedContent={selectedContent}
+                  handleToggleChange={handleToggleChange}
                />
-               <span
-                  className={`px-4 py-2 ${
-                     selectedContent === "vision"
-                        ? "bg-blue-400"
-                        : "bg-gray-300 dark:bg-blue-400"
-                  }`}
-               >
-                  Vision
-               </span>
-               <span
-                  className={`px-4 py-2 ${
-                     selectedContent === "mission"
-                        ? "bg-blue-400 dark:bg-gray-300"
-                        : "bg-gray-300"
-                  }`}
-               >
-                  Mission
-               </span>
-            </label>
 
-            {/* List of professions */}
-            <ul className="list-disc space-y-2 px-4 py-2 text-[#6B7280]">
-               {professions.map((profession, index) => (
-                  <li key={index}>{profession}</li>
-               ))}
-            </ul>
-
-            {/* Content based on the selected toggle */}
-            <div className="rounded-2xl border border-[#3C99DC] bg-white py-2">
-               <ul className="list-disc space-y-2 px-10 py-2 text-justify text-[#6B7280]">
-                  {selectedContent === "vision"
-                     ? visionContent.map((item, index) => (
-                          <li key={index}>{item}</li>
-                       ))
-                     : missionContent.map((item, index) => (
-                          <li key={index}>{item}</li>
-                       ))}
-               </ul>
+               {/* Content based on the selected toggle */}
+               <ListVisionAndMissionCard
+                  selectedContent={selectedContent}
+                  visionContent={visionContent}
+                  missionContent={missionContent}
+               />
             </div>
          </div>
 
@@ -154,7 +126,56 @@ export default function StudyProgramPage() {
                Lecturer
             </h1>
             {/* dean and head of study program */}
-            <div className="grid grid-cols-2"></div>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12 lg:grid-cols-4">
+               <LectureCard
+                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
+                  name="Ir. Rila Mandala, M.Eng., Ph.D."
+                  position="Dean School of Computing"
+               />
+               <LectureCard
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Cutifa Safitri, Ph.D."
+                  position="Head of Study Programme"
+               />
+            </div>
+            <div className="grid grid-cols-2 gap-6 md:grid-cols-3 md:py-2 lg:grid-cols-5">
+               <LectureCard
+                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
+                  name="Prof. Dr. Ir. Wiranto Herry Utomo, M.Kom"
+               />
+               <LectureCard
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Dr. Andreas Yumarma"
+               />
+               <LectureCard
+                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
+                  name="Ir. Rila Mandala, M.Eng., Ph.D."
+               />
+               <LectureCard
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Cutifa Safitri, Ph.D."
+               />
+               <LectureCard
+                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
+                  name="Ir. Rila Mandala, M.Eng., Ph.D."
+               />
+               <LectureCard
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Cutifa Safitri, Ph.D."
+               />
+               <LectureCard
+                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
+                  name="Ir. Rila Mandala, M.Eng., Ph.D."
+               />
+               <LectureCard
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Cutifa Safitri, Ph.D."
+               />
+               <LectureCard
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Cutifa Safitri, Ph.D."
+               />
+            </div>
          </div>
       </section>
    );

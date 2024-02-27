@@ -54,19 +54,19 @@ export default function Navbar() {
          items: [
             {
                title: "PUMA Informatics",
-               href: "/organizations/puma-informatics",
+               href: "/puma/puma-informatics",
             },
             {
                title: "PUMA IS",
-               href: "/organizations/puma-is",
+               href: "/puma/puma-is",
             },
             {
                title: "PUMA ID",
-               href: "/organizations/puma-id",
+               href: "/puma/puma-id",
             },
             {
                title: "PUMA VCD",
-               href: "/organizations/puma-vcd",
+               href: "/puma/puma-vcd",
             },
          ],
       },
