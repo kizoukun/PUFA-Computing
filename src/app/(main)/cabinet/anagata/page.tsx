@@ -37,12 +37,12 @@ export default function Page() {
          </section>
 
          {/* logo philosophy  */}
-         <section className="bg-white">
-            <h1 className="flex justify-center p-8 text-2xl font-bold text-[#353535] md:p-20 md:text-4xl lg:text-5xl">
+         <section className="bg-white flex flex-col justify-center items-center px-20 py-20">
+            <h1 className="flex justify-center p-8 text-2xl font-bold text-[#353535] md:p-14 md:text-4xl lg:text-5xl">
                LOGO PHILOSOPHY
             </h1>
 
-            {/* <div className="flex flex-col gap-16">
+            <div className="flex flex-col gap-16">
                <div className="relative left-[-2rem] flex gap-4">
                   <div className="h-[150px] w-[150px] rounded-lg bg-green-400"></div>
 
@@ -81,7 +81,7 @@ export default function Page() {
                      "ANAGATA".
                   </h1>
                </div>
-            </div> */}
+            </div>
          </section>
 
          {/* VISIONS & MISSIONS  */}
@@ -123,6 +123,99 @@ export default function Page() {
             <h1 className="flex justify-center p-8 text-2xl font-bold text-[#353535] md:p-20 md:text-4xl lg:text-5xl">
                DIVISION
             </h1>
+
+            <div className="flex justify-center gap-12 items-center py-6 pb-20">
+
+               <div className="flex flex-col gap-14">
+
+                  <div className="">
+                     <div className="flex gap-2 items-center justify-end">
+                        <h1 className="">BOARD OF DIRECTOR</h1>
+                        <div className="w-[25px] h-[25px] bg-orange-400 rounded-full"></div>
+                     </div>
+                     <p className="">is a representative of the highest division consisting of <br/>Chairperson, Vice Chairperson, Secretary and Treasurer.</p>
+                  </div>
+                  
+                  <div className=" right-10 relative">
+                     <div className="flex gap-2 items-center justify-end">
+                        <h1 className="">BOARD OF DIRECTOR</h1>
+                        <div className="w-[25px] h-[25px] bg-orange-400 rounded-full"></div>
+                     </div>
+                     <p className="">is a representative of the highest division consisting of <br/>Chairperson, Vice Chairperson, Secretary and Treasurer.</p>
+                  </div>
+                  
+                  <div className=" right-20 relative">
+                     <div className="flex gap-2 items-center justify-end">
+                        <h1 className="">BOARD OF DIRECTOR</h1>
+                        <div className="w-[25px] h-[25px] bg-orange-400 rounded-full"></div>
+                     </div>
+                     <p className="">is a representative of the highest division consisting of <br/>Chairperson, Vice Chairperson, Secretary and Treasurer.</p>
+                  </div>
+                  
+                  <div className=" right-10 relative">
+                     <div className="flex gap-2 items-center justify-end">
+                        <h1 className="">BOARD OF DIRECTOR</h1>
+                        <div className="w-[25px] h-[25px] bg-orange-400 rounded-full"></div>
+                     </div>
+                     <p className="">is a representative of the highest division consisting of <br/>Chairperson, Vice Chairperson, Secretary and Treasurer.</p>
+                  </div>
+                  
+                  <div className="">
+                     <div className="flex gap-2 items-center justify-end">
+                        <h1 className="">BOARD OF DIRECTOR</h1>
+                        <div className="w-[25px] h-[25px] bg-orange-400 rounded-full"></div>
+                     </div>
+                     <p className="">is a representative of the highest division consisting of <br/>Chairperson, Vice Chairperson, Secretary and Treasurer.</p>
+                  </div>
+                  
+
+               </div>
+
+               <div className="h-[250px] w-[250px] bg-black rounded-lg"></div>
+
+               <div className="flex flex-col gap-14">
+
+                  <div className="">
+                     <div className="flex flex-row-reverse gap-2 items-center justify-end">
+                        <h1 className="">BOARD OF DIRECTOR</h1>
+                        <div className="w-[25px] h-[25px] bg-orange-400 rounded-full"></div>
+                     </div>
+                     <p className="">is a representative of the highest division consisting of <br/>Chairperson, Vice Chairperson, Secretary and Treasurer.</p>
+                  </div>
+                  
+                  <div className=" relative left-10">
+                     <div className="flex flex-row-reverse gap-2 items-center justify-end">
+                        <h1 className="">BOARD OF DIRECTOR</h1>
+                        <div className="w-[25px] h-[25px] bg-orange-400 rounded-full"></div>
+                     </div>
+                     <p className="">is a representative of the highest division consisting of <br/>Chairperson, Vice Chairperson, Secretary and Treasurer.</p>
+                  </div>
+                  <div className=" relative left-20">
+                     <div className="flex flex-row-reverse gap-2 items-center justify-end">
+                        <h1 className="">BOARD OF DIRECTOR</h1>
+                        <div className="w-[25px] h-[25px] bg-orange-400 rounded-full"></div>
+                     </div>
+                     <p className="">is a representative of the highest division consisting of <br/>Chairperson, Vice Chairperson, Secretary and Treasurer.</p>
+                  </div>
+                  <div className=" relative left-10">
+                     <div className="flex flex-row-reverse gap-2 items-center justify-end">
+                        <h1 className="">BOARD OF DIRECTOR</h1>
+                        <div className="w-[25px] h-[25px] bg-orange-400 rounded-full"></div>
+                     </div>
+                     <p className="">is a representative of the highest division consisting of <br/>Chairperson, Vice Chairperson, Secretary and Treasurer.</p>
+                  </div>
+                  <div className="">
+                     <div className="flex flex-row-reverse gap-2 items-center justify-end">
+                        <h1 className="">BOARD OF DIRECTOR</h1>
+                        <div className="w-[25px] h-[25px] bg-orange-400 rounded-full"></div>
+                     </div>
+                     <p className="">is a representative of the highest division consisting of <br/>Chairperson, Vice Chairperson, Secretary and Treasurer.</p>
+                  </div>
+
+
+               </div>
+            </div>
+
          </section>
 
          <section className="bg-[#F2F2F2]">
@@ -177,7 +270,7 @@ export default function Page() {
                                  November 2023
                               </p>
                               <h4 className="mb-3 text-lg font-bold md:text-2xl">
-                                Compbraints
+                                 Compbraints
                               </h4>
                               <p className="text-sm leading-snug text-gray-50 text-opacity-100 md:text-base">
                                  Pick your favourite event(s) and register in
