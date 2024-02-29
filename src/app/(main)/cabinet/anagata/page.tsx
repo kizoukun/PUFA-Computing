@@ -4,7 +4,7 @@ import Logo from "@/assets/anagatalogo.svg";
 import CardWithImage from "@/components/CardWithImage";
 import TimelineComponent from "@/components/TimelineComponent";
 import Link from "next/link";
-import LogoPhilosophyCard from "@/components/LogoPhilosophyCard";
+import LogoPhilosophyCard from "@/components/cabinet/LogoPhilosophyCard";
 
 export default function Page() {
    return (

@@ -15,9 +15,9 @@
 import Image from "next/image";
 import Banner from "@/assets/banner/banner-informatics.png";
 import React, { useState } from "react";
-import ListCard from "@/components/ListCard";
-import ListVisionAndMissionCard from "@/components/ListVisionAndMissionCard";
-import LectureCard from "@/components/LectureCard";
+import ListCard from "@/components/major/ListCard";
+import ListVisionAndMissionCard from "@/components/major/ListVisionAndMissionCard";
+import LectureCard from "@/components/major/LectureCard";
 import ToggleSwitch from "@/components/ToggleSwitch";
 
 /**

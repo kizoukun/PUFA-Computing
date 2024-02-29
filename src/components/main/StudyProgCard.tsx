@@ -1,17 +1,27 @@
 import Link from "next/link";
 import Button from "@/components/Button";
-
+import { StudyProgramDataProps } from "@/lib/common.type";
 /**
  * StudyProgCard component represents a card for displaying information about a study program.
  *
  * @component
  * @example
- * // Example usage of StudyProgCard component
- * <StudyProgCard
- *    title="Computer Science"
- *    article="Explore the fascinating world of computer science and its applications."
- *    link="/study-programs/computer-science"
- * />
+ * // Assuming StudyProgramData is an array of study program objects.
+ * // import StudyProgCard from "@/path-to-your-components/StudyProgCard";
+ * // import { StudyProgramData } from "@/path-to-your-lib/common.type";
+ *
+ * // Inside your component where you use StudyProgCard:
+ * function YourComponent() {
+ *    return (
+ *       <div>
+ *          {StudyProgramData.map((prodi, index) => (
+ *             <div key={index}>
+ *                <StudyProgCard {...prodi} />
+ *             </div>
+ *          ))}
+ *       </div>
+ *    );
+ * }
  *
  * @param {Object} props - The component props.
  * @param {string} props.title - The title of the study program.
@@ -19,23 +29,23 @@ import Button from "@/components/Button";
  * @param {string} [props.link] - The optional link to navigate to when the "See Details" button is clicked.
  * @returns {JSX.Element} React component
  */
-
-interface StudyProgCardProps {
-   title: string;
-   article: string;
-   link?: string;
-}
-
 export default function StudyProgCard({
    title,
    article,
    link,
-}: StudyProgCardProps) {
+}: StudyProgramDataProps) {
    return (
       <div className="rounded-lg bg-white p-3 shadow-lg transition-all duration-300 hover:bg-gradient-to-b hover:from-white hover:via-white hover:to-[#54A8E2]">
+         {/* Display the title of the study program */}
          <p className="text-2xl md:text-base">{title}</p>
+
+         {/* Horizontal line for separation */}
          <hr className="mx-auto mb-12 mt-4 w-16 border border-[#3C99DC]" />
+
+         {/* Display the article or description of the study program on larger screens */}
          <p className="my-16 hidden md:block">{article}</p>
+
+         {/* Button to navigate to the details page, with optional link */}
          <Link href={link || "/"}>
             <Button className="mx-auto my-4 w-max">See Details</Button>
          </Link>

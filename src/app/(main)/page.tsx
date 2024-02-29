@@ -3,21 +3,21 @@ import BGImage from "@/assets/backgroundimg.png";
 import AnagataLogo from "@/assets/anagatalogo.svg";
 import Link from "next/link";
 import Button from "@/components/Button";
-import Faq from "@/components/Faq";
+import Faq from "@/components/main/Faq";
 import NewsCard from "@/components/news/NewsCard";
 import NewsCardBig from "@/components/news/NewsCardBig";
-import StudyProgCard from "@/components/StudyProgCard";
-import VCDStudyProgCard from "@/components/VCDStudyProgCard";
+import StudyProgCard from "@/components/main/StudyProgCard";
+// import VCDStudyProgCard from "@/components/VCDStudyProgCard";
 import CardStore from "@/components/store/CardStore";
 import EventSection from "@/components/event/EventSection";
-import CompreciationCard from "@/components/CompreciationCard";
+import CompreciationCard from "@/components/main/CompreciationCard";
 import { Suspense } from "react";
+import { FaqData, StudyProgramData } from "@/lib/data";
 
-export const revalidate = 3600;
-export const dynamic = "force-dynamic";
+// export const revalidate = 3600;
+// export const dynamic = "force-dynamic";
 
 export default async function Index() {
-
    return (
       <div className="min-h-screen">
          <div>
@@ -34,11 +34,18 @@ export default async function Index() {
             id="introduction"
             className="container mx-auto -mt-24 sm:-mt-32 md:-mt-48 lg:-mt-64 xl:-mt-96"
          >
-            <img
+            <Image
+               alt="PUFA Photo"
+               className="mx-auto my-5 aspect-video h-48 rounded-2xl md:h-96"
+               width={0}
+               height={0}
+               src="/member.jpg"
+            />
+            {/* <img
                className="mx-auto my-5 aspect-video h-48 md:h-96 rounded-2xl"
                src="../member.jpg"
                alt="PUMA Photo"
-            />
+            /> */}
             <div className="space-y-2 px-8 text-justify md:px-24">
                <p className="text-xl ">
                   PUMA Computing is President University Major Association of
@@ -72,34 +79,11 @@ export default async function Index() {
                qualified student graduates in their fields.
             </h3>
             <div className="grid grid-cols-1 gap-16 md:grid-cols-4">
-               <StudyProgCard
-                  title="Informatics"
-                  article="Informatics study program that will produce qualified
-               graduates in the field of educators who are experts in
-               Informatics."
-                  link="/major/informatics"
-               />
-               <StudyProgCard
-                  title="Information System"
-                  article="Informatics study program that will produce qualified
-               graduates in the field of educators who are experts in
-               Informatics."
-                  link="/major/information-system"
-               />
-               <VCDStudyProgCard
-                  title="Visual Communication Design"
-                  article="Informatics study program that will produce qualified
-               graduates in the field of educators who are experts in
-               Informatics."
-                  link="/major/visual-communication-design"
-               />
-               <StudyProgCard
-                  title="Interior Design"
-                  article="Informatics study program that will produce qualified
-               graduates in the field of educators who are experts in
-               Informatics."
-                  link="/major/interior-design"
-               />
+               {StudyProgramData.map((StudyProgram, index) => (
+                  <div key={index}>
+                     <StudyProgCard {...StudyProgram} />
+                  </div>
+               ))}
             </div>
          </section>
          {/* end */}
@@ -174,9 +158,9 @@ export default async function Index() {
             </h3>
 
             <div className="flex flex-col items-center justify-center gap-7 md:flex-row"></div>
-				<Suspense fallback={<div>Loading...</div>}>
-            	<EventSection />
-				</Suspense>
+            <Suspense fallback={<div>Loading...</div>}>
+               <EventSection />
+            </Suspense>
          </section>
          {/* end */}
 
@@ -338,16 +322,11 @@ export default async function Index() {
                   </h2>
                </div>
                <div className="mb-6 mt-8 space-y-4">
-                  <Faq
-                     status="open"
-                     title="Kukurukuurkrurkurkrkrurkrkruk?"
-                     content="lorem ipsum skdskdsj asdjnaskdjahsfj asljkashdaslfhd dfjlasdfhdjlcbd dsfjkadsfhdsjfbdsc dsfbdsjfbdsjbdsc dsjfdsjdscbdsc dsc jdkfhdslkcbzd"
-                  />
-
-                  <Faq title="ayam itu apa ?" content="ikan bilis" />
-                  <Faq title="ayam itu apa ?" content="ikan bilis" />
-                  <Faq title="ayam itu apa ?" content="ikan bilis" />
-                  <Faq title="ayam itu apa ?" content="ikan bilis" />
+                  {FaqData.map((FaqContent, index) => (
+                     <div key={index}>
+                        <Faq {...FaqContent} />
+                     </div>
+                  ))}
                </div>
             </div>
          </section>
