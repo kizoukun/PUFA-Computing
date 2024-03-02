@@ -25,7 +25,7 @@ export default async function ProjectsCard() {
                className="space-y-4 rounded-lg border border-black"
                key={project.id}
             >
-               <Image
+               <img
                   src={project.ProjectImage[0]?.imageUrl || "/PUComputing.png"}
                   alt={project.title}
                   width={256}

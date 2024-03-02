@@ -19,7 +19,7 @@ export async function POST(request: Request) {
       }
       const fileName = `${Date.now()}-${file.name}`;
       const filePath = `public/uploads/${fileName}`;
-      const fileUrl = `/uploads/${fileName}`;
+      const fileUrl = `/api/public?image=${fileName}`;
       fs.mkdir("public/uploads", { recursive: true });
       await fs.writeFile(filePath, new Uint8Array(await file.arrayBuffer()));
       return NextResponse.json({ error: false, url: fileUrl }, { status: 200 });
