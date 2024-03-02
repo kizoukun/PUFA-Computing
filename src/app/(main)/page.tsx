@@ -37,8 +37,8 @@ export default async function Index() {
             <Image
                alt="PUFA Photo"
                className="mx-auto my-5 aspect-video h-48 rounded-2xl md:h-96"
-               width={0}
-               height={0}
+               width={1080}
+               height={1920}
                src="/member.jpg"
             />
             {/* <img
@@ -59,7 +59,7 @@ export default async function Index() {
                   the IT (Information Technology) and IS (Information System)
                   majors.
                </p>
-               <Link href="#" className="block w-max">
+               <Link href="/" className="block w-max">
                   <Button>See Details</Button>
                </Link>
             </div>

@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Logo from "@/assets/anagatalogo.svg";
 import CardWithImage from "@/components/CardWithImage";
-import TimelineComponent from "@/components/TimelineComponent";
+import TimelineComponent from "@/components/cabinet/TimelineComponent";
 import Link from "next/link";
 import LogoPhilosophyCard from "@/components/cabinet/LogoPhilosophyCard";
 
