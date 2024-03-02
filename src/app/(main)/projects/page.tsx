@@ -3,6 +3,14 @@ import PUComputing from "@/assets/PUComputing.png";
 import { db } from "@/lib/db";
 import Link from "next/link";
 import Button from "@/components/Button";
+import { Metadata } from "next";
+
+export const revalidate = 600;
+export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+   title: "Projects",
+};
 
 export default async function ProjectsPage() {
    const projects = await db.project.findMany({
