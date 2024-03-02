@@ -4,7 +4,7 @@ import Logo from "@/assets/anagatalogo.svg";
 import CardWithImage from "@/components/CardWithImage";
 import TimelineComponent from "@/components/TimelineComponent";
 import Link from "next/link";
-import LogoPhilosophyCard from "@/components/LogoPhilosophyCard";
+import LogoPhilosophyCard from "@/components/cabinet/LogoPhilosophyCard";
 
 export default function Page() {
    return (
@@ -199,10 +199,12 @@ export default function Page() {
                         className="rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
                      >
                         <div className="flex items-center justify-end gap-2">
-                           <h1 className="">BOARD OF DIRECTOR</h1>
-                           <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
+                           <h1 className="text-[1.2rem] font-bold">
+                              BOARD OF DIRECTOR
+                           </h1>
+                           <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-orange-200 to-orange-400"></div>
                         </div>
-                        <p className="">
+                        <p className="text-[0.9rem] font-light text-gray-800">
                            is a representative of the highest division
                            consisting of <br />
                            Chairperson, Vice Chairperson, Secretary and
@@ -215,10 +217,12 @@ export default function Page() {
                         className="relative right-10 rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
                      >
                         <div className="flex items-center justify-end gap-2">
-                           <h1 className="">BOARD OF DIRECTOR</h1>
-                           <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
+                           <h1 className="text-[1.2rem] font-bold">
+                              BOARD OF DIRECTOR
+                           </h1>
+                           <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-green-200 to-green-600"></div>
                         </div>
-                        <p className="">
+                        <p className="text-[0.9rem] font-light text-gray-800">
                            is a representative of the highest division
                            consisting of <br />
                            Chairperson, Vice Chairperson, Secretary and
@@ -231,10 +235,12 @@ export default function Page() {
                         className="relative right-20 rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
                      >
                         <div className="flex items-center justify-end gap-2">
-                           <h1 className="">BOARD OF DIRECTOR</h1>
-                           <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
+                           <h1 className="text-[1.2rem] font-bold">
+                              BOARD OF DIRECTOR
+                           </h1>
+                           <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-orange-200 to-orange-400"></div>
                         </div>
-                        <p className="">
+                        <p className="text-[0.9rem] font-light text-gray-800">
                            is a representative of the highest division
                            consisting of <br />
                            Chairperson, Vice Chairperson, Secretary and
@@ -247,10 +253,12 @@ export default function Page() {
                         className="relative right-10 rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
                      >
                         <div className="flex items-center justify-end gap-2">
-                           <h1 className="">BOARD OF DIRECTOR</h1>
-                           <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
+                           <h1 className="text-[1.2rem] font-bold">
+                              BOARD OF DIRECTOR
+                           </h1>
+                           <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-green-200 to-green-600"></div>
                         </div>
-                        <p className="">
+                        <p className="text-[0.9rem] font-light text-gray-800">
                            is a representative of the highest division
                            consisting of <br />
                            Chairperson, Vice Chairperson, Secretary and
@@ -263,10 +271,12 @@ export default function Page() {
                         className="rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
                      >
                         <div className="flex items-center justify-end gap-2">
-                           <h1 className="">BOARD OF DIRECTOR</h1>
-                           <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
+                           <h1 className="text-[1.2rem] font-bold">
+                              BOARD OF DIRECTOR
+                           </h1>
+                           <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-orange-200 to-orange-400"></div>
                         </div>
-                        <p className="">
+                        <p className="text-[0.9rem] font-light text-gray-800">
                            is a representative of the highest division
                            consisting of <br />
                            Chairperson, Vice Chairperson, Secretary and
@@ -289,10 +299,12 @@ export default function Page() {
                         className="rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
                      >
                         <div className="flex flex-row-reverse items-center justify-end gap-2">
-                           <h1 className="">BOARD OF DIRECTOR</h1>
-                           <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
+                           <h1 className="text-[1.2rem] font-bold">
+                              RESEARCH AND TECHNOLOGY
+                           </h1>
+                           <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-orange-200 to-orange-400"></div>
                         </div>
-                        <p className="">
+                        <p className="text-[0.9rem] font-light text-gray-800">
                            is a representative of the highest division
                            consisting of <br />
                            Chairperson, Vice Chairperson, Secretary and
@@ -305,10 +317,12 @@ export default function Page() {
                         className="relative left-10 rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
                      >
                         <div className="flex flex-row-reverse items-center justify-end gap-2">
-                           <h1 className="">BOARD OF DIRECTOR</h1>
-                           <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
+                           <h1 className="text-[1.2rem] font-bold">
+                              BOARD OF DIRECTOR
+                           </h1>
+                           <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-green-200 to-green-600"></div>
                         </div>
-                        <p className="">
+                        <p className="text-[0.9rem] font-light text-gray-800">
                            is a representative of the highest division
                            consisting of <br />
                            Chairperson, Vice Chairperson, Secretary and
@@ -321,10 +335,12 @@ export default function Page() {
                         className="relative left-20 rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
                      >
                         <div className="flex flex-row-reverse items-center justify-end gap-2">
-                           <h1 className="">BOARD OF DIRECTOR</h1>
-                           <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
+                           <h1 className="text-[1.2rem] font-bold">
+                              BOARD OF DIRECTOR
+                           </h1>
+                           <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-orange-200 to-orange-400"></div>
                         </div>
-                        <p className="">
+                        <p className="text-[0.9rem] font-light text-gray-800">
                            is a representative of the highest division
                            consisting of <br />
                            Chairperson, Vice Chairperson, Secretary and
@@ -336,10 +352,12 @@ export default function Page() {
                         className="relative left-10 rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
                      >
                         <div className="flex flex-row-reverse items-center justify-end gap-2">
-                           <h1 className="">BOARD OF DIRECTOR</h1>
-                           <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
+                           <h1 className="text-[1.2rem] font-bold">
+                              BOARD OF DIRECTOR
+                           </h1>
+                           <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-green-200 to-green-600"></div>
                         </div>
-                        <p className="">
+                        <p className="text-[0.9rem] font-light text-gray-800">
                            is a representative of the highest division
                            consisting of <br />
                            Chairperson, Vice Chairperson, Secretary and
@@ -351,10 +369,12 @@ export default function Page() {
                         className="rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
                      >
                         <div className="flex flex-row-reverse items-center justify-end gap-2">
-                           <h1 className="">BOARD OF DIRECTOR</h1>
-                           <div className="h-[25px] w-[25px] rounded-full bg-orange-400"></div>
+                           <h1 className="text-[1.2rem] font-bold">
+                              BOARD OF DIRECTOR
+                           </h1>
+                           <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-orange-200 to-orange-400"></div>
                         </div>
-                        <p className="">
+                        <p className="text-[0.9rem] font-light text-gray-800">
                            is a representative of the highest division
                            consisting of <br />
                            Chairperson, Vice Chairperson, Secretary and

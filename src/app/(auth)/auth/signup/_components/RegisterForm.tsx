@@ -267,12 +267,6 @@ export default function RegisterForm() {
             <div>
                {SelectedRole != "Student" && (
                   <div className="mt-2">
-                     <label
-                        htmlFor="institution"
-                        className="block text-left text-white"
-                     >
-                        Name Of Institution
-                     </label>
                      <input
                         type="text"
                         className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
