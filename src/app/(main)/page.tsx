@@ -60,7 +60,7 @@ export default async function Index() {
                   the IT (Information Technology) and IS (Information System)
                   majors.
                </p>
-               <Link href="#" className="block w-max">
+               <Link href="/" className="block w-max">
                   <Button>See Details</Button>
                </Link>
             </div>
