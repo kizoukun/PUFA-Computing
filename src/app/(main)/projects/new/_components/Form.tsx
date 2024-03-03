@@ -118,6 +118,24 @@ export default function ProjectForm() {
          return;
       }
 
+      const sourceCode = ["drive.google.com", "github.com", "gitlab.com"];
+      const presentation = [
+         "docs.google.com",
+         "youtube.com",
+         "slides.google.com",
+      ];
+
+      if (
+         !sourceCode.some((sc) => result.data.codeLink.includes(sc)) &&
+         !presentation.some((pr) => result.data.codeLink.includes(pr))
+      ) {
+         return Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Invalid allowable link, please use Google Drive, Github, Gitlab, Google Docs, Google Slides, Youtube",
+         });
+      }
+
       const imageUrls = [];
 
       for (const image of images) {
@@ -233,8 +251,8 @@ export default function ProjectForm() {
          </div>
          <Images images={images} setImages={setImages} />
          <Input2
-            label="Code Link"
-            placeholder="https://gdrive or https://github"
+            label="Code Link Or Presentation Link"
+            placeholder="Google Drive, Github, Gitlab, Google Docs, Google Slides, Youtube"
             htmlFor="codeLink"
             name="codeLink"
             type="text"
