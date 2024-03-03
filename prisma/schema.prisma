@@ -65,3 +65,23 @@ model ProjectImage {
    imageUrl  String
    project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
 }
+
+model Aspiration {
+   id             String           @id @default(uuid())
+   to             String
+   from           String
+   anonymous      Boolean          @default(false)
+   subject        String
+   message        String
+   adminResponse  String?
+   createdAt      DateTime         @default(now())
+   updatedAt      DateTime         @default(now()) @updatedAt
+   AspirationLike AspirationLike[]
+}
+
+model AspirationLike {
+   id           Int        @id @default(autoincrement())
+   aspirationId String
+   userEmail    String
+   aspiration   Aspiration @relation(fields: [aspirationId], references: [id], onDelete: Cascade)
+}
