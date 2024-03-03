@@ -3,6 +3,7 @@ import Button from "@/components/Button";
 import { Metadata } from "next";
 import { Suspense } from "react";
 import ProjectsCard from "./_components/ProjectsCard";
+import Loading from "@/components/Loading";
 
 export const revalidate = 600;
 export const dynamic = "force-dynamic";
@@ -36,7 +37,7 @@ export default async function ProjectsPage() {
                </Link>{" "}
             </div>
             {/* the big project card */}
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loading />}>
                <ProjectsCard />
             </Suspense>
          </section>

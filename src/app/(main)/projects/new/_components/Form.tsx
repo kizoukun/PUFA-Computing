@@ -45,6 +45,9 @@ export default function ProjectForm() {
       title: z.string({ required_error: "Title is required" }).min(5, {
          message: "Title must be at least 5 characters",
       }),
+      fullName: z.string({ required_error: "Full Name is required" }).min(1, {
+         message: "Full Name is required",
+      }),
       description: z
          .string({ required_error: "Description is required" })
          .min(10, { message: "Description must be at least 10 characters" }),
@@ -84,6 +87,7 @@ export default function ProjectForm() {
    async function handleAction(form: FormData) {
       const data = {
          title: form.get("title"),
+         fullName: form.get("fullName"),
          description: form.get("description"),
          major: form.get("major"),
          image: form.get("image"),
@@ -129,6 +133,13 @@ export default function ProjectForm() {
 
    return (
       <form className="space-y-4" action={handleAction}>
+         <Input2
+            label="Full Name"
+            placeholder="Your Full Name (And Team)"
+            htmlFor="fullName"
+            name="fullName"
+            type="text"
+         />
          <Input2
             label="Title"
             placeholder="Your Title Project"

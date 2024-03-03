@@ -8,6 +8,9 @@ const CreateProjectSchema = z.object({
    title: z.string({ required_error: "Title is required" }).min(5, {
       message: "Title must be at least 5 characters",
    }),
+   fullName: z.string({ required_error: "Full Name is required" }).min(1, {
+      message: "Full Name is required",
+   }),
    description: z
       .string({ required_error: "Description is required" })
       .min(10, { message: "Description must be at least 10 characters" }),
@@ -34,6 +37,7 @@ export async function CreateProject(form: unknown) {
          title: data.title,
          description: data.description,
          major: data.major,
+         fullName: data.fullName,
       },
    });
    if (!putDb) {

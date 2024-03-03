@@ -8,15 +8,15 @@ import Faq from "@/components/main/Faq";
 import NewsCard from "@/components/news/NewsCard";
 import NewsCardBig from "@/components/news/NewsCardBig";
 import StudyProgCard from "@/components/main/StudyProgCard";
-// import VCDStudyProgCard from "@/components/VCDStudyProgCard";
 import CardStore from "@/components/store/CardStore";
 import EventSection from "@/components/event/EventSection";
-import CompreciationCard from "@/components/main/CompreciationCard";
 import { Suspense } from "react";
 import { FaqData, StudyProgramData } from "@/lib/data";
+import CompreciationCards from "./_components/CompreciationCards";
+import Loading from "@/components/Loading";
 
-// export const revalidate = 3600;
-// export const dynamic = "force-dynamic";
+export const revalidate = 600;
+export const dynamic = "force-dynamic";
 
 export default async function Index() {
    return (
@@ -159,7 +159,7 @@ export default async function Index() {
             </h3>
 
             <div className="flex flex-col items-center justify-center gap-7 md:flex-row"></div>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loading />}>
                <EventSection />
             </Suspense>
          </section>
@@ -233,32 +233,11 @@ export default async function Index() {
                Compreciation
             </h2>
             <h3 className="">Appreciation to Computizen’s best projects.</h3>
-
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-               <CompreciationCard
-                  date="September 11, 2023"
-                  title="Student Analysis Using Python"
-                  name="Paman, and Aleph"
-                  description="a student analysis system that can help us to see our performance in campus and give the recommendation for the further ..."
-                  major="Informatics"
-               />
-               <CompreciationCard
-                  date="September 11, 2023"
-                  title="Student Analysis Using Python"
-                  name="Paman, and Aleph"
-                  description="a student analysis system that can help us to see our performance in campus and give the recommendation for the further ..."
-                  major="Informatics"
-               />
-               <CompreciationCard
-                  date="September 11, 2023"
-                  title="Student Analysis Using Python"
-                  name="Paman, and Aleph"
-                  description="a student analysis system that can help us to see our performance in campus and give the recommendation for the further ..."
-                  major="Informatics"
-               />
-            </div>
+            <Suspense fallback={<Loading />}>
+               <CompreciationCards />
+            </Suspense>
             <div className="flex items-center justify-center">
-               <Link href="/" className="block w-max">
+               <Link href="/projects" className="block w-max">
                   <Button className="border-[#AF95FF] px-10 py-2 text-[#AF95FF] hover:bg-[#AF95FF] hover:text-white">
                      See all items
                   </Button>
