@@ -3,6 +3,15 @@ import { CiSearch } from "react-icons/ci";
 import React from "react";
 import AspirationForm from "./_components/Form";
 import AspirationsCards from "./_components/Aspirations";
+import { Metadata } from "next";
+
+export const revalidate = 600;
+export const dynamic = "force-dynamic";
+export const metadata: Metadata = {
+   title: "Aspirations",
+   description:
+      "A place for computizens to share their aspirations, ideas, and suggestions with us.",
+};
 
 export default function page() {
    return (
