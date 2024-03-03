@@ -40,7 +40,8 @@ export default function Footer() {
             <div className="md:-mx-3 md:flex md:items-center md:justify-between">
                <div className="dark:text-white md:mx-3 xl:text-sm">
                   <div className="text-sm font-normal tracking-widest text-[#9CA3AF]">
-                     © 2023 PUMA Computing. All rights reserved.
+                     © {new Date().getFullYear()} PUMA Computing. All rights
+                     reserved.
                      <br />
                      Made by Webdev Team Paling Ganteng-Ganteng, Research and
                      Technology.
