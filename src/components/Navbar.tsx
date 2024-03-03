@@ -44,6 +44,10 @@ export default function Navbar() {
                title: "Our Partners",
                href: "/partners",
             },
+            {
+               title: "Projects",
+               href: "/projects",
+            },
          ],
       },
    ];
