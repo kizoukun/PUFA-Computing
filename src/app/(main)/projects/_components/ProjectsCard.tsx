@@ -34,6 +34,7 @@ export default async function ProjectsCard() {
             >
                {project.ProjectImage.map((image) => (
                   <img
+                     key={image.imageUrl}
                      src={image.imageUrl || "/PUComputing.png"}
                      alt={project.title}
                      width={256}
