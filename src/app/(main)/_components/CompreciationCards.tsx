@@ -9,7 +9,7 @@ export default async function CompreciationCards() {
          description: true,
          createdAt: true,
          major: true,
-         fullName: true,
+         teamMembers: true,
          ProjectImage: {
             select: {
                imageUrl: true,
@@ -49,7 +49,7 @@ export default async function CompreciationCards() {
                key={project.id}
                date={dateConvert(project.createdAt)}
                title={project.title}
-               name={project.fullName}
+               name={project.teamMembers[0]}
                description={project.description}
                major={project.major}
             />
