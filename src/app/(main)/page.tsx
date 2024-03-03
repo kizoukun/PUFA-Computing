@@ -1,6 +1,7 @@
 import Image from "next/image";
 import BGImage from "@/assets/backgroundimg.png";
 import AnagataLogo from "@/assets/anagatalogo.svg";
+import Member from "@/assets/member.jpg";
 import Link from "next/link";
 import Button from "@/components/Button";
 import Faq from "@/components/main/Faq";
@@ -36,10 +37,10 @@ export default async function Index() {
          >
             <Image
                alt="PUFA Photo"
-               className="mx-auto my-5 aspect-video h-48 rounded-2xl md:h-96"
-               width={0}
-               height={0}
-               src="/member.jpg"
+               className="mx-auto my-5 aspect-square h-48 rounded-2xl md:h-96"
+               width={1080}
+               height={720}
+               src={Member}
             />
             {/* <img
                className="mx-auto my-5 aspect-video h-48 md:h-96 rounded-2xl"
@@ -102,10 +103,10 @@ export default async function Index() {
                {/* logo anagata */}
                <div className="mt-5 aspect-square h-[20rem] rounded-xl p-1 shadow-lg md:col-span-2 md:mt-0">
                   <Image
-                     className=" mx-auto object-cover "
+                     className="mx-auto object-cover "
                      src={AnagataLogo}
-                     width="0"
-                     height="0"
+                     width={1080}
+                     height={1920}
                      alt="PUMA Photo"
                      loading="lazy"
                   />
