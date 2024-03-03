@@ -15,6 +15,7 @@ import {
 import { CreateProject } from "@/server/projects";
 import { z } from "zod";
 import { redirect } from "next/navigation";
+import Swal from "sweetalert2";
 
 export default function ProjectForm() {
    const majors = [
@@ -92,9 +93,13 @@ export default function ProjectForm() {
       if (!result.success) {
          let errorMessage = "";
          result.error.issues.forEach((issue) => {
-            errorMessage += issue.message + ". ";
+            errorMessage += issue.message + ".\n";
          });
-         alert(errorMessage);
+         Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: errorMessage,
+         });
          return;
       }
 
@@ -107,9 +112,18 @@ export default function ProjectForm() {
 
       const response = await CreateProject(serializedData);
       if (response.error) {
-         alert(response.error);
+         Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: response.error as string,
+         });
          return;
       }
+      Swal.fire({
+         icon: "success",
+         title: "Success",
+         text: "Project created successfully",
+      });
       redirect("/projects");
    }
 
