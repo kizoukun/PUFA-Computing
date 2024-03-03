@@ -31,7 +31,7 @@ export default async function AspirationsCards() {
                key={asp.id}
                title={asp.subject}
                date={asp.createdAt}
-               from={asp.from}
+               from={asp.anonymous ? "Anonymous" : asp.from}
                to={asp.to}
                message={asp.message}
             />
