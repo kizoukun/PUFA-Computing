@@ -26,7 +26,7 @@ export default async function ProjectsCard() {
 
    //TODO: Make the image swipeable
    return (
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
          {projects.map((project) => (
             <div
                className="space-y-4 rounded-lg border border-black"
