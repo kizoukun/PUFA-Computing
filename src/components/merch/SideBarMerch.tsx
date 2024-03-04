@@ -1,5 +1,6 @@
-"use client"
-import Select from 'react-select'
+"use client";
+import { useState } from "react";
+import Select from "react-select";
 
 interface CheckboxItem {
    id: string;
@@ -7,15 +8,16 @@ interface CheckboxItem {
 }
 
 export default function SideBarMerch() {
+   const [isClearable, setIsClearable] = useState(true);
 
    const options = [
-      { value: 'pufa_computing', label: 'PUFA Computing' },
-      { value: 'puma_informatics', label: 'PUMA Informatics' },
-      { value: 'puma_is', label: 'PUMA Information System' },
-      { value: 'puma_vcd', label: 'PUMA VCD' },
-      { value: 'puma_id', label: 'PUMA Interior Design' },
-    ]
-   
+      { value: "pufa_computing", label: "PUFA Computing" },
+      { value: "puma_informatics", label: "PUMA Informatics" },
+      { value: "puma_is", label: "PUMA Information System" },
+      { value: "puma_vcd", label: "PUMA VCD" },
+      { value: "puma_id", label: "PUMA Interior Design" },
+   ];
+
    const checkboxData: CheckboxItem[] = [
       { id: "all", label: "All" },
       { id: "jacket", label: "Jacket" },
@@ -25,7 +27,7 @@ export default function SideBarMerch() {
    ];
 
    return (
-      <div className="hidden space-y-4 lg:block sticky">
+      <div className="sticky hidden space-y-4 lg:block">
          <div className="rounded-xl bg-[#F2F2F2]">
             <div className="p-6">
                <p className="text-[16px] font-[700] text-[#353535]">Filter</p>
@@ -54,7 +56,7 @@ export default function SideBarMerch() {
                   <p className="text-[16px] font-[700] text-[#353535]">
                      Organizations
                   </p>
-                  <Select options={options} />
+                  <Select isClearable={isClearable} options={options} />
                </div>
             </div>
          </div>

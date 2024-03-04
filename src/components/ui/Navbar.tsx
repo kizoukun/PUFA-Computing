@@ -37,8 +37,8 @@ export default function Navbar() {
                href: "/aspiration",
             },
             {
-               title: "Our Team",
-               href: "/team",
+               title: "Merch",
+               href: "/merch",
             },
             {
                title: "Our Partners",

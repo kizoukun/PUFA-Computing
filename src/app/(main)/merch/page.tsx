@@ -1,4 +1,3 @@
-import Card from "@/components/merch/Card";
 import ProductCard from "@/components/merch/ProductCard";
 import SideBarMerch from "@/components/merch/SideBarMerch";
 import Link from "next/link";
@@ -15,7 +14,19 @@ export default function MerchPage() {
          imageUrl: "../aot.jpg",
          price: 100000,
          title: "Computing Varsity",
-         organization: "PUFA Computing"
+         organization: "PUMA Informatics"
+      },
+      {
+         imageUrl: "../aot.jpg",
+         price: 100000,
+         title: "Computing Varsity",
+         organization: "PUMA Interior Design"
+      },
+      {
+         imageUrl: "../aot.jpg",
+         price: 100000,
+         title: "alief",
+         organization: "PUMA VCD"
       },
       {
          imageUrl: "../aot.jpg",
@@ -26,21 +37,22 @@ export default function MerchPage() {
       {
          imageUrl: "../aot.jpg",
          price: 100000,
-         title: "alief",
-         organization: "PUFA Computing"
+         title: "Computing Varsity",
+         organization: "PUMA Informatics"
+      },
+      {
+         imageUrl: "../aot.jpg",
+         price: 100000,
+         title: "Computing Varsity",
+         organization: "PUMA Interior Design"
       },
       {
          imageUrl: "../aot.jpg",
          price: 100000,
          title: "alief",
-         organization: "PUFA Computing"
+         organization: "PUMA VCD"
       },
-      {
-         imageUrl: "../aot.jpg",
-         price: 100000,
-         title: "alief",
-         organization: "PUFA Computing"
-      },
+      
    ];
    return (
       <section>
@@ -62,8 +74,7 @@ export default function MerchPage() {
 
                <div className="lg:col-span-3">
                   <ul className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-                     {/* <ProductCard Products={Product} /> */}
-                     <Card Product={Product}/>
+                     <ProductCard Product={Product}/>
                   </ul>
                </div>
             </div>
