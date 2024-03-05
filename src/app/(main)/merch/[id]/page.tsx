@@ -1,7 +1,24 @@
-import Button from "@/components/Button";
-import Seperator from "@/components/Seperator";
+"use client";
+import { useState } from "react";
+import Select from "react-select";
+
 
 export default function MerchPage() {
+   const [selectedImage, setSelectedImage] = useState<string>("../aot.jpg");
+
+   const handleImageClick = (chooseImage: string) => {
+      setSelectedImage(chooseImage);
+   };
+
+   const [isClearable, setIsClearable] = useState(true);
+
+   const options = [
+      { value: "1", label: "1" },
+      { value: "2", label: "2" },
+      { value: "3", label: "3" },
+      { value: "4", label: "4" },
+      { value: "5", label: "5" },
+   ];
    return (
       <div>
          <div className="bg-[#F2F2F2] p-10">
@@ -20,129 +37,98 @@ export default function MerchPage() {
             <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                <div className="-mx-4 flex flex-col md:flex-row">
                   <div className="px-4 md:flex-1">
-                     <div className="mb-4 h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700">
+                     <div className="mb-4 h-[460px]">
                         <img
-                           className="h-full w-full object-cover"
-                           src="../aot.jpg"
+                           className="h-full w-full rounded-xl object-cover"
+                           src={selectedImage}
                            alt="Product Image"
                         />
                      </div>
-                     <div className="-mx-2 mb-4 flex">
-                        <div className="w-1/2 px-2">
-                           <Button className="border-[#705100] px-10 py-2 text-[#705100] hover:bg-[#705100] hover:text-white">
-                              Add to cart
-                              <svg
-                                 xmlns="http://www.w3.org/2000/svg"
-                                 fill="none"
-                                 viewBox="0 0 24 24"
-                                 strokeWidth={1.5}
-                                 stroke="currentColor"
-                                 className="h-6 w-6"
-                              >
-                                 <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-                                 />
-                              </svg>
-                           </Button>
-                        </div>
-                        <div className="flex w-1/2 items-center justify-center px-2">
-                           <Button className="border-[#705100] px-10 py-2 text-[#705100] hover:bg-[#705100] hover:text-white">
-                              add to cart
-                              <svg
-                                 xmlns="http://www.w3.org/2000/svg"
-                                 fill="none"
-                                 viewBox="0 0 24 24"
-                                 strokeWidth={1.5}
-                                 stroke="currentColor"
-                                 className="h-6 w-6"
-                              >
-                                 <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-                                 />
-                              </svg>
-                           </Button>
-                        </div>
+                     <div className="grid grid-cols-3 gap-2">
+                        <img
+                           className="h-48 w-36 rounded-xl object-cover"
+                           src="../aot.jpg"
+                           alt="Product Image"
+                           onClick={() => handleImageClick("../aot.jpg")}
+                        />
+                        <img
+                           className="h-48 w-36 rounded-xl object-cover"
+                           src="../another-aot.jpg"
+                           alt="Product Image"
+                           onClick={() =>
+                              handleImageClick("../another-aot.jpg")
+                           }
+                        />
                      </div>
                   </div>
                   <div className="px-4 md:flex-1">
                      <h2 className="mb-2 text-2xl font-bold text-gray-800 dark:text-white">
-                        Product Name
+                        Computing Varsity
                      </h2>
-                     <p className="mb-4 text-sm text-gray-600 dark:text-gray-300">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Sed sed ante justo. Integer euismod libero id mauris
-                        malesuada tincidunt.
+                     <div className="flex gap-2">
+                        <label className="justitfy-center flex items-center rounded-2xl border border-[#BA704F] px-3 py-1 text-[14px] font-[400] text-[#BA704F]">
+                           PUFA Computing
+                        </label>
+                        <label className="justitfy-center flex items-center rounded-2xl border border-[#1FA820] px-3 py-1 text-[14px] font-[400] text-[#1FA820]">
+                           Ready
+                        </label>
+                     </div>
+                     {/* price  */}
+
+                     <p className="py-4 text-[32px] font-[600] text-[#353535]">
+                        Rp. 250.000
                      </p>
-                     <div className="mb-4 flex">
-                        <div className="mr-4">
-                           <span className="font-bold text-gray-700 dark:text-gray-300">
-                              Price:
-                           </span>
-                           <span className="text-gray-600 dark:text-gray-300">
-                              $29.99
-                           </span>
+                     {/* Description  */}
+                     <p className="text-justify text-[16px] font-[500] text-[#353535]">
+                        It is long setablished sleeves with an ordinary pattern
+                        and has three color on it, it deserve to make a
+                        computizen proud of their faculty
+                     </p>
+                     
+                        {/* colour  */}
+                        <div className="flex items-center gap-x-4">
+                           <p className="text-[16px] font-[600] text-[#353535] ">
+                              Choose Color :
+                           </p>
+                           <div className="grid grid-cols-3 gap-x-3">
+                              <button className="justitfy-center flex items-center rounded-2xl border border-[#9DA2A7] px-3 py-1 text-[14px] font-[400] text-[#9DA2A7]">
+                                 {" "}
+                                 Black n Grey
+                              </button>
+                              <button className="justitfy-center flex items-center rounded-2xl border border-[#9DA2A7] px-3 py-1 text-[14px] font-[400] text-[#9DA2A7]">
+                                 {" "}
+                                 Black n Grey
+                              </button>
+                              <button className="justitfy-center flex items-center rounded-2xl border border-[#9DA2A7] px-3 py-1 text-[14px] font-[400] text-[#9DA2A7]">
+                                 {" "}
+                                 Black n Grey
+                              </button>
+                           </div>
                         </div>
-                        <div>
-                           <span className="font-bold text-gray-700 dark:text-gray-300">
-                              Availability:
-                           </span>
-                           <span className="text-gray-600 dark:text-gray-300">
-                              In Stock
-                           </span>
+                        {/* size  */}
+                        <div className="flex items-center gap-x-4 p">
+                           <p className="text-[16px] font-[600] text-[#353535] ">
+                              Choose Size :
+                           </p>
+                           <div className="grid grid-cols-3 gap-x-3">
+                              <button className="justitfy-center flex items-center rounded-2xl border border-[#9DA2A7] px-3 py-1 text-[14px] font-[400] text-[#9DA2A7]">
+                                 {" "}
+                                 Black n Grey
+                              </button>
+                              <button className="justitfy-center flex items-center rounded-2xl border border-[#9DA2A7] px-3 py-1 text-[14px] font-[400] text-[#9DA2A7]">
+                                 {" "}
+                                 Black n Grey
+                              </button>
+                              <button className="justitfy-center flex items-center rounded-2xl border border-[#9DA2A7] px-3 py-1 text-[14px] font-[400] text-[#9DA2A7]">
+                                 {" "}
+                                 Black n Grey
+                              </button>
+                           </div>
                         </div>
-                     </div>
-                     <div className="mb-4">
-                        <span className="font-bold text-gray-700 dark:text-gray-300">
-                           Select Color:
-                        </span>
-                        <div className="mt-2 flex items-center">
-                           <button className="mr-2 h-6 w-6 rounded-full bg-gray-800 dark:bg-gray-200"></button>
-                           <button className="mr-2 h-6 w-6 rounded-full bg-red-500 dark:bg-red-700"></button>
-                           <button className="mr-2 h-6 w-6 rounded-full bg-blue-500 dark:bg-blue-700"></button>
-                           <button className="mr-2 h-6 w-6 rounded-full bg-yellow-500 dark:bg-yellow-700"></button>
-                        </div>
-                     </div>
-                     <div className="mb-4">
-                        <span className="font-bold text-gray-700 dark:text-gray-300">
-                           Select Size:
-                        </span>
-                        <div className="mt-2 flex items-center">
-                           <button className="hover-bg-gray-400 dark:hover-bg-gray-600 mr-2 rounded-full bg-gray-300 px-4 py-2 font-bold text-gray-700 dark:bg-gray-700 dark:text-white">
-                              S
-                           </button>
-                           <button className="hover-bg-gray-400 dark:hover-bg-gray-600 mr-2 rounded-full bg-gray-300 px-4 py-2 font-bold text-gray-700 dark:bg-gray-700 dark:text-white">
-                              M
-                           </button>
-                           <button className="hover-bg-gray-400 dark:hover-bg-gray-600 mr-2 rounded-full bg-gray-300 px-4 py-2 font-bold text-gray-700 dark:bg-gray-700 dark:text-white">
-                              L
-                           </button>
-                           <button className="hover-bg-gray-400 dark:hover-bg-gray-600 mr-2 rounded-full bg-gray-300 px-4 py-2 font-bold text-gray-700 dark:bg-gray-700 dark:text-white">
-                              XL
-                           </button>
-                           <button className="hover-bg-gray-400 dark:hover-bg-gray-600 mr-2 rounded-full bg-gray-300 px-4 py-2 font-bold text-gray-700 dark:bg-gray-700 dark:text-white">
-                              XXL
-                           </button>
-                        </div>
-                     </div>
-                     <div>
-                        <span className="font-bold text-gray-700 dark:text-gray-300">
-                           Product Description:
-                        </span>
-                        <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
-                           Lorem ipsum dolor sit amet, consectetur adipiscing
-                           elit. Sed sed ante justo. Integer euismod libero id
-                           mauris malesuada tincidunt. Vivamus commodo nulla ut
-                           lorem rhoncus aliquet. Duis dapibus augue vel ipsum
-                           pretium, et venenatis sem blandit. Quisque ut erat
-                           vitae nisi ultrices placerat non eget velit. Integer
-                           ornare mi sed ipsum lacinia, non sagittis mauris
-                           blandit. Morbi fermentum libero vel nisl suscipit,
-                           nec tincidunt mi consectetur.
-                        </p>
+                     <div className="flex gap-x-5 pt-8">
+
+                        <Select isClearable={isClearable} options={options} />
+                        <button className="text-white bg-[#BA704F] px-10 py-1 rounded-2xl">Purchase</button>
                      </div>
                   </div>
                </div>
