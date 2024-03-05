@@ -4,10 +4,7 @@ import Select from "react-select";
 
 export default function MerchPage() {
    const [selectedImage, setSelectedImage] = useState<string>("../aot.jpg");
-
-   const handleImageClick = (chooseImage: string) => {
-      setSelectedImage(chooseImage);
-   };
+   const [selectedSize, setSelectedSize] = useState<string | null>(null);
 
    const [isClearable, setIsClearable] = useState(true);
 
@@ -18,6 +15,35 @@ export default function MerchPage() {
       { value: "4", label: "4" },
       { value: "5", label: "5" },
    ];
+
+   const sizeOptions = [
+      { value: "s", label: "S" },
+      { value: "m", label: "M" },
+      { value: "l", label: "L" },
+      { value: "xl", label: "XL" },
+      { value: "xxl", label: "XXL" },
+   ];
+
+   const colorOptions = [
+      { value: "blackGrey", label: "Black n Grey" },
+      { value: "blackGrey", label: "Black n Grey" },
+      { value: "blackGrey", label: "Black n Grey" },  
+   ];
+
+   const [selectedColor, setSelectedColor] = useState<string | null>(null);
+
+   const handleColorChange = (selectedOption: any) => {
+      setSelectedColor(selectedOption?.value || null);
+   };
+
+   const handleSizeChange = (selectedOption: any) => {
+      const selectedSizeLabel = selectedOption?.label || null;
+      setSelectedSize(selectedSizeLabel);
+   };
+   const handleImageClick = (chooseImage: string) => {
+      setSelectedImage(chooseImage);
+   };
+
    return (
       <div>
          {/* header title  */}
@@ -93,18 +119,19 @@ export default function MerchPage() {
                               Choose Color :
                            </p>
                            <div className="grid grid-cols-3 gap-x-3">
-                              <button className="justitfy-center flex items-center rounded-2xl border border-[#9DA2A7] px-3 py-1 text-[14px] font-[400] text-[#9DA2A7] transition-all duration-300 hover:border-black hover:text-black hover:shadow-lg">
-                                 {" "}
-                                 Black n Grey
-                              </button>
-                              <button className="justitfy-center flex items-center rounded-2xl border border-[#9DA2A7] px-3 py-1 text-[14px] font-[400] text-[#9DA2A7] transition-all duration-300 hover:border-black hover:text-black hover:shadow-lg">
-                                 {" "}
-                                 Black n Grey
-                              </button>
-                              <button className="justitfy-center flex items-center rounded-2xl border border-[#9DA2A7] px-3 py-1 text-[14px] font-[400] text-[#9DA2A7] transition-all duration-300 hover:border-black hover:text-black hover:shadow-lg">
-                                 {" "}
-                                 Black n Grey
-                              </button>
+                              {colorOptions.map((color) => (
+                                 <button
+                                    key={color.value}
+                                    className={`justitfy-center flex items-center rounded-2xl border ${
+                                       selectedColor === color.value
+                                          ? "border-black text-black shadow-lg"
+                                          : "border-[#9DA2A7] text-[#9DA2A7]"
+                                    } px-3 py-1 text-[14px] font-[400] transition-all duration-300 hover:border-black hover:text-black hover:shadow-lg`}
+                                    onClick={() => handleColorChange(color)}
+                                 >
+                                    {color.label}
+                                 </button>
+                              ))}
                            </div>
                         </div>
                         {/* size  */}
@@ -113,28 +140,24 @@ export default function MerchPage() {
                               Choose Size :
                            </p>
                            <div className="grid grid-cols-3 gap-x-2 pl-5 md:grid-cols-5">
-                              <button className="justitfy-center flex flex-col items-center rounded-2xl border border-[#9DA2A7] px-3 py-1 text-center text-[14px] font-[400] text-[#9DA2A7] transition-all duration-300 hover:border-black hover:text-black hover:shadow-lg">
-                                 {" "}
-                                 S
-                              </button>
-                              <button className="justitfy-center flex flex-col items-center rounded-2xl border border-[#9DA2A7] px-3 py-1 text-center text-[14px] font-[400] text-[#9DA2A7] transition-all duration-300 hover:border-black hover:text-black hover:shadow-lg">
-                                 {" "}
-                                 M
-                              </button>
-                              <button className="justitfy-center flex flex-col items-center rounded-2xl border border-[#9DA2A7] px-3 py-1 text-center text-[14px] font-[400] text-[#9DA2A7] transition-all duration-300 hover:border-black hover:text-black hover:shadow-lg">
-                                 {" "}
-                                 L
-                              </button>
-                              <button className="justitfy-center flex flex-col items-center rounded-2xl border border-[#9DA2A7] px-3 py-1 text-center text-[14px] font-[400] text-[#9DA2A7] transition-all duration-300 hover:border-black hover:text-black hover:shadow-lg">
-                                 {" "}
-                                 XL
-                              </button>
-                              <button className="justitfy-center flex flex-col items-center rounded-2xl border border-[#9DA2A7] px-3 py-1 text-center text-[14px] font-[400] text-[#9DA2A7] transition-all duration-300 hover:border-black hover:text-black hover:shadow-lg">
-                                 {" "}
-                                 XXL
-                              </button>
+                              {sizeOptions.map((size) => (
+                                 <button
+                                    key={size.value}
+                                    className={`justitfy-center flex flex-col items-center rounded-2xl border ${
+                                       selectedSize === size.value
+                                          ? "border-black text-black shadow-lg"
+                                          : "border-[#9DA2A7] text-[#9DA2A7]"
+                                    } px-3 py-1 text-center text-[14px] font-[400] transition-all duration-300 hover:border-black hover:text-black hover:shadow-lg`}
+                                    onClick={() => handleSizeChange(size)}
+                                 >
+                                    {size.label}
+                                 </button>
+                              ))}
                            </div>
                         </div>
+                           <p className="text-[#353535] font-[300] text-[11px]">
+                           *for size xxl will be charged an additional fee of Rp. 10,000
+                           </p>
                      </div>
 
                      <div className="flex gap-x-5 pt-8">
