@@ -68,8 +68,8 @@ export default function Page() {
                </div>
             </div>
 
-            <div className="hidden max-w-5xl flex-col gap-16 md:block">
-               <div className="relative left-[-2rem] flex gap-4">
+            <div className="hidden max-w-[62rem] flex-col gap-16 md:flex">
+               <div className="flex gap-8">
                   <Image
                      alt="Letter A"
                      width={1920}
@@ -78,7 +78,7 @@ export default function Page() {
                      className="h-[150px] w-[150px] rounded-lg"
                   />
 
-                  <h1 className="self-center rounded-lg border-2 border-[#F6931A] px-4 py-2 text-[1.2rem] font-bold text-[#376853]">
+                  <h1 className="self-center rounded-lg border-2 border-[#F6931A] px-6 py-4 text-[1.2rem] font-bold text-[#376853]">
                      LETTER "A"
                   </h1>
 
@@ -88,7 +88,7 @@ export default function Page() {
                   </h1>
                </div>
 
-               <div className="relative left-[2rem] flex gap-4">
+               <div className="flex gap-8">
                   <Image
                      alt="Bridge & 25 Pillars"
                      width={1920}
@@ -97,7 +97,7 @@ export default function Page() {
                      className="h-[150px] w-[150px] rounded-lg"
                   />
 
-                  <h1 className="self-center rounded-lg border-2 border-[#F6931A] px-10 py-2 text-[1.2rem] font-bold text-[#376853]">
+                  <h1 className="self-center rounded-lg border-2 border-[#F6931A] px-6 py-2 text-[1.2rem] font-bold text-[#376853]">
                      BRIDGES & 25 PILLARS
                   </h1>
 
@@ -109,7 +109,7 @@ export default function Page() {
                   </h1>
                </div>
 
-               <div className="relative left-[-2rem] flex gap-4">
+               <div className="flex gap-8">
                   <Image
                      alt="Sun"
                      width={1920}
@@ -118,7 +118,7 @@ export default function Page() {
                      className="h-[150px] w-[150px] rounded-lg"
                   />
 
-                  <h1 className="self-center rounded-lg border-2 border-[#F6931A] px-4 py-2 text-[1.2rem] font-bold text-[#376853]">
+                  <h1 className="self-center rounded-lg border-2 border-[#F6931A] px-12 py-4 text-[1.2rem] font-bold text-[#376853]">
                      SUN
                   </h1>
 
