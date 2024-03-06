@@ -4,7 +4,7 @@ import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
 
 export default function Footer() {
    return (
-      <footer className="mx-auto max-w-7xl bg-white ">
+      <footer className="container mx-auto bg-white px-10 ">
          <div className="container mx-auto px-6 py-12">
             <hr className="my-4 border-gray-200 dark:border-gray-700" />
             <div className="md:-mx-3 md:flex md:items-center md:justify-between">
@@ -22,12 +22,16 @@ export default function Footer() {
                   <input
                      id="email"
                      type="text"
-                     className="rounded-md border bg-white px-4 py-2 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 disabled:opacity-50 cursor-not-allowed"
+                     className="cursor-not-allowed rounded-md border bg-white px-4 py-2 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 disabled:opacity-50"
                      placeholder="Email Address"
                      disabled
                      title="This feature is not available yet"
                   />
-                  <button disabled title="This feature is not available yet" className="w-full transform rounded-lg border border-sky-500 text-sky-500 px-6 py-2.5 text-sm font-medium tracking-wider transition-colors duration-300 hover:bg-sky-500 hover:text-white focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-80 md:mx-4 md:w-auto disabled:opacity-50 cursor-not-allowed">
+                  <button
+                     disabled
+                     title="This feature is not available yet"
+                     className="w-full transform cursor-not-allowed rounded-lg border border-sky-500 px-6 py-2.5 text-sm font-medium tracking-wider text-sky-500 transition-colors duration-300 hover:bg-sky-500 hover:text-white focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-80 disabled:opacity-50 md:mx-4 md:w-auto"
+                  >
                      Subscribe
                   </button>
                </div>

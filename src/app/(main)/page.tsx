@@ -47,7 +47,7 @@ export default async function Index() {
                src="../member.jpg"
                alt="PUMA Photo"
             /> */}
-            <div className="space-y-2 px-8 text-justify md:px-24">
+            <div className="space-y-6 px-8 text-justify md:px-24">
                <p className="text-xl">
                   PUMA Computing is President University Major Association of
                   Computing. Members of PUMA Computing consist of students from
@@ -61,7 +61,7 @@ export default async function Index() {
                   majors.
                </p>
                <Link href="/" className="block w-max">
-                  <Button>See details</Button>
+                  <Button>See Details</Button>
                </Link>
             </div>
          </section>
@@ -116,12 +116,12 @@ export default async function Index() {
             </div>
 
             <button className="rounded-lg border-2 border-[#1FA820] px-10 py-2 text-[#1FA820] transition-all duration-300 hover:bg-[#1FA820] hover:text-white">
-               See Our cabinet
+               See our Cabinet
             </button>
          </section>
 
          {/* event section */}
-         <section className="my-[10rem] flex flex-col items-center space-y-8 md:space-y-12">
+         <section className="my-[10rem] flex select-none flex-col items-center space-y-8 md:space-y-12">
             <div className="border-l-4 border-[#E50D0D] pl-4">
                <h1 className="text-[1.5rem] font-[600]">Computing Events</h1>
             </div>
@@ -222,7 +222,7 @@ export default async function Index() {
             </div>
 
             <button className="rounded-lg border-2 border-[#E50D0D] px-10 py-2 text-[#E50D0D] transition-all duration-300 hover:bg-[#E50D0D] hover:text-white">
-               See all events
+               See all Events
             </button>
          </section>
 
@@ -276,7 +276,7 @@ export default async function Index() {
             <div className="flex items-center justify-center">
                <Link href="/" className="block w-max">
                   <Button className="border-[#FF6F22] px-10 py-2 text-[#FF6F22] hover:bg-[#FF6F22] hover:text-white">
-                     See all news
+                     See all News
                   </Button>
                </Link>
             </div>
@@ -319,7 +319,7 @@ export default async function Index() {
             <div className="flex items-center justify-center">
                <Link href="/" className="block w-max">
                   <Button className="border-[#AF95FF] px-10 py-2 text-[#AF95FF] hover:bg-[#AF95FF] hover:text-white">
-                     See all projects
+                     See all Projects
                   </Button>
                </Link>
             </div>
@@ -357,7 +357,7 @@ export default async function Index() {
             </div>
 
             <button className="rounded-lg border-2 border-[#BA704F] px-10 py-2 text-[#BA704F] transition-all duration-300 hover:bg-[#BA704F] hover:text-white">
-               See all items
+               See all Items
             </button>
          </section>
 

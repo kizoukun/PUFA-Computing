@@ -186,7 +186,7 @@ export default function Navbar() {
                               className="block rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5"
                               href="/auth/signin"
                            >
-                              Sign in
+                              Log in
                            </Link>
 
                            <Link
