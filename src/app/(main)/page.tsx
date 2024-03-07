@@ -132,14 +132,16 @@ export default async function Index() {
 
             {/* event card untuk home (2 besar) */}
             <div className="grid scale-90 grid-cols-1 gap-12 md:scale-100 md:grid-cols-2 md:gap-8">
-               <div className="flex gap-4 rounded-lg shadow-lg">
+               <div className="flex max-w-[35rem] gap-4 rounded-lg shadow-lg">
                   <div className="h-[300px] w-[250px] scale-110 rounded-lg bg-[#E50D0D]"></div>
-                  <div className="max-w-[25rem] space-y-8 p-6">
-                     <h1 className="text-[1.2rem] font-[600]">
+                  <div className="max-w-[20rem] space-y-10 p-6">
+                     <h1 className="text-[1.0rem] font-[600]">
                         Computing Social Project 2023
                      </h1>
-                     <h1>w/ Rumah Tahfidz Taman Qur'ani</h1>
-                     <p>
+                     <h1 className="text-[0.8rem]">
+                        w/ Rumah Tahfidz Taman Qur'ani
+                     </h1>
+                     <p className="text-[0.8rem]">
                         Hola everyone, we are from PUFA Computing 2023. We are
                         so excited to announce the Social Project.
                      </p>
@@ -152,14 +154,16 @@ export default async function Index() {
                   </div>
                </div>
 
-               <div className="flex gap-4 rounded-lg shadow-lg">
+               <div className="flex max-w-[35rem] gap-4 rounded-lg shadow-lg">
                   <div className="h-[300px] w-[250px] scale-110 rounded-lg bg-[#E50D0D]"></div>
-                  <div className="max-w-[25rem] space-y-8 p-6">
-                     <h1 className="text-[1.2rem] font-[600]">
+                  <div className="max-w-[20rem] space-y-10 p-6">
+                     <h1 className="text-[1.0rem] font-[600]">
                         Computing Social Project 2023
                      </h1>
-                     <h1>w/ Rumah Tahfidz Taman Qur'ani</h1>
-                     <p>
+                     <h1 className="text-[0.8rem]">
+                        w/ Rumah Tahfidz Taman Qur'ani
+                     </h1>
+                     <p className="text-[0.8rem]">
                         Hola everyone, we are from PUFA Computing 2023. We are
                         so excited to announce the Social Project.
                      </p>
@@ -174,7 +178,7 @@ export default async function Index() {
             </div>
 
             {/* event card untuk home (3 kecil) */}
-            <div className="grid scale-90 grid-cols-1 gap-8 md:grid-cols-3">
+            <div className="grid scale-90 grid-cols-1 gap-8 md:scale-75 md:grid-cols-3">
                <div className="max-w-[25rem] space-y-6 rounded-lg border border-[#E50D0D] p-6">
                   <h1 className="text-[1.2rem] font-[600]">
                      Computing Social Project 2023
