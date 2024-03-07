@@ -3,24 +3,25 @@ import React from "react";
 
 export default function page() {
    return (
-      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-         <div className="items-center space-x-2">
-            <div className="mx-auto flex max-w-7xl flex-col border-l-4 border-[#1FA820] pl-5 ">
-               <h1 className="text-6xl font-black tracking-widest">
-                  BOARD OF DIRECTOR
+      <section className="flex flex-col space-y-12 border px-[10rem] py-[2rem]">
+         {/* text logo nya  */}
+         <div className="flex flex-col border-l-4 border-[#1FA820] pl-8">
+            <h1 className="text-[3rem] font-[900] uppercase tracking-widest">
+               Board of Director
+            </h1>
+            <div className="flex items-center gap-2">
+               <h1 className="text-[3rem] font-thin uppercase tracking-widest text-stroke-1 text-stroke-black text-stroke-fill-white">
+                  Division
                </h1>
-               <div className="flex-cols-2 flex max-w-2xl gap-2 ">
-                  <h2 className="text-stroke text-5xl font-thin tracking-widest text-white">
-                     DIVISION
-                  </h2>
-
-                  <p className="text-[15px] font-[600] text-[#353535] text-justify">
-                     is a representative of the highest division consisting of
-                     Chairperson, Vice Chairperson, Secretary and Treasurer.
-                  </p>
-               </div>
+               <h1 className="max-w-[20rem] text-[0.8rem]">
+                  is a presentitive of the highest divison consisting of
+                  Chairperson, Vice Chairperson, Secretary and Treasurer.
+               </h1>
             </div>
          </div>
+
+         {/* gambarnya  */}
+         <div className="h-[363px] w-[645px] rounded-lg bg-[#1FA820]"></div>
       </section>
    );
 }
