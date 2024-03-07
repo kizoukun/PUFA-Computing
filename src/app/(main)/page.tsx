@@ -286,46 +286,38 @@ export default async function Index() {
             </div>
          </section>
 
-         {/* compreciacion */}
-         <section
-            id="compreciacion"
-            className="max-h-xl mx-auto my-[10rem] max-w-7xl space-y-12 p-5 text-center"
-         >
-            <h2 className="text-2xl font-bold">
-               <span className="mr-4 border-l-4 border-l-[#AF95FF]"></span>
-               Compreciation
-            </h2>
-            <h3 className="">Appreciation to Computizen’s best projects.</h3>
-
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-               <CompreciationCard
-                  date="September 11, 2023"
-                  title="Student Analysis Using Python"
-                  name="Paman, and Aleph"
-                  description="a student analysis system that can help us to see our performance in campus and give the recommendation for the further ..."
-                  major="Informatics"
-               />
-               <CompreciationCard
-                  date="September 11, 2023"
-                  title="Student Analysis Using Python"
-                  name="Paman, and Aleph"
-                  description="a student analysis system that can help us to see our performance in campus and give the recommendation for the further ..."
-                  major="Informatics"
-               />
-               <CompreciationCard
-                  date="September 11, 2023"
-                  title="Student Analysis Using Python"
-                  name="Paman, and Aleph"
-                  description="a student analysis system that can help us to see our performance in campus and give the recommendation for the further ..."
-                  major="Informatics"
-               />
+         {/* open projects */}
+         <section className="my-[10rem] flex select-none flex-col items-center space-y-12">
+            <div className="border-l-4 border-[#AF95FF] pl-4">
+               <h1 className="text-[1.5rem] font-bold">Open Projects</h1>
             </div>
-            <div className="flex items-center justify-center">
-               <Link href="/" className="block w-max">
-                  <Button className="border-[#AF95FF] px-10 py-2 text-[#AF95FF] hover:bg-[#AF95FF] hover:text-white">
-                     See all Projects
-                  </Button>
-               </Link>
+
+            <h1 className="text-center">
+               Library for all the computizen's projects
+            </h1>
+
+            <div className="grid max-w-[30rem] grid-cols-1 gap-4  md:max-w-[75rem] md:grid-cols-3">
+               <CompreciationCard
+                  date="September 11, 2023"
+                  title="Student Analysis Using Python"
+                  name="Paman, and Aleph"
+                  description="a student analysis system that can help us to see our performance in campus and give the recommendation for the further ..."
+                  major="Informatics"
+               />
+               <CompreciationCard
+                  date="September 11, 2023"
+                  title="Student Analysis Using Python"
+                  name="Paman, and Aleph"
+                  description="a student analysis system that can help us to see our performance in campus and give the recommendation for the further ..."
+                  major="Informatics"
+               />
+               <CompreciationCard
+                  date="September 11, 2023"
+                  title="Student Analysis Using Python"
+                  name="Paman, and Aleph"
+                  description="a student analysis system that can help us to see our performance in campus and give the recommendation for the further ..."
+                  major="Informatics"
+               />
             </div>
          </section>
 
