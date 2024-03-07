@@ -4,7 +4,7 @@ import Logo from "@/assets/anagatalogo.svg";
 import CardWithImage from "@/components/CardWithImage";
 import TimelineComponent from "@/components/cabinet/TimelineComponent";
 import Link from "next/link";
-import LogoPhilosophyCard from "@/components/cabinet/LogoPhilosophyCard";
+import MobileViewPhilosophy from "@/components/cabinet/MobileViewPhilosophy";
 
 export default function Page() {
    return (
@@ -23,7 +23,7 @@ export default function Page() {
                   />
                   {/* tagline  */}
                   <div className="mb-8 lg:mb-0 lg:border-l-4 lg:border-[#1FA820] lg:pl-5 lg:text-left lg:text-[#353535]">
-                     <p className="text-4xl font-bold lg:text-5xl xl:text-6xl">
+                     <p className="text-4xl font-[600] text-[#353535] lg:text-5xl xl:text-6xl">
                         ANAGATA CABINET
                      </p>
                      <p className="text-xl font-semibold lg:text-2xl xl:text-3xl">
@@ -39,34 +39,12 @@ export default function Page() {
 
          {/* logo philosophy  */}
          <section className="flex flex-col items-center justify-center bg-white px-20 pb-12">
-            <h1 className="flex justify-center p-8 text-2xl font-bold text-[#353535] md:p-14 md:text-4xl lg:text-5xl">
+            <h1 className="flex justify-center p-8 text-2xl font-[600] text-[#353535] md:p-14 md:text-4xl lg:text-5xl">
                LOGO PHILOSOPHY
             </h1>
 
-            <div className="block md:hidden">
-               <div className="grid grid-cols-1 gap-y-10">
-                  <LogoPhilosophyCard
-                     image="/logo/letter_a.svg"
-                     title="Letter A"
-                     description="To strengthen relationships with faculty, PUFA Computing members, Computizens, PUSB, PUSC, all PUMA, Academic Communities, Alumni, and CnC."
-                  />
-                  <LogoPhilosophyCard
-                     image="/logo/bridge.svg"
-                     title="Bridge & 25 Pillars"
-                     description=" A bridge means PUFA Computing as an intermediary for
-                     computing faculty to achieve a bright future. 25 Pillars
-                     which means 25 people consisting of a combination of BoD,
-                     HoD, and VoD."
-                  />
-                  <LogoPhilosophyCard
-                     image="/logo/sun.svg"
-                     title="SUN"
-                     description="The brilliant sun represents a bright future for the
-                     computing faculty, with 9 sides of sunshine representing
-                     the 9 divisions of PUFA Computing."
-                  />
-               </div>
-            </div>
+            {/* mobile view  */}
+            <MobileViewPhilosophy/>
 
             <div className="hidden max-w-[62rem] flex-col gap-16 md:flex">
                <div className="flex gap-8">
@@ -78,11 +56,11 @@ export default function Page() {
                      className="h-[150px] w-[150px] rounded-lg"
                   />
 
-                  <h1 className="self-center rounded-lg border-2 border-[#F6931A] px-6 py-4 text-[1.2rem] font-bold text-[#376853]">
+                  <h1 className="self-center rounded-lg border-2 border-[#F6931A] px-6 py-4 text-[1.2rem] font-[600] text-[#376853]">
                      LETTER "A"
                   </h1>
 
-                  <h1 className="self-center text-[1.2rem] font-bold text-[#376853]">
+                  <h1 className="self-center text-[1.2rem] font-[600] text-[#376853] text-[]">
                      Our letter "A" that represents our cabinet name is
                      "ANAGATA".
                   </h1>
@@ -97,11 +75,11 @@ export default function Page() {
                      className="h-[150px] w-[150px] rounded-lg"
                   />
 
-                  <h1 className="self-center rounded-lg border-2 border-[#F6931A] px-6 py-2 text-[1.2rem] font-bold text-[#376853]">
+                  <h1 className="self-center rounded-lg border-2 border-[#F6931A] px-6 py-2 text-[1.2rem] font-[600] text-[#376853]">
                      BRIDGES & 25 PILLARS
                   </h1>
 
-                  <h1 className="self-center text-[1.2rem] font-bold text-[#376853]">
+                  <h1 className="self-center text-[1.2rem] font-[600] text-[#376853]">
                      A bridge means PUFA Computing as an intermediary for
                      computing faculty to achieve a bright future. 25 Pillars
                      which means 25 people consisting of a combination of BoD,
@@ -118,11 +96,11 @@ export default function Page() {
                      className="h-[150px] w-[150px] rounded-lg"
                   />
 
-                  <h1 className="self-center rounded-lg border-2 border-[#F6931A] px-12 py-4 text-[1.2rem] font-bold text-[#376853]">
+                  <h1 className="self-center rounded-lg border-2 border-[#F6931A] px-12 py-4 text-[1.2rem] font-[600] text-[#376853]">
                      SUN
                   </h1>
 
-                  <h1 className="self-center text-[1.2rem] font-bold text-[#376853]">
+                  <h1 className="self-center text-[1.2rem] font-[600] text-[#376853]">
                      The brilliant sun represents a bright future for the
                      computing faculty, with 9 sides of sunshine representing
                      the 9 divisions of PUFA Computing.
@@ -133,7 +111,7 @@ export default function Page() {
 
          {/* VISIONS & MISSIONS  */}
          <section className="bg-[#F2F2F2]">
-            <h1 className="flex justify-center p-8 text-2xl font-bold text-[#353535] md:p-20 md:text-4xl lg:text-5xl">
+            <h1 className="flex justify-center p-8 text-2xl font-[600] text-[#353535] md:p-20 md:text-4xl lg:text-5xl">
                VISIONS & MISSIONS
             </h1>
             <p className="mx-auto px-10 text-justify text-base font-semibold text-[#376853] md:max-w-6xl md:p-0 md:text-center md:text-lg lg:text-xl ">
@@ -167,7 +145,7 @@ export default function Page() {
 
          {/* division  */}
          <section className="bg-white">
-            <h1 className="flex justify-center p-8 text-2xl font-bold text-[#353535] md:p-20 md:text-4xl lg:text-5xl">
+            <h1 className="flex justify-center p-8 text-2xl font-[600] text-[#353535] md:p-20 md:text-4xl lg:text-5xl">
                DIVISION
             </h1>
 
@@ -193,18 +171,18 @@ export default function Page() {
             </div>
             <div className="hidden md:block">
                <div className="flex items-center justify-center gap-12 pb-20">
-                  <div className="flex flex-col gap-14">
+                  <div className="flex flex-col gap-14 text-right">
                      <Link
-                        href="/anagata/bod"
+                        href="anagata/board-of-director"
                         className="rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
                      >
                         <div className="flex items-center justify-end gap-2">
-                           <h1 className="text-[1.2rem] font-bold">
-                              BOARD OF DIRECTOR
+                           <h1 className="text-[1.2rem] font-[600] text-[#353535]">
+                              Board of Director
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-orange-200 to-orange-400"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-gray-800">
+                        <p className="text-[0.9rem] font-light text-[#6B7280]">
                            is a representative of the highest division
                            consisting of <br />
                            Chairperson, Vice Chairperson, Secretary and
@@ -213,74 +191,72 @@ export default function Page() {
                      </Link>
 
                      <Link
-                        href="/anagata/bod"
+                        href="anagata/external-relation"
                         className="relative right-10 rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
                      >
                         <div className="flex items-center justify-end gap-2">
-                           <h1 className="text-[1.2rem] font-bold">
-                              BOARD OF DIRECTOR
+                           <h1 className="text-[1.2rem] font-[600] text-[#353535]">
+                              External Relations
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-green-200 to-green-600"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-gray-800">
-                           is a representative of the highest division
-                           consisting of <br />
-                           Chairperson, Vice Chairperson, Secretary and
-                           Treasurer.
+                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                           This division organize activities or events related
+                           <br />
+                           to parties outside the campus.
                         </p>
                      </Link>
 
                      <Link
-                        href="/anagata/bod"
+                        href="anagata/internal-relation"
                         className="relative right-20 rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
                      >
                         <div className="flex items-center justify-end gap-2">
-                           <h1 className="text-[1.2rem] font-bold">
-                              BOARD OF DIRECTOR
+                           <h1 className="text-[1.2rem] font-[600] text-[#353535]">
+                              Internal Relations
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-orange-200 to-orange-400"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-gray-800">
-                           is a representative of the highest division
-                           consisting of <br />
-                           Chairperson, Vice Chairperson, Secretary and
-                           Treasurer.
+                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                           This division has the main task of strengthening the
+                           <br />
+                           relationship between students and students, students
+                           and <br /> lecturers, students and alumni and PUMA -
+                           PUFA
                         </p>
                      </Link>
 
                      <Link
-                        href="/anagata/bod"
+                        href="anagata/art-and-sport"
                         className="relative right-10 rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
                      >
                         <div className="flex items-center justify-end gap-2">
-                           <h1 className="text-[1.2rem] font-bold">
-                              BOARD OF DIRECTOR
+                           <h1 className="text-[1.2rem] font-[600] text-[#353535]">
+                              Art and Sport
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-green-200 to-green-600"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-gray-800">
-                           is a representative of the highest division
-                           consisting of <br />
-                           Chairperson, Vice Chairperson, Secretary and
-                           Treasurer.
+                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                           Division that focuses on developing interest and
+                           burning <br /> the arts and sports in the computing
+                           sphere.
                         </p>
                      </Link>
 
                      <Link
-                        href="/anagata/bod"
+                        href="anagata/communication-and-multimedia"
                         className="rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
                      >
                         <div className="flex items-center justify-end gap-2">
-                           <h1 className="text-[1.2rem] font-bold">
-                              BOARD OF DIRECTOR
+                           <h1 className="text-[1.2rem] font-[600] text-[#353535]">
+                              Communication
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-orange-200 to-orange-400"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-gray-800">
-                           is a representative of the highest division
-                           consisting of <br />
-                           Chairperson, Vice Chairperson, Secretary and
-                           Treasurer.
+                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                           Division that handles PUFA Computing social media
+                           such <br /> as Instagram, LinkedIn, LINE OA, and
+                           youtube.
                         </p>
                      </Link>
                   </div>
@@ -293,36 +269,35 @@ export default function Page() {
                      className="h-[250px] w-[250px] rounded-3xl duration-300 hover:scale-110 hover:shadow-xl"
                   />
 
-                  <div className="flex flex-col gap-14">
+                  <div className="flex flex-col gap-14 text-left">
                      <Link
-                        href="anagata/bod"
+                        href="anagata/research-and-technology"
                         className="rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
                      >
                         <div className="flex flex-row-reverse items-center justify-end gap-2">
-                           <h1 className="text-[1.2rem] font-bold">
-                              RESEARCH AND TECHNOLOGY
+                           <h1 className="text-[1.2rem] font-[600] text-[#353535]">
+                              Research and Technology
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-orange-200 to-orange-400"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-gray-800">
-                           is a representative of the highest division
-                           consisting of <br />
-                           Chairperson, Vice Chairperson, Secretary and
-                           Treasurer.
+                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                           division in charge of developing creative ideas and
+                           sharing <br /> knowledge and sharing knowledge in the
+                           field of technology.
                         </p>
                      </Link>
 
                      <Link
-                        href="/anagata/bod"
+                        href="anagata/student-development-and-competition"
                         className="relative left-10 rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
                      >
                         <div className="flex flex-row-reverse items-center justify-end gap-2">
-                           <h1 className="text-[1.2rem] font-bold">
-                              BOARD OF DIRECTOR
+                           <h1 className="text-[1.2rem] font-[600] text-[#353535]">
+                              Student Development and Competition
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-green-200 to-green-600"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-gray-800">
+                        <p className="text-[0.9rem] font-light text-[#6B7280]">
                            is a representative of the highest division
                            consisting of <br />
                            Chairperson, Vice Chairperson, Secretary and
@@ -331,54 +306,53 @@ export default function Page() {
                      </Link>
 
                      <Link
-                        href="/anagata/bod"
+                        href="anagata/student-welfare-advocacy"
                         className="relative left-20 rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
                      >
                         <div className="flex flex-row-reverse items-center justify-end gap-2">
-                           <h1 className="text-[1.2rem] font-bold">
-                              BOARD OF DIRECTOR
+                           <h1 className="text-[1.2rem] font-[600] text-[#353535]">
+                              Student Welfare Advocacy
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-orange-200 to-orange-400"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-gray-800">
-                           is a representative of the highest division
-                           consisting of <br />
-                           Chairperson, Vice Chairperson, Secretary and
-                           Treasurer.
+                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                           Responsible for accommodating aspirations and <br />
+                           suggestions, as well as assisting and defending
+                           problems <br /> experienced by Computizens.
                         </p>
                      </Link>
                      <Link
-                        href="/anagata/bod"
+                        href="anagata/entrepreneur"
                         className="relative left-10 rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
                      >
                         <div className="flex flex-row-reverse items-center justify-end gap-2">
-                           <h1 className="text-[1.2rem] font-bold">
-                              BOARD OF DIRECTOR
+                           <h1 className="text-[1.2rem] font-[600] text-[#353535]">
+                              Entrepreneurship
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-green-200 to-green-600"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-gray-800">
-                           is a representative of the highest division
-                           consisting of <br />
-                           Chairperson, Vice Chairperson, Secretary and
-                           Treasurer.
+                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                           this division aims to develop computizens interests
+                           and <br />
+                           talents in entrepreneurship and business.
                         </p>
                      </Link>
                      <Link
-                        href="/anagata/bod"
+                        href="anagata/communication-and-multimedia"
                         className="rounded-xl p-2 duration-300 hover:scale-110 hover:shadow-xl"
                      >
                         <div className="flex flex-row-reverse items-center justify-end gap-2">
-                           <h1 className="text-[1.2rem] font-bold">
-                              BOARD OF DIRECTOR
+                           <h1 className="text-[1.2rem] font-[600] text-[#353535]">
+                              Multimedia
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-orange-200 to-orange-400"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-gray-800">
-                           is a representative of the highest division
-                           consisting of <br />
-                           Chairperson, Vice Chairperson, Secretary and
-                           Treasurer.
+                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                           Responsible to in charge of creating and editing{" "}
+                           <br />
+                           templates content to be posted on social media PUFA{" "}
+                           <br />
+                           Computing.
                         </p>
                      </Link>
                   </div>
@@ -387,7 +361,7 @@ export default function Page() {
          </section>
 
          <section className="bg-[#F2F2F2]">
-            <h1 className="flex justify-center p-8 text-2xl font-bold text-[#353535] md:p-20 md:text-4xl lg:text-5xl">
+            <h1 className="flex justify-center p-8 text-2xl font-[600] text-[#353535] md:p-20 md:text-4xl lg:text-5xl">
                TIMELINE
             </h1>
             <div className="bg-black text-white">
@@ -438,7 +412,7 @@ export default function Page() {
                                  <p className="mb-3 text-base text-yellow-300">
                                     November 2023
                                  </p>
-                                 <h4 className="mb-3 text-lg font-bold md:text-2xl">
+                                 <h4 className="mb-3 text-lg font-[600] text-[#353535] md:text-2xl">
                                     Compbraints
                                  </h4>
                                  <p className="text-sm leading-snug text-gray-50 text-opacity-100 md:text-base">
@@ -454,7 +428,7 @@ export default function Page() {
                                  <p className="mb-3 text-base text-yellow-300">
                                     December 2023
                                  </p>
-                                 <h4 className="mb-3 text-lg font-bold md:text-2xl">
+                                 <h4 className="mb-3 text-lg font-[600] text-[#353535] md:text-2xl">
                                     Compshadow I Welcoming
                                  </h4>
                                  <p className="text-sm leading-snug text-gray-50 text-opacity-100 md:text-base">
@@ -472,7 +446,7 @@ export default function Page() {
                                     {" "}
                                     February 2024
                                  </p>
-                                 <h4 className="mb-3 text-lg font-bold md:text-2xl">
+                                 <h4 className="mb-3 text-lg font-[600] text-[#353535] md:text-2xl">
                                     CSGO
                                  </h4>
                                  <p className="text-sm leading-snug text-gray-50 text-opacity-100 md:text-base">
@@ -492,10 +466,10 @@ export default function Page() {
                                     March 2024
                                  </p>
                                  <ul className="list-disc">
-                                    <li className="mb-3 text-left  text-lg font-bold md:text-2xl">
+                                    <li className="mb-3 text-left  text-lg font-[600] text-[#353535] md:text-2xl">
                                        Social Project
                                     </li>
-                                    <li className="mb-3 text-left  text-lg font-bold md:text-2xl">
+                                    <li className="mb-3 text-left  text-lg font-[600] text-[#353535] md:text-2xl">
                                        Compstud
                                     </li>
                                  </ul>
