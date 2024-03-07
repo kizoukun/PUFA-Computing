@@ -1,52 +1,49 @@
-import { API_LOGIN } from "@/config/config";
+import axios from 'axios';
+import { API_LOGIN, API_LOGOUT, API_REGISTER } from "@/config/config";
+import User from "@/models/user";
 
-const setAuthHeader = () => {
-   const token = localStorage.getItem("access_token");
-   if (token) {
-      return { Authorization: `Bearer ${token}` };
+export const Login = async (username: string, password: string) => {
+   const data = {
+      username,
+      password,
+   };
+   try {
+      const response = await axios.post(API_LOGIN, data, {withCredentials: true});
+      return response.data;
+   } catch (error) {
+      console.error("Failed to Login", error);
+      throw error;
    }
-   return {};
 }
 
-export async function Login(
-   username: string,
-   password: string
-): Promise<Response> {
-   setAuthHeader();
-   return fetch(API_LOGIN, {
-      method: "POST",
-      headers: {
-         "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-         username,
-         password,
-      }),
-   });
+export const Logout = async () => {
+   try {
+      const response = await axios.post(API_LOGOUT, {withCredentials: true});
+      return response.data;
+   } catch (error) {
+      console.error("Failed to Logout", error);
+      throw error;
+   }
 }
 
-export async function Logout(): Promise<Response> {
-   return fetch(API_LOGIN, {
-      method: "DELETE",
-      headers: {
-         "Content-Type": "application/json",
-      },
-   });
+export const Register = async (user: User) => {
+   try {
+      const response = await axios.post(API_REGISTER, {
+         username: user.username,
+         first_name: user.first_name,
+         last_name: user.last_name,
+         email: user.email,
+         password: user.password,
+         role_id: user.role_id,
+         student_id: user.student_id,
+         year: user.year,
+
+      }, {withCredentials: true});
+      return response.data;
+   } catch (error) {
+      console.error("Failed to Register", error);
+      throw error;
+   }
 }
 
-export async function Register(
-   email: string,
-   password: string
-): Promise<Response> {
-   setAuthHeader();
-   return fetch(API_LOGIN, {
-      method: "POST",
-      headers: {
-         "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-         password,
-         email,
-      }),
-   });
-}
+export default Login;
