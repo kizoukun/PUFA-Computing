@@ -190,7 +190,7 @@ export default async function Index() {
                            Completed
                         </h1>
                      </div>
-                     <a href="">Read More</a>
+                     <Link href="">Read More</Link>
                   </div>
                </div>
 
@@ -205,7 +205,7 @@ export default async function Index() {
                            Completed
                         </h1>
                      </div>
-                     <a href="">Read More</a>
+                     <Link href="">Read More</Link>
                   </div>
                </div>
 
@@ -220,7 +220,7 @@ export default async function Index() {
                            Completed
                         </h1>
                      </div>
-                     <a href="">Read More</a>
+                     <Link href="">Read More</Link>
                   </div>
                </div>
             </div>
