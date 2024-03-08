@@ -76,7 +76,7 @@ export default function StudyProgramPage() {
          <div className="space-y-8">
             <h1 className="font-[600]">About Study Program</h1>
 
-            <h1 className="leading-7">
+            <h1 className="leading-7 text-justify">
                Visual Communication Design (VCD) is a major of design study
                focused on how to reflect the concept of communication using
                visual design elements that deliver messages and impressions

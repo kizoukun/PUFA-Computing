@@ -80,7 +80,7 @@ export default function StudyProgramPage() {
             <div className="space-y-8">
                <h1 className="font-[600]">About Study Program</h1>
 
-               <h1 className="leading-7">
+               <h1 className="leading-7 text-justify">
                   Informatics are concerned with issues related to advocating
                   for users and meeting their needs within an organizational and
                   societal context through the selection, creation, application,

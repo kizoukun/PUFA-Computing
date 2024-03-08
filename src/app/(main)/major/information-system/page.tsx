@@ -76,7 +76,7 @@ export default function StudyProgramPage() {
          <div className="space-y-8">
             <h1 className="font-[600]">About Study Program</h1>
 
-            <h1 className="leading-7">
+            <h1 className="leading-7 text-justify">
                Information System Study Program has strong connections with
                information science, computer science, business, and technology
                as well as with project management. Bachelor in Information
