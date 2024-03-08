@@ -6,10 +6,11 @@ export const fetchAspirations = async (): Promise<Aspirations[]> => {
     try {
        const response = await axios.get(API_ASPIRATION);
        // console.log("API Response:", response);
-       const aspirationData = response.data?.aspirations || [];
-       aspirationData.forEach((aspiration: Aspirations) => {
-          aspiration.updated_at = new Date(aspiration.updated_at);
-          aspiration.created_at = new Date(aspiration.created_at);
+       let aspirationData = response.data?.aspirations || [];
+       aspirationData = aspirationData.map((aspiration: Aspirations) => {
+            aspiration.created_at = new Date(aspiration.created_at);
+            aspiration.updated_at = new Date(aspiration.updated_at);
+            return aspiration;
        });
 
        return aspirationData as Aspirations[];

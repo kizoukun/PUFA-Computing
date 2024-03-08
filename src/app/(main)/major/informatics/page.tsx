@@ -113,15 +113,16 @@ export default function StudyProgramPage() {
                   handleToggleChange={handleToggleChange}
                />
 
-            {/* List of professions */}
-            <ListCard content={professions} />
+               {/* List of professions */}
+               <ListCard content={professions} />
 
-            {/* Content based on the selected toggle */}
-            <ListVisionAndMissionCard
-               selectedContent={selectedContent}
-               visionContent={visionContent}
-               missionContent={missionContent}
-            />
+               {/* Content based on the selected toggle */}
+               <ListVisionAndMissionCard
+                  selectedContent={selectedContent}
+                  visionContent={visionContent}
+                  missionContent={missionContent}
+               />
+            </div>
          </div>
 
          {/* lecture */}
