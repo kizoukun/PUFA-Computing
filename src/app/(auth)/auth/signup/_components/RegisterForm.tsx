@@ -22,7 +22,9 @@ export default function RegisterForm() {
    // validation/regex
    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-   const studentIdRegex = /^\d{11,}$/;
+
+   // Student ID format is 3 digits 001 and 9 digits 123456789
+   const studentIdRegex = /^[0-9]{3}[0-9]{9}$/;
 
    // Function to check
    const isEmailValid = (email: string) => {
@@ -53,7 +55,7 @@ export default function RegisterForm() {
 
       // Check if the entered email is valid
       if (!isEmailValid(email)) {
-         Swal.fire({
+         await Swal.fire({
             icon: "error",
             title: "Invalid Email",
             text: "Please enter a valid email address",
@@ -62,7 +64,7 @@ export default function RegisterForm() {
       }
       // Check if the password valid
       if (!isPasswordValid(password)) {
-         Swal.fire({
+         await Swal.fire({
             icon: "error",
             title: "Invalid Password",
             text: "Password must be at least 8 characters long and contain at least 1 numeric digit.",
@@ -70,10 +72,10 @@ export default function RegisterForm() {
          return;
       }
       if (!isStudentIdValid(studentId)) {
-         Swal.fire({
+         await Swal.fire({
             icon: "error",
             title: "Invalid Student ID",
-            text: "Student ID must be at least 12 characters long and contain numeric digit.",
+            text: "Student ID must be 12 digits long and start with 3 digits of batch and 9 digits of student id",
          });
          return;
       }
@@ -81,29 +83,28 @@ export default function RegisterForm() {
       try {
          // Construct user object based on form data
          const user: User = {
+            username: `${formData.get("firstName") as string}.${formData.get("lastName") as string}`.toLowerCase(),
             first_name: formData.get("firstName") as string,
             last_name: formData.get("lastName") as string,
-            email,
-            password: formData.get("password") as string,
-            student_id:
-               SelectedRole === "computing"
-                  ? (formData.get("studentId") as string)
-                  : undefined,
-            year:
-               SelectedRole === "computing"
-                  ? (formData.get("batch") as string)
-                  : undefined,
-            institution:
-               SelectedRole === "Institution"
-                  ? (formData.get("institution") as string)
-                  : undefined,
+            email: email,
+            password: password,
+            student_id: studentId,
+            year: formData.get("batch") as string,
          };
 
-         // Send registration request
-         const res: Response = await Register(user.email, user.password);
+         const response = await Register(user);
+         console.log("API Response:", response);
 
-         // Handle the response or perform any necessary actions here
-         console.log(res); // You can log the response or update your UI accordingly
+         // Show success message
+         await Swal.fire({
+            icon: "success",
+            title: "Register Success",
+            text: "You are now registered",
+            showConfirmButton: false,
+            timer: 2000,
+         }).then(() => {
+            window.location.href = "/auth/signin";
+         });
       } catch (error) {
          // Handle errors here
          if (error instanceof AxiosError) {
@@ -212,7 +213,7 @@ export default function RegisterForm() {
                            htmlFor="Student"
                            className="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-5 py-3 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
                         >
-                           <p className="text-sm font-medium">Computizens</p>
+                           <p className="text-sm font-medium">Computizen</p>
                         </label>
                      </div>
                      <div className="flex-grow">
@@ -221,13 +222,14 @@ export default function RegisterForm() {
                            name="RoleOption"
                            value="Institution"
                            id="Institution"
-                           className="peer hidden"
+                           className="peer hidden disabled:opacity-50 cursor-not-allowed"
                            checked={SelectedRole === "Institution"}
                            onChange={HandleRoleChange}
+                           disabled
                         />
                         <label
                            htmlFor="Institution"
-                           className="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-5 py-3 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+                           className="flex items-center justify-center rounded-md border border-gray-100 bg-white px-5 py-3 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white disabled:opacity-50 text-gray-500 cursor-not-allowed"
                         >
                            <p className="text-sm font-medium">Institution</p>
                         </label>

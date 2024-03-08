@@ -1,22 +1,21 @@
-// import { API_ASPIRATION } from "@/config/config";
-// import axios from "axios";
+import { API_ASPIRATION } from "@/config/config";
+import axios from "axios";
+import Aspirations from "@/models/aspiration";
 
-// export const fetchAspirations = async (): Promise<Event[]> => {
-//     try {
-//        // Make a GET request to the API endpoint.
-//        const response = await axios.get(API_ASPIRATION);
- 
-//        // Log the response to the console.
-//        console.log("API Response:", response);
- 
-//        // Extract event data from the response.
-//        const eventData = response.data?.events || [];
- 
-//        // Return the array of Event objects.
-//        return eventData as Event[];
-//     } catch (error) {
-//        // Log an error message and rethrow the error.
-//        console.error("Error fetching aspirations", error);
-//        throw error;
-//     }
-// }; 
+export const fetchAspirations = async (): Promise<Aspirations[]> => {
+    try {
+       const response = await axios.get(API_ASPIRATION);
+       console.log("API Response:", response);
+       const aspirationData = response.data?.aspirations || [];
+       aspirationData.forEach((aspiration: Aspirations) => {
+          aspiration.updated_at = new Date(aspiration.updated_at);
+          aspiration.created_at = new Date(aspiration.created_at);
+       });
+
+       return aspirationData as Aspirations[];
+    } catch (error) {
+       // Log an error message and rethrow the error.
+       console.error("Error fetching aspirations", error);
+       throw error;
+    }
+};

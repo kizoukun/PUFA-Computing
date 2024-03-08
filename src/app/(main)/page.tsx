@@ -8,15 +8,15 @@ import Faq from "@/components/main/Faq";
 import NewsCard from "@/components/news/NewsCard";
 import NewsCardBig from "@/components/news/NewsCardBig";
 import StudyProgCard from "@/components/main/StudyProgCard";
-// import VCDStudyProgCard from "@/components/VCDStudyProgCard";
 import CardStore from "@/components/store/CardStore";
 import EventSection from "@/components/event/EventSection";
-import CompreciationCard from "@/components/main/CompreciationCard";
 import { Suspense } from "react";
 import { FaqData, StudyProgramData } from "@/lib/data";
+import CompreciationCards from "./_components/CompreciationCards";
+import Loading from "@/components/Loading";
 
-// export const revalidate = 3600;
-// export const dynamic = "force-dynamic";
+export const revalidate = 600;
+export const dynamic = "force-dynamic";
 
 export default async function Index() {
    return (
@@ -230,7 +230,32 @@ export default async function Index() {
             </button>
          </section>
 
+<<<<<<< HEAD
          {/* news section */}
+=======
+         {/* event */}
+
+         <section
+            id="event"
+            className="max-w-8xl mx-auto my-32 space-y-8 p-5 text-center"
+         >
+            <h2 className="text-2xl font-bold">
+               <span className="mr-4 border-l-4 border-l-[#E50D0D]"></span>
+               Computing Events
+            </h2>
+            <h3 className="">
+               Discover the latest updates on events in our faculty.
+            </h3>
+
+            <div className="flex flex-col items-center justify-center gap-7 md:flex-row"></div>
+            <Suspense fallback={<Loading />}>
+               <EventSection />
+            </Suspense>
+         </section>
+         {/* end */}
+
+         {/* news */}
+>>>>>>> development
          <section
             id="news"
             className="max-h-xl mx-auto my-[10rem] max-w-7xl space-y-12 p-5 text-center"
@@ -286,6 +311,7 @@ export default async function Index() {
             </div>
          </section>
 
+<<<<<<< HEAD
          {/* open projects */}
          <section className="my-[10rem] flex select-none flex-col items-center space-y-12">
             <div className="border-l-4 border-[#AF95FF] pl-4">
@@ -318,6 +344,28 @@ export default async function Index() {
                   description="a student analysis system that can help us to see our performance in campus and give the recommendation for the further ..."
                   major="Informatics"
                />
+=======
+         {/* compreciacion */}
+
+         <section
+            id="compreciacion"
+            className="max-h-xl mx-auto my-32 max-w-7xl space-y-8 p-5 text-center"
+         >
+            <h2 className="text-2xl font-bold">
+               <span className="mr-4 border-l-4 border-l-[#AF95FF]"></span>
+               Compreciation
+            </h2>
+            <h3 className="">Appreciation to Computizen’s best projects.</h3>
+            <Suspense fallback={<Loading />}>
+               <CompreciationCards />
+            </Suspense>
+            <div className="flex items-center justify-center">
+               <Link href="/projects" className="block w-max">
+                  <Button className="border-[#AF95FF] px-10 py-2 text-[#AF95FF] hover:bg-[#AF95FF] hover:text-white">
+                     See all items
+                  </Button>
+               </Link>
+>>>>>>> development
             </div>
          </section>
 
