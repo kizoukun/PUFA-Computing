@@ -22,7 +22,7 @@ const MemberCard: React.FC<MemberCardProps> = ({
       <div>
          <div className="mx-auto max-w-xs rounded-md">
             <div className="flex justify-center">
-               <div className="absolute z-20 flex h-72 w-48 items-center justify-center gap-8 rounded-md bg-gray-200 opacity-0 transition-all duration-300 hover:opacity-80">
+               <div className="absolute z-20 flex h-72 w-48 items-end justify-center gap-8 rounded-md bg-gray-200 p-4 opacity-0 transition-all duration-300 hover:opacity-80">
                   <Link href="https://www.linkedin.com/company/pumacomputing/">
                      <FaLinkedin size={25} className="" />
                   </Link>

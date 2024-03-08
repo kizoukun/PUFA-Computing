@@ -14,7 +14,7 @@ import EventSection from "@/components/event/EventSection";
 import CompreciationCard from "@/components/main/CompreciationCard";
 import { Suspense } from "react";
 import { FaqData, StudyProgramData } from "@/lib/data";
-import Logo from "@/assets/anagatalogo.svg";
+import Logo from "@/assets/anagataLogo.svg";
 
 // export const revalidate = 3600;
 // export const dynamic = "force-dynamic";
@@ -93,10 +93,10 @@ export default async function Index() {
                <h1 className="text-[1.5rem] font-bold">Cabinet 2023/2024</h1>
             </div>
 
-            <div className="flex flex-col items-center gap-12 md:flex-row md:gap-4">
+            <div className="flex flex-col items-center gap-12 md:flex-row md:gap-8">
                <Image
                   alt="ANAGATA logo"
-                  className="object-cover"
+                  className="rounded-lg object-cover shadow-xl"
                   height="256"
                   src={Logo}
                   width="256"

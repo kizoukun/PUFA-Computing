@@ -14,7 +14,7 @@ export default function Page() {
             <div className="flex flex-col items-center gap-8 md:flex-row md:gap-16">
                <Image
                   alt="ANAGATA logo"
-                  className="object-cover "
+                  className="rounded-lg object-cover shadow-xl"
                   height="256"
                   src={Logo}
                   width="256"
@@ -46,8 +46,8 @@ export default function Page() {
                      alt="Letter A"
                      width={1920}
                      height={1080}
-                     src="/logo/letter_a.svg"
-                     className="h-[150px] w-[150px] rounded-lg"
+                     src="/logo/anagataLetterA.svg"
+                     className="h-[150px] w-[150px] rounded-lg shadow-xl"
                   />
 
                   <h1 className="max-w-[10rem] self-center rounded-lg border-2 border-[#F6931A] px-6 py-4 text-[1.2rem] font-[600] text-[#376853]">
@@ -65,8 +65,8 @@ export default function Page() {
                      alt="Bridge & 25 Pillars"
                      width={1920}
                      height={1080}
-                     src="/logo/bridge.svg"
-                     className="h-[150px] w-[150px] rounded-lg"
+                     src="/logo/anagataBridge.svg"
+                     className="h-[150px] w-[150px] rounded-lg shadow-xl"
                   />
 
                   <h1 className="max-w-[10rem] self-center rounded-lg border-2 border-[#F6931A] px-6 py-2 text-[1.2rem] font-[600] text-[#376853]">
@@ -86,8 +86,8 @@ export default function Page() {
                      alt="Sun"
                      width={1920}
                      height={1080}
-                     src="/logo/sun.svg"
-                     className="h-[150px] w-[150px] rounded-lg"
+                     src="/logo/anagataSun.svg"
+                     className="h-[150px] w-[150px] rounded-lg shadow-xl"
                   />
 
                   <h1 className="max-w-[10rem] self-center rounded-lg border-2 border-[#F6931A] px-12 py-4 text-[1.2rem] font-[600] text-[#376853]">
@@ -121,7 +121,7 @@ export default function Page() {
                   for the welfare of faculty, lecturers, and students.
                </p>
             </div>
-            <div className="grid max-w-[60rem] grid-cols-1 gap-10 md:grid-cols-3">
+            <div className="grid max-w-[20rem] grid-cols-1 gap-10 md:max-w-[60rem] md:grid-cols-3">
                <CardWithImage
                   image="/icon-pufa/explore.svg"
                   title="EXPLORE"
@@ -141,14 +141,14 @@ export default function Page() {
          </section>
 
          {/* division  */}
-         <section className="bg-white">
+         <section className="flex flex-col items-center bg-white">
             <h1 className="flex justify-center p-8 text-2xl font-[600] text-[#353535] md:p-20 md:text-4xl lg:text-5xl">
                DIVISION
             </h1>
 
             <div className="md:hidden">
                {" "}
-               <div className="grid grid-cols-2 md:grid-cols-4">
+               <div className="grid max-w-[20rem] grid-cols-1 gap-8 md:grid-cols-4">
                   <CardWithImage
                      image="/icon-pufa/embrace.svg"
                      title="EMBRACE"

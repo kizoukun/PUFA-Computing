@@ -23,15 +23,24 @@ export default function LogoPhilosophyCard({
                   height={150}
                   width={300}
                   src={image}
-                  className="object-cover"
+                  className="object-cover p-5"
                />
+               {/* <img
+                  src={image}
+                  width={150}
+                  height={150}
+                  alt=""
+                  className="bg-black"
+               /> */}
             </div>
 
             <div className="absolute p-4 opacity-0 transition-opacity group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8">
                <p className="mt-8 font-bold">Philosophy</p>
                <h3 className="mt-4 text-xl font-medium sm:text-2xl">{title}</h3>
 
-               <p className="mt-4 text-sm sm:text-base">{description}</p>
+               <p className="mt-4 max-w-[15rem] text-sm sm:text-base">
+                  {description}
+               </p>
             </div>
          </div>
       </div>
