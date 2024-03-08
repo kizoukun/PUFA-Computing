@@ -5,51 +5,51 @@ import Link from "next/link";
 export default function MerchPage() {
    const Product = [
       {
-         imageUrl: "../aot.jpg",
+         imageUrl: "../comingsoon.jpg",
          price: 100000,
          title: "Computing Varsity",
          organization: "PUFA Computing"
       },
       {
-         imageUrl: "../aot.jpg",
+         imageUrl: "../comingsoon.jpg",
          price: 100000,
          title: "Computing Varsity",
          organization: "PUMA Informatics"
       },
       {
-         imageUrl: "../aot.jpg",
+         imageUrl: "../comingsoon.jpg",
          price: 100000,
          title: "Computing Varsity",
          organization: "PUMA Interior Design"
       },
       {
-         imageUrl: "../aot.jpg",
+         imageUrl: "../comingsoon.jpg",
          price: 100000,
-         title: "alief",
+         title: "Computing Varsity",
          organization: "PUMA VCD"
       },
       {
-         imageUrl: "../aot.jpg",
+         imageUrl: "../comingsoon.jpg",
          price: 100000,
          title: "Computing Varsity",
          organization: "PUFA Computing"
       },
       {
-         imageUrl: "../aot.jpg",
+         imageUrl: "../comingsoon.jpg",
          price: 100000,
          title: "Computing Varsity",
          organization: "PUMA Informatics"
       },
       {
-         imageUrl: "../aot.jpg",
+         imageUrl: "../comingsoon.jpg",
          price: 100000,
          title: "Computing Varsity",
          organization: "PUMA Interior Design"
       },
       {
-         imageUrl: "../aot.jpg",
+         imageUrl: "../comingsoon.jpg",
          price: 100000,
-         title: "alief",
+         title: "Computing Varsity",
          organization: "PUMA VCD"
       },
       
