@@ -44,7 +44,7 @@ export default function Page() {
             </h1>
 
             {/* mobile view  */}
-            <MobileViewPhilosophy/>
+            <MobileViewPhilosophy />
 
             <div className="hidden max-w-[62rem] flex-col gap-16 md:flex">
                <div className="flex gap-8">
@@ -110,21 +110,24 @@ export default function Page() {
          </section>
 
          {/* VISIONS & MISSIONS  */}
-         <section className="bg-[#F2F2F2]">
-            <h1 className="flex justify-center p-8 text-2xl font-[600] text-[#353535] md:p-20 md:text-4xl lg:text-5xl">
-               VISIONS & MISSIONS
-            </h1>
-            <p className="mx-auto px-10 text-justify text-base font-semibold text-[#376853] md:max-w-6xl md:p-0 md:text-center md:text-lg lg:text-xl ">
-               PUFA Computing as a bridge for students in the Computing Faculty,
-               and makes PUFA Computing more responsive, progressive,
-               professional, and inspiring to become a strong bridge as a forum
-               for students in the computing faculty to improve soft skills,
-               hard skills, connecting computing minds to empowering future
-               innovators, and as an aspirational forum for the welfare of
-               faculty, lecturers, and students.
-            </p>
-
-            <div className="mx-auto grid max-w-4xl grid-cols-1 gap-12 py-10 md:grid-cols-3">
+         <section className="flex flex-col items-center space-y-12 bg-[#F2F2F2] px-[5rem] py-[5rem] md:px-[10rem]">
+            <div>
+               <h1 className="text-[2rem] font-[600] text-[#353535]">
+                  VISION & MISSION
+               </h1>
+            </div>
+            <div>
+               <p className="max-w-[50rem] text-center font-[600] text-[#376853]">
+                  PUFA Computing as a bridge for students in the Computing
+                  Faculty, and makes PUFA Computing more responsive,
+                  progressive, professional, and inspiring to become a strong
+                  bridge as a forum for students in the computing faculty to
+                  improve soft skills, hard skills, connecting computing minds
+                  to empowering future innovators, and as an aspirational forum
+                  for the welfare of faculty, lecturers, and students.
+               </p>
+            </div>
+            <div className="grid max-w-[60rem] grid-cols-1 gap-10 md:grid-cols-3">
                <CardWithImage
                   image="/icon-pufa/explore.svg"
                   title="EXPLORE"
