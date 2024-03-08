@@ -357,6 +357,7 @@ export default function Page() {
             </div>
          </section>
 
+         {/* timeline section  */}
          <section className="bg-[#F2F2F2]">
             <h1 className="flex justify-center p-8 text-2xl font-[600] text-[#353535] md:p-20 md:text-4xl lg:text-5xl">
                TIMELINE
