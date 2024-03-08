@@ -1,11 +1,21 @@
 "use client";
 
 import { CreateAspiration } from "@/services/api/aspiration";
-import React, { useEffect, useRef, useState } from "react";
 import Swal from "sweetalert2";
 import Select from "react-select";
 import Aspirations from "@/models/aspiration";
 import { GetUserProfile } from "@/services/api/user";
+import z from "zod";
+import { useEffect, useRef, useState } from "react";
+
+// zod
+const AspirationSchema = z.object({
+   subject: z.string({ required_error: "Subject is required"}).min(3, { message: "Subject must be at least 3 characters long"}),
+   organization_id: z.number({ required_error: "Organization is required"}).min(1, { message: "Choose an organization"}),
+   anonymous: z.boolean().optional(),
+   closed: z.boolean(),
+   message: z.string({ required_error: "Message is required"}).min(10, { message: "Message must be at least 10 characters long"}),
+});
 
 export default function AspirationForm() {
    const formHtml = useRef<HTMLFormElement>(null);
@@ -39,46 +49,47 @@ export default function AspirationForm() {
          return; // If no organization is selected, do not proceed
       }
 
-      const data: {
-         subject: any;
-         organization_id: number;
-         anonymous: any;
-         closed: boolean;
-         message: any;
-      } = {
-         subject: (formHtml.current?.elements.namedItem("subject") as HTMLInputElement).value,
+      const formData = new FormData(event.currentTarget);
+      const data = {
+         subject: formData.get("subject") as string,
          organization_id: parseInt(selectedOrganization.value),
-         anonymous: (formHtml.current?.elements.namedItem("anonymous") as HTMLInputElement).checked,
+         anonymous: formData.get("anonymous") === "on",
          closed: false,
-         message: (formHtml.current?.elements.namedItem("message") as HTMLInputElement).value,
+         message: formData.get("message") as string,
       };
 
-      try {
-         const response = await CreateAspiration(data);
-         console.log("Response:", response);
-
-         if (response.error) {
-            await Swal.fire({
-               icon: "error",
-               title: "Error",
-               text: response.error as string,
-            });
-            return;
-         }
-
-         await Swal.fire({
-            icon: "success",
-            title: "Success",
-            text: "Successfully added your aspiration",
+      const validationResult = AspirationSchema.safeParse(data);
+      if (!validationResult.success) {
+         console.error("Validation error:", validationResult.error);
+         let errorMessage = "";
+         validationResult.error.issues.forEach((issue) => {
+            errorMessage += issue.message + ".\n";
          });
-
-         formHtml.current?.reset();
-         setSelectedOrganization(null);
-      } catch (error) {
          await Swal.fire({
             icon: "error",
             title: "Error",
-            text: "An error occurred while adding your aspiration",
+            text: errorMessage,
+         });
+         return;
+      }
+
+      const aspirationData = validationResult.data as Aspirations;
+      try {
+         await CreateAspiration(aspirationData);
+         await Swal.fire({
+            title: "Aspiration Sent!",
+            text: "Your aspiration has been sent to the organization.",
+            icon: "success",
+            confirmButtonText: "OK",
+         });
+         formHtml.current?.reset();
+      } catch (error) {
+         console.error("Error creating aspiration", error);
+         await Swal.fire({
+            title: "Error",
+            text: "An error occurred while sending your aspiration.",
+            icon: "error",
+            confirmButtonText: "OK",
          });
       }
    }

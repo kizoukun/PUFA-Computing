@@ -97,15 +97,16 @@ const AspirationCard: React.FC<AspirationCardProps> = ({ aspiration }) => {
                      <span>{dateConvert(aspiration.updated_at)}</span>
                   </p>
                </div>
-               <div className="flex gap-2 text-sm">
-                  {/* <p>7</p> */}
-                  <div onClick={toggleLike} className="cursor-pointer">
-                     {liked ? (
-                        <IoIosHeart className="h-8 w-8 text-[#E50D0D] transition" />
-                     ) : (
-                        <IoIosHeartEmpty className="h-8 w-8 text-[#6B7280] transition" />
-                     )}
-                  </div>
+
+               {/*Like and Like Count*/}
+               <div className="flex flex-row gap-4">
+                  <button
+                     onClick={toggleLike}
+                     className="flex items-center gap-1 text-[#6B7280] hover:text-[#E50D0D] text-2xl"
+                  >
+                     {liked ? <IoIosHeart className="text-3xl" /> : <IoIosHeartEmpty className="text-3xl" />}
+                     <span className="text-xl">{aspiration.upvote}</span>
+                  </button>
                </div>
             </div>
          </div>
