@@ -13,7 +13,7 @@
  */
 "use client";
 import Image from "next/image";
-import Banner from "@/assets/banner/banner-informatics.png";
+import Banner from "@/assets/banner/information-system.svg";
 import React, { useState } from "react";
 import ListCard from "@/components/major/ListCard";
 import ListVisionAndMissionCard from "@/components/major/ListVisionAndMissionCard";
@@ -67,7 +67,7 @@ export default function StudyProgramPage() {
          <Image
             width={1280}
             height={500}
-            src={"/"}
+            src={Banner}
             alt={""}
             className="rounded-lg bg-blue-400"
          />

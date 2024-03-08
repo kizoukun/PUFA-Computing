@@ -13,7 +13,7 @@
  */
 "use client";
 import Image from "next/image";
-import Banner from "@/assets/banner/banner-informatics.png";
+import Banner from "@/assets/banner/interior-design.svg";
 import React, { useState } from "react";
 import ListCard from "@/components/major/ListCard";
 import ListVisionAndMissionCard from "@/components/major/ListVisionAndMissionCard";
