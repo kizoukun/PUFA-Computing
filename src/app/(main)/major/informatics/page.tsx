@@ -96,7 +96,7 @@ export default function StudyProgramPage() {
             </div>
 
             {/* profession and future career part  */}
-            <div className="flex w-full justify-between">
+            <div className="flex max-h-[20rem] w-full justify-between">
                <div className="space-y-8">
                   <h1 className="font-[600]">Future Field and Career</h1>
                   <ListCard content={professions} />
@@ -122,7 +122,7 @@ export default function StudyProgramPage() {
             <div className="flex flex-col gap-8">
                <h1 className="font-[600]">Lecturers</h1>
                <div className="">
-                  <div className="grid scale-50 grid-cols-1 gap-8 md:grid-cols-2">
+                  <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
                      <LectureCard
                         image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
                         name="Ir. Rila Mandala, M.Eng., Ph.D."
