@@ -10,44 +10,38 @@ export default function Page() {
    return (
       <div>
          {/* logo and tagline */}
-         <section className="bg-[#F2F2F2]">
-            <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 ">
-               <div className="mb-12 flex flex-col items-center justify-center text-center lg:flex-row">
-                  {/* logo  */}
-                  <Image
-                     alt="ANAGATA logo"
-                     className="object-cover lg:mr-8"
-                     height="256"
-                     src={Logo}
-                     width="256"
-                  />
-                  {/* tagline  */}
-                  <div className="mb-8 lg:mb-0 lg:border-l-4 lg:border-[#1FA820] lg:pl-5 lg:text-left lg:text-[#353535]">
-                     <p className="text-4xl font-[600] text-[#353535] lg:text-5xl xl:text-6xl">
-                        ANAGATA CABINET
-                     </p>
-                     <p className="text-xl font-semibold lg:text-2xl xl:text-3xl">
-                        "BE STRONG ONE DETERMINATION"
-                     </p>
-                     <p className="text-lg font-semibold lg:text-xl xl:text-2xl">
-                        PUFA COMPUTING PERIOD 2023/2024
-                     </p>
-                  </div>
+         <section className="flex flex-col items-center bg-[#F2F2F2] p-[5rem] md:px-[10rem]">
+            <div className="flex flex-col items-center gap-8 md:flex-row md:gap-16">
+               <Image
+                  alt="ANAGATA logo"
+                  className="object-cover "
+                  height="256"
+                  src={Logo}
+                  width="256"
+               />
+               <div className="flex flex-col space-y-6 border-l-4 border-[#1FA820] pl-8 leading-none text-[#353535]">
+                  <h1 className="text-[3rem] font-[600]">ANAGATA CABINET</h1>
+                  <h1 className="text-[2rem] font-[600]">
+                     "Be Strong, One Determination"
+                  </h1>
+                  <h1 className="text-[1rem] font-[600]">
+                     PUFA COMPUTING PERIOD 2023/2024
+                  </h1>
                </div>
             </div>
          </section>
 
          {/* logo philosophy  */}
-         <section className="flex flex-col items-center justify-center bg-white px-20 pb-12">
-            <h1 className="flex justify-center p-8 text-2xl font-[600] text-[#353535] md:p-14 md:text-4xl lg:text-5xl">
+         <section className="flex flex-col items-center space-y-12 p-[5rem] md:px-[10rem]">
+            <h1 className="text-[2rem] font-[600] text-[#353535]">
                LOGO PHILOSOPHY
             </h1>
 
             {/* mobile view  */}
             <MobileViewPhilosophy />
 
-            <div className="hidden max-w-[62rem] flex-col gap-16 md:flex">
-               <div className="flex gap-8">
+            <div className="hidden max-w-[62rem] flex-col items-center gap-16 md:flex">
+               <div className="relative -left-10 flex gap-8">
                   <Image
                      alt="Letter A"
                      width={1920}
@@ -56,17 +50,17 @@ export default function Page() {
                      className="h-[150px] w-[150px] rounded-lg"
                   />
 
-                  <h1 className="self-center rounded-lg border-2 border-[#F6931A] px-6 py-4 text-[1.2rem] font-[600] text-[#376853]">
+                  <h1 className="max-w-[10rem] self-center rounded-lg border-2 border-[#F6931A] px-6 py-4 text-[1.2rem] font-[600] text-[#376853]">
                      LETTER "A"
                   </h1>
 
-                  <h1 className="self-center text-[1.2rem] font-[600] text-[#376853] text-[]">
+                  <h1 className="max-w-[30rem] self-center text-[1.2rem] font-[600] text-[#376853] text-[]">
                      Our letter "A" that represents our cabinet name is
                      "ANAGATA".
                   </h1>
                </div>
 
-               <div className="flex gap-8">
+               <div className="relative left-10 flex gap-8">
                   <Image
                      alt="Bridge & 25 Pillars"
                      width={1920}
@@ -75,11 +69,11 @@ export default function Page() {
                      className="h-[150px] w-[150px] rounded-lg"
                   />
 
-                  <h1 className="self-center rounded-lg border-2 border-[#F6931A] px-6 py-2 text-[1.2rem] font-[600] text-[#376853]">
+                  <h1 className="max-w-[10rem] self-center rounded-lg border-2 border-[#F6931A] px-6 py-2 text-[1.2rem] font-[600] text-[#376853]">
                      BRIDGES & 25 PILLARS
                   </h1>
 
-                  <h1 className="self-center text-[1.2rem] font-[600] text-[#376853]">
+                  <h1 className="max-w-[30rem] self-center text-[1.2rem] font-[600] text-[#376853]">
                      A bridge means PUFA Computing as an intermediary for
                      computing faculty to achieve a bright future. 25 Pillars
                      which means 25 people consisting of a combination of BoD,
@@ -87,7 +81,7 @@ export default function Page() {
                   </h1>
                </div>
 
-               <div className="flex gap-8">
+               <div className="relative -left-10 flex gap-8">
                   <Image
                      alt="Sun"
                      width={1920}
@@ -96,11 +90,11 @@ export default function Page() {
                      className="h-[150px] w-[150px] rounded-lg"
                   />
 
-                  <h1 className="self-center rounded-lg border-2 border-[#F6931A] px-12 py-4 text-[1.2rem] font-[600] text-[#376853]">
+                  <h1 className="max-w-[10rem] self-center rounded-lg border-2 border-[#F6931A] px-12 py-4 text-[1.2rem] font-[600] text-[#376853]">
                      SUN
                   </h1>
 
-                  <h1 className="self-center text-[1.2rem] font-[600] text-[#376853]">
+                  <h1 className="max-w-[30rem] self-center text-[1.2rem] font-[600] text-[#376853]">
                      The brilliant sun represents a bright future for the
                      computing faculty, with 9 sides of sunshine representing
                      the 9 divisions of PUFA Computing.
@@ -110,7 +104,7 @@ export default function Page() {
          </section>
 
          {/* VISIONS & MISSIONS  */}
-         <section className="flex flex-col items-center space-y-12 bg-[#F2F2F2] px-[5rem] py-[5rem] md:px-[10rem]">
+         <section className="flex select-none flex-col items-center space-y-12 bg-[#F2F2F2] px-[5rem] py-[5rem] md:px-[10rem]">
             <div>
                <h1 className="text-[2rem] font-[600] text-[#353535]">
                   VISION & MISSION

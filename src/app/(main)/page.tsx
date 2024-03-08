@@ -14,6 +14,7 @@ import EventSection from "@/components/event/EventSection";
 import CompreciationCard from "@/components/main/CompreciationCard";
 import { Suspense } from "react";
 import { FaqData, StudyProgramData } from "@/lib/data";
+import Logo from "@/assets/anagatalogo.svg";
 
 // export const revalidate = 3600;
 // export const dynamic = "force-dynamic";
@@ -93,7 +94,13 @@ export default async function Index() {
             </div>
 
             <div className="flex flex-col items-center gap-12 md:flex-row md:gap-4">
-               <div className="h-[250px] w-[250px] rounded-lg bg-[#1FA820]"></div>
+               <Image
+                  alt="ANAGATA logo"
+                  className="object-cover"
+                  height="256"
+                  src={Logo}
+                  width="256"
+               />
 
                <div className="flex max-w-[38rem] flex-col gap-8 rounded-lg border-2 border-[#1FA820] px-8 py-12">
                   <div className="flex items-center gap-4">
