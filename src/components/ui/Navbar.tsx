@@ -15,7 +15,8 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import NavbarDropdown from "./NavbarDropdown";
-import { access } from "fs";
+import Logo from "@/assets/logo.png";
+import Image from "next/image";
 
 /**
  * Navbar Component
@@ -101,7 +102,7 @@ export default function Navbar() {
                <div className="flex items-center gap-12 lg:divide-x-2 lg:divide-black">
                   {/* Logo and site title */}
                   <Link className="inline text-teal-600" href="/">
-                     <img src="../logo.png" width="130" height="80" />
+                     <Image alt="PU Computing" src={Logo} width="130" height="80" />
                   </Link>
                   <div className="hidden px-7 font-bold lg:block">
                      <div className="flex flex-col items-center">

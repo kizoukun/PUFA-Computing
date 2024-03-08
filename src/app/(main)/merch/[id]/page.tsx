@@ -26,8 +26,8 @@ export default function MerchPage() {
 
    const colorOptions = [
       { value: "blackGrey", label: "Black n Grey" },
-      { value: "blackGrey", label: "Black n Grey" },
-      { value: "blackGrey", label: "Black n Grey" },  
+      { value: "blackWhite", label: "Black n White" },
+      { value: "blackYellow", label: "Black n Yelow" },  
    ];
 
    const [selectedColor, setSelectedColor] = useState<string | null>(null);
