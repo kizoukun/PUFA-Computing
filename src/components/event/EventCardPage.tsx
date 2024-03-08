@@ -57,7 +57,7 @@ export default function EventCardPage({
                height={256}
             />
          </div>
-         <div className="flex flex-col justify-between space-y-4 p-2 md:p-5">
+         <div className="flex flex-col justify-between space-y-4 p-2 md:p-4">
             <p className="text-lg font-bold">{title}</p>
             <p className="font-bold">{participant}</p>
             <p className="text-sm md:text-base">{children}</p>
