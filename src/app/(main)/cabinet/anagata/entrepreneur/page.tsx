@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Button from "@/components/Button";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -8,52 +8,32 @@ import { Pagination } from "swiper/modules";
 
 const members = [
    {
-      name: "Aura Shafarina Salsabila",
-      position: "Chairperson",
-      image: "/member/bod/Aura Shafarina Salsabila.jpg",
-      instagram: "",
+      name: "Mohammad Lukyanto",
+      position: "",
+      image: "",
+      instagram: "@kikya_lky",
+      linkedin: "Mohammad Lukyanto",
+   },
+   {
+      name: "Angel Kusuma Ajinata",
+      position: "",
+      image: "",
+      instagram: "@na.taa__",
       linkedin: "",
    },
    {
-      name: "Bintang Wira Gemilang",
-      position: "Vice Chairperson 1",
-      image: "/member/bod/Bintang Wira Gemilang.png",
-   },
-
-   {
-      name: "Zioneza Auxiliadora Lou Jeronimo Martins",
-      position: "Vice Chairperson 2",
-      image: "/member/bod/Zioneza Auxiliadora Lou Jeronimo Martins.jpg",
+      name: "Belva Tabitha",
+      position: "",
+      image: "",
+      instagram: "@zheaazee",
+      linkedin: "Belva Tabitha",
    },
    {
-      name: "Irene Putri Sihite",
-      position: "Secretary 1",
-      image: "/member/bod/Irene Putri Sihite.png",
-   },
-   {
-      name: "Gita Olfa Hidayah",
-      position: "Secretary 2",
-      image: "/member/bod/Gita Olfa Hidayah.jpg",
-   },
-   {
-      name: "Gabriela Imanuel Setiawan",
-      position: "Secretary 3",
-      image: "/member/bod/Gabriela Imanuel Setiawan.jpg",
-   },
-   {
-      name: "Alexandra Verencia Poluakan",
-      position: "Treasure 1",
-      image: "/member/bod/Alexandra Verencia Poluakan.jpg",
-   },
-   {
-      name: "Dian Vania Jessicha Rondonuwu",
-      position: "Treasure 2",
-      image: "/member/bod/Dian Vania Jessicha Rondonuwu.png",
-   },
-   {
-      name: "Dinda Ayu Maulina",
-      position: "Treasure 3",
-      image: "/member/bod/Dinda Ayu Maulina.jpg",
+      name: "Gavin Abhinaya Nirwasita",
+      position: "",
+      image: "",
+      instagram: "@gavin_abhinaya",
+      linkedin: "Gavin Abhinaya Nirwasita",
    },
 ];
 
