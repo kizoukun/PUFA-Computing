@@ -230,9 +230,6 @@ export default async function Index() {
             </button>
          </section>
 
-<<<<<<< HEAD
-         {/* news section */}
-=======
          {/* event */}
 
          <section
@@ -255,7 +252,6 @@ export default async function Index() {
          {/* end */}
 
          {/* news */}
->>>>>>> development
          <section
             id="news"
             className="max-h-xl mx-auto my-[10rem] max-w-7xl space-y-12 p-5 text-center"
@@ -311,40 +307,6 @@ export default async function Index() {
             </div>
          </section>
 
-<<<<<<< HEAD
-         {/* open projects */}
-         <section className="my-[10rem] flex select-none flex-col items-center space-y-12">
-            <div className="border-l-4 border-[#AF95FF] pl-4">
-               <h1 className="text-[1.5rem] font-bold">Open Projects</h1>
-            </div>
-
-            <h1 className="text-center">
-               Library for all the computizen's projects
-            </h1>
-
-            <div className="grid max-w-[30rem] grid-cols-1 gap-4  md:max-w-[75rem] md:grid-cols-3">
-               <CompreciationCard
-                  date="September 11, 2023"
-                  title="Student Analysis Using Python"
-                  name="Paman, and Aleph"
-                  description="a student analysis system that can help us to see our performance in campus and give the recommendation for the further ..."
-                  major="Informatics"
-               />
-               <CompreciationCard
-                  date="September 11, 2023"
-                  title="Student Analysis Using Python"
-                  name="Paman, and Aleph"
-                  description="a student analysis system that can help us to see our performance in campus and give the recommendation for the further ..."
-                  major="Informatics"
-               />
-               <CompreciationCard
-                  date="September 11, 2023"
-                  title="Student Analysis Using Python"
-                  name="Paman, and Aleph"
-                  description="a student analysis system that can help us to see our performance in campus and give the recommendation for the further ..."
-                  major="Informatics"
-               />
-=======
          {/* compreciacion */}
 
          <section
@@ -365,7 +327,6 @@ export default async function Index() {
                      See all items
                   </Button>
                </Link>
->>>>>>> development
             </div>
          </section>
 

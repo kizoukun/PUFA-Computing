@@ -4,11 +4,7 @@ import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
 
 export default function Footer() {
    return (
-<<<<<<< HEAD:src/components/ui/Footer.tsx
-      <footer className="container mx-auto bg-white px-10 ">
-=======
       <footer className="mx-auto max-w-7xl bg-white pt-8">
->>>>>>> development:src/components/Footer.tsx
          <div className="container mx-auto px-6 py-12">
             <hr className="my-4 border-gray-200 dark:border-gray-700" />
             <div className="md:-mx-3 md:flex md:items-center md:justify-between">
