@@ -5,7 +5,12 @@ import Event from "@/models/event";
 // User
 export async function GetUserProfile() {
    try {
-      const response = await axios.get(`${API_USER}/:id`);
+      const id = localStorage.getItem("userId");
+      const response = await axios.get(`${API_USER}/${id}`, {
+         headers: {
+            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+         },
+      });
       return response.data;
    } catch (error) {
       console.log(error);

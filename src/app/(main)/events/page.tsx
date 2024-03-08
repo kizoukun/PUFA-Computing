@@ -18,7 +18,7 @@ export default async function EventsPage() {
                <h1 className="text-[35px] font-[700] text-[#353535]">
                   Computing Events
                </h1>
-               <p className="text-[#353535] text-sm font-[500]">
+               <p className="text-sm font-[500] text-[#353535]">
                   Discover the latest updates on events in our faculty.
                </p>
             </div>

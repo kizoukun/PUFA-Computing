@@ -15,9 +15,9 @@
 import Image from "next/image";
 import Banner from "@/assets/banner/banner-informatics.png";
 import React, { useState } from "react";
-import ListCard from "@/components/ListCard";
-import ListVisionAndMissionCard from "@/components/ListVisionAndMissionCard";
-import LectureCard from "@/components/LectureCard";
+import ListCard from "@/components/major/ListCard";
+import ListVisionAndMissionCard from "@/components/major/ListVisionAndMissionCard";
+import LectureCard from "@/components/major/LectureCard";
 import ToggleSwitch from "@/components/ToggleSwitch";
 
 /**
@@ -113,13 +113,15 @@ export default function StudyProgramPage() {
                   handleToggleChange={handleToggleChange}
                />
 
-               {/* Content based on the selected toggle */}
-               <ListVisionAndMissionCard
-                  selectedContent={selectedContent}
-                  visionContent={visionContent}
-                  missionContent={missionContent}
-               />
-            </div>
+            {/* List of professions */}
+            <ListCard content={professions} />
+
+            {/* Content based on the selected toggle */}
+            <ListVisionAndMissionCard
+               selectedContent={selectedContent}
+               visionContent={visionContent}
+               missionContent={missionContent}
+            />
          </div>
 
          {/* lecture */}
@@ -128,7 +130,7 @@ export default function StudyProgramPage() {
                Lecturer
             </h1>
             {/* dean and head of study program */}
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12 lg:grid-cols-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
                <LectureCard
                   image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
                   name="Ir. Rila Mandala, M.Eng., Ph.D."
