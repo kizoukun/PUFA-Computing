@@ -1,6 +1,5 @@
 "use client";
 import Button from "@/components/Button";
-import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -13,7 +12,7 @@ const members = [
       position: "Head of Division",
       image: "/member/rnt/muhammad-ilham-pratama.jpg",
       instagram: "https://www.instagram.com/",
-      linkedin: "linkedin.com",
+      linkedin: "https://www.instagram.com/",
    },
    {
       name: "Devita Annisa",

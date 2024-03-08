@@ -1,6 +1,5 @@
 "use client";
 import Button from "@/components/Button";
-import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -12,27 +11,36 @@ const members = [
       name: "Muhammad Yusuf",
       position: "Head of Division",
       image: "/member/sdc/muhammad-yusuf.jpg",
+      instagram: "http://Instagram.com/muhayuf",
+      linkedin: "http://linkedin.com/in/muhayuf",
    },
    {
       name: "Bilqis Nabila Mukhtar",
       position: "Vice of Division",
       image: "/member/sdc/bilqis-nabila-mukhtar.jpg",
+      instagram: "http://instagram.com/bilqiss.n",
    },
 
    {
       name: "Muhammad Arrizky Adhita Azizi",
       position: "Member",
       image: "/member/sdc/muhammad-arrizky-adhita-azizi.jpg",
+      instagram: "https://instagram.com/arrizkyadhita.a",
+      linkedin: "https://www.linkedin.com/in/muhammad-firman-hidayat-786561286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
    },
    {
       name: "Violetta Scarlet Adeline Roeroe",
       position: "Member",
       image: "/member/sdc/violetta-scarlet-adeline-roeroe.jpg",
+      instagram: "http://instagram.com/violettaroeroe",
+      linkedin: "http://linkedin.com/in/violettascarlet",
    },
    {
       name: "Muhammad Firman Hidayat",
       position: "Member",
       image: "/member/sdc/firman.jpg",
+      instagram: "https://www.instagram.com/frmaanhdyt__",
+      linkedin: "https://www.linkedin.com/in/muhammad-firman-hidayat-786561286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
    },
 ];
 
@@ -102,6 +110,8 @@ export default function page() {
                            name={member.name}
                            position={member.position}
                            image={member.image}
+                           instagram={member.instagram}
+                           linkedin={member.linkedin}
                         />
                      </SwiperSlide>
                   ))}
@@ -123,6 +133,8 @@ export default function page() {
                            name={member.name}
                            position={member.position}
                            image={member.image}
+                           instagram={member.instagram}
+                           linkedin={member.linkedin}
                         />
                      </SwiperSlide>
                   ))}

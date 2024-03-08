@@ -1,6 +1,5 @@
-"use client";
+"use client"
 import Button from "@/components/Button";
-import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -12,6 +11,8 @@ const members = [
       name: "Aura Shafarina Salsabila",
       position: "Chairperson",
       image: "/member/bod/Aura Shafarina Salsabila.jpg",
+      instagram: "",
+      linkedin: "",
    },
    {
       name: "Bintang Wira Gemilang",
@@ -122,6 +123,8 @@ export default function page() {
                            name={member.name}
                            position={member.position}
                            image={member.image}
+                           instagram={member.instagram}
+                           linkedin={member.linkedin}
                         />
                      </SwiperSlide>
                   ))}
@@ -143,6 +146,8 @@ export default function page() {
                            name={member.name}
                            position={member.position}
                            image={member.image}
+                           instagram={member.instagram}
+                           linkedin={member.linkedin}
                         />
                      </SwiperSlide>
                   ))}

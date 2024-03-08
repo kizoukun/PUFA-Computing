@@ -2,13 +2,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { UrlObject } from "url";
 
 interface MemberCardProps {
    image: string;
    name: string;
    position: string;
-   instagram?: string;
-   linkedin?: string;
+   instagram?: string | UrlObject;
+   linkedin?: string | UrlObject;
 }
 
 const MemberCard: React.FC<MemberCardProps> = ({
@@ -22,14 +23,26 @@ const MemberCard: React.FC<MemberCardProps> = ({
       <div>
          <div className="mx-auto max-w-xs rounded-md">
             <div className="flex justify-center">
-               <div className="absolute z-20 flex h-72 w-48 items-end justify-center gap-8 rounded-md bg-gray-200 p-4 opacity-0 transition-all duration-300 hover:opacity-80">
-                  <Link href="https://www.linkedin.com/company/pumacomputing/">
-                     <FaLinkedin size={25} className="" />
-                  </Link>
-                  <Link href="https://www.instagram.com/pufacomputing">
-                     <FaInstagram size={25} className="" />
-                  </Link>
-               </div>
+               {(linkedin || instagram) && (
+                  <div className="absolute z-20 flex h-72 w-48 items-end justify-center gap-8 rounded-md bg-gray-200 p-4 opacity-0 transition-all duration-300 hover:opacity-80">
+                     {linkedin && (
+                        <Link href={linkedin as string} passHref>
+                           <FaLinkedin
+                              size={25}
+                              className="text-gray-500 duration-300 hover:text-gray-800"
+                           />
+                        </Link>
+                     )}
+                     {instagram && (
+                        <Link href={instagram as string} passHref>
+                           <FaInstagram
+                              size={25}
+                              className="text-gray-500 duration-300 hover:text-gray-800"
+                           />
+                        </Link>
+                     )}
+                  </div>
+               )}
                <Image
                   src={image}
                   alt={`${name}'s Photo`}
