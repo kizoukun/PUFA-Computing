@@ -20,7 +20,7 @@ const ListVisionAndMissionCard: React.FC<ListVisionAndMissionProps> = ({
          : "list-disc space-y-2 px-10 py-2 text-justify text-[#6B7280] md:px-6 md:text-sm lg:text-base";
 
    return (
-      <div className="max-w-[50rem] rounded-2xl border border-[#3C99DC]  bg-white px-4 py-2">
+      <div className="max-w-[50rem] rounded-2xl border border-[#3C99DC] bg-white px-5">
          <ul className={listClassName}>
             {contentToDisplay.map((item, index) => (
                <li key={index}>{item}</li>
