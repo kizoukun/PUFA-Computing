@@ -12,21 +12,14 @@ export default async function EventSection() {
 
 	if(!events) return <div>Failed to fetch data...</div>
 
-   return (
-      <div className="">
-         <div>
-            <EventCardUpcoming events={events} />
-         </div>
-         <EventCardCompleted events={events} />
+   const upcomingEvents = events.filter(event => event.status === "Open").slice(0, 2);
+   const completedEvents = events.filter(event => event.status == "Upcoming").slice(0, 3);
 
-         {/* button */}
-         <div className="mt-4 flex items-center justify-center">
-            <Link href="/events" className="block w-max">
-               <Button className="border-[#E50D0D] px-10 py-2 text-[#E50D0D] hover:bg-[#E50D0D] hover:text-white">
-                  See all Events
-               </Button>
-            </Link>
-         </div>
+   return (
+      <div>
+         <EventCardUpcoming events={upcomingEvents} />
+
+         <EventCardCompleted events={completedEvents} />
       </div>
    );
 }
