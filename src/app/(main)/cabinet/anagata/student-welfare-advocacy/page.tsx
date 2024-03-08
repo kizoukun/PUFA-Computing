@@ -9,24 +9,30 @@ import { Pagination } from "swiper/modules";
 
 const members = [
    {
-      name: "Aura Shafarina Salsabila",
-      position: "Chairperson",
+      name: "Deby Ayu Putri Butar-Butar",
+      position: "Head of Division",
       image: "/member/bod/Aura Shafarina Salsabila.jpg",
       instagram: "",
       linkedin: "",
    },
    {
-      name: "Bintang Wira Gemilang",
-      position: "Vice Chairperson 1",
-      image: "/member/bod/Bintang Wira Gemilang.png",
+      name: "Muhammad Hanif Insan Rabbani",
+      position: "Vice of Division",
+      image: "/member/bod/Aura Shafarina Salsabila.jpg",
       instagram: "",
       linkedin: "",
    },
-
    {
-      name: "Zioneza Auxiliadora Lou Jeronimo Martins",
-      position: "Vice Chairperson 2",
-      image: "/member/bod/Zioneza Auxiliadora Lou Jeronimo Martins.jpg",
+      name: "Najwa Ratu Aini Alamsyah",
+      position: "Member",
+      image: "/member/bod/Aura Shafarina Salsabila.jpg",
+      instagram: "",
+      linkedin: "",
+   },
+   {
+      name: "Hafizh Cexarian",
+      position: "Member",
+      image: "/member/bod/Aura Shafarina Salsabila.jpg",
       instagram: "",
       linkedin: "",
    },

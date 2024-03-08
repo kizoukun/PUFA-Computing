@@ -9,14 +9,21 @@ import { Pagination } from "swiper/modules";
 const members = [
    {
       name: "Mohammad Lukyanto",
-      position: "",
+      position: "Head of Division",
+      image: "",
+      instagram: "@kikya_lky",
+      linkedin: "Mohammad Lukyanto",
+   },
+   {
+      name: "Gavin Abhinaya",
+      position: "Vice of Division",
       image: "",
       instagram: "@kikya_lky",
       linkedin: "Mohammad Lukyanto",
    },
    {
       name: "Angel Kusuma Ajinata",
-      position: "",
+      position: "Member",
       image: "",
       instagram: "@na.taa__",
       linkedin: "",
@@ -27,13 +34,6 @@ const members = [
       image: "",
       instagram: "@zheaazee",
       linkedin: "Belva Tabitha",
-   },
-   {
-      name: "Gavin Abhinaya Nirwasita",
-      position: "",
-      image: "",
-      instagram: "@gavin_abhinaya",
-      linkedin: "Gavin Abhinaya Nirwasita",
    },
 ];
 
