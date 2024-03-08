@@ -11,33 +11,33 @@ const members = [
    {
       name: "Dena Dwi Nagita",
       position: "Head of Division",
-      image: "/member/er/Dena Dwi Nagita.jpg",
+      image: "/member/er/dena-dwi-nagita.jpg",
    },
    {
       name: "Dicho Dermawan",
       position: "Vice of Division",
-      image: "/member/er/Dicho Dermawan.jpg",
+      image: "/member/er/dicho-dermawan.jpg",
    },
 
    {
       name: "Daffa Athallah Hade",
       position: "Member",
-      image: "/member/er/Daffa Athallah Hade.jpg",
+      image: "/member/er/daffa-athallah-hade.jpg",
    },
    {
       name: "Nindhita Akmalia Putri",
       position: "Member",
-      image: "/member/er/Nindhita Akmalia.png",
+      image: "/member/er/nindhita-akmalia.jpg",
    },
    {
       name: "Reysa Amelia Gehan",
       position: "Member",
-      image: "/member/er/Reysa Amelia Gehan.jpg",
+      image: "/member/er/reysa-amelia-gehan.jpg",
    },
    {
       name: "Samuel Junio Sambuaga",
       position: "Secretary 3",
-      image: "/member/er/Samuel Junio Sambuaga.png",
+      image: "/member/er/samuel-junio-sambuaga.jpg",
    },
 ];
 

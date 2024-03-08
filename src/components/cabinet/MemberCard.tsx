@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface MemberCardProps {
    image: string;
    name: string;
@@ -7,9 +9,13 @@ interface MemberCardProps {
 export default function MemberCard({ image, name, position }: MemberCardProps) {
    return (
       <div className="mx-auto max-w-xs rounded-md">
-         <img
+         <Image
             src={image}
             alt={`${name}'s Photo`}
+            width={720}
+            height={1280}
+            loading="lazy"
+            
             className="mx-auto h-72 w-48 rounded-xl object-cover object-center"
          />
          <div className="flex flex-col items-center justify-between space-y-8 p-6">

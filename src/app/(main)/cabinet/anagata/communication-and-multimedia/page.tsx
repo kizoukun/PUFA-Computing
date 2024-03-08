@@ -9,13 +9,13 @@ import { Pagination } from "swiper/modules";
 
 const members = [
    {
-      name: "Aura Shafarina Salsabila",
-      position: "Chairperson",
-      image: "/member/bod/Aura Shafarina Salsabila.jpg",
+      name: "Annisa Delicia Yansaf",
+      position: "Head of Division (Communication)",
+      image: "/member/comm/annisa-delicia-yansaf.jpg",
    },
    {
-      name: "Bintang Wira Gemilang",
-      position: "Vice Chairperson 1",
+      name: "Annisa Nirwana Nasution",
+      position: "Vice of Division (Multimedia)",
       image: "/member/bod/Bintang Wira Gemilang.png",
    },
 
