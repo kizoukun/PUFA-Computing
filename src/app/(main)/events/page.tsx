@@ -55,7 +55,7 @@ export default async function EventsPage() {
          </section>
 
          <section className="mt-[5rem]">
-            <h1 className="mx-auto mb-10 max-w-7xl p-10 text-[1.2rem] font-bold">
+            <h1 className="mx-auto max-w-7xl p-10 text-[1.2rem] font-bold">
                Event Categories
             </h1>
             <hr className="border-t-2 border-gray-200" />
@@ -93,7 +93,7 @@ export default async function EventsPage() {
          </section>
 
          <section className="mx-auto max-w-7xl px-10 py-[5rem]">
-            <h1 className="mb-[5rem] text-[1.2rem] font-bold">All Events</h1>
+            <h1 className="mb-[3rem] text-[1.2rem] font-bold">All Events</h1>
             <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
                <PosterCardEventPage
                   link="/news"

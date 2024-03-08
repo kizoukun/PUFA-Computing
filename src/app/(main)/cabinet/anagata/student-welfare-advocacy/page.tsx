@@ -12,47 +12,23 @@ const members = [
       name: "Aura Shafarina Salsabila",
       position: "Chairperson",
       image: "/member/bod/Aura Shafarina Salsabila.jpg",
+      instagram: "",
+      linkedin: "",
    },
    {
       name: "Bintang Wira Gemilang",
       position: "Vice Chairperson 1",
       image: "/member/bod/Bintang Wira Gemilang.png",
+      instagram: "",
+      linkedin: "",
    },
 
    {
       name: "Zioneza Auxiliadora Lou Jeronimo Martins",
       position: "Vice Chairperson 2",
       image: "/member/bod/Zioneza Auxiliadora Lou Jeronimo Martins.jpg",
-   },
-   {
-      name: "Irene Putri Sihite",
-      position: "Secretary 1",
-      image: "/member/bod/Irene Putri Sihite.png",
-   },
-   {
-      name: "Gita Olfa Hidayah",
-      position: "Secretary 2",
-      image: "/member/bod/Gita Olfa Hidayah.jpg",
-   },
-   {
-      name: "Gabriela Imanuel Setiawan",
-      position: "Secretary 3",
-      image: "/member/bod/Gabriela Imanuel Setiawan.jpg",
-   },
-   {
-      name: "Alexandra Verencia Poluakan",
-      position: "Treasure 1",
-      image: "/member/bod/Alexandra Verencia Poluakan.jpg",
-   },
-   {
-      name: "Dian Vania Jessicha Rondonuwu",
-      position: "Treasure 2",
-      image: "/member/bod/Dian Vania Jessicha Rondonuwu.png",
-   },
-   {
-      name: "Dinda Ayu Maulina",
-      position: "Treasure 3",
-      image: "/member/bod/Dinda Ayu Maulina.jpg",
+      instagram: "",
+      linkedin: "",
    },
 ];
 
@@ -152,4 +128,3 @@ export default function page() {
       </section>
    );
 }
- 
