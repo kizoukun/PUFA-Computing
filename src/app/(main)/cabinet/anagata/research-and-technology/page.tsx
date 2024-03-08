@@ -12,47 +12,65 @@ const members = [
       name: "Muhammad Ilham Pratama",
       position: "Head of Division",
       image: "/member/rnt/muhammad-ilham-pratama.jpg",
+      instagram: "https://www.instagram.com/",
+      linkedin:"linkedin.com",
    },
    {
       name: "Devita Annisa",
       position: "Vice of Division",
       image: "/member/rnt/devita-annisa.jpg",
+      instagram: "instagram.com",
+      linkedin:"linkedin.com",
    },
 
    {
       name: "Muhamad Aldi Apriansyah",
       position: "Research",
       image: "/member/rnt/muhamad-aldi-apriansyah.jpg",
+      instagram: "instagram.com",
+      linkedin:"linkedin.com",
    },
    {
       name: "Adelia Zhafira Puspasari ",
       position: "Research",
       image: "/member/rnt/adelia-zhafira-puspasari.jpg",
+      instagram: "instagram.com",
+      linkedin:"linkedin.com",
    },
    {
       name: "Alden Sayidina Radjab ",
       position: "Web Development",
       image: "/member/rnt/alden-sayidina-radjab.jpg",
+      instagram: "instagram.com",
+      linkedin:"linkedin.com",
    },
    {
       name: "Rafael Josh Isaac ",
       position: "Web Development",
       image: "/member/rnt/rafael-josh.jpg",
+      instagram: "instagram.com",
+      linkedin:"linkedin.com",
    },
    {
       name: "Yudhistira Fauzy Achmadarel ",
       position: "Web Development",
       image: "/member/rnt/yudhistira-fauzy-achmadarel.jpg",
+      instagram: "instagram.com",
+      linkedin:"linkedin.com",
    },
    {
       name: "Irfan Saifullah AL Fakih ",
       position: "Web Development",
       image: "/member/rnt/irfan-saf.jpg",
+      instagram: "instagram.com",
+      linkedin:"linkedin.com",
    },
    {
       name: "Muhammad Alief Firmanda",
       position: "Web Development",
       image: "/member/rnt/m-alief-firmanda.jpg",
+      instagram: "instagram.com",
+      linkedin:"linkedin.com",
    },
 ];
 
@@ -122,6 +140,8 @@ export default function page() {
                            name={member.name}
                            position={member.position}
                            image={member.image}
+                           instagram={member.instagram}
+                           linkedin={member.linkedin}
                         />
                      </SwiperSlide>
                   ))}
@@ -143,6 +163,8 @@ export default function page() {
                            name={member.name}
                            position={member.position}
                            image={member.image}
+                           instagram={member.instagram}
+                           linkedin={member.linkedin}
                         />
                      </SwiperSlide>
                   ))}
