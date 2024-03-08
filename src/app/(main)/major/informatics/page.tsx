@@ -96,8 +96,8 @@ export default function StudyProgramPage() {
             </div>
 
             {/* profession and future career part  */}
-            <div className="flex max-h-[20rem] w-full justify-between">
-               <div className="space-y-8">
+            <div className="flex  w-full flex-col justify-between gap-8 md:flex-row">
+               <div className="space-y-4">
                   <h1 className="font-[600]">Future Field and Career</h1>
                   <ListCard content={professions} />
                </div>
