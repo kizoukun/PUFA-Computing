@@ -100,24 +100,17 @@ export default function Navbar() {
          <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-24 items-center justify-between">
                <div className="flex items-center gap-12 lg:divide-x-2 lg:divide-black">
-                  {/* Logo and site title */}
-                  <Link className="inline text-teal-600" href="/">
+                  <Link href="/">
                      <Image alt="PU Computing" src={Logo} width="130" height="80" />
                   </Link>
                   <div className="hidden px-7 font-bold lg:block">
                      <div className="flex flex-col items-center">
                         <div className="flex-grow text-sm font-normal tracking-widest">
                            President University
-                           <p
-                              className=" text-sm font-normal"
-                              style={{ letterSpacing: "0.11em" }}
-                           >
+                           <p className="text-sm font-normal" style={{ letterSpacing: "0.11em" }}>
                               Faculty Association
                            </p>
-                           <div
-                              className="text-center text-[19px] font-[700]"
-                              style={{ letterSpacing: "0.33em" }}
-                           >
+                           <div className="text-center text-[19px] font-[700]" style={{ letterSpacing: "0.33em" }}>
                               COMPUTING
                            </div>
                         </div>
@@ -125,100 +118,115 @@ export default function Navbar() {
                   </div>
                </div>
 
-               {/* Navigation links */}
-               <div className="hidden md:block">
-                  <nav aria-label="Global">
-                     <ul className="text-md flex items-center gap-6 font-medium text-black ">
-                        <li>
-                           <Link href="/" className="">
-                              Home
-                           </Link>
-                        </li>
-
-                        <li>
-                           <Link href="/events">Events</Link>
-                        </li>
-
-                        <li>
-                           <Link href="/news">News</Link>
-                        </li>
-
-                        {/* Dropdowns for PUMA and Others sections */}
-                        {NavbarPuma.map((item) => (
-                           <NavbarDropdown
-                              title={item.title}
-                              items={item.items}
-                              key={item.title}
-                           />
-                        ))}
-
-                        {NavbarOthers.map((item) => (
-                           <NavbarDropdown
-                              title={item.title}
-                              items={item.items}
-                              key={item.title}
-                           />
-                        ))}
-                     </ul>
-                  </nav>
+               <div className="block lg:hidden">
+                  <button
+                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                     className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+                  >
+                     <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                     >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                     </svg>
+                  </button>
                </div>
 
-               {/* User authentication and mobile view toggle */}
-               <div className="flex items-center gap-4">
-                  <div className="sm:flex sm:gap-4">
-                     {/* Conditionally render "Sign in" and "Sign up" buttons or user icon */}
-                     {isLoggedIn ? (
-                        <div className="flex items-center gap-4">
-                           <img
-                              alt=""
-                              className="ri ri ri ri h-12 w-12 rounded-full dark:bg-gray-500"
-                              src="https://source.unsplash.com/40x40/?portrait?1"
-                           />
+               {isMobileMenuOpen && (
+                  <div className="lg:hidden absolute top-24 left-0 right-0 bg-white shadow-md">
+                     <nav aria-label="Global" className="p-4">
+                        <ul className="text-md flex flex-col items-center gap-6 font-medium text-black">
+                           <li>
+                              <Link href="/">Home</Link>
+                           </li>
+                           <li>
+                              <Link href="/events">Events</Link>
+                           </li>
+                           <li>
+                              <Link href="/news">News</Link>
+                           </li>
+                           <NavbarDropdown title="PUMA" items={NavbarPuma[0].items} />
+                           <NavbarDropdown title="Others" items={NavbarOthers[0].items} />
+                           <div>
+                           {isLoggedIn ? (
+                              <button
+                                 onClick={handleLogout}
+                                 className="rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5 mr-3"
+                              >
+                                 Logout
+                              </button>
+                           ) : (
+                              <>
+                                 <div className="mb-5">
+                                    <Link
+                                       className="rounded-md bg-white px-2 py-2.5 my-6 font-medium text-black md:px-5 mr-3"
+                                       href="/auth/signin"
+                                    >
+                                       Log in
+                                    </Link>
+                                 </div>
+                                 <Link
+                                    className="rounded-md bg-white px-2 py-2.5 font-medium text-black"
+                                    href="/auth/signup"
+                                 >
+                                    Sign up
+                                 </Link>
+                              </>
+                           )}
+                        </div>
+
+                        </ul>
+                     </nav>
+                  </div>
+               )}
+
+               <div className="hidden lg:flex lg:items-center lg:gap-6">
+                  <ul className="text-md flex flex-row items-center gap-6 font-medium text-black">
+                     <li>
+                        <Link href="/">Home</Link>
+                     </li>
+                     <li>
+                        <Link href="/events">Events</Link>
+                     </li>
+                     <li>
+                        <Link href="/news">News</Link>
+                     </li>
+                     {NavbarPuma.map((item) => (
+                        <NavbarDropdown title={item.title} items={item.items} key={item.title} />
+                     ))}
+                     {NavbarOthers.map((item) => (
+                        <NavbarDropdown title={item.title} items={item.items} key={item.title} />
+                     ))}
+                     <li>
+                        {isLoggedIn ? (
                            <button
                               onClick={handleLogout}
-                              className="block rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5"
+                              className="rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5"
                            >
                               Logout
                            </button>
-                        </div>
-                     ) : (
-                        <div className="hidden gap-x-4 sm:flex">
-                           <Link
-                              className="block rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5"
-                              href="/auth/signin"
-                           >
-                              Log in
-                           </Link>
-
-                           <Link
-                              className={`block rounded-md border-2 border-[#0C8CE9] bg-[#0C8CE9] px-5 py-2.5 text-sm font-medium text-white duration-300 hover:bg-white hover:text-black`}
-                              href="/auth/signup"
-                           >
-                              Sign up
-                           </Link>
-                        </div>
-                     )}
-                  </div>
-
-                  {/* Mobile view toggle button */}
-                  <div className="block md:hidden">
-                     <button className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
-                        <svg
-                           xmlns="http://www.w3.org/2000/svg"
-                           className="h-5 w-5"
-                           fill="none"
-                           viewBox="0 0 24 24"
-                           stroke="currentColor"
-                           strokeWidth="2"
-                        >
-                           <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M4 6h16M4 12h16M4 18h16"
-                           />
-                        </svg>
-                     </button>
-                  </div>
+                        ) : (
+                           <>
+                              <Link
+                                 className="rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 mr-2 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5"
+                                 href="/auth/signin"
+                              >
+                                 Log in
+                              </Link>
+                              <Link
+                                 className={`rounded-md border-2 border-[#0C8CE9] bg-[#0C8CE9] px-5 py-2.5 text-sm font-medium text-white duration-300 hover:bg-white hover:text-black`}
+                                 href="/auth/signup"
+                              >
+                                 Sign up
+                              </Link>
+                           </>
+                        )}
+                     </li>
+                  </ul>
                </div>
             </div>
          </div>
