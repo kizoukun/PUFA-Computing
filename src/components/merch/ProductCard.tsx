@@ -74,7 +74,7 @@ export default function ProductCard({ Product }: ProductCardProps) {
                                  {product.organization}
                               </h2>
 
-                              <img src="cart.svg" />
+                              {/* <img src="cart.svg" /> */}
                            </div>
                         </div>
 

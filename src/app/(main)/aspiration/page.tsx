@@ -34,21 +34,8 @@ export default function page() {
             className="bg-cover bg-center bg-repeat px-4 py-8 md:px-[10rem] md:py-16"
             style={{ backgroundImage: `url('/doodle.svg')` }}
          >
-            <div className="flex flex-col rounded-lg border bg-white px-4 py-4 opacity-90 shadow-lg md:px-8 md:py-8">
-               <h1 className=" text-[1.4rem] text-[#656565] md:text-[1.8rem]">
-                  Share Your Aspirations for Better Computing
-               </h1>
-               <hr className="my-8 border" />
-               <div>
-                  <h1 className="text-[1.3rem] ">Hello, Alden Sayidina!</h1>
-                  <h1 className="text-[1.3rem] font-bold">
-                     Let's fill in this box!
-                  </h1>
-               </div>
-               <hr className="my-8 border" />
+            <AspirationForm />
 
-               <AspirationForm />
-            </div>
             <h1 className="mt-20 text-center text-[35px] font-[700] text-[#353535]">
                Aspirations Library
             </h1>

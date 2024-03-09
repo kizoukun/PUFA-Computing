@@ -8,16 +8,16 @@ import Faq from "@/components/main/Faq";
 import NewsCard from "@/components/news/NewsCard";
 import NewsCardBig from "@/components/news/NewsCardBig";
 import StudyProgCard from "@/components/main/StudyProgCard";
-// import VCDStudyProgCard from "@/components/VCDStudyProgCard";
 import CardStore from "@/components/store/CardStore";
 import EventSection from "@/components/event/EventSection";
-import CompreciationCard from "@/components/main/CompreciationCard";
 import { Suspense } from "react";
 import { FaqData, StudyProgramData } from "@/lib/data";
 import Logo from "@/assets/anagataLogo.svg";
+import CompreciationCards from "./_components/CompreciationCards";
+import Loading from "@/components/Loading";
 
-// export const revalidate = 3600;
-// export const dynamic = "force-dynamic";
+export const revalidate = 600;
+export const dynamic = "force-dynamic";
 
 export default async function Index() {
    return (
@@ -139,107 +139,14 @@ export default async function Index() {
                Discover the latest updates on events in our faculty.
             </h1>
 
-            {/* event card untuk home (2 besar) */}
-            <div className="grid scale-90 grid-cols-1 gap-12 md:scale-100 md:grid-cols-2 md:gap-8">
-               <div className="flex max-w-[35rem] gap-4 rounded-lg shadow-lg">
-                  <div className="h-[300px] w-[250px] scale-110 rounded-lg bg-[#E50D0D]"></div>
-                  <div className="max-w-[20rem] space-y-10 p-6">
-                     <h1 className="text-[1.0rem] font-[600]">
-                        Computing Social Project 2023
-                     </h1>
-                     <h1 className="text-[0.8rem]">
-                        w/ Rumah Tahfidz Taman Qur'ani
-                     </h1>
-                     <p className="text-[0.8rem]">
-                        Hola everyone, we are from PUFA Computing 2023. We are
-                        so excited to announce the Social Project.
-                     </p>
-                     <div className="flex justify-between">
-                        <h1 className="font-[600]">PUMA IT</h1>
-                        <div className="rounded-2xl border-2 border-[#E50D0D] px-4">
-                           <h1 className="text-[#E50D0D]">Upcoming</h1>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-
-               <div className="flex max-w-[35rem] gap-4 rounded-lg shadow-lg">
-                  <div className="h-[300px] w-[250px] scale-110 rounded-lg bg-[#E50D0D]"></div>
-                  <div className="max-w-[20rem] space-y-10 p-6">
-                     <h1 className="text-[1.0rem] font-[600]">
-                        Computing Social Project 2023
-                     </h1>
-                     <h1 className="text-[0.8rem]">
-                        w/ Rumah Tahfidz Taman Qur'ani
-                     </h1>
-                     <p className="text-[0.8rem]">
-                        Hola everyone, we are from PUFA Computing 2023. We are
-                        so excited to announce the Social Project.
-                     </p>
-                     <div className="flex justify-between">
-                        <h1 className="font-[600]">PUMA IT</h1>
-                        <div className="rounded-2xl border-2 border-[#E50D0D] px-4">
-                           <h1 className="text-[#E50D0D]">Upcoming</h1>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-            {/* event card untuk home (3 kecil) */}
-            <div className="grid scale-90 grid-cols-1 gap-8 md:scale-75 md:grid-cols-3">
-               <div className="max-w-[25rem] space-y-6 rounded-lg border border-[#E50D0D] p-6">
-                  <h1 className="text-[1.2rem] font-[600]">
-                     Computing Social Project 2023
-                  </h1>
-                  <h1>Hola everyone, We are from PUFA Computing 2023...</h1>
-                  <div className="flex justify-between">
-                     <div className="rounded-2xl border-2 border-[#E50D0D] px-4">
-                        <h1 className="text-[0.8rem] text-[#E50D0D]">
-                           Completed
-                        </h1>
-                     </div>
-                     <Link href="">Read More</Link>
-                  </div>
-               </div>
-
-               <div className="max-w-[25rem] space-y-6 rounded-lg border border-[#E50D0D] p-6">
-                  <h1 className="text-[1.2rem] font-[600]">
-                     Computing Social Project 2023
-                  </h1>
-                  <h1>Hola everyone, We are from PUFA Computing 2023...</h1>
-                  <div className="flex justify-between">
-                     <div className="rounded-2xl border-2 border-[#E50D0D] px-4">
-                        <h1 className="text-[0.8rem] text-[#E50D0D]">
-                           Completed
-                        </h1>
-                     </div>
-                     <Link href="">Read More</Link>
-                  </div>
-               </div>
-
-               <div className="max-w-[25rem] space-y-6 rounded-lg border border-[#E50D0D] p-6">
-                  <h1 className="text-[1.2rem] font-[600]">
-                     Computing Social Project 2023
-                  </h1>
-                  <h1>Hola everyone, We are from PUFA Computing 2023...</h1>
-                  <div className="flex justify-between">
-                     <div className="rounded-2xl border-2 border-[#E50D0D] px-4">
-                        <h1 className="text-[0.8rem] text-[#E50D0D]">
-                           Completed
-                        </h1>
-                     </div>
-                     <Link href="">Read More</Link>
-                  </div>
-               </div>
-            </div>
+            <EventSection />
 
             <button className="rounded-lg border-2 border-[#E50D0D] px-10 py-2 text-[#E50D0D] transition-all duration-300 hover:bg-[#E50D0D] hover:text-white">
                See all Events
             </button>
          </section>
 
-         {/* news section */}
+         {/* news */}
          <section
             id="news"
             className="max-h-xl mx-auto my-[10rem] max-w-7xl space-y-12 p-5 text-center"
@@ -295,38 +202,26 @@ export default async function Index() {
             </div>
          </section>
 
-         {/* open projects */}
-         <section className="my-[10rem] flex select-none flex-col items-center space-y-12">
-            <div className="border-l-4 border-[#AF95FF] pl-4">
-               <h1 className="text-[1.5rem] font-bold">Open Projects</h1>
-            </div>
+         {/* compreciacion */}
 
-            <h1 className="text-center">
-               Library for all the computizen's projects
-            </h1>
-
-            <div className="grid max-w-[30rem] grid-cols-1 gap-4  md:max-w-[75rem] md:grid-cols-3">
-               <CompreciationCard
-                  date="September 11, 2023"
-                  title="Student Analysis Using Python"
-                  name="Paman, and Aleph"
-                  description="a student analysis system that can help us to see our performance in campus and give the recommendation for the further ..."
-                  major="Informatics"
-               />
-               <CompreciationCard
-                  date="September 11, 2023"
-                  title="Student Analysis Using Python"
-                  name="Paman, and Aleph"
-                  description="a student analysis system that can help us to see our performance in campus and give the recommendation for the further ..."
-                  major="Informatics"
-               />
-               <CompreciationCard
-                  date="September 11, 2023"
-                  title="Student Analysis Using Python"
-                  name="Paman, and Aleph"
-                  description="a student analysis system that can help us to see our performance in campus and give the recommendation for the further ..."
-                  major="Informatics"
-               />
+         <section
+            id="compreciacion"
+            className="max-h-xl mx-auto my-32 max-w-7xl space-y-8 p-5 text-center"
+         >
+            <h2 className="text-2xl font-bold">
+               <span className="mr-4 border-l-4 border-l-[#AF95FF]"></span>
+               Compreciation
+            </h2>
+            <h3 className="">Appreciation to Computizen’s best projects.</h3>
+            <Suspense fallback={<Loading />}>
+               <CompreciationCards />
+            </Suspense>
+            <div className="flex items-center justify-center">
+               <Link href="/projects" className="block w-max">
+                  <Button className="border-[#AF95FF] px-10 py-2 text-[#AF95FF] hover:bg-[#AF95FF] hover:text-white">
+                     See all items
+                  </Button>
+               </Link>
             </div>
          </section>
 
@@ -391,3 +286,4 @@ export default async function Index() {
       </div>
    );
 }
+   

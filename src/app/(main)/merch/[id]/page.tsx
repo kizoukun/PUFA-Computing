@@ -3,7 +3,7 @@ import { useState } from "react";
 import Select from "react-select";
 
 export default function MerchPage() {
-   const [selectedImage, setSelectedImage] = useState<string>("../aot.jpg");
+   const [selectedImage, setSelectedImage] = useState<string>("../store/merch.png");
    const [selectedSize, setSelectedSize] = useState<string | null>(null);
 
    const [isClearable, setIsClearable] = useState(true);
@@ -26,8 +26,8 @@ export default function MerchPage() {
 
    const colorOptions = [
       { value: "blackGrey", label: "Black n Grey" },
-      { value: "blackGrey", label: "Black n Grey" },
-      { value: "blackGrey", label: "Black n Grey" },  
+      { value: "blackWhite", label: "Black n White" },
+      { value: "blackYellow", label: "Black n Yelow" },  
    ];
 
    const [selectedColor, setSelectedColor] = useState<string | null>(null);
@@ -74,16 +74,16 @@ export default function MerchPage() {
                      <div className="grid grid-cols-3">
                         <img
                            className="h-48 w-36 rounded-xl object-cover"
-                           src="../aot.jpg"
+                           src="../store/merch.png"
                            alt="Product Image"
-                           onClick={() => handleImageClick("../aot.jpg")}
+                           onClick={() => handleImageClick("../store/merch.png")}
                         />
                         <img
                            className="h-48 w-36 rounded-xl object-cover"
-                           src="../another-aot.jpg"
+                           src="../comingsoon.jpg"
                            alt="Product Image"
                            onClick={() =>
-                              handleImageClick("../another-aot.jpg")
+                              handleImageClick("../comingsoon.jpg")
                            }
                         />
                      </div>

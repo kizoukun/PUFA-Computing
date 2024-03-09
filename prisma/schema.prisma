@@ -52,6 +52,10 @@ model Project {
    title       String
    description String
    major       String
+   teamName    String?
+   teamMembers String[]
+   batch       String
+   codeLink    String
    accepted    Boolean  @default(false)
    createdAt   DateTime @default(now())
    updatedAt   DateTime @default(now()) @updatedAt
