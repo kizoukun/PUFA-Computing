@@ -1,6 +1,5 @@
 "use client";
 import Button from "@/components/Button";
-import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -11,48 +10,66 @@ const members = [
    {
       name: "Aura Shafarina Salsabila",
       position: "Chairperson",
-      image: "/member/bod/Aura Shafarina Salsabila.jpg",
+      image: "/member/bod/aura-shafarina-salsabila.jpg",
+      instagram: "",
+      linkedin: "",
    },
    {
       name: "Bintang Wira Gemilang",
       position: "Vice Chairperson 1",
-      image: "/member/bod/Bintang Wira Gemilang.png",
+      image: "/member/bod/bintang-wira-gemilang.jpg",
+      instagram: "",
+      linkedin: "",
    },
 
    {
       name: "Zioneza Auxiliadora Lou Jeronimo Martins",
       position: "Vice Chairperson 2",
-      image: "/member/bod/Zioneza Auxiliadora Lou Jeronimo Martins.jpg",
+      image: "/member/bod/zioneza-auxiliadora-lou-jeronimo-martins.jpg",
+      instagram: "",
+      linkedin: "",
    },
    {
       name: "Irene Putri Sihite",
       position: "Secretary 1",
-      image: "/member/bod/Irene Putri Sihite.png",
+      image: "/member/bod/irene-putri-sihite.jpg",
+      instagram: "",
+      linkedin: "",
    },
    {
       name: "Gita Olfa Hidayah",
       position: "Secretary 2",
-      image: "/member/bod/Gita Olfa Hidayah.jpg",
+      image: "/member/bod/gita-olfa-hidayah.jpg",
+      instagram: "",
+      linkedin: "",
    },
    {
       name: "Gabriela Imanuel Setiawan",
       position: "Secretary 3",
-      image: "/member/bod/Gabriela Imanuel Setiawan.jpg",
+      image: "/member/bod/gabriela-Imanuel-setiawan.jpg",
+      instagram: "",
+      linkedin: "",
    },
    {
       name: "Alexandra Verencia Poluakan",
       position: "Treasure 1",
-      image: "/member/bod/Alexandra Verencia Poluakan.jpg",
+      image: "/member/bod/alexandra-verencia-poluakan.jpg",
+      instagram: "",
+      linkedin: "",
    },
    {
       name: "Dian Vania Jessicha Rondonuwu",
       position: "Treasure 2",
-      image: "/member/bod/Dian Vania Jessicha Rondonuwu.png",
+      image: "/member/bod/dian-vania-jessicha-rondonuwu.jpg",
+      instagram: "",
+      linkedin: "",
    },
    {
       name: "Dinda Ayu Maulina",
       position: "Treasure 3",
-      image: "/member/bod/Dinda Ayu Maulina.jpg",
+      image: "/member/bod/dinda-ayu-maulina.jpg",
+      instagram: "",
+      linkedin: "",
    },
 ];
 

@@ -1,6 +1,5 @@
 "use client";
 import Button from "@/components/Button";
-import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -9,50 +8,41 @@ import { Pagination } from "swiper/modules";
 
 const members = [
    {
-      name: "Aura Shafarina Salsabila",
-      position: "Chairperson",
-      image: "/member/bod/Aura Shafarina Salsabila.jpg",
+      name: "Muhammad Yusuf",
+      position: "Head of Division",
+      image: "/member/sdc/muhammad-yusuf.jpg",
+      instagram: "http://Instagram.com/muhayuf",
+      linkedin: "http://linkedin.com/in/muhayuf",
    },
    {
-      name: "Bintang Wira Gemilang",
-      position: "Vice Chairperson 1",
-      image: "/member/bod/Bintang Wira Gemilang.png",
+      name: "Bilqis Nabila Mukhtar",
+      position: "Vice of Division",
+      image: "/member/sdc/bilqis-nabila-mukhtar.jpg",
+      instagram: "http://instagram.com/bilqiss.n",
    },
 
    {
-      name: "Zioneza Auxiliadora Lou Jeronimo Martins",
-      position: "Vice Chairperson 2",
-      image: "/member/bod/Zioneza Auxiliadora Lou Jeronimo Martins.jpg",
+      name: "Muhammad Arrizky Adhita Azizi",
+      position: "Member",
+      image: "/member/sdc/muhammad-arrizky-adhita-azizi.jpg",
+      instagram: "https://instagram.com/arrizkyadhita.a",
+      linkedin:
+         "https://www.linkedin.com/in/muhammad-firman-hidayat-786561286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
    },
    {
-      name: "Irene Putri Sihite",
-      position: "Secretary 1",
-      image: "/member/bod/Irene Putri Sihite.png",
+      name: "Violetta Scarlet Adeline Roeroe",
+      position: "Member",
+      image: "/member/sdc/violetta-scarlet-adeline-roeroe.jpg",
+      instagram: "http://instagram.com/violettaroeroe",
+      linkedin: "http://linkedin.com/in/violettascarlet",
    },
    {
-      name: "Gita Olfa Hidayah",
-      position: "Secretary 2",
-      image: "/member/bod/Gita Olfa Hidayah.jpg",
-   },
-   {
-      name: "Gabriela Imanuel Setiawan",
-      position: "Secretary 3",
-      image: "/member/bod/Gabriela Imanuel Setiawan.jpg",
-   },
-   {
-      name: "Alexandra Verencia Poluakan",
-      position: "Treasure 1",
-      image: "/member/bod/Alexandra Verencia Poluakan.jpg",
-   },
-   {
-      name: "Dian Vania Jessicha Rondonuwu",
-      position: "Treasure 2",
-      image: "/member/bod/Dian Vania Jessicha Rondonuwu.png",
-   },
-   {
-      name: "Dinda Ayu Maulina",
-      position: "Treasure 3",
-      image: "/member/bod/Dinda Ayu Maulina.jpg",
+      name: "Muhammad Firman Hidayat",
+      position: "Member",
+      image: "/member/sdc/firman.jpg",
+      instagram: "https://www.instagram.com/frmaanhdyt__",
+      linkedin:
+         "https://www.linkedin.com/in/muhammad-firman-hidayat-786561286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
    },
 ];
 
@@ -63,7 +53,7 @@ export default function page() {
             {/* text logo nya  */}
             <div className="flex flex-col border-l-4 border-[#1FA820] pl-4 md:pl-8">
                <h1 className="text-[2rem] font-[900] uppercase tracking-widest md:text-[3rem]">
-                  Board of Director
+                  Student Development and Competition
                </h1>
                <div className="flex flex-col items-start gap-2 md:flex-row md:items-center">
                   <h1 className="text-[2rem] font-thin uppercase tracking-widest text-stroke-1 text-stroke-black text-stroke-fill-white md:text-[3rem]">
@@ -122,6 +112,8 @@ export default function page() {
                            name={member.name}
                            position={member.position}
                            image={member.image}
+                           instagram={member.instagram}
+                           linkedin={member.linkedin}
                         />
                      </SwiperSlide>
                   ))}
@@ -143,6 +135,8 @@ export default function page() {
                            name={member.name}
                            position={member.position}
                            image={member.image}
+                           instagram={member.instagram}
+                           linkedin={member.linkedin}
                         />
                      </SwiperSlide>
                   ))}

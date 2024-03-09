@@ -1,6 +1,5 @@
 "use client";
 import Button from "@/components/Button";
-import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -9,50 +8,39 @@ import { Pagination } from "swiper/modules";
 
 const members = [
    {
-      name: "Aura Shafarina Salsabila",
-      position: "Chairperson",
-      image: "/member/bod/Aura Shafarina Salsabila.jpg",
+      name: "Marizky Afri Legoarto",
+      position: "Head of Division",
+      image: "/member/ans/marizky-arfi.jpg",
+      instagram: "",
+      linkedin: "",
    },
    {
-      name: "Bintang Wira Gemilang",
-      position: "Vice Chairperson 1",
-      image: "/member/bod/Bintang Wira Gemilang.png",
-   },
-
-   {
-      name: "Zioneza Auxiliadora Lou Jeronimo Martins",
-      position: "Vice Chairperson 2",
-      image: "/member/bod/Zioneza Auxiliadora Lou Jeronimo Martins.jpg",
+      name: "Indah Novianti Setyoningrum",
+      position: "Vice of Division",
+      image: "/member/ans/indah-novianti-setyoningrum.jpg",
+      instagram: "",
+      linkedin: "",
    },
    {
-      name: "Irene Putri Sihite",
-      position: "Secretary 1",
-      image: "/member/bod/Irene Putri Sihite.png",
+      name: "George Elver Andrew Tamba",
+      position: "Member",
+      image: "/member/ans/george-elver-andrew-tamba.jpg",
+      instagram: "",
+      linkedin: "",
    },
    {
-      name: "Gita Olfa Hidayah",
-      position: "Secretary 2",
-      image: "/member/bod/Gita Olfa Hidayah.jpg",
+      name: "Bimasena Yudhaprawira",
+      position: "Member",
+      image: "/member/ans/bimasena-yudhaprawira.jpg",
+      instagram: "",
+      linkedin: "",
    },
    {
-      name: "Gabriela Imanuel Setiawan",
-      position: "Secretary 3",
-      image: "/member/bod/Gabriela Imanuel Setiawan.jpg",
-   },
-   {
-      name: "Alexandra Verencia Poluakan",
-      position: "Treasure 1",
-      image: "/member/bod/Alexandra Verencia Poluakan.jpg",
-   },
-   {
-      name: "Dian Vania Jessicha Rondonuwu",
-      position: "Treasure 2",
-      image: "/member/bod/Dian Vania Jessicha Rondonuwu.png",
-   },
-   {
-      name: "Dinda Ayu Maulina",
-      position: "Treasure 3",
-      image: "/member/bod/Dinda Ayu Maulina.jpg",
+      name: "Najla Rifa Nur Asjad",
+      position: "Member",
+      image: "/member/ans/najla-rifa-nur-asjad.jpg",
+      instagram: "",
+      linkedin: "",
    },
 ];
 
@@ -63,15 +51,15 @@ export default function page() {
             {/* text logo nya  */}
             <div className="flex flex-col border-l-4 border-[#1FA820] pl-4 md:pl-8">
                <h1 className="text-[2rem] font-[900] uppercase tracking-widest md:text-[3rem]">
-                  Board of Director
+                  Art and Sport
                </h1>
                <div className="flex flex-col items-start gap-2 md:flex-row md:items-center">
                   <h1 className="text-[2rem] font-thin uppercase tracking-widest text-stroke-1 text-stroke-black text-stroke-fill-white md:text-[3rem]">
                      Division
                   </h1>
                   <h1 className="text-justify text-[0.8rem] md:max-w-[20rem]">
-                     is a representative of the highest division consisting of
-                     Chairperson, Vice Chairperson, Secretary, and Treasurer.
+                     Division that focuses on developing interest and burning
+                     the arts and sports in the computing sphere.
                   </h1>
                </div>
             </div>

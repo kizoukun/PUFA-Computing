@@ -10,76 +10,70 @@ export default function Page() {
    return (
       <div>
          {/* logo and tagline */}
-         <section className="bg-[#F2F2F2]">
-            <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 ">
-               <div className="mb-12 flex flex-col items-center justify-center text-center lg:flex-row">
-                  {/* logo  */}
-                  <Image
-                     alt="ANAGATA logo"
-                     className="object-cover lg:mr-8"
-                     height="256"
-                     src={Logo}
-                     width="256"
-                  />
-                  {/* tagline  */}
-                  <div className="mb-8 lg:mb-0 lg:border-l-4 lg:border-[#1FA820] lg:pl-5 lg:text-left lg:text-[#353535]">
-                     <p className="text-4xl font-[600] text-[#353535] lg:text-5xl xl:text-6xl">
-                        ANAGATA CABINET
-                     </p>
-                     <p className="text-xl font-semibold lg:text-2xl xl:text-3xl">
-                        "BE STRONG ONE DETERMINATION"
-                     </p>
-                     <p className="text-lg font-semibold lg:text-xl xl:text-2xl">
-                        PUFA COMPUTING PERIOD 2023/2024
-                     </p>
-                  </div>
+         <section className="flex flex-col items-center bg-[#F2F2F2] p-[5rem] md:px-[10rem]">
+            <div className="flex flex-col items-center gap-8 md:flex-row md:gap-16">
+               <Image
+                  alt="ANAGATA logo"
+                  className="rounded-lg object-cover shadow-xl"
+                  height="256"
+                  src={Logo}
+                  width="256"
+               />
+               <div className="flex flex-col space-y-6 border-l-4 border-[#1FA820] pl-8 leading-none text-[#353535]">
+                  <h1 className="text-[3rem] font-[600]">ANAGATA CABINET</h1>
+                  <h1 className="text-[2rem] font-[600]">
+                     "Be Strong, One Determination"
+                  </h1>
+                  <h1 className="text-[1rem] font-[600]">
+                     PUFA COMPUTING PERIOD 2023/2024
+                  </h1>
                </div>
             </div>
          </section>
 
          {/* logo philosophy  */}
-         <section className="flex flex-col items-center justify-center bg-white px-20 pb-12">
-            <h1 className="flex justify-center p-8 text-2xl font-[600] text-[#353535] md:p-14 md:text-4xl lg:text-5xl">
+         <section className="flex flex-col items-center space-y-12 p-[5rem] md:px-[10rem]">
+            <h1 className="text-[2rem] font-[600] text-[#353535]">
                LOGO PHILOSOPHY
             </h1>
 
             {/* mobile view  */}
-            <MobileViewPhilosophy/>
+            <MobileViewPhilosophy />
 
-            <div className="hidden max-w-[62rem] flex-col gap-16 md:flex">
-               <div className="flex gap-8">
+            <div className="hidden max-w-[62rem] flex-col items-center gap-16 md:flex">
+               <div className="relative -left-10 flex gap-8">
                   <Image
                      alt="Letter A"
                      width={1920}
                      height={1080}
-                     src="/logo/letter_a.svg"
-                     className="h-[150px] w-[150px] rounded-lg"
+                     src="/logo/anagataLetterA.svg"
+                     className="h-[150px] w-[150px] rounded-lg shadow-xl"
                   />
 
-                  <h1 className="self-center rounded-lg border-2 border-[#F6931A] px-6 py-4 text-[1.2rem] font-[600] text-[#376853]">
+                  <h1 className="max-w-[10rem] self-center rounded-lg border-2 border-[#F6931A] px-6 py-4 text-[1.2rem] font-[600] text-[#376853]">
                      LETTER "A"
                   </h1>
 
-                  <h1 className="self-center text-[1.2rem] font-[600] text-[#376853] text-[]">
+                  <h1 className="max-w-[30rem] self-center text-[1.2rem] font-[600] text-[#376853] text-[]">
                      Our letter "A" that represents our cabinet name is
                      "ANAGATA".
                   </h1>
                </div>
 
-               <div className="flex gap-8">
+               <div className="relative left-10 flex gap-8">
                   <Image
                      alt="Bridge & 25 Pillars"
                      width={1920}
                      height={1080}
-                     src="/logo/bridge.svg"
-                     className="h-[150px] w-[150px] rounded-lg"
+                     src="/logo/anagataBridge.svg"
+                     className="h-[150px] w-[150px] rounded-lg shadow-xl"
                   />
 
-                  <h1 className="self-center rounded-lg border-2 border-[#F6931A] px-6 py-2 text-[1.2rem] font-[600] text-[#376853]">
+                  <h1 className="max-w-[10rem] self-center rounded-lg border-2 border-[#F6931A] px-6 py-2 text-[1.2rem] font-[600] text-[#376853]">
                      BRIDGES & 25 PILLARS
                   </h1>
 
-                  <h1 className="self-center text-[1.2rem] font-[600] text-[#376853]">
+                  <h1 className="max-w-[30rem] self-center text-[1.2rem] font-[600] text-[#376853]">
                      A bridge means PUFA Computing as an intermediary for
                      computing faculty to achieve a bright future. 25 Pillars
                      which means 25 people consisting of a combination of BoD,
@@ -87,20 +81,20 @@ export default function Page() {
                   </h1>
                </div>
 
-               <div className="flex gap-8">
+               <div className="relative -left-10 flex gap-8">
                   <Image
                      alt="Sun"
                      width={1920}
                      height={1080}
-                     src="/logo/sun.svg"
-                     className="h-[150px] w-[150px] rounded-lg"
+                     src="/logo/anagataSun.svg"
+                     className="h-[150px] w-[150px] rounded-lg shadow-xl"
                   />
 
-                  <h1 className="self-center rounded-lg border-2 border-[#F6931A] px-12 py-4 text-[1.2rem] font-[600] text-[#376853]">
+                  <h1 className="max-w-[10rem] self-center rounded-lg border-2 border-[#F6931A] px-12 py-4 text-[1.2rem] font-[600] text-[#376853]">
                      SUN
                   </h1>
 
-                  <h1 className="self-center text-[1.2rem] font-[600] text-[#376853]">
+                  <h1 className="max-w-[30rem] self-center text-[1.2rem] font-[600] text-[#376853]">
                      The brilliant sun represents a bright future for the
                      computing faculty, with 9 sides of sunshine representing
                      the 9 divisions of PUFA Computing.
@@ -110,21 +104,24 @@ export default function Page() {
          </section>
 
          {/* VISIONS & MISSIONS  */}
-         <section className="bg-[#F2F2F2]">
-            <h1 className="flex justify-center p-8 text-2xl font-[600] text-[#353535] md:p-20 md:text-4xl lg:text-5xl">
-               VISIONS & MISSIONS
-            </h1>
-            <p className="mx-auto px-10 text-justify text-base font-semibold text-[#376853] md:max-w-6xl md:p-0 md:text-center md:text-lg lg:text-xl ">
-               PUFA Computing as a bridge for students in the Computing Faculty,
-               and makes PUFA Computing more responsive, progressive,
-               professional, and inspiring to become a strong bridge as a forum
-               for students in the computing faculty to improve soft skills,
-               hard skills, connecting computing minds to empowering future
-               innovators, and as an aspirational forum for the welfare of
-               faculty, lecturers, and students.
-            </p>
-
-            <div className="mx-auto grid max-w-4xl grid-cols-1 gap-12 py-10 md:grid-cols-3">
+         <section className="flex select-none flex-col items-center space-y-12 bg-[#F2F2F2] px-[5rem] py-[5rem] md:px-[10rem]">
+            <div>
+               <h1 className="text-[2rem] font-[600] text-[#353535]">
+                  VISION & MISSION
+               </h1>
+            </div>
+            <div>
+               <p className="max-w-[50rem] text-center font-[600] text-[#376853]">
+                  PUFA Computing as a bridge for students in the Computing
+                  Faculty, and makes PUFA Computing more responsive,
+                  progressive, professional, and inspiring to become a strong
+                  bridge as a forum for students in the computing faculty to
+                  improve soft skills, hard skills, connecting computing minds
+                  to empowering future innovators, and as an aspirational forum
+                  for the welfare of faculty, lecturers, and students.
+               </p>
+            </div>
+            <div className="grid max-w-[20rem] grid-cols-1 gap-10 md:max-w-[60rem] md:grid-cols-3">
                <CardWithImage
                   image="/icon-pufa/explore.svg"
                   title="EXPLORE"
@@ -144,14 +141,14 @@ export default function Page() {
          </section>
 
          {/* division  */}
-         <section className="bg-white">
+         <section className="flex flex-col items-center bg-white">
             <h1 className="flex justify-center p-8 text-2xl font-[600] text-[#353535] md:p-20 md:text-4xl lg:text-5xl">
                DIVISION
             </h1>
 
             <div className="md:hidden">
                {" "}
-               <div className="grid grid-cols-2 md:grid-cols-4">
+               <div className="grid max-w-[20rem] grid-cols-1 gap-8 md:grid-cols-4">
                   <CardWithImage
                      image="/icon-pufa/embrace.svg"
                      title="EMBRACE"
@@ -182,7 +179,7 @@ export default function Page() {
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-orange-200 to-orange-400"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                        <p className="capitalize text-[0.9rem] font-light text-[#6B7280]">
                            is a representative of the highest division
                            consisting of <br />
                            Chairperson, Vice Chairperson, Secretary and
@@ -200,7 +197,7 @@ export default function Page() {
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-green-200 to-green-600"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                        <p className="capitalize text-[0.9rem] font-light text-[#6B7280]">
                            This division organize activities or events related
                            <br />
                            to parties outside the campus.
@@ -217,7 +214,7 @@ export default function Page() {
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-orange-200 to-orange-400"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                        <p className="capitalize text-[0.9rem] font-light text-[#6B7280]">
                            This division has the main task of strengthening the
                            <br />
                            relationship between students and students, students
@@ -236,7 +233,7 @@ export default function Page() {
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-green-200 to-green-600"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                        <p className="capitalize text-[0.9rem] font-light text-[#6B7280]">
                            Division that focuses on developing interest and
                            burning <br /> the arts and sports in the computing
                            sphere.
@@ -253,7 +250,7 @@ export default function Page() {
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-orange-200 to-orange-400"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                        <p className="capitalize text-[0.9rem] font-light text-[#6B7280]">
                            Division that handles PUFA Computing social media
                            such <br /> as Instagram, LinkedIn, LINE OA, and
                            youtube.
@@ -280,7 +277,7 @@ export default function Page() {
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-orange-200 to-orange-400"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                        <p className="capitalize text-[0.9rem] font-light text-[#6B7280]">
                            division in charge of developing creative ideas and
                            sharing <br /> knowledge and sharing knowledge in the
                            field of technology.
@@ -297,7 +294,7 @@ export default function Page() {
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-green-200 to-green-600"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                        <p className="capitalize text-[0.9rem] font-light text-[#6B7280]">
                            is a representative of the highest division
                            consisting of <br />
                            Chairperson, Vice Chairperson, Secretary and
@@ -315,7 +312,7 @@ export default function Page() {
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-orange-200 to-orange-400"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                        <p className="capitalize text-[0.9rem] font-light text-[#6B7280]">
                            Responsible for accommodating aspirations and <br />
                            suggestions, as well as assisting and defending
                            problems <br /> experienced by Computizens.
@@ -331,7 +328,7 @@ export default function Page() {
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-green-200 to-green-600"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                        <p className="capitalize text-[0.9rem] font-light text-[#6B7280]">
                            this division aims to develop computizens interests
                            and <br />
                            talents in entrepreneurship and business.
@@ -347,7 +344,7 @@ export default function Page() {
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-orange-200 to-orange-400"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                        <p className="capitalize text-[0.9rem] font-light text-[#6B7280]">
                            Responsible to in charge of creating and editing{" "}
                            <br />
                            templates content to be posted on social media PUFA{" "}
@@ -360,6 +357,7 @@ export default function Page() {
             </div>
          </section>
 
+         {/* timeline section  */}
          <section className="bg-[#F2F2F2]">
             <h1 className="flex justify-center p-8 text-2xl font-[600] text-[#353535] md:p-20 md:text-4xl lg:text-5xl">
                TIMELINE

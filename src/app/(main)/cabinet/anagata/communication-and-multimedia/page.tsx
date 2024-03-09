@@ -9,50 +9,74 @@ import { Pagination } from "swiper/modules";
 
 const members = [
    {
-      name: "Aura Shafarina Salsabila",
-      position: "Chairperson",
-      image: "/member/bod/Aura Shafarina Salsabila.jpg",
+      name: "Annisa Delicia Yansaf",
+      position: "Head of Division (Communication)",
+      image: "/member/comm/annisa-delicia-yansaf.jpg",
+      instagram: "",
+      linkedin: "",
    },
    {
-      name: "Bintang Wira Gemilang",
-      position: "Vice Chairperson 1",
+      name: "Annisa Nirwana Nasution",
+      position: "Vice of Division (Multimedia)",
       image: "/member/bod/Bintang Wira Gemilang.png",
-   },
-
-   {
-      name: "Zioneza Auxiliadora Lou Jeronimo Martins",
-      position: "Vice Chairperson 2",
-      image: "/member/bod/Zioneza Auxiliadora Lou Jeronimo Martins.jpg",
+      instagram: "",
+      linkedin: "",
    },
    {
-      name: "Irene Putri Sihite",
-      position: "Secretary 1",
-      image: "/member/bod/Irene Putri Sihite.png",
+      name: "Nailah Septiani Putri",
+      position: "Member (Communication)",
+      image: "/member/bod/Bintang Wira Gemilang.png",
+      instagram: "",
+      linkedin: "",
    },
    {
-      name: "Gita Olfa Hidayah",
-      position: "Secretary 2",
-      image: "/member/bod/Gita Olfa Hidayah.jpg",
+      name: "Ricarda Sebastian Hutagalung",
+      position: "Member (Communication)",
+      image: "/member/bod/Bintang Wira Gemilang.png",
+      instagram: "",
+      linkedin: "",
    },
    {
-      name: "Gabriela Imanuel Setiawan",
-      position: "Secretary 3",
-      image: "/member/bod/Gabriela Imanuel Setiawan.jpg",
+      name: "Aqeel Fazlemawla Faslah",
+      position: "Member (Communication)",
+      image: "/member/bod/Bintang Wira Gemilang.png",
+      instagram: "",
+      linkedin: "",
    },
    {
-      name: "Alexandra Verencia Poluakan",
-      position: "Treasure 1",
-      image: "/member/bod/Alexandra Verencia Poluakan.jpg",
+      name: "Ngurah Jaya Deva",
+      position: "Member (Multimedia)",
+      image: "/member/bod/Bintang Wira Gemilang.png",
+      instagram: "",
+      linkedin: "",
    },
    {
-      name: "Dian Vania Jessicha Rondonuwu",
-      position: "Treasure 2",
-      image: "/member/bod/Dian Vania Jessicha Rondonuwu.png",
+      name: "Deswita Ranny",
+      position: "Member (Multimedia)",
+      image: "/member/bod/Bintang Wira Gemilang.png",
+      instagram: "",
+      linkedin: "",
    },
    {
-      name: "Dinda Ayu Maulina",
-      position: "Treasure 3",
-      image: "/member/bod/Dinda Ayu Maulina.jpg",
+      name: "Anak Agung Gede Bagus Krishna M.P",
+      position: "Member (Multimedia)",
+      image: "/member/bod/Bintang Wira Gemilang.png",
+      instagram: "",
+      linkedin: "",
+   },
+   {
+      name: "Thomas Alexander",
+      position: "Member (Multimedia)",
+      image: "/member/bod/Bintang Wira Gemilang.png",
+      instagram: "",
+      linkedin: "",
+   },
+   {
+      name: "Riswaldy Pakpahan",
+      position: "Member (Multimedia)",
+      image: "/member/bod/Bintang Wira Gemilang.png",
+      instagram: "",
+      linkedin: "",
    },
 ];
 
@@ -63,7 +87,7 @@ export default function page() {
             {/* text logo nya  */}
             <div className="flex flex-col border-l-4 border-[#1FA820] pl-4 md:pl-8">
                <h1 className="text-[2rem] font-[900] uppercase tracking-widest md:text-[3rem]">
-                  Board of Director
+                  Communication and Multimedia
                </h1>
                <div className="flex flex-col items-start gap-2 md:flex-row md:items-center">
                   <h1 className="text-[2rem] font-thin uppercase tracking-widest text-stroke-1 text-stroke-black text-stroke-fill-white md:text-[3rem]">

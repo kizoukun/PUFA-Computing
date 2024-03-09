@@ -1,27 +1,71 @@
+import Link from "next/link";
+import Image from "next/image";
+import { FaInstagram } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { UrlObject } from "url";
+
 interface MemberCardProps {
    image: string;
    name: string;
    position: string;
+   instagram?: string | UrlObject;
+   linkedin?: string | UrlObject;
 }
 
-export default function MemberCard({ image, name, position }: MemberCardProps) {
+const MemberCard: React.FC<MemberCardProps> = ({
+   image,
+   name,
+   position,
+   instagram,
+   linkedin,
+}) => {
    return (
-      <div className="mx-auto max-w-xs rounded-md">
-         <img
-            src={image}
-            alt={`${name}'s Photo`}
-            className="mx-auto h-72 w-48 rounded-xl object-cover object-center"
-         />
-         <div className="flex flex-col items-center justify-between space-y-8 p-6">
-            <div className="space-y-2">
-               <h2 className="text-center text-[1rem] font-[600] capitalize text-[#353535]">
-                  {name}
-               </h2>
-               <p className="text-center text-[0.875rem] font-[400] capitalize text-[#6B7280]">
-                  {position}
-               </p>
+      <div>
+         <div className="mx-auto max-w-xs rounded-md">
+            <div className="flex justify-center">
+               {(linkedin || instagram) && (
+                  <div className="absolute z-20 flex h-72 w-48 items-end justify-center gap-8 rounded-md bg-gray-200 p-4 opacity-0 transition-all duration-300 hover:opacity-80">
+                     {linkedin && (
+                        <Link href={linkedin as string} passHref>
+                           <FaLinkedin
+                              size={25}
+                              className="text-gray-500 duration-300 hover:text-gray-800"
+                           />
+                        </Link>
+                     )}
+                     {instagram && (
+                        <Link href={instagram as string} passHref>
+                           <FaInstagram
+                              size={25}
+                              className="text-gray-500 duration-300 hover:text-gray-800"
+                           />
+                        </Link>
+                     )}
+                  </div>
+               )}
+               <Image
+                  src={image}
+                  alt={`${name}'s Photo`}
+                  width={720}
+                  height={1280}
+                  loading="lazy"
+                  className="relative z-10 mx-auto h-72 w-48 rounded-xl object-cover object-center opacity-100 transition-all hover:opacity-20"
+               />
+            </div>
+
+            <div className="flex flex-col items-center justify-between space-y-8 p-6">
+               <div className="space-y-2">
+                  <h2 className="text-center text-[1rem] font-[600] capitalize text-[#353535]">
+                     {name}
+                  </h2>
+                  <p className="text-center text-[0.875rem] font-[400] capitalize text-[#6B7280]">
+                     {position}
+                  </p>
+               </div>
             </div>
          </div>
       </div>
    );
-}
+};
+
+export default MemberCard;

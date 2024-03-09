@@ -1,6 +1,5 @@
 "use client";
 import Button from "@/components/Button";
-import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -11,33 +10,46 @@ const members = [
    {
       name: "Dena Dwi Nagita",
       position: "Head of Division",
-      image: "/member/er/Dena Dwi Nagita.jpg",
+      image: "/member/er/dena-dwi-nagita.jpg",
+      instagram: "https://www.instagram.com/dnagitaa/",
+      linkedin: "https://www.linkedin.com/in/denadwinagita",
    },
    {
       name: "Dicho Dermawan",
       position: "Vice of Division",
-      image: "/member/er/Dicho Dermawan.jpg",
+      image: "/member/er/dicho-dermawan.jpg",
+      instagram: "https://www.instagram.com/dichodermawan_/",
+      linkedin: "https://id.linkedin.com/in/dicho-dermawan-b53839286",
    },
 
    {
       name: "Daffa Athallah Hade",
       position: "Member",
-      image: "/member/er/Daffa Athallah Hade.jpg",
+      image: "/member/er/daffa-athallah-hade.jpg",
+      instagram:
+         "https://www.instagram.com/daffathd?igsh=ZzNoeGo3Z3h5MmRv&utm_source=qr",
+      linkedin: "https://www.linkedin.com/in/daffa-athallah-954425276",
    },
    {
       name: "Nindhita Akmalia Putri",
       position: "Member",
-      image: "/member/er/Nindhita Akmalia.png",
+      image: "/member/er/nindhita-akmalia.jpg",
+      instagram: "https://www.instagram.com/nindhita.ap/",
+      linkedin: "https://id.linkedin.com/in/nindhitaakmalia",
    },
    {
       name: "Reysa Amelia Gehan",
       position: "Member",
-      image: "/member/er/Reysa Amelia Gehan.jpg",
+      image: "/member/er/reysa-amelia-gehan.jpg",
+      instagram: "https://www.instagram.com/reysaamlg/",
+      linkedin: "https://www.linkedin.com/in/reysa-amelia-gehan-70a038276/",
    },
    {
       name: "Samuel Junio Sambuaga",
-      position: "Secretary 3",
-      image: "/member/er/Samuel Junio Sambuaga.png",
+      position: "member",
+      image: "/member/er/samuel-junio-sambuaga.jpg",
+      instagram: "https://www.instagram.com/samuel_js12?igsh=NWxtam51bWVqc203",
+      linkedin: "https://www.linkedin.com/in/samuel-junio-sambuaga-a380ba27a/",
    },
 ];
 
@@ -77,7 +89,7 @@ export default function page() {
                   Social Project
                </Button>
                <Button className="rounded-full border-[#1FA820] text-sm uppercase text-[#1FA820] hover:bg-[#1FA820] md:text-[1.563]">
-                 Comparative Study
+                  Comparative Study
                </Button>
             </div>
          </div>
@@ -104,6 +116,8 @@ export default function page() {
                            name={member.name}
                            position={member.position}
                            image={member.image}
+                           instagram={member.instagram}
+                           linkedin={member.linkedin}
                         />
                      </SwiperSlide>
                   ))}
@@ -125,6 +139,8 @@ export default function page() {
                            name={member.name}
                            position={member.position}
                            image={member.image}
+                           instagram={member.instagram}
+                           linkedin={member.linkedin}
                         />
                      </SwiperSlide>
                   ))}
