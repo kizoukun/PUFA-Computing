@@ -14,9 +14,19 @@ const CreateProjectSchema = z.object({
    major: z
       .string({ required_error: "Major is required" })
       .min(1, { message: "Major is required" }),
-   image: z
-      .string({ required_error: "Image is required" })
-      .min(1, { message: "Image is required" }),
+   images: z
+      .array(z.string({ required_error: "Images is required" }))
+      .min(1, { message: "Images is required" }),
+   teamName: z.string().nullable(),
+   teamMembers: z.array(
+      z.string({ required_error: "Team Members is required" })
+   ),
+   batch: z.string({ required_error: "Batch is required" }).min(4, {
+      message: "Batch is required",
+   }),
+   codeLink: z.string({ required_error: "Code Link is required" }).min(4, {
+      message: "Code Link is required",
+   }),
 });
 
 export async function CreateProject(form: unknown) {
@@ -34,17 +44,23 @@ export async function CreateProject(form: unknown) {
          title: data.title,
          description: data.description,
          major: data.major,
+         teamMembers: data.teamMembers,
+         teamName: data.teamName,
+         batch: data.batch,
+         codeLink: data.codeLink,
       },
    });
    if (!putDb) {
       return { error: "Faield to create project" };
    }
-   const putImage = await db.projectImage.create({
-      data: {
-         imageUrl: data.image,
-         projectId: putDb.id,
-      },
-   });
+   for (const image of data.images) {
+      const putImage = await db.projectImage.create({
+         data: {
+            imageUrl: image,
+            projectId: putDb.id,
+         },
+      });
+   }
    revalidatePath("/projects");
    return { error: false, message: "Project created", id: putDb.id };
 }

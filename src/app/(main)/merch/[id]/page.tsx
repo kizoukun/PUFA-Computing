@@ -1,135 +1,175 @@
-import Button from "@/components/Button";
-import Seperator from "@/components/Seperator";
+"use client";
+import { useState } from "react";
+import Select from "react-select";
 
 export default function MerchPage() {
+   const [selectedImage, setSelectedImage] = useState<string>("../aot.jpg");
+   const [selectedSize, setSelectedSize] = useState<string | null>(null);
+
+   const [isClearable, setIsClearable] = useState(true);
+
+   const options = [
+      { value: "1", label: "1" },
+      { value: "2", label: "2" },
+      { value: "3", label: "3" },
+      { value: "4", label: "4" },
+      { value: "5", label: "5" },
+   ];
+
+   const sizeOptions = [
+      { value: "s", label: "S" },
+      { value: "m", label: "M" },
+      { value: "l", label: "L" },
+      { value: "xl", label: "XL" },
+      { value: "xxl", label: "XXL" },
+   ];
+
+   const colorOptions = [
+      { value: "blackGrey", label: "Black n Grey" },
+      { value: "blackWhite", label: "Black n White" },
+      { value: "blackYellow", label: "Black n Yelow" },  
+   ];
+
+   const [selectedColor, setSelectedColor] = useState<string | null>(null);
+
+   const handleColorChange = (selectedOption: any) => {
+      setSelectedColor(selectedOption?.value || null);
+   };
+
+   const handleSizeChange = (selectedOption: any) => {
+      const selectedSizeLabel = selectedOption?.label || null;
+      setSelectedSize(selectedSizeLabel);
+   };
+   const handleImageClick = (chooseImage: string) => {
+      setSelectedImage(chooseImage);
+   };
+
    return (
-      <div className="py-8">
-         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="-mx-4 flex flex-col md:flex-row">
-               <div className="px-4 md:flex-1">
-                  <div className="mb-4 h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700">
-                     <img
-                        className="h-full w-full object-cover"
-                        src="../aot.jpg"
-                        alt="Product Image"
-                     />
-                  </div>
-                  <div className="-mx-2 mb-4 flex">
-                     <div className="w-1/2 px-2">
-                        <Button className="border-[#705100] px-10 py-2 text-[#705100] hover:bg-[#705100] hover:text-white">
-                           Add to cart
-                           <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              strokeWidth={1.5}
-                              stroke="currentColor"
-                              className="h-6 w-6"
-                           >
-                              <path
-                                 strokeLinecap="round"
-                                 strokeLinejoin="round"
-                                 d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-                              />
-                           </svg>
-                        </Button>
-                     </div>
-                     <div className="flex w-1/2 items-center justify-center px-2">
-                        <Button className="border-[#705100] px-10 py-2 text-[#705100] hover:bg-[#705100] hover:text-white">
-                           add to cart
-                           <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              strokeWidth={1.5}
-                              stroke="currentColor"
-                              className="h-6 w-6"
-                           >
-                              <path
-                                 strokeLinecap="round"
-                                 strokeLinejoin="round"
-                                 d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-                              />
-                           </svg>
-                        </Button>
-                     </div>
-                  </div>
-               </div>
-               <div className="px-4 md:flex-1">
-                  <h2 className="mb-2 text-2xl font-bold text-gray-800 dark:text-white">
-                     Product Name
-                  </h2>
-                  <p className="mb-4 text-sm text-gray-600 dark:text-gray-300">
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                     Sed sed ante justo. Integer euismod libero id mauris
-                     malesuada tincidunt.
+      <div>
+         {/* header title  */}
+         <div className=" bg-[#F2F2F2] p-10">
+            <div className="mx-auto flex max-w-7xl flex-col border-l-4 border-[#BA704F] pl-5">
+               <div className="flex items-center">
+                  <p className="text-[35px] font-bold text-[#353535]">
+                     Computing Store
                   </p>
-                  <div className="mb-4 flex">
-                     <div className="mr-4">
-                        <span className="font-bold text-gray-700 dark:text-gray-300">
-                           Price:
-                        </span>
-                        <span className="text-gray-600 dark:text-gray-300">
-                           $29.99
-                        </span>
+               </div>
+               <p className="text-[12px] font-[400] text-[#353535]">
+                  Special merchandise for all Computizens
+               </p>
+            </div>
+         </div>
+
+         <div className="py-8">
+            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+               <div className="-mx-4 flex flex-col md:flex-row">
+                  <div className="px-4 md:flex-1">
+                     <div className="mb-4 h-[400px]">
+                        <img
+                           className="h-full w-full rounded-xl object-cover"
+                           src={selectedImage}
+                           alt="Product Image"
+                        />
                      </div>
-                     <div>
-                        <span className="font-bold text-gray-700 dark:text-gray-300">
-                           Availability:
-                        </span>
-                        <span className="text-gray-600 dark:text-gray-300">
-                           In Stock
-                        </span>
-                     </div>
-                  </div>
-                  <div className="mb-4">
-                     <span className="font-bold text-gray-700 dark:text-gray-300">
-                        Select Color:
-                     </span>
-                     <div className="mt-2 flex items-center">
-                        <button className="mr-2 h-6 w-6 rounded-full bg-gray-800 dark:bg-gray-200"></button>
-                        <button className="mr-2 h-6 w-6 rounded-full bg-red-500 dark:bg-red-700"></button>
-                        <button className="mr-2 h-6 w-6 rounded-full bg-blue-500 dark:bg-blue-700"></button>
-                        <button className="mr-2 h-6 w-6 rounded-full bg-yellow-500 dark:bg-yellow-700"></button>
-                     </div>
-                  </div>
-                  <div className="mb-4">
-                     <span className="font-bold text-gray-700 dark:text-gray-300">
-                        Select Size:
-                     </span>
-                     <div className="mt-2 flex items-center">
-                        <button className="hover-bg-gray-400 dark:hover-bg-gray-600 mr-2 rounded-full bg-gray-300 px-4 py-2 font-bold text-gray-700 dark:bg-gray-700 dark:text-white">
-                           S
-                        </button>
-                        <button className="hover-bg-gray-400 dark:hover-bg-gray-600 mr-2 rounded-full bg-gray-300 px-4 py-2 font-bold text-gray-700 dark:bg-gray-700 dark:text-white">
-                           M
-                        </button>
-                        <button className="hover-bg-gray-400 dark:hover-bg-gray-600 mr-2 rounded-full bg-gray-300 px-4 py-2 font-bold text-gray-700 dark:bg-gray-700 dark:text-white">
-                           L
-                        </button>
-                        <button className="hover-bg-gray-400 dark:hover-bg-gray-600 mr-2 rounded-full bg-gray-300 px-4 py-2 font-bold text-gray-700 dark:bg-gray-700 dark:text-white">
-                           XL
-                        </button>
-                        <button className="hover-bg-gray-400 dark:hover-bg-gray-600 mr-2 rounded-full bg-gray-300 px-4 py-2 font-bold text-gray-700 dark:bg-gray-700 dark:text-white">
-                           XXL
-                        </button>
+                     <div className="grid grid-cols-3">
+                        <img
+                           className="h-48 w-36 rounded-xl object-cover"
+                           src="../aot.jpg"
+                           alt="Product Image"
+                           onClick={() => handleImageClick("../aot.jpg")}
+                        />
+                        <img
+                           className="h-48 w-36 rounded-xl object-cover"
+                           src="../another-aot.jpg"
+                           alt="Product Image"
+                           onClick={() =>
+                              handleImageClick("../another-aot.jpg")
+                           }
+                        />
                      </div>
                   </div>
-                  <div>
-                     <span className="font-bold text-gray-700 dark:text-gray-300">
-                        Product Description:
-                     </span>
-                     <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Sed sed ante justo. Integer euismod libero id mauris
-                        malesuada tincidunt. Vivamus commodo nulla ut lorem
-                        rhoncus aliquet. Duis dapibus augue vel ipsum pretium,
-                        et venenatis sem blandit. Quisque ut erat vitae nisi
-                        ultrices placerat non eget velit. Integer ornare mi sed
-                        ipsum lacinia, non sagittis mauris blandit. Morbi
-                        fermentum libero vel nisl suscipit, nec tincidunt mi
-                        consectetur.
+                  <div className="px-4 md:flex-1">
+                     <h2 className="mb-2 text-[2rem] font-bold text-gray-800">
+                        Computing Varsity
+                     </h2>
+                     <div className="flex gap-2">
+                        <label className="justitfy-center flex items-center rounded-2xl border border-[#BA704F] px-6 py-1 text-[14px] font-[400] text-[#BA704F]">
+                           PUFA Computing
+                        </label>
+                        <label className="justitfy-center flex items-center rounded-2xl border border-[#1FA820] px-6 py-1 text-[14px] font-[400] text-[#1FA820]">
+                           Ready Stock
+                        </label>
+                     </div>
+                     {/* price  */}
+
+                     <p className="mt-4 text-[32px] font-[600] text-[#353535]">
+                        Rp. 250.000
                      </p>
+                     {/* Description  */}
+                     <p className="my-6 text-justify text-[15px] font-[500] text-[#353535]">
+                        It is long setablished sleeves with an ordinary pattern
+                        and has three color on it, it deserve to make a
+                        computizen proud of their faculty
+                     </p>
+
+                     <div className="flex flex-col gap-4">
+                        {/* colour  */}
+                        <div className="flex items-center gap-x-4">
+                           <p className="text-[16px] font-[600] text-[#353535] ">
+                              Choose Color :
+                           </p>
+                           <div className="grid grid-cols-3 gap-x-3">
+                              {colorOptions.map((color) => (
+                                 <button
+                                    key={color.value}
+                                    className={`justitfy-center flex items-center rounded-2xl border ${
+                                       selectedColor === color.value
+                                          ? "border-black text-black shadow-lg"
+                                          : "border-[#9DA2A7] text-[#9DA2A7]"
+                                    } px-3 py-1 text-[14px] font-[400] transition-all duration-300 hover:border-black hover:text-black hover:shadow-lg`}
+                                    onClick={() => handleColorChange(color)}
+                                 >
+                                    {color.label}
+                                 </button>
+                              ))}
+                           </div>
+                        </div>
+                        {/* size  */}
+                        <div className="p flex items-center gap-x-2">
+                           <p className="text-[16px] font-[600] text-[#353535] ">
+                              Choose Size :
+                           </p>
+                           <div className="grid grid-cols-3 gap-x-2 pl-5 md:grid-cols-5">
+                              {sizeOptions.map((size) => (
+                                 <button
+                                    key={size.value}
+                                    className={`justitfy-center flex flex-col items-center rounded-2xl border ${
+                                       selectedSize === size.value
+                                          ? "border-black text-black shadow-lg"
+                                          : "border-[#9DA2A7] text-[#9DA2A7]"
+                                    } px-3 py-1 text-center text-[14px] font-[400] transition-all duration-300 hover:border-black hover:text-black hover:shadow-lg`}
+                                    onClick={() => handleSizeChange(size)}
+                                 >
+                                    {size.label}
+                                 </button>
+                              ))}
+                           </div>
+                        </div>
+                           <p className="text-[#353535] font-[300] text-[11px]">
+                           *for size xxl will be charged an additional fee of Rp. 10,000
+                           </p>
+                     </div>
+
+                     <div className="flex gap-x-5 pt-8">
+                        <Select
+                           isClearable={isClearable}
+                           options={options}
+                           placeholder="QTY"
+                        />
+                        <button className="rounded-lg bg-[#BA704F] px-20 py-1 text-white">
+                           Purchase
+                        </button>
+                     </div>
                   </div>
                </div>
             </div>

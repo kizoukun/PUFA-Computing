@@ -75,7 +75,7 @@ export default function StudyProgramPage() {
                alt={""}
                className="rounded-lg bg-blue-400"
             />
-
+           
             {/* study program description */}
             <div className="space-y-8">
                <h1 className="font-[600]">About Study Program</h1>
@@ -140,15 +140,23 @@ export default function StudyProgramPage() {
             <div className="grid grid-cols-1 gap-8 md:grid-cols-5">
                <LectureCard
                   image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
-                  name="Prof. Dr. Ir. Wiranto Herry Utomo, M.Kom"
+                  name="Ir. Rila Mandala, M.Eng., Ph.D."
+                  position="Dean School of Computing"
                />
                <LectureCard
                   image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
-                  name="Dr. Andreas Yumarma"
+                  name="Cutifa Safitri, Ph.D."
+                  position="Head of Study Programme"
                />
                <LectureCard
                   image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
                   name="Ir. Rila Mandala, M.Eng., Ph.D."
+                  position="Dean School of Computing"
+               />
+               <LectureCard
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Cutifa Safitri, Ph.D."
+                  position="Head of Study Programme"
                />
                <LectureCard
                   image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
@@ -161,22 +169,27 @@ export default function StudyProgramPage() {
                <LectureCard
                   image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
                   name="Cutifa Safitri, Ph.D."
-               />
-               <LectureCard
-                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
-                  name="Cutifa Safitri, Ph.D."
+                  position="Head of Study Programme"
                />
                <LectureCard
                   image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
                   name="Ir. Rila Mandala, M.Eng., Ph.D."
+                  position="Dean School of Computing"
                />
                <LectureCard
                   image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
                   name="Cutifa Safitri, Ph.D."
+                  position="Head of Study Programme"
+               />
+               <LectureCard
+                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
+                  name="Ir. Rila Mandala, M.Eng., Ph.D."
+                  position="Dean School of Computing"
                />
                <LectureCard
                   image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
                   name="Cutifa Safitri, Ph.D."
+                  position="Head of Study Programme"
                />
             </div>
          </section>
