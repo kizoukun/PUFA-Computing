@@ -28,23 +28,23 @@ export const StudyProgramData = [
 export const FaqData = [
    {
       status: "open",
-      title: "Kukurukuurkrurkurkrkrurkrkruk?",
+      title: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo",
       content:
-         "lorem ipsum skdskdsj asdjnaskdjahsfj asljkashdaslfhd dfjlasdfhdjlcbd dsfjkadsfhdsjfbdsc dsfbdsjfbdsjbdsc dsjfdsjdscbdsc dsc jdkfhdslkcbzd",
+         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo",
    },
    {
-      title: "Kukurukuurkrurkurkrkrurkrkruk?",
+      title: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo",
       content:
-         "lorem ipsum skdskdsj asdjnaskdjahsfj asljkashdaslfhd dfjlasdfhdjlcbd dsfjkadsfhdsjfbdsc dsfbdsjfbdsjbdsc dsjfdsjdscbdsc dsc jdkfhdslkcbzd",
+         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo",
    },
    {
-      title: "Kukurukuurkrurkurkrkrurkrkruk?",
+      title: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo",
       content:
-         "lorem ipsum skdskdsj asdjnaskdjahsfj asljkashdaslfhd dfjlasdfhdjlcbd dsfjkadsfhdsjfbdsc dsfbdsjfbdsjbdsc dsjfdsjdscbdsc dsc jdkfhdslkcbzd",
+         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo",
    },
    {
-      title: "Kukurukuurkrurkurkrkrurkrkruk?",
+      title: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo",
       content:
-         "lorem ipsum skdskdsj asdjnaskdjahsfj asljkashdaslfhd dfjlasdfhdjlcbd dsfjkadsfhdsjfbdsc dsfbdsjfbdsjbdsc dsjfdsjdscbdsc dsc jdkfhdslkcbzd",
+         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo",
    },
 ];

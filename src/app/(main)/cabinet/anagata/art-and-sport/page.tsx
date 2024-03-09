@@ -58,8 +58,8 @@ export default function page() {
                      Division
                   </h1>
                   <h1 className="text-justify text-[0.8rem] md:max-w-[20rem]">
-                     is a representative of the highest division consisting of
-                     Chairperson, Vice Chairperson, Secretary, and Treasurer.
+                     Division that focuses on developing interest and burning
+                     the arts and sports in the computing sphere.
                   </h1>
                </div>
             </div>
