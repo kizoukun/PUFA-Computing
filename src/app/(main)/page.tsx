@@ -1,7 +1,7 @@
 import Image from "next/image";
 import BGImage from "@/assets/backgroundimg.png";
-import AnagataLogo from "@/assets/anagatalogo.svg";
-import Member from "@/assets/member.jpg";
+// import AnagataLogo from "@/assets/anagatalogo.svg";
+import ComingSoon from "@/assets/coming_soon.jpg";
 import Link from "next/link";
 import Button from "@/components/Button";
 import Faq from "@/components/main/Faq";
@@ -41,7 +41,7 @@ export default async function Index() {
                className="mx-auto my-12 h-48 rounded-2xl object-cover md:h-96"
                width={1080}
                height={720}
-               src={Member}
+               src={ComingSoon}
             />
             {/* <img
                className="mx-auto my-5 aspect-video h-48 md:h-96 rounded-2xl"
@@ -102,7 +102,7 @@ export default async function Index() {
                   width="256"
                />
 
-               <div className="flex max-w-[38rem] flex-col gap-8 rounded-lg border-2 border-[#1FA820] px-8 py-12">
+               <div className="flex max-w-[20rem] md:max-w-[38rem] flex-col gap-8 rounded-lg border-2 border-[#1FA820] px-8 py-12">
                   <div className="flex items-center gap-4">
                      <h1 className="text-[1.2rem] font-[600]">
                         ANAGATA CABINET
@@ -122,9 +122,11 @@ export default async function Index() {
                </div>
             </div>
 
-            <button className="rounded-lg border-2 border-[#1FA820] px-10 py-2 text-[#1FA820] transition-all duration-300 hover:bg-[#1FA820] hover:text-white">
-               See our Cabinet
-            </button>
+            <Link href="/cabinet/anagata">
+               <button className="rounded-lg border-2 border-[#1FA820] px-10 py-2 text-[#1FA820] transition-all duration-300 hover:bg-[#1FA820] hover:text-white">
+                  See our Cabinet
+               </button>
+            </Link>
          </section>
 
          {/* event section */}
@@ -252,35 +254,35 @@ export default async function Index() {
             </h3>
             <div className="grid grid-cols-1 gap-8 text-justify md:grid-cols-2">
                <NewsCardBig
-                  image="../aot.jpg"
-                  title="Attack On Titan"
-                  description="AOT DEBEST"
-                  time="10 november"
+                  image="/coming_soon.jpg"
+                  title="Coming Soon"
+                  description="Coming Soon"
+                  time="Coming Soon"
                />
                <div className="grid grid-cols-2 gap-8">
                   <NewsCard
-                     image="../aot.jpg"
-                     title="Attack On Titan"
-                     description="AOT DEBEST"
-                     time="10 november"
+                     image="/coming_soon.jpg"
+                     title="Coming Soon"
+                     description="Coming Soon"
+                     time="Coming Soon"
                   />
                   <NewsCard
-                     image="../aot.jpg"
-                     title="Attack On Titan"
-                     description="AOT DEBEST"
-                     time="10 november"
+                     image="/coming_soon.jpg"
+                     title="Coming Soon"
+                     description="Coming Soon"
+                     time="Coming Soon"
                   />
                   <NewsCard
-                     image="../aot.jpg"
-                     title="Attack On Titan"
-                     description="AOT DEBEST"
-                     time="10 november"
+                     image="/coming_soon.jpg"
+                     title="Coming Soon"
+                     description="Coming Soon"
+                     time="Coming Soon"
                   />
                   <NewsCard
-                     image="../aot.jpg"
-                     title="Attack On Titan"
-                     description="AOT DEBEST"
-                     time="10 november"
+                     image="/coming_soon.jpg"
+                     title="Coming Soon"
+                     description="Coming Soon"
+                     time="Coming Soon"
                   />
                </div>
             </div>
@@ -358,10 +360,11 @@ export default async function Index() {
                   price={343}
                />
             </div>
-
-            <button className="rounded-lg border-2 border-[#BA704F] px-10 py-2 text-[#BA704F] transition-all duration-300 hover:bg-[#BA704F] hover:text-white">
-               See all Items
-            </button>
+            <Link href="/merch">
+               <button className="rounded-lg border-2 border-[#BA704F] px-10 py-2 text-[#BA704F] transition-all duration-300 hover:bg-[#BA704F] hover:text-white">
+                  See all Items
+               </button>
+            </Link>
          </section>
 
          {/* Faq */}
