@@ -60,7 +60,7 @@ export default function page() {
             {/* text logo nya  */}
             <div className="flex flex-col border-l-4 border-[#1FA820] pl-4 md:pl-8">
                <h1 className="text-[2rem] font-[800] uppercase tracking-widest md:text-[3rem]">
-                  External Relations
+                  External Relation
                </h1>
                <div className="flex flex-col items-start gap-2 md:flex-row md:items-center">
                   <h1 className="text-[3rem] uppercase tracking-widest text-stroke-1 text-stroke-black text-stroke-fill-white md:text-[3rem]">
