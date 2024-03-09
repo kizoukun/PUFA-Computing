@@ -6,8 +6,8 @@ import React, { useEffect, useState } from "react";
 import { FiMenu, FiX} from "react-icons/fi";
 
 export default function DashboardLayout({
-   children,
-}: {
+                                           children,
+                                        }: {
    children: React.ReactNode;
 }) {
    const router = useRouter();
@@ -141,28 +141,31 @@ export default function DashboardLayout({
    return (
       <div className="flex h-screen">
          {/* Sidebar */}
-         <aside
-            className={`fixed top-0 bottom-0 left-0 h-screen mt-[100px] min-w-[200px] overflow-w-auto w-64 bg-white shadow-lg z-10 ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out`}>
-            <div className="flex items-center justify-between p-3">
-               <p className="text-lg font-bold">Dashboard</p>
-               {/* Toggle button beside the title */}
-            </div>
-            <div className="mt-4 space-y-6 ml-2">
-               {LINKS.map((link, index) => (
-                  <Link
-                     key={index}
-                     className=" flex items-center text-[14px]"
-                     href={link.link}
-                  >
-                     {link.icon && <span className="mr-2">{link.icon}</span>}
-                     {link.name}
-                  </Link>
-               ))}
-            </div>
-         </aside>
+         {isLoggedIn && (
+            <aside
+               className={`fixed top-0 bottom-0 left-0 h-screen mt-[100px] min-w-[200px] overflow-w-auto w-64 bg-white shadow-lg z-10 ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out`}>
+               <div className="flex items-center justify-between p-3">
+                  <p className="text-lg font-bold">Dashboard</p>
+                  {/* Toggle button beside the title */}
+               </div>
+               <div className="mt-4 space-y-6 ml-2">
+                  {LINKS.map((link, index) => (
+                     <Link
+                        key={index}
+                        className=" flex items-center text-[14px]"
+                        href={link.link}
+                     >
+                        {link.icon && <span className="mr-2">{link.icon}</span>}
+                        {link.name}
+                     </Link>
+                  ))}
+               </div>
+            </aside>
+         )}
 
          {/* Main content */}
-         <main className={`flex-1 overflow-y-auto p-4 transition-transform duration-300 ease-in-out ${isMenuOpen ? 'ml-64' : 'ml-0'}`}>
+         <main
+            className={`flex-1 overflow-y-auto p-4 transition-transform duration-300 ease-in-out ${isMenuOpen ? 'ml-64' : 'ml-0'}`}>
             {children}
          </main>
 

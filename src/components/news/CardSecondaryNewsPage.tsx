@@ -36,7 +36,7 @@ export default function CardSecondaryNewsPage({
       <div className="flex flex-col rounded-lg border-2">
          <div>
             <img
-               className="h-48 w-full bg-center object-cover"
+               className="h-48 w-full rounded bg-center object-cover"
                src={image}
                alt={`${title}'s image`}
             />

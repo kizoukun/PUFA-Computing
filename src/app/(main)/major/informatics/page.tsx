@@ -143,40 +143,16 @@ export default function StudyProgramPage() {
                   name="Abdul Ghofir, S.Kom., M.Kom."
                />
                <LectureCard
-                  image="/lecture/informatics/Dr. Andreas Yumarma.png"
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
                   name="Dr. Andreas Yumarma"
                />
                <LectureCard
-                  image="/lecture/informatics/Andika Candra Jaya.png"
-                  name="Andika Candra Jaya"
+                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
+                  name="Ir. Rila Mandala, M.Eng., Ph.D."
                />
                <LectureCard
-                  image="/lecture/informatics/Dr. Budi Sulistyo.png"
-                  name="Dr. Budi Sulistyo"
-               />
-               <LectureCard
-                  image="/lecture/informatics/Dr. Raden B. Wahyu, M.Sc.png"
-                  name="Dr. Raden B. Wahyu, M.Sc"
-               />
-               <LectureCard
-                  image="/lecture/informatics/Dr. Tjong Wan Sen, S. T., M. T..png"
-                  name="Dr. Tjong Wan Sen, S. T., M. T."
-               />
-               <LectureCard
-                  image="/lecture/informatics/Dr. Yuyu Wahyu.png"
-                  name="Dr. Yuyu Wahyu"
-               />
-               <LectureCard
-                  image="/lecture/informatics/Genta Sahuri, S.Kom., M.Kom..png"
-                  name="Genta Sahuri, S.Kom., M.Kom."
-               />
-               <LectureCard
-                  image="/lecture/informatics/Hadi Suprayitno, S.Kom., M.M.png"
-                  name="Hadi Suprayitno, S.Kom., M.M"
-               />
-               <LectureCard
-                  image="/lecture/informatics/Hendra Jayanto.png"
-                  name="Hendra Jayanto"
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Cutifa Safitri, Ph.D."
                />
                <LectureCard
                   image="/lecture/informatics/Ir. Moh. A. Amin Soetomo, M.Sc., DSC.png"
@@ -187,20 +163,20 @@ export default function StudyProgramPage() {
                   name="Rikip Ginanjar, M.Sc."
                />
                <LectureCard
-                  image="/lecture/informatics/Ronny Juwono, S.Pd., M.T..png"
-                  name="Ronny Juwono, S.Pd., M.T."
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Cutifa Safitri, Ph.D."
                />
                <LectureCard
-                  image="/lecture/informatics/Rusdianto Roestam MSc., PhD..png"
-                  name="Rusdianto Roestam MSc., PhD."
+                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
+                  name="Ir. Rila Mandala, M.Eng., Ph.D."
                />
                <LectureCard
-                  image="/lecture/informatics/Sandy Darmowinoto, B.Sc.(Hons), M.IT..png"
-                  name="Sandy Darmowinoto, B.Sc.(Hons), M.IT."
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Cutifa Safitri, Ph.D."
                />
                <LectureCard
-                  image="/lecture/informatics/Williem, S.Kom., M.Kom..png"
-                  name="Williem, S.Kom., M.Kom."
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Cutifa Safitri, Ph.D."
                />
             </div>
          </section>
