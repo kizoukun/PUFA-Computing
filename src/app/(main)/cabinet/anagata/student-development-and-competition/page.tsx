@@ -26,7 +26,8 @@ const members = [
       position: "Member",
       image: "/member/sdc/muhammad-arrizky-adhita-azizi.jpg",
       instagram: "https://instagram.com/arrizkyadhita.a",
-      linkedin: "https://www.linkedin.com/in/muhammad-firman-hidayat-786561286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      linkedin:
+         "https://www.linkedin.com/in/muhammad-firman-hidayat-786561286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
    },
    {
       name: "Violetta Scarlet Adeline Roeroe",
@@ -40,7 +41,8 @@ const members = [
       position: "Member",
       image: "/member/sdc/firman.jpg",
       instagram: "https://www.instagram.com/frmaanhdyt__",
-      linkedin: "https://www.linkedin.com/in/muhammad-firman-hidayat-786561286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      linkedin:
+         "https://www.linkedin.com/in/muhammad-firman-hidayat-786561286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
    },
 ];
 
@@ -51,7 +53,7 @@ export default function page() {
             {/* text logo nya  */}
             <div className="flex flex-col border-l-4 border-[#1FA820] pl-4 md:pl-8">
                <h1 className="text-[2rem] font-[900] uppercase tracking-widest md:text-[3rem]">
-                  Board of Director
+                  Student Development and Competition
                </h1>
                <div className="flex flex-col items-start gap-2 md:flex-row md:items-center">
                   <h1 className="text-[2rem] font-thin uppercase tracking-widest text-stroke-1 text-stroke-black text-stroke-fill-white md:text-[3rem]">
