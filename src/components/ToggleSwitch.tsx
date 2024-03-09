@@ -13,7 +13,7 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({
       <div className="pb-2">
          <label
             htmlFor="switchOption"
-            className="inline-flex cursor-pointer items-center rounded-full p-2 px-4 text-gray-800"
+            className="inline-flex cursor-pointer items-center gap-1 rounded-full text-gray-800"
          >
             <input
                id="switchOption"
@@ -23,19 +23,19 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({
                checked={selectedContent === "mission"}
             />
             <span
-               className={`flex h-full W-3/4 items-center justify-center text-lg rounded-xl font-medium ${
+               className={`W-3/4 flex h-full items-center justify-center rounded-xl text-lg font-medium ${
                   selectedContent === "vision"
-                     ? "bg-blue-400 text-white px-5"
-                     : "bg-gray-300 text-gray-600 px-5"
+                     ? "bg-blue-400 px-5 text-white"
+                     : "bg-gray-300 px-5 text-gray-600"
                }`}
             >
                Vision
             </span>
             <span
-               className={`flex h-full w-3/4 items-center justify-center text-lg rounded-xl font-medium ${
+               className={`flex h-full w-3/4 items-center justify-center rounded-xl text-lg font-medium ${
                   selectedContent === "mission"
-                     ? "bg-blue-400 text-white px-5"
-                     : "bg-gray-300 text-gray-600 px-5"
+                     ? "bg-blue-400 px-5 text-white"
+                     : "bg-gray-300 px-5 text-gray-600"
                }`}
             >
                Mission
