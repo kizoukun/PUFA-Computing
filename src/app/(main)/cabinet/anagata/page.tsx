@@ -179,7 +179,7 @@ export default function Page() {
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-orange-200 to-orange-400"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                        <p className="capitalize text-[0.9rem] font-light text-[#6B7280]">
                            is a representative of the highest division
                            consisting of <br />
                            Chairperson, Vice Chairperson, Secretary and
@@ -197,7 +197,7 @@ export default function Page() {
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-green-200 to-green-600"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                        <p className="capitalize text-[0.9rem] font-light text-[#6B7280]">
                            This division organize activities or events related
                            <br />
                            to parties outside the campus.
@@ -214,7 +214,7 @@ export default function Page() {
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-orange-200 to-orange-400"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                        <p className="capitalize text-[0.9rem] font-light text-[#6B7280]">
                            This division has the main task of strengthening the
                            <br />
                            relationship between students and students, students
@@ -233,7 +233,7 @@ export default function Page() {
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-green-200 to-green-600"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                        <p className="capitalize text-[0.9rem] font-light text-[#6B7280]">
                            Division that focuses on developing interest and
                            burning <br /> the arts and sports in the computing
                            sphere.
@@ -250,7 +250,7 @@ export default function Page() {
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-orange-200 to-orange-400"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                        <p className="capitalize text-[0.9rem] font-light text-[#6B7280]">
                            Division that handles PUFA Computing social media
                            such <br /> as Instagram, LinkedIn, LINE OA, and
                            youtube.
@@ -277,7 +277,7 @@ export default function Page() {
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-orange-200 to-orange-400"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                        <p className="capitalize text-[0.9rem] font-light text-[#6B7280]">
                            division in charge of developing creative ideas and
                            sharing <br /> knowledge and sharing knowledge in the
                            field of technology.
@@ -294,7 +294,7 @@ export default function Page() {
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-green-200 to-green-600"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                        <p className="capitalize text-[0.9rem] font-light text-[#6B7280]">
                            is a representative of the highest division
                            consisting of <br />
                            Chairperson, Vice Chairperson, Secretary and
@@ -312,7 +312,7 @@ export default function Page() {
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-orange-200 to-orange-400"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                        <p className="capitalize text-[0.9rem] font-light text-[#6B7280]">
                            Responsible for accommodating aspirations and <br />
                            suggestions, as well as assisting and defending
                            problems <br /> experienced by Computizens.
@@ -328,7 +328,7 @@ export default function Page() {
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-green-200 to-green-600"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                        <p className="capitalize text-[0.9rem] font-light text-[#6B7280]">
                            this division aims to develop computizens interests
                            and <br />
                            talents in entrepreneurship and business.
@@ -344,7 +344,7 @@ export default function Page() {
                            </h1>
                            <div className="h-[20px] w-[20px] rounded-full bg-gradient-to-br from-orange-200 to-orange-400"></div>
                         </div>
-                        <p className="text-[0.9rem] font-light text-[#6B7280]">
+                        <p className="capitalize text-[0.9rem] font-light text-[#6B7280]">
                            Responsible to in charge of creating and editing{" "}
                            <br />
                            templates content to be posted on social media PUFA{" "}
