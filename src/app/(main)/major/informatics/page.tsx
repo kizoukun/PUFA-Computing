@@ -13,7 +13,7 @@
  */
 "use client";
 import Image from "next/image";
-import Banner from "@/assets/banner/banner-informatics.png";
+import Banner from "@/assets/banner/informatics.svg";
 import React, { useState } from "react";
 import ListCard from "@/components/major/ListCard";
 import ListVisionAndMissionCard from "@/components/major/ListVisionAndMissionCard";
@@ -66,67 +66,121 @@ export default function StudyProgramPage() {
    ];
 
    return (
-      <section className="mx-auto max-w-7xl ">
-         {/* banner */}
-         <Image
-            src={Banner}
-            alt="Banner Informatics"
-            width="0"
-            height="0"
-            sizes="100vw"
-            className="h-auto w-full"
-         />
+      <>
+         <section className="flex flex-col items-center space-y-12 p-[5rem] md:px-[10rem]">
+            <Image
+               width={1280}
+               height={500}
+               src={Banner}
+               alt={""}
+               className="rounded-lg bg-blue-400"
+            />
+           
+            {/* study program description */}
+            <div className="space-y-8">
+               <h1 className="font-[600]">About Study Program</h1>
 
-         {/* about */}
-         <div>
-            <h1 className="px-10 py-2 text-[20px] font-[600] text-[#2F2F2F] md:px-0">
-               About Study Program
-            </h1>
-            <p className="px-10 py-2 text-justify text-[16px] md:text-[20px] font-[400] text-[#6B7280] md:px-0">
-               Informatics are concerned with issues related to advocating for
-               users and meeting their needs within an organizational and
-               societal context through the selection, creation, application,
-               integration, and administration of computing technologies,
-               including the installation of networks; network administration
-               and security; the design of web pages; the development of
-               multimedia resources; the installation of communication
-               components; the oversight of e-mail systems; and the planning and
-               management of the technology lifecycle by which an organization’s
-               technology is maintained, upgraded, and replaced.
-            </p>
-         </div>
-
-         <div className="grid grid-cols-1 md:grid-cols-2">
-            <div>
-               <p className="px-10 py-2 text-[20px] font-[600] text-[#2F2F2F] md:px-0">
-                  Future Field and Career
-               </p>
-               {/* List of professions */}
-               <ListCard content={professions} />
+               <h1 className="leading-7 text-justify">
+                  Informatics are concerned with issues related to advocating
+                  for users and meeting their needs within an organizational and
+                  societal context through the selection, creation, application,
+                  integration, and administration of computing technologies,
+                  including the installation of networks; network administration
+                  and security; the design of web pages; the development of
+                  multimedia resources; the installation of communication
+                  components; the oversight of e-mail systems; and the planning
+                  and management of the technology lifecycle by which an
+                  organization’s technology is maintained, upgraded, and
+                  replaced.
+               </h1>
             </div>
-            <div>
-               {/* Toggle switch for Vision and Mission */}
-               <ToggleSwitch
-                  selectedContent={selectedContent}
-                  handleToggleChange={handleToggleChange}
-               />
 
-               {/* Content based on the selected toggle */}
-               <ListVisionAndMissionCard
-                  selectedContent={selectedContent}
-                  visionContent={visionContent}
-                  missionContent={missionContent}
-               />
+            {/* profession and future career part  */}
+            <div className="flex  w-full flex-col justify-between gap-8 md:flex-row">
+               <div className="space-y-4">
+                  <h1 className="font-[600]">Future Field and Career</h1>
+                  <ListCard content={professions} />
+               </div>
+
+               <div className="flex flex-col">
+                  {/* Toggle switch for Vision and Mission */}
+                  <ToggleSwitch
+                     selectedContent={selectedContent}
+                     handleToggleChange={handleToggleChange}
+                  />
+
+                  {/* Content based on the selected toggle */}
+                  <ListVisionAndMissionCard
+                     selectedContent={selectedContent}
+                     visionContent={visionContent}
+                     missionContent={missionContent}
+                  />
+               </div>
             </div>
-         </div>
 
-         {/* lecture */}
-         <div>
-            <h1 className="px-10 py-2 text-[20px] font-[600] text-[#2F2F2F] md:px-0">
-               Lecturer
-            </h1>
-            {/* dean and head of study program */}
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12 lg:grid-cols-4">
+            {/* big lecturers */}
+            <div className="flex flex-col gap-8">
+               <h1 className="font-[600]">Lecturers</h1>
+               <div className="">
+                  <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
+                     <LectureCard
+                        image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
+                        name="Ir. Rila Mandala, M.Eng., Ph.D."
+                        position="Dean School of Computing"
+                     />
+                     <LectureCard
+                        image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                        name="Cutifa Safitri, Ph.D."
+                        position="Head of Study Programme"
+                     />
+                  </div>
+               </div>
+            </div>
+
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-5">
+               <LectureCard
+                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
+                  name="Ir. Rila Mandala, M.Eng., Ph.D."
+                  position="Dean School of Computing"
+               />
+               <LectureCard
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Cutifa Safitri, Ph.D."
+                  position="Head of Study Programme"
+               />
+               <LectureCard
+                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
+                  name="Ir. Rila Mandala, M.Eng., Ph.D."
+                  position="Dean School of Computing"
+               />
+               <LectureCard
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Cutifa Safitri, Ph.D."
+                  position="Head of Study Programme"
+               />
+               <LectureCard
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Cutifa Safitri, Ph.D."
+               />
+               <LectureCard
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Cutifa Safitri, Ph.D."
+               />
+               <LectureCard
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Cutifa Safitri, Ph.D."
+                  position="Head of Study Programme"
+               />
+               <LectureCard
+                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
+                  name="Ir. Rila Mandala, M.Eng., Ph.D."
+                  position="Dean School of Computing"
+               />
+               <LectureCard
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Cutifa Safitri, Ph.D."
+                  position="Head of Study Programme"
+               />
                <LectureCard
                   image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
                   name="Ir. Rila Mandala, M.Eng., Ph.D."
@@ -138,45 +192,7 @@ export default function StudyProgramPage() {
                   position="Head of Study Programme"
                />
             </div>
-            <div className="grid grid-cols-2 gap-6 md:grid-cols-3 md:py-2 lg:grid-cols-5">
-               <LectureCard
-                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
-                  name="Prof. Dr. Ir. Wiranto Herry Utomo, M.Kom"
-               />
-               <LectureCard
-                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
-                  name="Dr. Andreas Yumarma"
-               />
-               <LectureCard
-                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
-                  name="Ir. Rila Mandala, M.Eng., Ph.D."
-               />
-               <LectureCard
-                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
-                  name="Cutifa Safitri, Ph.D."
-               />
-               <LectureCard
-                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
-                  name="Ir. Rila Mandala, M.Eng., Ph.D."
-               />
-               <LectureCard
-                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
-                  name="Cutifa Safitri, Ph.D."
-               />
-               <LectureCard
-                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
-                  name="Ir. Rila Mandala, M.Eng., Ph.D."
-               />
-               <LectureCard
-                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
-                  name="Cutifa Safitri, Ph.D."
-               />
-               <LectureCard
-                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
-                  name="Cutifa Safitri, Ph.D."
-               />
-            </div>
-         </div>
-      </section>
+         </section>
+      </>
    );
 }

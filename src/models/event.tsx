@@ -12,6 +12,8 @@ interface Event {
   created_at: Date;
   updated_at: Date;
   organization_id: number;
+  organization: string;
+  author: string;
 }
 
 export default Event;

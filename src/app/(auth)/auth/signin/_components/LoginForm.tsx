@@ -51,7 +51,7 @@ export default function LoginForm() {
             "access_token",
             access.data.attributes.access_token
          );
-         localStorage.setItem("userId", access.data.attributes.user_id);
+         localStorage.setItem("userId", access.data.user_id);
          window.location.href = "/dashboard/profile";
       });
    };

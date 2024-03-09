@@ -18,13 +18,20 @@ export const Login = async (username: string, password: string) => {
 
 export const Logout = async () => {
    try {
-      const response = await axios.post(API_LOGOUT, {withCredentials: true});
+      const response = await axios.post(API_LOGOUT, {}, {
+         withCredentials: true,
+         headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem('access_token') || ''
+         }
+      });
       return response.data;
    } catch (error) {
-      console.error("Failed to Logout", error);
+      console.error('Failed to Logout', error);
       throw error;
    }
-}
+};
 
 export const Register = async (user: User) => {
    try {
