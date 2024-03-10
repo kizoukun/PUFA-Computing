@@ -10,7 +10,7 @@ export default function EventCardUpcoming({ events }: { events: Event[] }) {
          {events.map((event, index) => (
             <div key={index} className="flex max-w-[35rem] gap-4 rounded-lg shadow-lg">
                <div className="h-[300px] w-[250px] scale-110 rounded-lg bg-[#E50D0D]"></div>
-               <div className="max-w-[20rem] space-y-10 p-6">
+               <div className="max-w-[20rem] space-y-8 p-6">
                   <h1 className="text-[1.0rem] font-[600]">
                      {event.title}
                   </h1>

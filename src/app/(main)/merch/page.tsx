@@ -69,7 +69,7 @@ export default function MerchPage() {
       </div>
    </div>
 
-   <div className="mt-8 block lg:hidden flex justify-end space-x-4 px-20 ">
+   <div className="mt-8 lg:hidden flex justify-end space-x-4 px-20 ">
       <div className="relative">
          <details className="overflow-hidden rounded border border-gray-300 [&_summary::-webkit-details-marker]:hidden">
             <summary className="flex cursor-pointer items-center justify-between gap-2 p-4 text-gray-900 transition">
