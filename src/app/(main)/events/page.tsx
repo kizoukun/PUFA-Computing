@@ -1,6 +1,5 @@
 import EventCardPage from "@/components/event/EventCardPage";
-
-// import componentnya
+import { fetchEvents } from "@/services/api/event";
 import LogoOrganizationEventPage from "@/components/event/LogoOrganizationEventPage";
 import PosterCardEventPage from "@/components/event/PosterCardEventPage";
 import { Metadata } from "next";
@@ -8,8 +7,18 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
    title: "Events",
 };
+export const revalidate = 0;
+export const dynamic = "force-dynamic";
 
 export default async function EventsPage() {
+   const events = await fetchEvents();
+
+	if(!events) return <div>Failed to fetch data...</div>
+
+   const upcomingEvents = events.filter(event => event.status == "Upcoming").slice(0, 2);
+   const completedEvents = events.filter(event => event.status == "Completed").slice(0, 3);
+
+   
    return (
       <div>
          {/* // title */}
@@ -31,26 +40,7 @@ export default async function EventsPage() {
                {/* card */}
 
                {/* isi dari komponennya  */}
-               <EventCardPage
-                  title="Compsphere 2023"
-                  participant="Public"
-                  status="Upcoming"
-                  major="PUMA IT"
-                  image="/events/compsphere_2023.png"
-               >
-                  Holla Everyone!! 🙌🏻 We are from PUMA COMPUTING 2023 are so
-                  excited to announce that Social Project 2023 ..
-               </EventCardPage>
-               <EventCardPage
-                  title="Compsphere 2023"
-                  participant="Public"
-                  status="Upcoming"
-                  major="PUMA IT"
-                  image="/events/compsphere_2023.png"
-               >
-                  Holla Everyone!! 🙌🏻 We are from PUMA COMPUTING 2023 are so
-                  excited to announce that Social Project 2023 ..
-               </EventCardPage>
+               <EventCardPage events={upcomingEvents}/>
             </div>
          </section>
 

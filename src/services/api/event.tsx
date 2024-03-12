@@ -27,6 +27,8 @@ export const fetchEvents = async (): Promise<Event[]> => {
          event.updated_at = new Date(event.updated_at);
       });
 
+      console.log("Fetched Events:", response.data);
+
       // Return the array of Event objects.
       return eventData as Event[];
    } catch (error) {
