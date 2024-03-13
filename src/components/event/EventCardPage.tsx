@@ -2,15 +2,6 @@ import Image from "next/image";
 import Event from '@/models/event';
 import React from "react";
 
-interface EventCardPageProps {
-  title: string;
-  status: string;
-  participant: string;
-  major: string;
-  image: string;
-  children: React.ReactNode;
-}
-
 export default function EventCardPage({ events }: { events: Event[] }) {
   return (
      <div className="mt-16 grid grid-cols-1 gap-16 lg:grid-cols-2">
