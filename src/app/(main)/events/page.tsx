@@ -16,7 +16,11 @@ export default async function EventsPage() {
 	if(!events) return <div>Failed to fetch data...</div>
 
    const upcomingEvents = events.filter(event => event.status == "Upcoming").slice(0, 2);
-   const completedEvents = events.filter(event => event.status == "Completed").slice(0, 3);
+
+   // All event sorted by end date
+   const allEvents = events.sort((a, b) => {
+      return a.end_date.getTime() - b.end_date.getTime();
+   });
 
    
    return (
@@ -77,71 +81,8 @@ export default async function EventsPage() {
             <hr className="border-t-2 border-gray-200" />
          </section>
 
-         <section className="mx-auto max-w-7xl px-10 py-[5rem]">
-            <h1 className="mb-[3rem] text-[1.2rem] font-bold">All Events</h1>
-            <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/compsphere_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/sospro_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/compsphere_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/sospro_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/compsphere_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/sospro_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/compsphere_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/sospro_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/compsphere_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/sospro_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/compsphere_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/sospro_2023.png"
-                  alt="logo"
-               />
-            </div>
-         </section>
+         {/* all events section*/}
+         <PosterCardEventPage events={allEvents} />
 
          <section className="mx-auto max-w-7xl">
             <div className="flex justify-between border-t-2 border-gray-100 py-2 text-gray-400">

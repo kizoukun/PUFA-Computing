@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Event from "@/models/event";
 
 /**
  * PosterCardEventPage component represents a card with a poster image linked to a specific page.
@@ -25,20 +26,23 @@ interface PosterCardEventPageProps {
    alt: string;
 }
 
-export default function PosterCardEventPage({
-   link,
-   image,
-   alt,
-}: PosterCardEventPageProps) {
+export default function PosterCardEventPage({ events }: { events: Event[] }) {
    return (
-      <Link href={`${link}`} className="block w-full">
-         <div className="rounded-xl transition duration-300 hover:scale-105 hover:shadow-md">
-            <img
-               className="h-full w-full rounded-xl bg-center object-cover"
-               src={image}
-               alt={alt}
-            />
+      <section className="mx-auto max-w-7xl px-10 py-[5rem]">
+         <h1 className="mb-[3rem] text-[1.2rem] font-bold">All Events</h1>
+         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+            {events.map((event) => (
+               <Link href={`${event.link}`} className="block w-full">
+                  <div className="rounded-xl transition duration-300 hover:scale-105 hover:shadow-md">
+                     <img
+                        className="h-full w-full rounded-xl bg-center object-cover"
+                        src={event.thumbnail}
+                        alt={event.title}
+                     />
+                  </div>
+               </Link>
+            ))}
          </div>
-      </Link>
-   );
+      </section>
+);
 }
