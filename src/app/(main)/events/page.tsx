@@ -15,7 +15,7 @@ export default async function EventsPage() {
 
 	if(!events) return <div>Failed to fetch data...</div>
 
-   const upcomingEvents = events.filter(event => event.status == "Upcoming").slice(0, 2);
+   const upcomingEvents = events.filter(event => event.status == "Upcoming").slice(0, 5);
 
    // All event sorted by end date exclude the first 2 upcoming events
    const allEvents = events.sort((a, b) => a.end_date.getTime() - b.end_date.getTime()).slice(2);
