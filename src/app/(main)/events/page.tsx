@@ -17,10 +17,8 @@ export default async function EventsPage() {
 
    const upcomingEvents = events.filter(event => event.status == "Upcoming").slice(0, 2);
 
-   // All event sorted by end date
-   const allEvents = events.sort((a, b) => {
-      return a.end_date.getTime() - b.end_date.getTime();
-   });
+   // All event sorted by end date exclude the first 2 upcoming events
+   const allEvents = events.sort((a, b) => a.end_date.getTime() - b.end_date.getTime()).slice(2);
 
    
    return (
