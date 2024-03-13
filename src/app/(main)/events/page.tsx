@@ -3,6 +3,7 @@ import { fetchEvents } from "@/services/api/event";
 import LogoOrganizationEventPage from "@/components/event/LogoOrganizationEventPage";
 import PosterCardEventPage from "@/components/event/PosterCardEventPage";
 import { Metadata } from "next";
+import EventCardPageMobile from "@/components/event/EventCardPageMobile";
 
 export const metadata: Metadata = {
    title: "Events",
@@ -13,14 +14,17 @@ export const dynamic = "force-dynamic";
 export default async function EventsPage() {
    const events = await fetchEvents();
 
-	if(!events) return <div>Failed to fetch data...</div>
+   if (!events) return <div>Failed to fetch data...</div>;
 
-   const upcomingEvents = events.filter(event => event.status == "Upcoming").slice(0, 5);
+   const upcomingEvents = events
+      .filter((event) => event.status == "Upcoming")
+      .slice(0, 5);
 
    // All event sorted by end date exclude the first 2 upcoming events
-   const allEvents = events.sort((a, b) => a.end_date.getTime() - b.end_date.getTime()).slice(2);
+   const allEvents = events
+      .sort((a, b) => a.end_date.getTime() - b.end_date.getTime())
+      .slice(2);
 
-   
    return (
       <div>
          {/* // title */}
@@ -38,7 +42,12 @@ export default async function EventsPage() {
             <h1 className="mb-5 text-[1.2rem] font-bold">Highlights</h1>
 
             {/* card section */}
-            <EventCardPage events={upcomingEvents} />
+            <div className="hidden md:block">
+               <EventCardPage events={upcomingEvents} />
+            </div>
+            <div className="block md:hidden">
+               <EventCardPageMobile events={upcomingEvents} />
+            </div>
          </section>
 
          <section className="mt-[5rem]">
