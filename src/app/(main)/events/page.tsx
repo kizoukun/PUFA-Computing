@@ -36,12 +36,7 @@ export default async function EventsPage() {
             <h1 className="mb-5 text-[1.2rem] font-bold">Highlights</h1>
 
             {/* card section */}
-            <div className="mt-16 grid grid-cols-1 gap-16 lg:grid-cols-2">
-               {/* card */}
-
-               {/* isi dari komponennya  */}
-               <EventCardPage events={upcomingEvents}/>
-            </div>
+            <EventCardPage events={upcomingEvents} />
          </section>
 
          <section className="mt-[5rem]">
