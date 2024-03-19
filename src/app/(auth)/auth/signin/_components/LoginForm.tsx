@@ -47,9 +47,10 @@ export default function LoginForm() {
          showConfirmButton: false,
          timer: 2000,
       }).then(() => {
+         console.log(access.data);
          localStorage.setItem(
             "access_token",
-            access.data.attributes.access_token
+            access.data.access_token
          );
          localStorage.setItem("userId", access.data.user_id);
          window.location.href = "/dashboard/profile";

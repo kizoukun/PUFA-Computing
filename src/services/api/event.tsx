@@ -19,7 +19,7 @@ export const fetchEvents = async (): Promise<Event[]> => {
       const response = await axios.get(API_EVENT);
 
       // Extract event data from the response.
-      const eventData = response.data?.events || [];
+      const eventData = response.data?.data || [];
       eventData.forEach((event: Event) => {
          event.start_date = new Date(event.start_date);
          event.end_date = new Date(event.end_date);
@@ -49,7 +49,7 @@ export const fetchEventById = async (eventId: string): Promise<Event> => {
       const response = await axios.get(`${API_EVENT}/${eventId}`);
 
       // Extract the event data from the response.
-      const eventData = response.data?.event;
+      const eventData = response.data?.data;
 
       // Return the Event object.
       return eventData as Event;
@@ -73,7 +73,7 @@ export const createEvent = async (eventData: Event): Promise<Event> => {
       const response = await axios.post(`${API_EVENT}/create`, eventData);
 
       // Extract the event data from the response.
-      const newEventData = response.data?.event;
+      const newEventData = response.data?.data;
 
       // Return the newly created Event object.
       return newEventData as Event;
@@ -98,7 +98,7 @@ export const updateEvent = async (eventId: string, eventData: Event): Promise<Ev
       const response = await axios.put(`${API_EVENT}/${eventId}/edit`, eventData);
 
       // Extract the updated event data from the response.
-      const updatedEventData = response.data?.event;
+      const updatedEventData = response.data?.data;
 
       // Return the updated Event object.
       return updatedEventData as Event;

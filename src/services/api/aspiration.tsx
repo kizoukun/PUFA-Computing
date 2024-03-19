@@ -6,7 +6,7 @@ export const fetchAspirations = async (): Promise<Aspirations[]> => {
     try {
        const response = await axios.get(API_ASPIRATION);
        // console.log("API Response:", response);
-       let aspirationData = response.data?.aspirations || [];
+       let aspirationData = response.data?.data || [];
        aspirationData = aspirationData.map((aspiration: Aspirations) => {
             aspiration.created_at = new Date(aspiration.created_at);
             aspiration.updated_at = new Date(aspiration.updated_at);
