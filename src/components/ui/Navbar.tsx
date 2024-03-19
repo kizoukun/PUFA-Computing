@@ -95,6 +95,10 @@ export default function Navbar() {
       setIsLogggedIn(false);
    };
 
+   const dashboard = () => {
+      window.location.href = "/dashboard";
+   }
+
    return (
       <header className="sticky top-0 z-50 bg-white shadow-md">
          <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -153,12 +157,20 @@ export default function Navbar() {
                            <NavbarDropdown title="Others" items={NavbarOthers[0].items} />
                            <div>
                            {isLoggedIn ? (
-                              <button
-                                 onClick={handleLogout}
-                                 className="rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5 mr-3"
-                              >
-                                 Logout
-                              </button>
+                              <>
+                                 <button
+                                    onClick={dashboard} // Change onClick to dashboard function
+                                    className="rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5 mr-3"
+                                 >
+                                    Dashboard
+                                 </button>
+                                 <button
+                                    onClick={handleLogout}
+                                    className="rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5 mr-3"
+                                 >
+                                    Logout
+                                 </button>
+                              </>
                            ) : (
                               <>
                                  <div className="mb-5">
@@ -203,12 +215,20 @@ export default function Navbar() {
                      ))}
                      <li>
                         {isLoggedIn ? (
-                           <button
-                              onClick={handleLogout}
-                              className="rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5"
-                           >
-                              Logout
-                           </button>
+                           <>
+                              <button
+                                 onClick={dashboard} // Change onClick to dashboard function
+                                 className="rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5 mr-3"
+                              >
+                                 Dashboard
+                              </button>
+                              <button
+                                 onClick={handleLogout}
+                                 className="rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5 mr-3"
+                              >
+                                 Logout
+                              </button>
+                           </>
                         ) : (
                            <>
                               <Link
