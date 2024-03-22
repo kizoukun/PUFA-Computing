@@ -13,7 +13,7 @@ import { API_EVENT } from "@/config/config";
  * @returns {Promise<Event[]>} A promise that resolves to an array of Event objects.
  * @throws {Error} If an error occurs during the API request.
  */
-export const fetchEvents = async (): Promise<Event[]> => {
+export  const fetchEvents = async (): Promise<Event[]> => {
    try {
       // Make a GET request to the API endpoint.
       const response = await axios.get(API_EVENT);
@@ -26,8 +26,6 @@ export const fetchEvents = async (): Promise<Event[]> => {
          event.created_at = new Date(event.created_at);
          event.updated_at = new Date(event.updated_at);
       });
-
-      console.log("Fetched Events:", response.data);
 
       // Return the array of Event objects.
       return eventData as Event[];
