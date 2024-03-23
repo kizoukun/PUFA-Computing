@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react';
-import { fetchEvents } from '@/services/api/event';
+import { fetchEventById } from '@/services/api/event';
 import Event from "@/models/event";
 
 const Page = () => {
@@ -10,7 +10,7 @@ const Page = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const eventsData = await fetchEvents();
+        const eventsData = await fetchEventById();
         console.log('Events Data:', eventsData); // Log events data
         setEvents(eventsData);
       } catch (error) {
@@ -31,7 +31,6 @@ const Page = () => {
           <div key={event.id}>
             <h2 className='text-black'>{event.title}</h2>
             <p>{event.description}</p>
-            {/* Add other elements you want to display */}
           </div>
         ))}
       </div>
