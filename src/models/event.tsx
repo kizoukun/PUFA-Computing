@@ -7,13 +7,14 @@ interface Event {
   end_date: Date;
   user_id: string; 
   status: string;
-  link: string;
+  slug: string;
   thumbnail: string;
   created_at: Date;
   updated_at: Date;
   organization_id: number;
   organization: string;
   author: string;
+  max_registration: number;
 }
 
 export default Event;

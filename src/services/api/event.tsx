@@ -17,6 +17,7 @@ export  const fetchEvents = async (): Promise<Event[]> => {
    try {
       // Make a GET request to the API endpoint.
       const response = await axios.get(API_EVENT);
+      // const response = await axios.get(`${API_EVENT}/?slug=`);
 
       // Extract event data from the response.
       const eventData = response.data?.data || [];
@@ -32,7 +33,7 @@ export  const fetchEvents = async (): Promise<Event[]> => {
    } catch (error) {
       // Log an error message and rethrow the error.
       console.error("Error fetching events", error);
-		throw error;
+      throw error;
    }
 };
 
@@ -43,10 +44,10 @@ export  const fetchEvents = async (): Promise<Event[]> => {
  * @returns {Promise<Event>} A promise that resolves to the Event object with the specified ID.
  * @throws {Error} If an error occurs during the API request.
  */
-export const fetchEventById = async (eventId: string): Promise<Event> => {
+export const fetchEventById = async (eventSlug: string): Promise<Event> => {
    try {
       // Make a GET request to the API endpoint.
-      const response = await axios.get(`${API_EVENT}/${eventId}`);
+      const response = await axios.get(`${API_EVENT}/?slug=${eventSlug}`);
 
       // Extract the event data from the response.
       const eventData = response.data?.data;
@@ -55,7 +56,7 @@ export const fetchEventById = async (eventId: string): Promise<Event> => {
       return eventData as Event;
    } catch (error) {
       // Log an error message and rethrow the error.
-      console.error(`Error fetching event with ID ${eventId}`, error);
+      console.error(`Error fetching event with ID ${eventSlug}`, error);
       throw error;
    }
 };
@@ -82,7 +83,7 @@ export const createEvent = async (eventData: Event): Promise<Event> => {
       console.error("Error creating event", error);
       throw error;
    }
-}
+};
 
 /**
  * Updates an existing event with the specified ID using the provided data.
@@ -92,10 +93,16 @@ export const createEvent = async (eventData: Event): Promise<Event> => {
  * @returns {Promise<Event>} A promise that resolves to the updated Event object.
  * @throws {Error} If an error occurs during the API request.
  */
-export const updateEvent = async (eventId: string, eventData: Event): Promise<Event> => {
+export const updateEvent = async (
+   eventId: string,
+   eventData: Event
+): Promise<Event> => {
    try {
       // Make a PUT request to the API endpoint.
-      const response = await axios.put(`${API_EVENT}/${eventId}/edit`, eventData);
+      const response = await axios.put(
+         `${API_EVENT}/${eventId}/edit`,
+         eventData
+      );
 
       // Extract the updated event data from the response.
       const updatedEventData = response.data?.data;
@@ -107,7 +114,7 @@ export const updateEvent = async (eventId: string, eventData: Event): Promise<Ev
       console.error(`Error updating event with ID ${eventId}`, error);
       throw error;
    }
-}
+};
 
 /**
  * Deletes an existing event with the specified ID from the API endpoint.
@@ -125,4 +132,4 @@ export const deleteEvent = async (eventId: string): Promise<void> => {
       console.error(`Error deleting event with ID ${eventId}`, error);
       throw error;
    }
-}
+};
