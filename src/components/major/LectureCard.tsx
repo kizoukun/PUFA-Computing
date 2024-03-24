@@ -38,7 +38,7 @@ interface LectureCardProps {
  */
 const LectureCard: React.FC<LectureCardProps> = ({ image, name, position }) => {
    return (
-      <div className="space-y-4 rounded-xl duration-300 hover:scale-110 hover:shadow-xl">
+      <div className="flex flex-col items-center space-y-2 transition-all duration-300 hover:scale-110">
          <Image
             className="aspect-[3/4] rounded-lg object-cover"
             src={image}
@@ -46,8 +46,10 @@ const LectureCard: React.FC<LectureCardProps> = ({ image, name, position }) => {
             width={1920}
             height={1080}
          />
-         <h3 className="text-lg font-medium leading-6 text-gray-900">{name}</h3>
-         <p className="text-[18px] font-[500] text-[#0C8CE9]">{position}</p>
+         <h1 className="text-[1.2rem] font-bold">{name}</h1>
+         <h1 className="text-[0.8rem] font-bold italic text-[#0C8CE9]">
+            {position}
+         </h1>
       </div>
    );
 };
