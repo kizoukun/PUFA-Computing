@@ -50,7 +50,7 @@ export default function EventCardPage({ events }: { events: Event[] }) {
                            year: "numeric",
                         })}`}
                      </p>
-                     <p className="text-sm md:text-base">
+                     <p className="text-sm md:text-base text-justify">
                         {truncateDescription(event.description, 150)} {/* Batasi panjang deskripsi menjadi 150 karakter */}
                      </p>
                      <div className="flex justify-between">
