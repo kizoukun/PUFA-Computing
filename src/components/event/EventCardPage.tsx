@@ -7,16 +7,15 @@ export default function EventCardPage({ events }: { events: Event[] }) {
    const calculateDaysLeft = (endDate: Date) => {
       const today = new Date();
       const differenceInTime = endDate.getTime() - today.getTime();
-      const differenceInDays = Math.ceil(
+      return Math.ceil(
          differenceInTime / (1000 * 60 * 60 * 24)
       );
-      return differenceInDays;
    };
 
    return (
       <div className="mt-16 grid grid-cols-1 gap-16 lg:grid-cols-2">
          {events.map((event) => (
-            <Link key={event.id} href={`/events/?slug=${event.slug}`}>
+            <Link key={event.id} href={`/events/${event.slug}`}>
                <div key={event.id}>
                   <div className="flex cursor-pointer gap-4 rounded-[15px] border-[0.5px] border-[#E50D0D] md:gap-8">
                      <div className="relative">

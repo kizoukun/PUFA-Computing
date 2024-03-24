@@ -38,25 +38,29 @@ export  const fetchEvents = async (): Promise<Event[]> => {
 };
 
 /**
- * Fetches a single event by its ID from the specified API endpoint.
+ * Fetches a single event by its slug from the specified API endpoint.
  *
- * @param {string} eventId The ID of the event to fetch.
  * @returns {Promise<Event>} A promise that resolves to the Event object with the specified ID.
  * @throws {Error} If an error occurs during the API request.
+ * @param eventSlug
  */
-export const fetchEventById = async (eventSlug: string): Promise<Event> => {
+export const fetchEventBySlug = async (eventSlug: boolean): Promise<Event> => {
    try {
       // Make a GET request to the API endpoint.
       const response = await axios.get(`${API_EVENT}/?slug=${eventSlug}`);
 
       // Extract the event data from the response.
       const eventData = response.data?.data;
+      eventData.start_date = new Date(eventData.start_date);
+      eventData.end_date = new Date(eventData.end_date);
+      eventData.created_at = new Date(eventData.created_at);
+      eventData.updated_at = new Date(eventData.updated_at);
 
       // Return the Event object.
       return eventData as Event;
    } catch (error) {
       // Log an error message and rethrow the error.
-      console.error(`Error fetching event with ID ${eventSlug}`, error);
+      console.error(`Error fetching event with slug ${eventSlug}`, error);
       throw error;
    }
 };
