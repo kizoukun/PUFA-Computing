@@ -62,28 +62,28 @@ export default async function EventsPage() {
                   <LogoOrganizationEventPage
                      image="../logo/PUFA_Computing.png"
                      title="PUFA Computing"
-                     link="/pufa-computing/event"
+                     link="/events/pufa-computing"
                   />
 
                   <LogoOrganizationEventPage
                      image="../logo/PUMA_IT.png"
                      title="PUMA Informatics"
-                     link="/puma-it/event"
+                     link="/events/puma-it"
                   />
                   <LogoOrganizationEventPage
                      image="../logo/PUMA_IS.png"
                      title="PUMA Information System"
-                     link="/puma-is/event"
+                     link="/events/puma-is"
                   />
                   <LogoOrganizationEventPage
                      image="../logo/PUMA_VCD.png"
                      title="PUMA Visual Design Communication"
-                     link="/puma-vcd/event"
+                     link="/events/puma-vcd"
                   />
                   <LogoOrganizationEventPage
                      image="../logo/PUMA_ID.png"
                      title="PUMA Interior Design"
-                     link="/puma-id/event"
+                     link="/events/puma-id"
                   />
                </div>
             </div>
