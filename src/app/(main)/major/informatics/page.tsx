@@ -124,12 +124,12 @@ export default function StudyProgramPage() {
                <div className="">
                   <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
                      <LectureCard
-                        image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
+                        image="/lecture/informatics/rila-mandala.png"
                         name="Ir. Rila Mandala, M.Eng., Ph.D."
                         position="Dean School of Computing"
                      />
                      <LectureCard
-                        image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                        image="/lecture/informatics/cutifa-safitri.png"
                         name="Cutifa Safitri, Ph.D."
                         position="Head of Study Programme"
                      />
