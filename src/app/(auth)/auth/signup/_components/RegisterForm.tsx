@@ -77,7 +77,7 @@ const HandleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
       await Swal.fire({
          icon: "error",
          title: "Invalid Student ID",
-         text: "Student ID must be 12 digits long and start with 3 digits of batch and 9 digits of student ID",
+         text: "Student ID must be 12 digits long and start with 3 digits of major, 4 digits of batch, 5 digits of id",
       });
       return;
    }
