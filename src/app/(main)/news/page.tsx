@@ -3,11 +3,12 @@ import CardSecondaryNewsPage from "@/components/news/CardSecondaryNewsPage";
 import Seperator from "@/components/Seperator";
 import { SelectSeparator } from "@/components/ui/select";
 import React from "react";
+import PageHeading from "@/components/PageHeading";
 
 export default function NewsPage() {
    return (
       <div>
-         <section className="flex flex-col bg-[#F2F2F2] px-[5rem] py-[2rem] md:px-[10rem]">
+         {/* <section className="flex flex-col bg-[#F2F2F2] px-[5rem] py-[2rem] md:px-[10rem]">
             <div className="border-l-4 border-[#FF6F22] pl-8">
                <h1 className="text-[2rem] font-[600]">Computing News</h1>
                <h1 className="text-[0.8rem]">
@@ -15,7 +16,12 @@ export default function NewsPage() {
                   campus life.
                </h1>
             </div>
-         </section>
+         </section> */}
+         <PageHeading
+            title="Computing News"
+            description="The latest news about research, technology, achievements, and campus life."
+            borderColor="#FF6F22"
+         />
 
          <section className="flex flex-col space-y-12 px-[5rem] py-[2rem] md:px-[10rem]">
             <h1 className="text-[1.5rem] font-[600]">Latest</h1>
