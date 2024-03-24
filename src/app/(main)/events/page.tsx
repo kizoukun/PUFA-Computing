@@ -16,9 +16,10 @@ export default async function EventsPage() {
 
    if (!events) return <div>Failed to fetch data...</div>;
 
+   // Upcoming events sorted by end date
    const upcomingEvents = events
       .filter((event) => event.status == "Upcoming")
-      .slice(0, 5);
+      .slice(0, 2);
 
    // All event sorted by end date exclude the first 2 upcoming events
    const allEvents = events
@@ -60,28 +61,28 @@ export default async function EventsPage() {
                   <LogoOrganizationEventPage
                      image="../logo/PUFA_Computing.png"
                      title="PUFA Computing"
-                     link="events/pufa-computing"
+                     link="/pufa-computing/event"
                   />
 
                   <LogoOrganizationEventPage
                      image="../logo/PUMA_IT.png"
                      title="PUMA Informatics"
-                     link="events/puma-it"
+                     link="/puma-it/event"
                   />
                   <LogoOrganizationEventPage
                      image="../logo/PUMA_IS.png"
                      title="PUMA Information System"
-                     link="events/puma-is"
+                     link="/puma-is/event"
                   />
                   <LogoOrganizationEventPage
                      image="../logo/PUMA_VCD.png"
                      title="PUMA Visual Design Communication"
-                     link="events/puma-vcd"
+                     link="/puma-vcd/event"
                   />
                   <LogoOrganizationEventPage
                      image="../logo/PUMA_ID.png"
                      title="PUMA Interior Design"
-                     link="events/puma-id"
+                     link="/puma-id/event"
                   />
                </div>
             </div>

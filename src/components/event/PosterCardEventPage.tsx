@@ -21,7 +21,7 @@ import Event from "@/models/event";
  */
 
 interface PosterCardEventPageProps {
-   link: string;
+   slug: string;
    image: string;
    alt: string;
 }
@@ -32,7 +32,7 @@ export default function PosterCardEventPage({ events }: { events: Event[] }) {
          <h1 className="mb-[3rem] text-[1.2rem] font-bold">All Events</h1>
          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
             {events.map((event) => (
-               <Link href={`${event.slug}`} className="block w-full">
+               <Link href={`events/${event.slug}`} className="block w-full">
                   <div className="rounded-xl transition duration-300 hover:scale-105 hover:shadow-md">
                      <img
                         className="h-full w-full rounded-xl bg-center object-cover"
