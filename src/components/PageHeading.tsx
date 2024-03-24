@@ -2,8 +2,8 @@ import React from "react";
 
 interface PageHeadingProps {
    title: string;
-   description?: string;
-   borderColor?: string;
+   description: string;
+   borderColor: string;
 }
 
 const PageHeading: React.FC<PageHeadingProps> = ({
@@ -17,9 +17,7 @@ const PageHeading: React.FC<PageHeadingProps> = ({
       <section className="flex flex-col bg-[#F2F2F2] px-[5rem] py-[2rem] md:px-[10rem]">
          <div className={`${borderClass} pl-8`}>
             <h1 className="text-[2rem] font-[600]">{title}</h1>
-            {description && (
-               <h2 className="text-[0.8rem]">{description}</h2>
-            )}{" "}
+            <h1 className="text-[0.8rem]">{description}</h1>
          </div>
       </section>
    );
