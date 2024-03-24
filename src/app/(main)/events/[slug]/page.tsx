@@ -93,15 +93,16 @@ const EventDetailsPage: React.FC<{ params: { slug: string } }> = ({
                   {event.title}
                </h1>
                <Seperator className="border-[#CBCBCB]" />
-               <div className="overflow-auto">
-                  <p className="overflow-auto px-5 py-2 text-[0.938rem] font-[400]">
+               {/*Overflow for scroll if long*/}
+               <div className="overflow-y-auto max-h-[39rem] px-5 py-2">
+                  <p className="px-5 py-2 text-[0.938rem] font-[400]">
                      {description(event.description)}
                   </p>
                </div>
 
                <div className="flex items-center justify-center pb-5 pt-3 ">
                   <Button className="w-5/6 border-[#353535] py-2 text-[#353535] hover:bg-[#353535] hover:text-white">
-                     Regist Now !
+                     Register Now !
                   </Button>
                </div>
             </div>
