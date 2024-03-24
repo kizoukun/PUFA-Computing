@@ -3,9 +3,9 @@ import Event from "../../models/event";
 import { API_EVENT } from "@/config/config";
 
 /**
- * The base URL of the API endpoint for events.
- * @type {string}
+ * An object that caches event data by slug.
  */
+const eventCache: { [key: string]: Event } = {};
 
 /**
  * Fetches a list of events from the specified API endpoint.
@@ -46,20 +46,28 @@ export  const fetchEvents = async (): Promise<Event[]> => {
  */
 export const fetchEventBySlug = async (eventSlug: string): Promise<Event> => {
    try {
-      // Make a GET request to the API endpoint.
+      // Check if the event is already cached
+      if (eventCache[eventSlug]) {
+         return eventCache[eventSlug];
+      }
+
+      // Make a GET request to the API endpoint
       const response = await axios.get(`${API_EVENT}/${eventSlug}`);
 
-      // Extract the event data from the response.
+      // Extract the event data from the response
       const eventData = response.data?.data;
       eventData.start_date = new Date(eventData.start_date);
       eventData.end_date = new Date(eventData.end_date);
       eventData.created_at = new Date(eventData.created_at);
       eventData.updated_at = new Date(eventData.updated_at);
 
-      // Return the Event object.
+      // Cache the event data
+      eventCache[eventSlug] = eventData;
+
+      // Return the Event object
       return eventData as Event;
    } catch (error) {
-      // Log an error message and rethrow the error.
+      // Log an error message and rethrow the error
       console.error(`Error fetching event with slug ${eventSlug}`, error);
       throw error;
    }
