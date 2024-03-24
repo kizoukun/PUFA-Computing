@@ -44,10 +44,10 @@ export  const fetchEvents = async (): Promise<Event[]> => {
  * @throws {Error} If an error occurs during the API request.
  * @param eventSlug
  */
-export const fetchEventBySlug = async (eventSlug: boolean): Promise<Event> => {
+export const fetchEventBySlug = async (eventSlug: string): Promise<Event> => {
    try {
       // Make a GET request to the API endpoint.
-      const response = await axios.get(`${API_EVENT}/?slug=${eventSlug}`);
+      const response = await axios.get(`${API_EVENT}/${eventSlug}`);
 
       // Extract the event data from the response.
       const eventData = response.data?.data;
