@@ -23,7 +23,7 @@ export default function NewsPage() {
             borderColor="#FF6F22"
          />
 
-         <section className="flex flex-col space-y-12 px-[5rem] py-[2rem] md:px-[10rem]">
+         <section className="flex flex-col space-y-12 px-[2rem] py-[2rem] md:px-[10rem]">
             <h1 className="text-[1.5rem] font-[600]">Latest</h1>
             {/* main big news   */}
             <div className="flex w-full flex-col gap-4 rounded-lg border-2 md:flex-row">

@@ -14,8 +14,8 @@ const PageHeading: React.FC<PageHeadingProps> = ({
    const borderClass = borderColor ? `border-l-4 border-[${borderColor}]` : "";
 
    return (
-      <section className="flex flex-col bg-[#F2F2F2] px-[5rem] py-[2rem] md:px-[10rem]">
-         <div className={`${borderClass} pl-8`}>
+      <section className="flex flex-col bg-[#F2F2F2] px-[2rem] py-[2rem] md:px-[10rem]">
+         <div className={`${borderClass} pl-4`}>
             <h1 className="text-[2rem] font-[600]">{title}</h1>
             <h1 className="text-[0.8rem]">{description}</h1>
          </div>
