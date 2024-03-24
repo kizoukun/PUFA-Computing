@@ -20,7 +20,6 @@ const PageHeading: React.FC<PageHeadingProps> = ({
             {description && (
                <h2 className="text-[0.8rem]">{description}</h2>
             )}{" "}
-            {/* Conditionally render description */}
          </div>
       </section>
    );
