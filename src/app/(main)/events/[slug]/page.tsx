@@ -52,17 +52,24 @@ const EventDetailsPage: React.FC<{ params: { slug: string } }> = ({
             console.error("Event is undefined");
             return;
          }
-         
-         const response: AxiosResponse<any, any> = await axios.post(
+
+         const accessToken = localStorage.getItem("access_token");
+         if (!accessToken) {
+            console.error("Access token not found");
+            return;
+         }
+
+         const response = await axios.post(
             `${API_EVENT}/${event.id}/register`,
+            {},
             {
                headers: {
                   "Content-Type": "application/json",
-                  "Authorization": `Bearer ${localStorage.getItem("access_token")}`
-               }
+                  Authorization: `Bearer ${accessToken}`,
+               },
             }
          );
-   
+
          if (response.status === 200) {
             console.log("Registration successful!");
          } else {
@@ -72,7 +79,7 @@ const EventDetailsPage: React.FC<{ params: { slug: string } }> = ({
          console.error("Error registering for event:", error);
       }
    };
-   
+
 
    const handleBack = () => {
       router.push("/events");
@@ -128,7 +135,7 @@ const EventDetailsPage: React.FC<{ params: { slug: string } }> = ({
                      {description(event.description)}
                   </p>
                </div>
-
+               <Seperator className="border-[#CBCBCB]" />
                <div className="flex items-center justify-center pb-5 pt-3 ">
                   <Button
                      className="w-5/6 border-[#353535] py-2 text-[#353535] hover:bg-[#353535] hover:text-white"

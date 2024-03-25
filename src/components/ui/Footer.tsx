@@ -43,12 +43,11 @@ export default function Footer() {
                      © {new Date().getFullYear()} PUMA Computing. All rights
                      reserved.
                      <br />
-                     Made by Webdev Team Paling Ganteng-Ganteng, Research and
-                     Technology.
+                     Made by Research & Technology PUFA Computing
                   </div>
                   {/*Version Info*/}
                   <div className="mt-2 text-xs font-normal tracking-widest text-[#9CA3AF]">
-                     Version 1.0.0 (Beta)
+                     Version Alpha 0.6.2
                   </div>
                </div>
 
