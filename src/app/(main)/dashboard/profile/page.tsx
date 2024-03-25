@@ -23,12 +23,12 @@ export default async function DashboardProfilePage() {
    return (
       <div className="grid grid-cols-1 gap-5 p-4 lg:grid-cols-2">
          <div>
-            <div className="rounded-lg bg-white border-[#CBCBCB] border shadow-lg">
-               <div className="mt-2 py-3 px-6">
+            <div className="rounded-lg border border-[#CBCBCB] bg-white shadow-lg">
+               <div className="mt-2 px-6 py-3">
                   <p className="text-[16px] font-[500]">Personal Information</p>
                </div>
                <Seperator className="border-gray-100" />
-               <div className="space-y-6 mt-2 py-3 px-6 pb-6">
+               <div className="mt-2 space-y-6 px-6 py-3 pb-6">
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                      <Input
                         htmlFor="full-name"
@@ -79,8 +79,8 @@ export default async function DashboardProfilePage() {
             </div>
          </div>
          <div>
-            <div className="rounded-lg bg-white border-[#CBCBCB] border shadow-lg">
-               <div className="mt-2 py-3 px-6">
+            <div className="rounded-lg border border-[#CBCBCB] bg-white shadow-lg">
+               <div className="mt-2 px-6 py-3">
                   <p className="text-[16px] font-[500]">Profile Photo</p>
                </div>
                <Seperator className="border-gray-100" />
@@ -89,21 +89,25 @@ export default async function DashboardProfilePage() {
                      <div className="flex gap-3">
                         <div className="">
                            <img
-                           src="https://source.unsplash.com/50x50/?portrait"
-                           alt=""
-                           className="h-14 w-14 rounded-full"
+                              src="https://source.unsplash.com/50x50/?portrait"
+                              alt=""
+                              className="h-14 w-14 rounded-full"
                            />
                         </div>
-                        <div className="flex flex-col gap-1 items-start">
-                           <button className="font-medium">Edit your photo</button>
-                           <button className="font-light text-[0.9rem] text-gray-600">Delete</button>
+                        <div className="flex flex-col items-start gap-1">
+                           <button className="font-medium">
+                              Edit your photo
+                           </button>
+                           <button className="text-[0.9rem] font-light text-gray-600">
+                              Delete
+                           </button>
                         </div>
                      </div>
                   </div>
-                  <div>
+                  <div className="text-[#353535]">
                      <label
                         htmlFor="dropzone-file"
-                        className="mx-auto mt-2 flex w-full max-w-xl cursor-pointer flex-col items-center rounded-xl border-2 border-dashed border-[#02ABF3] bg-white p-16 text-center dark:border-gray-700 dark:bg-gray-900"
+                        className="mx-auto mt-2 flex w-full max-w-xl cursor-pointer flex-col items-center rounded-xl border-2 border-dashed border-[#CBCBCB] bg-white p-16 text-center"
                      >
                         <svg
                            xmlns="http://www.w3.org/2000/svg"
@@ -120,11 +124,11 @@ export default async function DashboardProfilePage() {
                            />
                         </svg>
 
-                        <h2 className="mt-1 font-medium tracking-wide text-gray-700 dark:text-gray-200">
+                        <h2 className="mt-1 font-medium tracking-wide">
                            Add Profile Picture
                         </h2>
 
-                        <p className="mt-2 text-xs tracking-wide text-gray-500 dark:text-gray-400">
+                        <p className="mt-2 text-xs tracking-wide ">
                            Upload or darg & drop your file SVG, PNG, or JPG.{" "}
                         </p>
 
