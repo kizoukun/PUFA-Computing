@@ -130,7 +130,7 @@ const EventDetailsPage: React.FC<{ params: { slug: string } }> = ({
                <Seperator className="border-[#CBCBCB]" />
                {/*Overflow for scroll if long*/}
                <div className="max-h-[39rem] overflow-y-auto px-5 py-2">
-                  <p className="px-5 py-2 text-[0.938rem] font-[400] ">
+                  <p className="px-5 py-2 text-[0.938rem] font-[400] text-justify">
                      {description(event.description)}
                   </p>
                </div>
