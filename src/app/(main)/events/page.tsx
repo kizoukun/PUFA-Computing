@@ -1,16 +1,34 @@
 import EventCardPage from "@/components/event/EventCardPage";
-
-// import componentnya
+import { fetchEvents } from "@/services/api/event";
 import LogoOrganizationEventPage from "@/components/event/LogoOrganizationEventPage";
 import PosterCardEventPage from "@/components/event/PosterCardEventPage";
 import { Metadata } from "next";
 import PageHeading from "@/components/PageHeading";
+import EventCardPageMobile from "@/components/event/EventCardMobile";
 
 export const metadata: Metadata = {
    title: "Events",
 };
+export const revalidate = 0;
+export const dynamic = "force-dynamic";
 
 export default async function EventsPage() {
+   const events = await fetchEvents();
+
+   if (!events) return <div>Failed to fetch data...</div>;
+
+   const today: Date = new Date();
+
+   const upcomingEvents = events
+   .filter(event => new Date(event.start_date) >= today)
+   .sort((a, b) => new Date(a.start_date).getTime() - new Date(b.start_date).getTime())
+   .slice(0, 2);
+
+   // All event sorted by end date exclude the first 2 upcoming events
+   const allEvents = events
+      .sort((a, b) => a.end_date.getTime() - b.end_date.getTime())
+      .slice(2);
+
    return (
       <div>
          {/* // title */}
@@ -33,30 +51,11 @@ export default async function EventsPage() {
             <h1 className="mb-5 text-[1.2rem] font-bold">Highlights</h1>
 
             {/* card section */}
-            <div className="mt-16 grid grid-cols-1 gap-16 lg:grid-cols-2">
-               {/* card */}
-
-               {/* isi dari komponennya  */}
-               <EventCardPage
-                  title="Compsphere 2023"
-                  participant="Public"
-                  status="Upcoming"
-                  major="PUMA IT"
-                  image="/events/compsphere_2023.png"
-               >
-                  Holla Everyone!! 🙌🏻 We are from PUMA COMPUTING 2023 are so
-                  excited to announce that Social Project 2023 ..
-               </EventCardPage>
-               <EventCardPage
-                  title="Compsphere 2023"
-                  participant="Public"
-                  status="Upcoming"
-                  major="PUMA IT"
-                  image="/events/compsphere_2023.png"
-               >
-                  Holla Everyone!! 🙌🏻 We are from PUMA COMPUTING 2023 are so
-                  excited to announce that Social Project 2023 ..
-               </EventCardPage>
+            <div className="hidden md:block">
+               <EventCardPage events={upcomingEvents} />
+            </div>
+            <div className="block md:hidden">
+               <EventCardPageMobile events={upcomingEvents} />
             </div>
          </section>
 
@@ -70,99 +69,36 @@ export default async function EventsPage() {
                   <LogoOrganizationEventPage
                      image="../logo/PUFA_Computing.png"
                      title="PUFA Computing"
-                     link="events/pufa-computing"
+                     link="/events/pufa-computing"
                   />
 
                   <LogoOrganizationEventPage
                      image="../logo/PUMA_IT.png"
                      title="PUMA Informatics"
-                     link="events/puma-it"
+                     link="/events/puma-it"
                   />
                   <LogoOrganizationEventPage
                      image="../logo/PUMA_IS.png"
                      title="PUMA Information System"
-                     link="events/puma-is"
+                     link="/events/puma-is"
                   />
                   <LogoOrganizationEventPage
                      image="../logo/PUMA_VCD.png"
                      title="PUMA Visual Design Communication"
-                     link="events/puma-vcd"
+                     link="/events/puma-vcd"
                   />
                   <LogoOrganizationEventPage
                      image="../logo/PUMA_ID.png"
                      title="PUMA Interior Design"
-                     link="events/puma-id"
+                     link="/events/puma-id"
                   />
                </div>
             </div>
             <hr className="border-t-2 border-gray-200" />
          </section>
 
-         <section className="mx-auto max-w-7xl px-10 py-[5rem]">
-            <h1 className="mb-[3rem] text-[1.2rem] font-bold">All Events</h1>
-            <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/compsphere_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/sospro_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/compsphere_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/sospro_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/compsphere_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/sospro_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/compsphere_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/sospro_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/compsphere_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/sospro_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/compsphere_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/sospro_2023.png"
-                  alt="logo"
-               />
-            </div>
-         </section>
+         {/* all events section*/}
+         <PosterCardEventPage events={allEvents} />
 
          <section className="mx-auto max-w-7xl">
             <div className="flex justify-between border-t-2 border-gray-100 py-2 text-gray-400">

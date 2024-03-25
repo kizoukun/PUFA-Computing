@@ -1,112 +1,62 @@
 import EventCardPage from "@/components/event/EventCardPage";
-// import componentnya
+import { fetchEvents } from "@/services/api/event";
+import LogoOrganizationEventPage from "@/components/event/LogoOrganizationEventPage";
 import PosterCardEventPage from "@/components/event/PosterCardEventPage";
 import { Metadata } from "next";
-import Link from "next/link";
-import { IoIosArrowForward } from "react-icons/io";
+import EventCardPageMobile from "@/components/event/EventCardMobile";
 
 export const metadata: Metadata = {
    title: "PUMA VCD Events",
 };
+export const revalidate = 0;
+export const dynamic = "force-dynamic";
 
 export default async function EventsPage() {
+   const events = await fetchEvents();
+
+   if (!events) return <div>Failed to fetch data...</div>;
+
+   // Filter events related to PUFA Computing
+   const pumaVcdEvents = events.filter(event => event.organization === "PUMA VCD");
+
+   // Upcoming events sorted by end date
+   const upcomingEvents = pumaVcdEvents
+      .filter((event) => event.end_date.getTime() >= Date.now())
+      .sort((a, b) => a.end_date.getTime() - b.end_date.getTime())
+      .slice(0, 2);
+
+   // All event sorted by end date exclude the first 2 upcoming events
+   const allEvents = pumaVcdEvents
+      .sort((a, b) => a.end_date.getTime() - b.end_date.getTime())
+      .slice(2);
+
    return (
       <div>
-         {/* // title */}
-         <section className="bg-[#F2F2F2] p-10">
-            <div className="mx-auto flex max-w-7xl flex-col border-l-4 border-[#FF6F22] pl-5 ">
-               <h1 className="text-[2rem] font-extrabold text-black">
-                  <div className="flex items-center">
-                     <Link href="../events" className="hover:underline">
-                        Computing Events
-                     </Link>
-                     <IoIosArrowForward className="ml-2" /> PUMA Visual Communication Design
-                  </div>
+         {/* title */}
+         <section className="flex items-center bg-[#F2F2F2] px-[5rem] py-[2rem] md:px-[10rem]">
+            <div className="border-l-4 border-[#E50D0D] pl-8">
+               <h1 className="text-[2rem] font-[600]">Computing Events</h1>
+               <h1 className="text-[0.8rem]">
+                  Discover the latest updates on events in our faculty.
                </h1>
-               <p className="text-[0.8rem]">
-                  The latest news about research, technology, achievements, and
-                  campus life.
-               </p>
             </div>
          </section>
 
          {/* event highlights */}
          <section className="mx-auto max-w-7xl p-10">
-            <h1 className="mb-5 text-[1.2rem] font-bold">Upcoming</h1>
+            <h1 className="mb-5 text-[1.2rem] font-bold">Highlights</h1>
 
             {/* card section */}
-            <div className="mt-16 grid grid-cols-1 gap-16 lg:grid-cols-2">
-               {/* card */}
-
-               {/* isi dari komponennya  */}
-               <EventCardPage
-                  title="Compsphere 2023"
-                  participant="Public"
-                  status="Upcoming"
-                  major="PUMA IT"
-                  image="/events/compsphere_2023.png"
-               >
-                  Holla Everyone!! 🙌🏻 We are from PUMA COMPUTING 2023 are so
-                  excited to announce that Social Project 2023 ..
-               </EventCardPage>
-               <EventCardPage
-                  title="Compsphere 2023"
-                  participant="Public"
-                  status="Upcoming"
-                  major="PUMA IT"
-                  image="/events/compsphere_2023.png"
-               >
-                  Holla Everyone!! 🙌🏻 We are from PUMA COMPUTING 2023 are so
-                  excited to announce that Social Project 2023 ..
-               </EventCardPage>
+            <div className="hidden md:block">
+               <EventCardPage events={upcomingEvents} />
+            </div>
+            <div className="block md:hidden">
+               <EventCardPageMobile events={upcomingEvents} />
             </div>
          </section>
 
-         <section className="mx-auto max-w-7xl px-10 py-[5rem]">
-            <h1 className="mb-[5rem] text-[1.2rem] font-bold">All Events</h1>
-            <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/compsphere_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/sospro_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/compsphere_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/sospro_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/compsphere_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/sospro_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/compsphere_2023.png"
-                  alt="logo"
-               />
-               <PosterCardEventPage
-                  link="/news"
-                  image="/events/sospro_2023.png"
-                  alt="logo"
-               />
-            </div>
-         </section>
+         {/* all events section*/}
+         <PosterCardEventPage events={allEvents} />
 
          <section className="mx-auto max-w-7xl">
             <div className="flex justify-between border-t-2 border-gray-100 py-2 text-gray-400">
