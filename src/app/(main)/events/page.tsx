@@ -19,10 +19,11 @@ export default async function EventsPage() {
 
    const today: Date = new Date();
 
+   // 2 Highlighted Closest Events either upcoming or open
    const upcomingEvents = events
-   .filter(event => new Date(event.start_date) >= today)
-   .sort((a, b) => new Date(a.start_date).getTime() - new Date(b.start_date).getTime())
-   .slice(0, 2);
+      .filter((event) => event.end_date >= today)
+      .sort((a, b) => a.end_date.getTime() - b.end_date.getTime())
+      .slice(0, 2);
 
    // All event sorted by end date exclude the first 2 upcoming events
    const allEvents = events
