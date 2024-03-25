@@ -1,10 +1,30 @@
+'use client';
 import Button from "@/components/Button";
 import Input from "@/components/Input";
-import Selects from "@/components/Selects";
 import React from "react";
 import Seperator from "@/components/Seperator";
+import { GetUserProfile } from "@/services/api/user";
+import User from "@/models/user";
 
-export default async function DashboardProfilePage() {
+export default function DashboardProfilePage() {
+   const [loading, setLoading] = React.useState(true);
+   const [userData, setUserData] = React.useState<User>();
+
+   // Fetch user data
+   React.useEffect(() => {
+      const fetchData = async () => {
+         try {
+            const userData = await GetUserProfile();
+            setUserData(userData);
+            setLoading(false);
+         } catch (error) {
+            console.error("Error fetching user data:", error);
+         }
+      };
+
+      fetchData().then((r) => r);
+   }, []);
+
    const Major = [
       { value: "informatics", label: "Informatics" },
       { value: "information System", label: "Information System" },
@@ -31,16 +51,16 @@ export default async function DashboardProfilePage() {
                <div className="mt-2 space-y-6 px-6 py-3 pb-6">
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                      <Input
-                        htmlFor="full-name"
-                        label="Full Name"
+                        htmlFor="first-name"
+                        label="First Name"
                         type="text"
-                        placeholder="Muhammad Ilham Pratama"
+                        placeholder={userData?.first_name}
                      />
                      <Input
-                        htmlFor="phone-number"
-                        label="Phone Number"
-                        type="number"
-                        placeholder="0851"
+                        htmlFor="last-name"
+                        label="Last Name"
+                        type="text"
+                        placeholder={userData?.last_name}
                      />
                   </div>
                   <div>
@@ -48,23 +68,25 @@ export default async function DashboardProfilePage() {
                         htmlFor="email-address"
                         label="Email Address"
                         type="email"
-                        placeholder="ipe@gmail.com"
+                        placeholder={userData?.email}
                      />
                   </div>
                   <div>
-                     <Selects
+                     <Input
                         htmlFor="major"
                         label="Major"
-                        defaults={["informatics"]}
-                        options={Major}
+                        type="text"
+                        placeholder={userData?.major}
+                        disabled
                      />
                   </div>
                   <div>
-                     <Selects
+                     <Input
                         htmlFor="batch"
                         label="Batch"
-                        defaults={["2023"]}
-                        options={Batch}
+                        type="text"
+                        placeholder={userData?.year}
+                        disabled
                      />
                   </div>
                   <div className="mt-16 flex justify-end space-x-2">
