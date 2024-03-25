@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { Login } from "@/services/api/auth";
 import Swal from "sweetalert2";
 import Seperator from "@/components/Seperator";
-import Link from "next/link";
 
 interface LoginFormProps {
    onLoginSuccess: (access_token: string, userId: string) => void;
@@ -49,7 +48,10 @@ export default function LoginForm() {
          timer: 2000,
       }).then(() => {
          console.log(access.data);
-         localStorage.setItem("access_token", access.data.access_token);
+         localStorage.setItem(
+            "access_token",
+            access.data.access_token
+         );
          localStorage.setItem("userId", access.data.user_id);
          window.location.href = "/dashboard/profile";
       });
@@ -119,12 +121,6 @@ export default function LoginForm() {
                >
                   Sign in
                </button>
-               <h1 className="text-[0.875] font-[400] text-[#475467] text-center pt-1 md:pt-3">
-                  Doenst have an account ? 
-                  <span className="text-[#02ABF3] hover:underline">
-                     <Link href={"/auth/signup"}> Sign Up</Link>{" "}
-                  </span>
-               </h1>
             </div>
          </form>
       </section>

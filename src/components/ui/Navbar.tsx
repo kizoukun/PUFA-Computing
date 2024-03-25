@@ -47,7 +47,7 @@ export default function Navbar() {
             },
             {
                title: "Projects",
-               href: "/",
+               href: "/projects",
             },
          ],
       },

@@ -15,12 +15,11 @@ export default async function EventSection() {
 
    const today: Date = new Date();
 
-   // 2 Highlighted Closest Events either upcoming or open
    const upcomingEvents = events
-   .filter(event => new Date(event.end_date) >= today)
-   .sort((a, b) => new Date(a.end_date).getTime() - new Date(b.end_date).getTime())
-   .slice(0,2);
-
+   .filter(event => new Date(event.start_date) >= today)
+   .sort((a, b) => new Date(a.start_date).getTime() - new Date(b.start_date).getTime())
+   .slice(0, 2);
+      
    const completedEvents = events
    .filter(event => new Date(event.end_date) < today)
    // Mengambil tiga acara yang paling baru berakhir

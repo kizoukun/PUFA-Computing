@@ -8,10 +8,15 @@ import PageHeading from "@/components/PageHeading";
 export default function NewsPage() {
    return (
       <div>
-         <div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4" role="alert">
-            <p className="font-bold">Under Construction!</p>
-            <p>This page is currently under construction. Stay tuned for updates.</p>
-         </div>
+         {/* <section className="flex flex-col bg-[#F2F2F2] px-[5rem] py-[2rem] md:px-[10rem]">
+            <div className="border-l-4 border-[#FF6F22] pl-8">
+               <h1 className="text-[2rem] font-[600]">Computing News</h1>
+               <h1 className="text-[0.8rem]">
+                  The latest news about research, technology, achievements, and
+                  campus life.
+               </h1>
+            </div>
+         </section> */}
          <PageHeading
             title="Computing News"
             description="The latest news about research, technology, achievements, and campus life."
