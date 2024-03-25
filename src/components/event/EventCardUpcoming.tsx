@@ -17,7 +17,7 @@ export default function EventCardUpcoming({ events }: { events: Event[] }) {
          {events.map((event, index) => (
             <div
                key={index}
-               className="flex max-w-[35rem] gap-4 rounded-lg border border-[#E50D0D] shadow-lg duration-300 hover:border-transparent"
+               className="flex max-w-[35rem] gap-4 rounded-lg border shadow-lg duration-300 hover:border-transparent border-animation"
             >
                <div className="relative h-[300px] w-[250px] scale-110 overflow-hidden rounded-lg bg-[#E50D0D]">
                   <Image
