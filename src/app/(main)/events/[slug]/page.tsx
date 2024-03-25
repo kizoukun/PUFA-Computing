@@ -80,7 +80,6 @@ const EventDetailsPage: React.FC<{ params: { slug: string } }> = ({
       }
    };
 
-
    const handleBack = () => {
       router.push("/events");
    };

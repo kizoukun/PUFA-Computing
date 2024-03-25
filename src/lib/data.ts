@@ -28,23 +28,23 @@ export const StudyProgramData = [
 export const FaqData = [
    {
       status: "open",
-      title: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo",
+      title: "What is PUFA Computing?",
       content:
-         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo",
+         "(President University Faculty Association) Is the new association of the faculty of computing and stands as a faculty BEM. PUFA is The new Rectorate decree has stated that every faculty has to have their own association and all major has to have their own PUMA. PUFA Computing acts as the highest association in the computing faculty and as a supervisor for all of the PUMA under PUFA Computing.",
    },
    {
-      title: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo",
+      title: "Why is there is no more PUMA Computing?",
       content:
-         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo",
+         "Now PUMA Computing has been separated into 2 different organizations, which are PUMA Informatics and PUMA IS.",
    },
    {
-      title: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo",
+      title: "How many majors are there in the faculty of computing?",
       content:
-         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo",
+         "There are 4 majors in the faculty of computing at president university, which consist of Informatics, Information System, Visual Communication Design, and Interior Design.",
    },
    {
-      title: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo",
+      title: "How many divisions are there in PUFA Computing?",
       content:
-         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo",
+         "There are 9 divisions in our organizational structure including: Board of Directors, External Relations, Internal Relations, Student Development and Competition, Research and Technology, Communication and Multimedia, Art and Sport, Student Welfare Advocacy, Entrepreneurship.",
    },
 ];

@@ -1,20 +1,7 @@
-"use client"
-import React, { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { redirect } from 'next/navigation';
 
 const Page = () => {
-  const router = useRouter();
-
-  useEffect(() => {
-    
-    router.push('/dashboard/profile');
-  }, [router]);
-
-  return (
-    <div>
-      
-    </div>
-  );
+  return redirect('/dashboard/profile');
 };
 
 export default Page;

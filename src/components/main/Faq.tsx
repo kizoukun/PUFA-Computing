@@ -45,7 +45,7 @@ export default function Faq({ title, content, status }: FaqProps) {
          </summary>
 
          {/* Answer content for the FAQ */}
-         <p className="mt-4 px-4 leading-relaxed text-[#6B7280] ">{content}</p>
+         <p className="mt-4 px-4 leading-relaxed text-[#6B7280] text-justify">{content}</p>
       </details>
    );
 }
