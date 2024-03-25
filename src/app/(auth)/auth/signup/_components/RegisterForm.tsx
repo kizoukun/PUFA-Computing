@@ -5,7 +5,6 @@ import Swal from "sweetalert2";
 import { AxiosError, AxiosResponse } from "axios";
 import User from "@/models/user";
 import Seperator from "@/components/Seperator";
-import Link from "next/link";
 
 // Type for error response
 type ErrorResponse = {
@@ -44,101 +43,101 @@ export default function RegisterForm() {
    };
 
    // Event handler for registration
-   const HandleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
+const HandleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
+   e.preventDefault();
 
-      const formData = new FormData(e.target as HTMLFormElement);
+   const formData = new FormData(e.target as HTMLFormElement);
 
-      setError("");
-      const email = formData.get("email") as string;
-      const password = formData.get("password") as string;
-      const studentId = formData.get("studentId") as string;
+   setError("");
+   const email = formData.get("email") as string;
+   const password = formData.get("password") as string;
+   const studentId = formData.get("studentId") as string;
 
-      // Check if the entered email is valid
-      if (!isEmailValid(email)) {
-         await Swal.fire({
-            icon: "error",
-            title: "Invalid Email",
-            text: "Please enter a valid email address",
-         });
-         return;
-      }
-      // Check if the password valid
-      if (!isPasswordValid(password)) {
-         await Swal.fire({
-            icon: "error",
-            title: "Invalid Password",
-            text: "Password must be at least 8 characters long and contain at least 1 numeric digit.",
-         });
-         return;
-      }
+   // Check if the entered email is valid
+   if (!isEmailValid(email)) {
+      await Swal.fire({
+         icon: "error",
+         title: "Invalid Email",
+         text: "Please enter a valid email address",
+      });
+      return;
+   }
+   // Check if the password valid
+   if (!isPasswordValid(password)) {
+      await Swal.fire({
+         icon: "error",
+         title: "Invalid Password",
+         text: "Password must be at least 8 characters long and contain at least 1 numeric digit.",
+      });
+      return;
+   }
 
-      // Check if the selected role is Computizen and if the student ID is valid
-      if (SelectedRole === "Student" && !isStudentIdValid(studentId)) {
+   // Check if the selected role is Computizen and if the student ID is valid
+   if (SelectedRole === "Student" && !isStudentIdValid(studentId)) {
+      await Swal.fire({
+         icon: "error",
+         title: "Invalid Student ID",
+         text: "Student ID must be 12 digits long and start with 3 digits of major, 4 digits of batch, 5 digits of id",
+      });
+      return;
+   }
+
+   // Additional validation for Computizen role
+   if (SelectedRole === "Student") {
+      const batchPrefix = studentId.substr(0, 3);
+      const allowedBatchPrefixes = ["001", "012", "013", "025"];
+      if (!allowedBatchPrefixes.includes(batchPrefix)) {
          await Swal.fire({
             icon: "error",
             title: "Invalid Student ID",
-            text: "Student ID must be 12 digits long and start with 3 digits of major, 4 digits of batch, 5 digits of id",
+            text: "You are not eligible to register as a Computizen",
          });
          return;
       }
+   }
 
-      // Additional validation for Computizen role
-      if (SelectedRole === "Student") {
-         const batchPrefix = studentId.substr(0, 3);
-         const allowedBatchPrefixes = ["001", "012", "013", "025"];
-         if (!allowedBatchPrefixes.includes(batchPrefix)) {
-            await Swal.fire({
-               icon: "error",
-               title: "Invalid Student ID",
-               text: "You are not eligible to register as a Computizen",
-            });
+   try {
+      // Construct user object based on form data
+      const user: User = {
+         username: `${formData.get("firstName") as string}.${formData.get("lastName") as string}`.toLowerCase(),
+         first_name: formData.get("firstName") as string,
+         last_name: formData.get("lastName") as string,
+         email: email,
+         password: password,
+         student_id: studentId,
+         year: formData.get("batch") as string,
+      };
+
+      const response = await Register(user);
+      console.log("API Response:", response);
+
+      // Show success message
+      await Swal.fire({
+         icon: "success",
+         title: "Register Success",
+         text: "You are now registered",
+         showConfirmButton: false,
+         timer: 2000,
+      }).then(() => {
+         window.location.href = "/auth/signin";
+      });
+      
+   } catch (error) {
+      // Handle errors here
+      if (error instanceof AxiosError) {
+         if (error.code === "ERR_NETWORK") {
+            setError("Network Error");
             return;
          }
+         const ErrorResponse = error?.response?.data as ErrorResponse;
+         if (!ErrorResponse.success)
+            setError(ErrorResponse.message ?? "Failed to Register");
+      } else {
+         setError("Register failed");
       }
+   }
+};
 
-      try {
-         // Construct user object based on form data
-         const user: User = {
-            username: `${formData.get("firstName") as string}.${
-               formData.get("lastName") as string
-            }`.toLowerCase(),
-            first_name: formData.get("firstName") as string,
-            last_name: formData.get("lastName") as string,
-            email: email,
-            password: password,
-            student_id: studentId,
-            year: formData.get("batch") as string,
-         };
-
-         const response = await Register(user);
-         console.log("API Response:", response);
-
-         // Show success message
-         await Swal.fire({
-            icon: "success",
-            title: "Register Success",
-            text: "You are now registered",
-            showConfirmButton: false,
-            timer: 2000,
-         }).then(() => {
-            window.location.href = "/auth/signin";
-         });
-      } catch (error) {
-         // Handle errors here
-         if (error instanceof AxiosError) {
-            if (error.code === "ERR_NETWORK") {
-               setError("Network Error");
-               return;
-            }
-            const ErrorResponse = error?.response?.data as ErrorResponse;
-            if (!ErrorResponse.success)
-               setError(ErrorResponse.message ?? "Failed to Register");
-         } else {
-            setError("Register failed");
-         }
-      }
-   };
 
    return (
       <section className="mx-auto max-w-6xl rounded-md bg-white bg-opacity-40 p-6 shadow-md">
@@ -241,14 +240,14 @@ export default function RegisterForm() {
                            name="RoleOption"
                            value="Institution"
                            id="Institution"
-                           className="peer hidden cursor-not-allowed disabled:opacity-50"
+                           className="peer hidden disabled:opacity-50 cursor-not-allowed"
                            checked={SelectedRole === "Institution"}
                            onChange={HandleRoleChange}
                            disabled
                         />
                         <label
                            htmlFor="Institution"
-                           className="flex cursor-not-allowed items-center justify-center rounded-md border border-gray-100 bg-white px-5  py-3 text-gray-500 hover:border-gray-200 disabled:opacity-50 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+                           className="flex items-center justify-center rounded-md border border-gray-100 bg-white px-5 py-3  hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white disabled:opacity-50 text-gray-500 cursor-not-allowed"
                         >
                            <p className="text-sm font-medium">Institution</p>
                         </label>
@@ -310,12 +309,6 @@ export default function RegisterForm() {
                   Register
                </button>
             </div>
-            <h1 className="pt-1 text-center font-[400] text-[#475467] text-[0.875] md:pt-3">
-               Already have an account?
-               <span className="text-[#02ABF3] hover:underline">
-                  <Link href={"/auth/signin"}> Sign In</Link>{" "}
-               </span>
-            </h1>
          </form>
       </section>
    );
