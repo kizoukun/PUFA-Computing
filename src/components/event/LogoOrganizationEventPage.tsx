@@ -27,11 +27,11 @@ interface LogoOrganizationEventPageProps {
 export default function LogoOrganizationEventPage({
    image,
    title,
-   link
+   link,
 }: LogoOrganizationEventPageProps) {
    return (
       <Link href={`${link}`}>
-         <div className="flex flex-col items-center justify-center gap-5 hover:scale-110 duration-300 hover:shadow-2xl">
+         <div className="flex flex-col items-center justify-center gap-5 duration-300 hover:scale-110 hover:drop-shadow-2xl">
             <div className="h-[100px] w-[100px] rounded-xl bg-transparent">
                <img
                   className="h-full w-full rounded-lg object-cover"

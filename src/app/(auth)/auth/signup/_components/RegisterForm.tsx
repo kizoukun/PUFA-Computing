@@ -4,6 +4,8 @@ import { Register } from "@/services/api/auth";
 import Swal from "sweetalert2";
 import { AxiosError, AxiosResponse } from "axios";
 import User from "@/models/user";
+import Seperator from "@/components/Seperator";
+import Link from "next/link";
 
 // Type for error response
 type ErrorResponse = {
@@ -15,13 +17,15 @@ type ErrorResponse = {
 // RegisterForm component
 export default function RegisterForm() {
    // State variables
-   const [selectedRole, setSelectedRole] = useState("Student");
+   const [SelectedRole, setSelectedRole] = useState("Student");
    const [error, setError] = useState("");
 
    // validation/regex
    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-   const studentIdRegex = /^\d{11,}$/;
+
+   // Student ID format is 3 digits 001 and 9 digits 123456789
+   const studentIdRegex = /^[0-9]{3}[0-9]{9}$/;
 
    // Function to check
    const isEmailValid = (email: string) => {
@@ -35,12 +39,12 @@ export default function RegisterForm() {
    };
 
    // Event handler for role change
-   const handleRoleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+   const HandleRoleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       setSelectedRole(e.target.value);
    };
 
    // Event handler for registration
-   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
+   const HandleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
       const formData = new FormData(e.target as HTMLFormElement);
@@ -52,7 +56,7 @@ export default function RegisterForm() {
 
       // Check if the entered email is valid
       if (!isEmailValid(email)) {
-         Swal.fire({
+         await Swal.fire({
             icon: "error",
             title: "Invalid Email",
             text: "Please enter a valid email address",
@@ -61,48 +65,65 @@ export default function RegisterForm() {
       }
       // Check if the password valid
       if (!isPasswordValid(password)) {
-         Swal.fire({
+         await Swal.fire({
             icon: "error",
             title: "Invalid Password",
             text: "Password must be at least 8 characters long and contain at least 1 numeric digit.",
          });
          return;
       }
-      if (!isStudentIdValid(studentId)) {
-         Swal.fire({
+
+      // Check if the selected role is Computizen and if the student ID is valid
+      if (SelectedRole === "Student" && !isStudentIdValid(studentId)) {
+         await Swal.fire({
             icon: "error",
             title: "Invalid Student ID",
-            text: "Student ID must be at least 12 characters long and contain numeric digit.",
+            text: "Student ID must be 12 digits long and start with 3 digits of major, 4 digits of batch, 5 digits of id",
          });
          return;
+      }
+
+      // Additional validation for Computizen role
+      if (SelectedRole === "Student") {
+         const batchPrefix = studentId.substr(0, 3);
+         const allowedBatchPrefixes = ["001", "012", "013", "025"];
+         if (!allowedBatchPrefixes.includes(batchPrefix)) {
+            await Swal.fire({
+               icon: "error",
+               title: "Invalid Student ID",
+               text: "You are not eligible to register as a Computizen",
+            });
+            return;
+         }
       }
 
       try {
          // Construct user object based on form data
          const user: User = {
+            username: `${formData.get("firstName") as string}.${
+               formData.get("lastName") as string
+            }`.toLowerCase(),
             first_name: formData.get("firstName") as string,
             last_name: formData.get("lastName") as string,
-            email,
-            password: formData.get("password") as string,
-            student_id:
-               selectedRole === "Student"
-                  ? (formData.get("studentId") as string)
-                  : undefined,
-            year:
-               selectedRole === "Student"
-                  ? (formData.get("batch") as string)
-                  : undefined,
-            institution:
-               selectedRole === "Institution"
-                  ? (formData.get("institution") as string)
-                  : undefined,
+            email: email,
+            password: password,
+            student_id: studentId,
+            year: formData.get("batch") as string,
          };
 
-         // Send registration request
-         const res: AxiosResponse = await Register(user);
+         const response = await Register(user);
+         console.log("API Response:", response);
 
-         // Handle the response or perform any necessary actions here
-         console.log(res); // You can log the response or update your UI accordingly
+         // Show success message
+         await Swal.fire({
+            icon: "success",
+            title: "Register Success",
+            text: "You are now registered",
+            showConfirmButton: false,
+            timer: 2000,
+         }).then(() => {
+            window.location.href = "/auth/signin";
+         });
       } catch (error) {
          // Handle errors here
          if (error instanceof AxiosError) {
@@ -110,9 +131,9 @@ export default function RegisterForm() {
                setError("Network Error");
                return;
             }
-            const errorResponse = error?.response?.data as ErrorResponse;
-            if (!errorResponse.success)
-               setError(errorResponse.message ?? "Failed to Register");
+            const ErrorResponse = error?.response?.data as ErrorResponse;
+            if (!ErrorResponse.success)
+               setError(ErrorResponse.message ?? "Failed to Register");
          } else {
             setError("Register failed");
          }
@@ -120,18 +141,38 @@ export default function RegisterForm() {
    };
 
    return (
-      <div>
-         <form onSubmit={handleRegister} className="w-full max-w-md">
+      <section className="mx-auto max-w-6xl rounded-md bg-white bg-opacity-40 p-6 shadow-md">
+         <div>
+            <div className="flex flex-col items-center justify-between md:flex-row">
+               <div className="mb-4 text-[#353535] md:mb-0 md:mr-10">
+                  <p className="text-center text-base font-normal md:text-left md:text-lg">
+                     Hello, Computizens!
+                  </p>
+                  <p className="text-lg font-semibold md:text-lg">
+                     Let’s Create an Account
+                  </p>
+               </div>
+               <div className="flex space-x-2">
+                  <img
+                     src="../logo/PUFA_Computing.png"
+                     alt="PUFA Computing Logo"
+                     className="h-12 w-12 md:h-16 md:w-16"
+                  />
+                  <img
+                     src="../PU.png"
+                     alt="PU Logo"
+                     className="h-12 w-12 md:h-16 md:w-16"
+                  />
+               </div>
+            </div>
+            <div className="my-4">
+               <div className="border-t border-[#D1D5DB]"></div>
+            </div>
+         </div>
+         <form onSubmit={HandleRegister} className="w-full max-w-md">
             {/* Name */}
-            <div className="relative mt-8 flex items-center gap-2">
-               <div>
-                  <label
-                     htmlFor="firstName"
-                     className="block text-left capitalize text-white "
-                  >
-                     {" "}
-                     first name
-                  </label>
+            <div className="mb-4 md:flex md:space-x-2">
+               <div className="md:w-1/2">
                   <input
                      type="text"
                      className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
@@ -140,13 +181,7 @@ export default function RegisterForm() {
                      required
                   />
                </div>
-               <div>
-                  <label
-                     htmlFor="lastName"
-                     className="capitalilze block text-left text-white"
-                  >
-                     last name
-                  </label>
+               <div className="md:w-1/2">
                   <input
                      type="text"
                      className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
@@ -158,10 +193,7 @@ export default function RegisterForm() {
             </div>
 
             {/* Email */}
-            <div className="mt-2">
-               <label htmlFor="email" className="block text-left text-white ">
-                  Email
-               </label>
+            <div className="mb-4">
                <input
                   type="text"
                   className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
@@ -172,13 +204,7 @@ export default function RegisterForm() {
             </div>
 
             {/* Password */}
-            <div className="mt-2">
-               <label
-                  htmlFor="password"
-                  className="block text-left text-white "
-               >
-                  Password
-               </label>
+            <div className="mb-4">
                <input
                   type="password"
                   className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
@@ -191,12 +217,6 @@ export default function RegisterForm() {
             <div>
                {/* Choose */}
                <div className="mt-2">
-                  <label
-                     htmlFor="password"
-                     className="block text-left capitalize text-white"
-                  >
-                     Choose your role
-                  </label>
                   <div className="relative mt-4 flex items-center justify-center gap-2">
                      <div className="flex-grow">
                         <input
@@ -205,14 +225,14 @@ export default function RegisterForm() {
                            value="Student"
                            id="Student"
                            className="peer hidden"
-                           checked={selectedRole === "Student"}
-                           onChange={handleRoleChange}
+                           checked={SelectedRole === "Student"}
+                           onChange={HandleRoleChange}
                         />
                         <label
                            htmlFor="Student"
                            className="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-5 py-3 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
                         >
-                           <p className="text-sm font-medium">Computizens</p>
+                           <p className="text-sm font-medium">Computizen</p>
                         </label>
                      </div>
                      <div className="flex-grow">
@@ -221,13 +241,14 @@ export default function RegisterForm() {
                            name="RoleOption"
                            value="Institution"
                            id="Institution"
-                           className="peer hidden"
-                           checked={selectedRole === "Institution"}
-                           onChange={handleRoleChange}
+                           className="peer hidden cursor-not-allowed disabled:opacity-50"
+                           checked={SelectedRole === "Institution"}
+                           onChange={HandleRoleChange}
+                           disabled
                         />
                         <label
                            htmlFor="Institution"
-                           className="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-5 py-3 text-gray-900 hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
+                           className="flex cursor-not-allowed items-center justify-center rounded-md border border-gray-100 bg-white px-5  py-3 text-gray-500 hover:border-gray-200 disabled:opacity-50 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
                         >
                            <p className="text-sm font-medium">Institution</p>
                         </label>
@@ -236,19 +257,13 @@ export default function RegisterForm() {
                </div>
 
                {/* Student ID */}
-               {selectedRole === "Student" && (
+               {SelectedRole === "Student" && (
                   <div className="mt-2">
-                     <label
-                        htmlFor="studentId"
-                        className="block text-left text-white"
-                     >
-                        Student ID
-                     </label>
                      <input
                         type="text"
                         inputMode="numeric"
                         className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
-                        placeholder="0110333333"
+                        placeholder="Student ID"
                         name="studentId"
                         required
                      />
@@ -256,18 +271,12 @@ export default function RegisterForm() {
                )}
 
                {/* Batch */}
-               {selectedRole === "Student" && (
+               {SelectedRole === "Student" && (
                   <div className="mt-2">
-                     <label
-                        htmlFor="Batch"
-                        className="block text-left text-white"
-                     >
-                        Batch
-                     </label>
                      <input
                         type="number"
                         className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
-                        placeholder="2024"
+                        placeholder="Batch"
                         name="batch"
                         required
                      />
@@ -277,14 +286,8 @@ export default function RegisterForm() {
 
             {/* Institution */}
             <div>
-               {selectedRole != "Student" && (
+               {SelectedRole != "Student" && (
                   <div className="mt-2">
-                     <label
-                        htmlFor="institution"
-                        className="block text-left text-white"
-                     >
-                        Name Of Institution
-                     </label>
                      <input
                         type="text"
                         className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
@@ -307,7 +310,13 @@ export default function RegisterForm() {
                   Register
                </button>
             </div>
+            <h1 className="pt-1 text-center font-[400] text-[#475467] text-[0.875] md:pt-3">
+               Already have an account?
+               <span className="text-[#02ABF3] hover:underline">
+                  <Link href={"/auth/signin"}> Sign In</Link>{" "}
+               </span>
+            </h1>
          </form>
-      </div>
+      </section>
    );
 }

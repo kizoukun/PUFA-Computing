@@ -1,12 +1,17 @@
 import axios from "axios";
-
-const API_URL = "http://api.irfansaf.com/api/v1/user";
+import { API_EVENT, API_USER } from "@/config/config";
+import Event from "@/models/event";
 
 // User
 export async function GetUserProfile() {
    try {
-      const response = await axios.get(`${API_URL}/:id`);
-      return response.data;
+      const id = localStorage.getItem("userId");
+      const response = await axios.get(`${API_USER}/${id}`, {
+         headers: {
+            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+         },
+      });
+      return response.data?.data;
    } catch (error) {
       console.log(error);
       throw error;
@@ -15,8 +20,8 @@ export async function GetUserProfile() {
 
 export async function UpdateUserProfile() {
    try {
-      const response = await axios.put(`${API_URL}/user/update`);
-      return response.data;
+      const response = await axios.put(`${API_USER}/update`);
+      return response.data.data;
    } catch (error) {
       console.log(error);
       throw error;
@@ -25,8 +30,8 @@ export async function UpdateUserProfile() {
 
 export async function DeleteUserProfile() {
    try {
-      const response = await axios.delete(`${API_URL}/user/delete`);
-      return response.data;
+      const response = await axios.delete(`${API_USER}/delete`);
+      return response.data.data;
    } catch (error) {
       console.log(error);
       throw error;
@@ -35,8 +40,8 @@ export async function DeleteUserProfile() {
 
 export async function Logout() {
    try {
-      const response = await axios.post(`${API_URL}/logout`);
-      return response.data;
+      const response = await axios.post(`${API_USER}`);
+      return response.data.data;
    } catch (error) {
       console.log(error);
       throw error;
@@ -46,10 +51,34 @@ export async function Logout() {
 // Admin
 export async function GetUser() {
    try {
-      const response = await axios.get(`${API_URL}/user`);
-      return response.data;
+      const response = await axios.get(`${API_USER}`);
+      return response.data.data;
    } catch (error) {
       console.log(error);
+      throw error;
+   }
+}
+
+/** Fetches the events that the user has registered for from the API.
+ * @param {string} userId The ID of the user to fetch events for.
+ * @returns {Promise<Event[]>} A promise that resolves to an array of Event objects.
+ * @throws {Error} If an error occurs during the API request.
+ */
+export async function fetchUserEvents(userId: string): Promise<Event[]> {
+   try {
+      const token = localStorage.getItem("access_token");
+      if (!token) {
+         throw new Error("No access token found");
+      }
+
+      const response = await axios.get(`${API_USER}/registered-events`, {
+         headers: {
+            Authorization: `Bearer ${token}`,
+         },
+      });
+      return response.data?.data || [];
+   } catch (error) {
+      console.error("Error fetching user events", error);
       throw error;
    }
 }

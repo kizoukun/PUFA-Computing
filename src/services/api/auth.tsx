@@ -1,18 +1,57 @@
-import axios, { AxiosResponse } from "axios";
-import User from "../../models/user";
+import axios from 'axios';
+import { API_LOGIN, API_LOGOUT, API_REGISTER } from "@/config/config";
+import User from "@/models/user";
 
-import { API_LOGIN } from "@/config/config";
-import { API_REGISTER } from "@/config/config";
-
-export async function Login(username: string, password: string): Promise<AxiosResponse> {
-   return axios.post(`${API_LOGIN}`, {
+export const Login = async (username: string, password: string) => {
+   const data = {
       username,
       password,
-   });
+   };
+   try {
+      const response = await axios.post(API_LOGIN, data, {withCredentials: true});
+      console.log(response.data)
+      return response.data;
+   } catch (error) {
+      console.error("Failed to Login", error);
+      throw error;
+   }
 }
 
-export async function Register(user: User): Promise<AxiosResponse> {
-   return axios.post(`${API_REGISTER}`, {
-      user,
-   });
+export const Logout = async () => {
+   try {
+      const response = await axios.post(API_LOGOUT, {}, {
+         withCredentials: true,
+         headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem('access_token') || ''
+         }
+      });
+      return response.data;
+   } catch (error) {
+      console.error('Failed to Logout', error);
+      throw error;
+   }
+};
+
+export const Register = async (user: User) => {
+   try {
+      const response = await axios.post(API_REGISTER, {
+         username: user.username,
+         first_name: user.first_name,
+         last_name: user.last_name,
+         email: user.email,
+         password: user.password,
+         role_id: user.role_id,
+         student_id: user.student_id,
+         year: user.year,
+
+      }, {withCredentials: true});
+      return response.data;
+   } catch (error) {
+      console.error("Failed to Register", error);
+      throw error;
+   }
 }
+
+export default Login;

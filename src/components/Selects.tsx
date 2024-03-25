@@ -9,10 +9,16 @@ interface SelectsProps {
    htmlFor: string;
 }
 
-const Selects: React.FC<SelectsProps> = ({ defaults, options, label, htmlFor }) => {
+const Selects: React.FC<SelectsProps> = ({
+                                            defaults,
+                                            options,
+                                            label,
+                                            htmlFor,
+                                         }) => {
    const selectProps = {
       isClearable: true,
       isSearchable: true,
+      inputId: htmlFor,
    };
 
    const defaultValues = options.filter((option) =>
@@ -27,7 +33,7 @@ const Selects: React.FC<SelectsProps> = ({ defaults, options, label, htmlFor }) 
          <Select
             className="w-full rounded-md"
             classNamePrefix="select"
-            defaultValue={defaultValues}
+            value={defaultValues}
             {...selectProps}
             name="color"
             options={options}

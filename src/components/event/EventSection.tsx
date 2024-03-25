@@ -1,28 +1,42 @@
-import React, { useEffect, useState } from "react";
 import { fetchEvents } from "@/services/api/event";
 import Link from "next/link";
 import Button from "@/components/Button";
 import EventCardUpcoming from "@/components/event/EventCardUpcoming";
 import EventCardCompleted from "@/components/event/EventCardCompleted";
+import EventCardMobile from "./EventCardMobile";
+
+export const revalidate = 0;
+export const dynamic = "force-dynamic";
 
 export default async function EventSection() {
    const events = await fetchEvents();
 
-   return (
-      <div className="">
-         <div>
-            <EventCardUpcoming events={events} />
-         </div>
-         <EventCardCompleted events={events} />
+   if (!events) return <div>Failed to fetch data...</div>;
 
-         {/* button */}
-         <div className="mt-4 flex items-center justify-center">
-            <Link href="/events" className="block w-max">
-               <Button className="border-[#E50D0D] px-10 py-2 text-[#E50D0D] hover:bg-[#E50D0D] hover:text-white">
-                  See all Events
-               </Button>
-            </Link>
+   const today: Date = new Date();
+
+   // 2 Highlighted Closest Events either upcoming or open
+   const upcomingEvents = events
+   .filter(event => new Date(event.end_date) >= today)
+   .sort((a, b) => new Date(a.end_date).getTime() - new Date(b.end_date).getTime())
+   .slice(0,2);
+
+   const completedEvents = events
+   .filter(event => new Date(event.end_date) < today)
+   // Mengambil tiga acara yang paling baru berakhir
+   .sort((a, b) => new Date(b.end_date).getTime() - new Date(a.end_date).getTime())
+   .slice(0,3);
+
+   return (
+      <div>
+         <div className="hidden md:block">
+            <EventCardUpcoming events={upcomingEvents} />
          </div>
+         <div className="block md:hidden px-[1rem]">
+            <EventCardMobile events ={upcomingEvents}/>
+         </div>
+
+         <EventCardCompleted events={completedEvents} />
       </div>
    );
 }

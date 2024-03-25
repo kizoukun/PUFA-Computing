@@ -3,41 +3,30 @@ import Link from "next/link";
 import Event from "@/models/event";
 
 export default function EventCardCompleted({ events }: { events: Event[] }) {
-   // Filter and sort completed events
-   const completedEvents = events
-      .filter((event) => new Date(event.end_date) < new Date())
-      .sort(
-         (a, b) =>
-            new Date(b.end_date).getTime() - new Date(a.end_date).getTime()
-      )
-      .slice(0, 3); // Limit to 3 completed events
-
+   const truncateDescription = (description: string, maxLength: number) => {
+      if (description.length <= maxLength) {
+         return description;
+      }
+      return description.substring(0, maxLength) + "...";
+   };
    return (
-      <div className="mt- mx-auto grid max-w-5xl grid-cols-1 gap-10 md:grid-cols-3">
-         {completedEvents.map((event) => (
+      <div className="grid scale-90 grid-cols-1 gap-8 md:scale-75 md:grid-cols-3">
+         {events.map((event, index) => (
             <div
-               key={event.id}
-               className="flex flex-col justify-between rounded-md border-2 border-[#E50D0D] bg-white p-2 py-5   text-[#353535] md:p-5"
+               key={index}
+               className="max-w-[25rem] space-y-6 rounded-lg border border-[#E50D0D] p-6"
             >
-               <p className="mt-0.5 pb-1 text-justify text-2xl font-bold">
-                  {event.title}
-               </p>
-               {/* content */}
-               <div className="text-md text-justify font-extralight">
-                  <hr className="border-2 border-[#E50D0D]" />
-                  {event.description}
-               </div>
-               <div className="mt-4 flex flex-wrap justify-between gap-1">
-                  {/* status */}
-                  <div className="whitespace-nowrap rounded-full border border-[#E50D0D] bg-white px-2.5 py-0.5 text-xs text-[#E50D0D]">
-                     {event.status}
+               <h1 className="text-[1.2rem] font-[600]">{event.title}</h1>
+               <p className="text-justify text-sm md:text-base">
+                  {truncateDescription(event.description, 150)}{" "}
+               </p>{" "}
+               <div className="flex justify-between">
+                  <div className="rounded-2xl border-2 border-[#E50D0D] px-4">
+                     <h1 className="text-[0.8rem] text-[#E50D0D]">
+                        {event.status}
+                     </h1>
                   </div>
-                  <Link
-                     href={event.link}
-                     className="hover:bg group inline-flex items-center gap-1 text-sm font-medium text-black"
-                  >
-                     Read more
-                  </Link>
+                  <Link href={`/events/${event.slug}`}>Read More</Link>
                </div>
             </div>
          ))}

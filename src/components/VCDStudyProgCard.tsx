@@ -17,8 +17,10 @@ export default function VCDStudyProgCard({
          <p className="text-2xl md:text-base">{title}</p>
          <hr className="mx-auto mb-12 mt-4 w-16 border border-[#3C99DC]" />
          {/* Hide the article on small screens (mobile) */}
-         <p className="my-16 hidden md:block">{article}</p>
-         <Button className="mx-auto my-4 w-max">See Details</Button>
+         <p className="my-[52px] hidden md:block">{article}</p>
+         <Link href={link || "/"}>
+            <Button className="mx-auto my-4 w-max">See Details</Button>
+         </Link>
       </div>
    );
 }
