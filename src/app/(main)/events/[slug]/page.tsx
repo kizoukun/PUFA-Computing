@@ -55,7 +55,7 @@ const EventDetailsPage: React.FC<{ params: { slug: string } }> = ({
 
          const accessToken = localStorage.getItem("access_token");
          if (!accessToken) {
-            console.error("Access token not found");
+            router.push("/auth/signin");
             return;
          }
 
@@ -71,6 +71,7 @@ const EventDetailsPage: React.FC<{ params: { slug: string } }> = ({
          );
 
          if (response.status === 200) {
+            router.push("/dashboard/events");
             console.log("Registration successful!");
          } else {
             console.error("Registration failed:", response.statusText);
