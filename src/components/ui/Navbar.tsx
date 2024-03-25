@@ -250,6 +250,10 @@ export default function Navbar() {
                </div>
             </div>
          </div>
+         {/*Alpha Version Tag*/}
+         <div className="bg-[#FF6F22] text-white text-center text-sm py-1">
+            <span className="font-bold">Warning:</span> This is the version Alpha 0.6.2, your data will be deleted on 27-04-2024
+         </div>
       </header>
    );
 }
