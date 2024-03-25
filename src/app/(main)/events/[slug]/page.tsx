@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { fetchEventBySlug } from "@/services/api/event";
@@ -8,6 +8,8 @@ import Events from "@/models/event";
 import Link from "next/link";
 import { IoIosArrowForward } from "react-icons/io";
 import Seperator from "@/components/Seperator";
+import { API_EVENT } from "@/config/config";
+import axios, { AxiosResponse } from "axios";
 
 const description = (description: string) => {
    const lines = description.split("\n");
@@ -44,9 +46,33 @@ const EventDetailsPage: React.FC<{ params: { slug: string } }> = ({
       }
    }, [slug, router]);
 
-   const handleRegister = () => {
-      //TODO: Implement registration logic
+   const handleRegister = async () => {
+      try {
+         if (!event) {
+            console.error("Event is undefined");
+            return;
+         }
+         
+         const response: AxiosResponse<any, any> = await axios.post(
+            `${API_EVENT}/${event.id}/register`,
+            {
+               headers: {
+                  "Content-Type": "application/json",
+                  "Authorization": `Bearer ${localStorage.getItem("access_token")}`
+               }
+            }
+         );
+   
+         if (response.status === 200) {
+            console.log("Registration successful!");
+         } else {
+            console.error("Registration failed:", response.statusText);
+         }
+      } catch (error) {
+         console.error("Error registering for event:", error);
+      }
    };
+   
 
    const handleBack = () => {
       router.push("/events");
@@ -91,7 +117,7 @@ const EventDetailsPage: React.FC<{ params: { slug: string } }> = ({
             </div>
 
             {/* card details event  */}
-            <div className="w-full md:w-auto max-h-4xl rounded-lg border border-[#CBCBCB] text-[#353535]">
+            <div className="max-h-4xl w-full rounded-lg border border-[#CBCBCB] text-[#353535] md:w-auto">
                <h1 className="px-5 py-2 text-[1.5rem] font-[600]">
                   {event.title}
                </h1>
@@ -104,8 +130,11 @@ const EventDetailsPage: React.FC<{ params: { slug: string } }> = ({
                </div>
 
                <div className="flex items-center justify-center pb-5 pt-3 ">
-                  <Button className="w-5/6 border-[#353535] py-2 text-[#353535] hover:bg-[#353535] hover:text-white">
-                     Register Now !
+                  <Button
+                     className="w-5/6 border-[#353535] py-2 text-[#353535] hover:bg-[#353535] hover:text-white"
+                     onClick={handleRegister}
+                  >
+                     Register Now!
                   </Button>
                </div>
             </div>
