@@ -13,8 +13,9 @@ RUN \
    else echo "Lockfile not found." && exit 1; \
    fi
 
-# Install pnpm
+# Install pnpm and add it to PATH
 RUN yarn global add pnpm
+ENV PATH /app/node_modules/.bin:$PATH
 
 # Rebuild the source code only when needed
 FROM base AS builder
