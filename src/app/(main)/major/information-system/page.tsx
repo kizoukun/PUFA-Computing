@@ -76,7 +76,7 @@ export default function StudyProgramPage() {
          <div className="space-y-8">
             <h1 className="font-[600]">About Study Program</h1>
 
-            <h1 className="text-justify leading-7">
+            <h1 className="leading-7 text-justify">
                Information System Study Program has strong connections with
                information science, computer science, business, and technology
                as well as with project management. Bachelor in Information
@@ -118,14 +118,14 @@ export default function StudyProgramPage() {
             <div className="">
                <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
                   <LectureCard
-                     image="/lecture/Information System/Rikip Ginanjar, M.Sc..png"
-                     name="Rikip Ginanjar, M.Sc."
-                     position=""
+                     image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
+                     name="Ir. Rila Mandala, M.Eng., Ph.D."
+                     position="Dean School of Computing"
                   />
                   <LectureCard
-                     image="/lecture/Information System/Ronny Juwono, S.Pd., M.T..png"
-                     name="Ronny Juwono, S.Pd., M.T."
-                     position=""
+                     image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                     name="Cutifa Safitri, Ph.D."
+                     position="Head of Study Programme"
                   />
                </div>
             </div>
@@ -133,8 +133,8 @@ export default function StudyProgramPage() {
 
          <div className="grid grid-cols-1 gap-8 md:grid-cols-5">
             <LectureCard
-               image="/lecture/Information System/Sandy Darmowinoto, B.Sc.(Hons), M.IT..png"
-               name="Sandy Darmowinoto, B.Sc.(Hons), M.IT."
+               image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
+               name="Prof. Dr. Ir. Wiranto Herry Utomo, M.Kom"
             />
             <LectureCard
                image="/lecture/informatics/Cutifa Safitri, Ph.D.png"

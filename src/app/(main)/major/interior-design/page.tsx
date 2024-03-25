@@ -70,7 +70,7 @@ export default function StudyProgramPage() {
          <Image
             width={1280}
             height={500}
-            src={Banner}
+            src={"/"}
             alt={""}
             className="rounded-lg bg-blue-400"
          />
@@ -79,7 +79,7 @@ export default function StudyProgramPage() {
          <div className="space-y-8">
             <h1 className="font-[600]">About Study Program</h1>
 
-            <h1 className="text-justify leading-7">
+            <h1 className="leading-7 text-justify">
                The Interior Design Study Program aims to educate students to
                create a positive influence through both the creative process and
                the engineering process. On how to produce technical design in a

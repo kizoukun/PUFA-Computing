@@ -75,12 +75,12 @@ export default function StudyProgramPage() {
                alt={""}
                className="rounded-lg bg-blue-400"
             />
-
+           
             {/* study program description */}
             <div className="space-y-8">
                <h1 className="font-[600]">About Study Program</h1>
 
-               <h1 className="text-justify leading-7">
+               <h1 className="leading-7 text-justify">
                   Informatics are concerned with issues related to advocating
                   for users and meeting their needs within an organizational and
                   societal context through the selection, creation, application,
@@ -124,12 +124,12 @@ export default function StudyProgramPage() {
                <div className="">
                   <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
                      <LectureCard
-                        image="/lecture/informatics/rila-mandala.png"
+                        image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
                         name="Ir. Rila Mandala, M.Eng., Ph.D."
                         position="Dean School of Computing"
                      />
                      <LectureCard
-                        image="/lecture/informatics/cutifa-safitri.png"
+                        image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
                         name="Cutifa Safitri, Ph.D."
                         position="Head of Study Programme"
                      />
@@ -139,44 +139,57 @@ export default function StudyProgramPage() {
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-5">
                <LectureCard
-                  image="/lecture/informatics/Abdul Ghofir, S.Kom., M.Kom..png"
-                  name="Abdul Ghofir, S.Kom., M.Kom."
+                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
+                  name="Ir. Rila Mandala, M.Eng., Ph.D."
+                  position="Dean School of Computing"
                />
                <LectureCard
                   image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
-                  name="Dr. Andreas Yumarma"
+                  name="Cutifa Safitri, Ph.D."
+                  position="Head of Study Programme"
                />
                <LectureCard
                   image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
                   name="Ir. Rila Mandala, M.Eng., Ph.D."
+                  position="Dean School of Computing"
+               />
+               <LectureCard
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Cutifa Safitri, Ph.D."
+                  position="Head of Study Programme"
                />
                <LectureCard
                   image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
                   name="Cutifa Safitri, Ph.D."
                />
                <LectureCard
-                  image="/lecture/informatics/Ir. Moh. A. Amin Soetomo, M.Sc., DSC.png"
-                  name="Ir. Moh. A. Amin Soetomo, M.Sc., DSC"
-               />
-               <LectureCard
-                  image="/lecture/informatics/Rikip Ginanjar, M.Sc..png"
-                  name="Rikip Ginanjar, M.Sc."
+                  image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
+                  name="Cutifa Safitri, Ph.D."
                />
                <LectureCard
                   image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
                   name="Cutifa Safitri, Ph.D."
+                  position="Head of Study Programme"
                />
                <LectureCard
                   image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
                   name="Ir. Rila Mandala, M.Eng., Ph.D."
+                  position="Dean School of Computing"
                />
                <LectureCard
                   image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
                   name="Cutifa Safitri, Ph.D."
+                  position="Head of Study Programme"
+               />
+               <LectureCard
+                  image="/lecture/informatics/Ir. Rila Mandala, M.Eng., Ph.D..png"
+                  name="Ir. Rila Mandala, M.Eng., Ph.D."
+                  position="Dean School of Computing"
                />
                <LectureCard
                   image="/lecture/informatics/Cutifa Safitri, Ph.D.png"
                   name="Cutifa Safitri, Ph.D."
+                  position="Head of Study Programme"
                />
             </div>
          </section>
