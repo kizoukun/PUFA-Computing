@@ -1,7 +1,7 @@
 import Image from "next/image";
 import BGImage from "@/assets/backgroundimg.png";
 // import AnagataLogo from "@/assets/anagatalogo.svg";
-import ComingSoon from "@/assets/coming_soon.jpg";
+import bghomepage from "@/assets/bghomepage.jpg";
 import Link from "next/link";
 import Button from "@/components/Button";
 import Faq from "@/components/main/Faq";
@@ -41,7 +41,7 @@ export default async function Index() {
                className="mx-auto my-12 h-48 rounded-2xl object-cover md:h-96"
                width={1080}
                height={720}
-               src={ComingSoon}
+               src={bghomepage}
             />
             {/* <img
                className="mx-auto my-5 aspect-video h-48 md:h-96 rounded-2xl"

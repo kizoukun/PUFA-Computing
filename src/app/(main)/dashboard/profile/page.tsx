@@ -1,10 +1,11 @@
-'use client';
+"use client";
 import Button from "@/components/Button";
 import Input from "@/components/Input";
 import React from "react";
 import Seperator from "@/components/Seperator";
 import { GetUserProfile } from "@/services/api/user";
 import User from "@/models/user";
+import Image from "next/image";
 
 export default function DashboardProfilePage() {
    const [loading, setLoading] = React.useState(true);
@@ -55,12 +56,14 @@ export default function DashboardProfilePage() {
                         label="First Name"
                         type="text"
                         placeholder={userData?.first_name}
+                        disabled
                      />
                      <Input
                         htmlFor="last-name"
                         label="Last Name"
                         type="text"
                         placeholder={userData?.last_name}
+                        disabled
                      />
                   </div>
                   <div>
@@ -69,6 +72,7 @@ export default function DashboardProfilePage() {
                         label="Email Address"
                         type="email"
                         placeholder={userData?.email}
+                        disabled
                      />
                   </div>
                   <div>
@@ -90,10 +94,16 @@ export default function DashboardProfilePage() {
                      />
                   </div>
                   <div className="mt-16 flex justify-end space-x-2">
-                     <Button className="border-[#02ABF3] px-8 py-2 text-[#02ABF3] hover:bg-[#02ABF3] hover:text-white">
+                     <Button
+                        disabled
+                        className="border-[#02ABF3] px-8 py-2 text-[#02ABF3] hover:bg-[#02ABF3] hover:text-white"
+                     >
                         Cancel
                      </Button>
-                     <Button className="border-[#02ABF3] bg-[#02ABF3] px-8 py-2 text-white hover:bg-white hover:text-[#02ABF3]">
+                     <Button
+                        disabled
+                        className="border-[#02ABF3] bg-[#02ABF3] px-8 py-2 text-white hover:bg-white hover:text-[#02ABF3]"
+                     >
                         Save
                      </Button>
                   </div>
@@ -110,17 +120,22 @@ export default function DashboardProfilePage() {
                   <div className="mb-4">
                      <div className="flex gap-3">
                         <div className="">
-                           <img
-                              src="https://source.unsplash.com/50x50/?portrait"
+                           <Image
+                              src="/aot.jpg"
                               alt=""
                               className="h-14 w-14 rounded-full"
+                              width={480}
+                              height={240}
                            />
                         </div>
                         <div className="flex flex-col items-start gap-1">
-                           <button className="font-medium">
+                           <button disabled className="font-medium">
                               Edit your photo
                            </button>
-                           <button className="text-[0.9rem] font-light text-gray-600">
+                           <button
+                              disabled
+                              className="text-[0.9rem] font-light text-gray-600"
+                           >
                               Delete
                            </button>
                         </div>
@@ -154,7 +169,7 @@ export default function DashboardProfilePage() {
                            Upload or darg & drop your file SVG, PNG, or JPG.{" "}
                         </p>
 
-                        <input
+                        <input disabled
                            id="dropzone-file"
                            type="file"
                            className="hidden"
@@ -162,7 +177,10 @@ export default function DashboardProfilePage() {
                      </label>
                   </div>
                   <div className="mt-6 flex justify-end space-x-2">
-                     <Button className="border-[#02ABF3] px-8 py-2 text-[#02ABF3] hover:bg-[#02ABF3] hover:text-white">
+                     <Button
+                        disabled
+                        className="border-[#02ABF3] px-8 py-2 text-[#02ABF3] hover:bg-[#02ABF3] hover:text-white"
+                     >
                         Cancel
                      </Button>
                      <Button className="border-[#02ABF3] bg-[#02ABF3] px-8 py-2 text-white hover:bg-white hover:text-[#02ABF3]">
