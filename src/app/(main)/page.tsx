@@ -1,6 +1,5 @@
 import Image from "next/image";
 import BGImage from "@/assets/backgroundimg.png";
-// import AnagataLogo from "@/assets/anagatalogo.svg";
 import bghomepage from "@/assets/bghomepage.jpg";
 import Link from "next/link";
 import Button from "@/components/Button";
