@@ -3,7 +3,7 @@ import { fetchEvents } from "@/services/api/event";
 import LogoOrganizationEventPage from "@/components/event/LogoOrganizationEventPage";
 import PosterCardEventPage from "@/components/event/PosterCardEventPage";
 import { Metadata } from "next";
-import EventCardPageMobile from "@/components/event/EventCardPageMobile";
+import EventCardPageMobile from "@/components/event/EventCardMobile";
 
 export const metadata: Metadata = {
    title: "PUMA Information System Events",

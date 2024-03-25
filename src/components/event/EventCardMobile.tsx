@@ -3,12 +3,17 @@ import Event from "@/models/event";
 import React from "react";
 import Link from "next/link";
 
-export default function EventCardPageMobile({ events }: { events: Event[] }) {
+export default function EventCardMobile({ events }: { events: Event[] }) {
    const truncateDescription = (description: string, maxLength: number) => {
       if (description.length <= maxLength) {
          return description;
       }
       return description.substring(0, maxLength) + "...";
+   };
+   const calculateDaysLeft = (endDate: Date) => {
+      const today = new Date();
+      const differenceInTime = endDate.getTime() - today.getTime();
+      return Math.ceil(differenceInTime / (1000 * 60 * 60 * 24));
    };
    return (
       <div className="mt-16 grid grid-cols-1 gap-16 lg:grid-cols-2">
@@ -23,16 +28,10 @@ export default function EventCardPageMobile({ events }: { events: Event[] }) {
                         width={384}
                         height={256}
                      />
-                     {(+event.end_date - +event.start_date) /
-                        (1000 * 60 * 60 * 24) >
-                        0 && (
-                        <span className="absolute -top-1 right-0 whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-sm text-purple-700">
-                           {`${
-                              (+event.end_date - +event.start_date) /
-                              (1000 * 60 * 60 * 24)
-                           } days left`}
-                        </span>
-                     )}
+
+                     <span className="absolute -top-1 right-0 whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-sm text-purple-700">
+                        {calculateDaysLeft(event.end_date)} days left
+                     </span>
                   </div>
                   <div className="flex flex-col justify-between p-2 md:p-4">
                      <div>

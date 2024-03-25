@@ -21,7 +21,7 @@ export const dynamic = "force-dynamic";
 
 export default async function Index() {
    return (
-      <div className="min-h-screen">
+      <div className="min-h-screen text-[#353535]">
          <div>
             <Image
                src={BGImage}
@@ -102,7 +102,7 @@ export default async function Index() {
                   width="256"
                />
 
-               <div className="flex max-w-[20rem] md:max-w-[38rem] flex-col gap-8 rounded-lg border-2 border-[#1FA820] px-8 py-12">
+               <div className="flex max-w-[20rem] flex-col gap-8 rounded-lg border-2 border-[#1FA820] px-8 py-12 md:max-w-[38rem]">
                   <div className="flex items-center gap-4">
                      <h1 className="text-[1.2rem] font-[600]">
                         ANAGATA CABINET
@@ -140,10 +140,9 @@ export default async function Index() {
             </h1>
 
             <EventSection />
-
-            <button className="rounded-lg border-2 border-[#E50D0D] px-10 py-2 text-[#E50D0D] transition-all duration-300 hover:bg-[#E50D0D] hover:text-white">
-               See all Events
-            </button>
+               <Link href={"/events"} className="rounded-lg border-2 border-[#E50D0D] px-10 py-2 text-[#E50D0D] transition-all duration-300 hover:bg-[#E50D0D] hover:text-white">
+                  See all Events
+               </Link>
          </section>
 
          {/* news */}
@@ -286,4 +285,3 @@ export default async function Index() {
       </div>
    );
 }
-   
