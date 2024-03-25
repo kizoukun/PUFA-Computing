@@ -21,7 +21,7 @@ export const dynamic = "force-dynamic";
 
 export default async function Index() {
    return (
-      <div className="min-h-screen">
+      <div className="min-h-screen text-[#353535]">
          <div>
             <Image
                src={BGImage}
@@ -48,18 +48,25 @@ export default async function Index() {
                src="../member.jpg"
                alt="PUMA Photo"
             /> */}
-            <div className="space-y-6 px-8 text-justify md:px-24">
-               <p className="text-xl">
-                  PUMA Computing is President University Major Association of
-                  Computing. Members of PUMA Computing consist of students from
-                  the IT (Information Technology) and IS (Information System)
-                  majors.
+            <div className="space-y-6 px-8 text-justify md:px-24 text-base md:text-xl">
+               <p>
+                  PUFA Computing stands for President University's Faculty
+                  Association of Computing, serving as a dynamic platform for
+                  students enrolled in diverse majors such as Information
+                  Technology (IT), Information Systems (IS), Visual
+                  Communication Design (VCD), and Interior Design (ID). Our
+                  organization embodies a vibrant community of aspiring
+                  professionals, united by a shared passion for technology,
+                  creativity, and innovation.
                </p>
-               <p className="text-xl">
-                  PUMA Computing is President University Major Association of
-                  Computing. Members of PUMA Computing consist of students from
-                  the IT (Information Technology) and IS (Information System)
-                  majors.
+               <p>
+                  We are committed to fostering a collaborative and inclusive
+                  environment where members can thrive academically,
+                  professionally, and socially. Through a myriad of activities,
+                  workshops, seminars, and networking events, we provide our
+                  members with opportunities to enhance their skills, expand
+                  their knowledge, and forge meaningful connections within their
+                  respective fields.
                </p>
                <Link href="/" className="block w-max">
                   <Button>See Details</Button>
@@ -102,7 +109,7 @@ export default async function Index() {
                   width="256"
                />
 
-               <div className="flex max-w-[20rem] md:max-w-[38rem] flex-col gap-8 rounded-lg border-2 border-[#1FA820] px-8 py-12">
+               <div className="flex max-w-[20rem] flex-col gap-8 rounded-lg border-2 border-[#1FA820] px-8 py-12 md:max-w-[38rem]">
                   <div className="flex items-center gap-4">
                      <h1 className="text-[1.2rem] font-[600]">
                         ANAGATA CABINET
@@ -140,10 +147,12 @@ export default async function Index() {
             </h1>
 
             <EventSection />
-
-            <button className="rounded-lg border-2 border-[#E50D0D] px-10 py-2 text-[#E50D0D] transition-all duration-300 hover:bg-[#E50D0D] hover:text-white">
+            <Link
+               href={"/events"}
+               className="rounded-lg border-2 border-[#E50D0D] px-10 py-2 text-[#E50D0D] transition-all duration-300 hover:bg-[#E50D0D] hover:text-white"
+            >
                See all Events
-            </button>
+            </Link>
          </section>
 
          {/* news */}
@@ -286,4 +295,3 @@ export default async function Index() {
       </div>
    );
 }
-   

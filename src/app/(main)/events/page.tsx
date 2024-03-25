@@ -3,7 +3,7 @@ import { fetchEvents } from "@/services/api/event";
 import LogoOrganizationEventPage from "@/components/event/LogoOrganizationEventPage";
 import PosterCardEventPage from "@/components/event/PosterCardEventPage";
 import { Metadata } from "next";
-import EventCardPageMobile from "@/components/event/EventCardPageMobile";
+import EventCardPageMobile from "@/components/event/EventCardMobile";
 
 export const metadata: Metadata = {
    title: "Events",
@@ -16,11 +16,12 @@ export default async function EventsPage() {
 
    if (!events) return <div>Failed to fetch data...</div>;
 
-   // Upcoming events sorted by end date
+   const today: Date = new Date();
+
    const upcomingEvents = events
-      .filter((event) => event.end_date.getTime() >= Date.now())
-      .sort((a, b) => a.end_date.getTime() - b.end_date.getTime())
-      .slice(0, 2);
+   .filter(event => new Date(event.start_date) >= today)
+   .sort((a, b) => new Date(a.start_date).getTime() - new Date(b.start_date).getTime())
+   .slice(0, 2);
 
    // All event sorted by end date exclude the first 2 upcoming events
    const allEvents = events
