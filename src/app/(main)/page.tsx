@@ -11,7 +11,7 @@ import CardStore from "@/components/store/CardStore";
 import EventSection from "@/components/event/EventSection";
 import { Suspense } from "react";
 import { FaqData, StudyProgramData } from "@/lib/data";
-import Logo from "@/assets/anagataLogo.svg";
+import Logo from "@/assets/anagatalogo.svg";
 import CompreciationCards from "./_components/CompreciationCards";
 import Loading from "@/components/Loading";
 
