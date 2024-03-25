@@ -1,5 +1,6 @@
 import ProductCard from "@/components/merch/ProductCard";
 import SideBarMerch from "@/components/merch/SideBarMerch";
+import PageHeading from "@/components/PageHeading";
 import Link from "next/link";
 
 export default function MerchPage() {
@@ -67,7 +68,7 @@ export default function MerchPage() {
                </p>
             </div>
          </div>
-
+       
          <div className="mt-8 flex justify-end space-x-4 px-20 lg:hidden ">
             <div className="relative">
                <details className="overflow-hidden rounded border border-gray-300 [&_summary::-webkit-details-marker]:hidden">
