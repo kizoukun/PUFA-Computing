@@ -32,10 +32,21 @@ export default function LoginForm() {
       e.preventDefault();
       try {
          const data = await Login(username, password);
-         successLogin(data);
+         if (data.success) {
+            successLogin(data);
+         } else {
+            Swal.fire({
+               icon: "error",
+               title: "Login Failed",
+               text: data.message,
+            });
+         }
       } catch (error: any) {
-         console.error(error.response); // This might give you more details
-         setError(error.message);
+         Swal.fire({
+            icon: "error",
+            title: "Login Failed",
+            text: "Wrong Password/Email",
+         });
       }
    };
 
