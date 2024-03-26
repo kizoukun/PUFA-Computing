@@ -11,7 +11,7 @@ export async function GetUserProfile() {
             Authorization: `Bearer ${localStorage.getItem("access_token")}`,
          },
       });
-      return response.data;
+      return response.data?.data;
    } catch (error) {
       console.log(error);
       throw error;
@@ -76,7 +76,7 @@ export async function fetchUserEvents(userId: string): Promise<Event[]> {
             Authorization: `Bearer ${token}`,
          },
       });
-      return response.data.events;
+      return response.data.data;
    } catch (error) {
       console.error("Error fetching user events", error);
       throw error;
