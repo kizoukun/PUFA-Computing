@@ -19,7 +19,10 @@ export default function RegisterButton({
     eventTitle,
     eventSlug,
 }: RegisterButtonProps) {
-    const [isAlreadyRegistered, setIsAlreadyRegistered] = useState(false);
+    const [registerDisabled, setregisterDisabled] = useState(false);
+    const [buttonRegisterText, setButtonRegisterText] = useState("Loading...")
+
+
     useEffect(() => {
         const userEvents = async () => {
             try {
@@ -31,7 +34,11 @@ export default function RegisterButton({
                         text: "You havent logged in yet",
                     });
 
-                    router.push("/auth/signin");
+                    setButtonRegisterText("You need to login")
+
+
+
+                    // router.push("/auth/signin");
                     return;
                 }
 
@@ -39,10 +46,12 @@ export default function RegisterButton({
 
                 for (const event of response) {
                     if (event.slug == eventSlug) {
-                        setIsAlreadyRegistered(true);
+                        setregisterDisabled(true);
+                        setButtonRegisterText("Registered")
                         return;
                     }
                 }
+                setButtonRegisterText("Register Now!")
             } catch (error) {
                 console.log(error);
                 Swal.fire({
@@ -57,59 +66,52 @@ export default function RegisterButton({
 
     const router = useRouter();
     const handleRegister = async () => {
+        if(buttonRegisterText.toLowerCase().includes("login")) {
+            router.push("/auth/signin")
+            return;
+        }
         try {
-            const accessToken = localStorage.getItem("access_token");
-            if (!accessToken) {
-                Swal.fire({
-                    icon: "error",
-                    title: "Cannot Register",
-                    text: `Please login to register for ${eventTitle}.`,
-                    showConfirmButton: false,
-                    timer: 2000,
-                }).then(() => {
-                    router.push("/auth/signin");
-                    return;
-                });
-            } else {
-                Swal.fire({
-                    title: "Register for Event",
-                    text: `Are you sure you want to register for ${eventTitle}?`,
-                    icon: "question",
-                    showCancelButton: true,
-                    confirmButtonText: "Yes",
-                    cancelButtonText: "No",
-                }).then(async (result) => {
-                    if (result.isConfirmed) {
-                        const response = await axios.post(
-                            `${API_EVENT}/${eventId}/register`,
-                            {},
-                            {
-                                headers: {
-                                    "Content-Type": "application/json",
-                                    Authorization: `Bearer ${accessToken}`,
-                                },
-                            }
-                        );
-
-                        if (response.status === 200) {
-                            Swal.fire({
-                                icon: "success",
-                                title: "Registered successfully!",
-                                showConfirmButton: false,
-                                timer: 1500,
-                            }).then(() => {
-                                router.push("/dashboard/events");
-                            });
-                        } else {
-                            Swal.fire({
-                                icon: "error",
-                                title: "Registration failed",
-                                text: "There was an error while registering for the event.",
-                            });
+            Swal.fire({
+                title: "Register for Event",
+                text: `Are you sure you want to register for ${eventTitle}?`,
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonText: "Yes",
+                cancelButtonText: "No",
+            }).then(async (result) => {
+                if (result.isConfirmed) {
+                    const accessToken = localStorage.getItem("access_token");
+                    const response = await axios.post(
+                        `${API_EVENT}/${eventId}/register`,
+                        {},
+                        {
+                            headers: {
+                                "Content-Type": "application/json",
+                                Authorization: `Bearer ${accessToken}`,
+                            },
                         }
+                    );
+
+                    if (response.status === 200) {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Registered successfully!",
+                            showConfirmButton: false,
+                            timer: 1500,
+                        }).then(() => {
+                            router.push("/dashboard/events");
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Registration failed",
+                            text: "There was an error while registering for the event.",
+                        });
                     }
-                });
-            }
+                }
+            });
+
+            
         } catch (error) {
             console.error("Error registering for event:", error);
         }
@@ -118,9 +120,9 @@ export default function RegisterButton({
         <Button
             className="w-5/6 border-[#353535] py-2 text-[#353535] hover:bg-[#353535] hover:text-white"
             onClick={handleRegister}
-            disabled={isAlreadyRegistered}
+            disabled={buttonRegisterText.toLowerCase().includes("registered")}
         >
-            {isAlreadyRegistered ? "Registered" : "Register Now!"}
+            {buttonRegisterText}
         </Button>
     );
 }
