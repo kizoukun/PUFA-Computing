@@ -43,101 +43,116 @@ export default function RegisterForm() {
    };
 
    // Event handler for registration
-const HandleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
-   e.preventDefault();
+   const HandleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
 
-   const formData = new FormData(e.target as HTMLFormElement);
+      const formData = new FormData(e.target as HTMLFormElement);
 
-   setError("");
-   const email = formData.get("email") as string;
-   const password = formData.get("password") as string;
-   const studentId = formData.get("studentId") as string;
+      setError("");
+      const email = formData.get("email") as string;
+      const password = formData.get("password") as string;
+      const studentId = formData.get("studentId") as string;
+      const batch = studentId.substring(3, 7);
+      const firstName = (formData.get("firstName") as string).trim();
+      const lastName = (formData.get("lastName") as string).trim();
 
-   // Check if the entered email is valid
-   if (!isEmailValid(email)) {
-      await Swal.fire({
-         icon: "error",
-         title: "Invalid Email",
-         text: "Please enter a valid email address",
-      });
-      return;
-   }
-   // Check if the password valid
-   if (!isPasswordValid(password)) {
-      await Swal.fire({
-         icon: "error",
-         title: "Invalid Password",
-         text: "Password must be at least 8 characters long and contain at least 1 numeric digit.",
-      });
-      return;
-   }
+      const username = `${firstName}${lastName}`
+         .toLowerCase()
+         .replace(/\s+/g, "");
 
-   // Check if the selected role is Computizen and if the student ID is valid
-   if (SelectedRole === "Student" && !isStudentIdValid(studentId)) {
-      await Swal.fire({
-         icon: "error",
-         title: "Invalid Student ID",
-         text: "Student ID must be 12 digits long and start with 3 digits of major, 4 digits of batch, 5 digits of id",
-      });
-      return;
-   }
-
-   // Additional validation for Computizen role
-   if (SelectedRole === "Student") {
-      const batchPrefix = studentId.substr(0, 3);
-      const allowedBatchPrefixes = ["001", "012", "013", "025"];
-      if (!allowedBatchPrefixes.includes(batchPrefix)) {
+      // Check if the entered email is valid
+      if (!isEmailValid(email)) {
          await Swal.fire({
             icon: "error",
-            title: "Invalid Student ID",
-            text: "You are not eligible to register as a Computizen",
+            title: "Invalid Email",
+            text: "Please enter a valid email address",
          });
          return;
       }
-   }
+      // Password Confirmation
+      const passwordConfirm = formData.get("passwordConfirm") as string;
+      if (password !== passwordConfirm) {
+         await Swal.fire({
+            icon: "error",
+            title: "Password Mismatch",
+            text: "The entered passwords do not match.",
+         });
+         return;
+      }
+      // Check if the password valid
+      if (!isPasswordValid(password)) {
+         await Swal.fire({
+            icon: "error",
+            title: "Invalid Password",
+            text: "Password must be at least 8 characters long and contain at least 1 numeric digit.",
+         });
+         return;
+      }
 
-   try {
-      // Construct user object based on form data
-      const user: User = {
-         username: `${formData.get("firstName") as string}.${formData.get("lastName") as string}`.toLowerCase(),
-         first_name: formData.get("firstName") as string,
-         last_name: formData.get("lastName") as string,
-         email: email,
-         password: password,
-         student_id: studentId,
-         year: formData.get("batch") as string,
-      };
+      // Check if the selected role is Computizen and if the student ID is valid
+      if (SelectedRole === "Student" && !isStudentIdValid(studentId)) {
+         await Swal.fire({
+            icon: "error",
+            title: "Invalid Student ID",
+            text: "Student ID must be 12 digits long and start with 3 digits of major, 4 digits of batch, 5 digits of id",
+         });
+         return;
+      }
 
-      const response = await Register(user);
-      console.log("API Response:", response);
-
-      // Show success message
-      await Swal.fire({
-         icon: "success",
-         title: "Register Success",
-         text: "You are now registered",
-         showConfirmButton: false,
-         timer: 2000,
-      }).then(() => {
-         window.location.href = "/auth/signin";
-      });
-      
-   } catch (error) {
-      // Handle errors here
-      if (error instanceof AxiosError) {
-         if (error.code === "ERR_NETWORK") {
-            setError("Network Error");
+      // Additional validation for Computizen role
+      if (SelectedRole === "Student") {
+         const majorPrefix = studentId.substr(0, 3);
+         const allowedMajorPrefixes = ["001", "012", "013", "025"];
+         if (!allowedMajorPrefixes.includes(majorPrefix)) {
+            await Swal.fire({
+               icon: "error",
+               title: "Invalid Student ID",
+               text: "You are not eligible to register as a Computizen",
+            });
             return;
          }
-         const ErrorResponse = error?.response?.data as ErrorResponse;
-         if (!ErrorResponse.success)
-            setError(ErrorResponse.message ?? "Failed to Register");
-      } else {
-         setError("Register failed");
       }
-   }
-};
 
+      try {
+         // Construct user object based on form data
+         const user: User = {
+            username: username,
+            first_name: firstName,
+            last_name: lastName,
+            email: email,
+            password: password,
+            student_id: studentId,
+            year: batch,
+         };
+
+         const response = await Register(user);
+         console.log("API Response:", response);
+
+         // Show success message
+         await Swal.fire({
+            icon: "success",
+            title: "Register Success",
+            text: "You are now registered",
+            showConfirmButton: false,
+            timer: 2000,
+         }).then(() => {
+            window.location.href = "/auth/signin";
+         });
+      } catch (error) {
+         // Handle errors here
+         if (error instanceof AxiosError) {
+            if (error.code === "ERR_NETWORK") {
+               setError("Network Error");
+               return;
+            }
+            const ErrorResponse = error?.response?.data as ErrorResponse;
+            if (!ErrorResponse.success)
+               setError(ErrorResponse.message ?? "Failed to Register");
+         } else {
+            setError("Register failed");
+         }
+      }
+   };
 
    return (
       <section className="mx-auto max-w-6xl rounded-md bg-white bg-opacity-40 p-6 shadow-md">
@@ -211,6 +226,13 @@ const HandleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
                   name="password"
                   required
                />
+               <input
+                  type="password"
+                  className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
+                  placeholder="ConfirmPassword"
+                  name="passwordConfirm"
+                  required
+               />
             </div>
 
             <div>
@@ -240,14 +262,14 @@ const HandleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
                            name="RoleOption"
                            value="Institution"
                            id="Institution"
-                           className="peer hidden disabled:opacity-50 cursor-not-allowed"
+                           className="peer hidden cursor-not-allowed disabled:opacity-50"
                            checked={SelectedRole === "Institution"}
                            onChange={HandleRoleChange}
                            disabled
                         />
                         <label
                            htmlFor="Institution"
-                           className="flex items-center justify-center rounded-md border border-gray-100 bg-white px-5 py-3  hover:border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white disabled:opacity-50 text-gray-500 cursor-not-allowed"
+                           className="flex cursor-not-allowed items-center justify-center rounded-md border border-gray-100 bg-white px-5  py-3 text-gray-500 hover:border-gray-200 disabled:opacity-50 peer-checked:border-blue-500 peer-checked:bg-blue-500 peer-checked:text-white"
                         >
                            <p className="text-sm font-medium">Institution</p>
                         </label>
@@ -269,7 +291,7 @@ const HandleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
                   </div>
                )}
 
-               {/* Batch */}
+               {/* Batch
                {SelectedRole === "Student" && (
                   <div className="mt-2">
                      <input
@@ -280,7 +302,7 @@ const HandleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
                         required
                      />
                   </div>
-               )}
+               )} */}
             </div>
 
             {/* Institution */}

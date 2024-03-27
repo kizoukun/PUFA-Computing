@@ -10,6 +10,8 @@ import { IoIosArrowForward } from "react-icons/io";
 import Seperator from "@/components/Seperator";
 import { API_EVENT } from "@/config/config";
 import axios, { AxiosResponse } from "axios";
+import Swal from "sweetalert2";
+import Loading from "@/components/Loading";
 
 const description = (description: string) => {
    const lines = description.split("\n");
@@ -55,7 +57,7 @@ const EventDetailsPage: React.FC<{ params: { slug: string } }> = ({
 
          const accessToken = localStorage.getItem("access_token");
          if (!accessToken) {
-            console.error("Access token not found");
+            router.push("/auth/signin");
             return;
          }
 
@@ -71,6 +73,15 @@ const EventDetailsPage: React.FC<{ params: { slug: string } }> = ({
          );
 
          if (response.status === 200) {
+            Swal.fire({
+               icon: "success",
+               title: `Register on ${event.title} Success`,
+               text: "You are now registered",
+               showConfirmButton: false,
+               timer: 2000,
+            }).then(() => {
+               router.push("/dashboard/events");
+            });
          } else {
             console.error("Registration failed:", response.statusText);
          }
@@ -84,7 +95,9 @@ const EventDetailsPage: React.FC<{ params: { slug: string } }> = ({
    };
 
    if (!event) {
-      return <div>Loading...</div>;
+      return (
+         <Loading/>
+      );
    }
 
    return (
@@ -129,7 +142,7 @@ const EventDetailsPage: React.FC<{ params: { slug: string } }> = ({
                <Seperator className="border-[#CBCBCB]" />
                {/*Overflow for scroll if long*/}
                <div className="max-h-[39rem] overflow-y-auto px-5 py-2">
-                  <p className="px-5 py-2 text-[0.938rem] font-[400] text-justify">
+                  <p className="px-5 py-2 text-justify text-[0.938rem] font-[400]">
                      {description(event.description)}
                   </p>
                </div>
