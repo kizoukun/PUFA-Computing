@@ -28,6 +28,7 @@ export default function EventCardUpcoming({ events }: { events: Event[] }) {
                         objectFit="cover"
                         className="rounded-lg"
                         style={{ zIndex: -1 }}
+                        
                      />
                   </div>
 
