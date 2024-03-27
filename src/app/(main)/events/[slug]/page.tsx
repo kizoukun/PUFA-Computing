@@ -57,8 +57,15 @@ const EventDetailsPage: React.FC<{ params: { slug: string } }> = ({
 
          const accessToken = localStorage.getItem("access_token");
          if (!accessToken) {
-            router.push("/auth/signin");
-            return;
+            Swal.fire({
+               icon: "error",
+               title: "Cannot Register",
+               text: `Please login to register for ${event.title}.`,
+               showConfirmButton: false,
+               timer: 2000,
+            }).then(() => {
+               router.push("/auth/signin");
+               return;
          }
 
          const response = await axios.post(
@@ -83,7 +90,44 @@ const EventDetailsPage: React.FC<{ params: { slug: string } }> = ({
                router.push("/dashboard/events");
             });
          } else {
-            console.error("Registration failed:", response.statusText);
+            Swal.fire({
+               title: "Register for Event",
+               text: `Are you sure you want to register for ${event.title}?`,
+               icon: "question",
+               showCancelButton: true,
+               confirmButtonText: "Yes",
+               cancelButtonText: "No",
+            }).then(async (result) => {
+               if (result.isConfirmed) {
+                  const response = await axios.post(
+                     `${API_EVENT}/${event.id}/register`,
+                     {},
+                     {
+                        headers: {
+                           "Content-Type": "application/json",
+                           Authorization: `Bearer ${accessToken}`,
+                        },
+                     }
+                  );
+
+                  if (response.status === 200) {
+                     Swal.fire({
+                        icon: "success",
+                        title: "Registered successfully!",
+                        showConfirmButton: false,
+                        timer: 1500,
+                     }).then(() => {
+                        router.push("/dashboard/events");
+                     });
+                  } else {
+                     Swal.fire({
+                        icon: "error",
+                        title: "Registration failed",
+                        text: "There was an error while registering for the event.",
+                     });
+                  }
+               }
+            });
          }
       } catch (error) {
          console.error("Error registering for event:", error);
