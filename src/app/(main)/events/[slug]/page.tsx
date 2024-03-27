@@ -11,6 +11,7 @@ import Seperator from "@/components/Seperator";
 import { API_EVENT } from "@/config/config";
 import axios, { AxiosResponse } from "axios";
 import Swal from "sweetalert2";
+import Loading from "@/components/Loading";
 
 const description = (description: string) => {
    const lines = description.split("\n");
@@ -65,6 +66,28 @@ const EventDetailsPage: React.FC<{ params: { slug: string } }> = ({
             }).then(() => {
                router.push("/auth/signin");
                return;
+         }
+
+         const response = await axios.post(
+            `${API_EVENT}/${event.id}/register`,
+            {},
+            {
+               headers: {
+                  "Content-Type": "application/json",
+                  Authorization: `Bearer ${accessToken}`,
+               },
+            }
+         );
+
+         if (response.status === 200) {
+            Swal.fire({
+               icon: "success",
+               title: `Register on ${event.title} Success`,
+               text: "You are now registered",
+               showConfirmButton: false,
+               timer: 2000,
+            }).then(() => {
+               router.push("/dashboard/events");
             });
          } else {
             Swal.fire({
@@ -116,7 +139,9 @@ const EventDetailsPage: React.FC<{ params: { slug: string } }> = ({
    };
 
    if (!event) {
-      return <div>Loading...</div>;
+      return (
+         <Loading/>
+      );
    }
 
    return (

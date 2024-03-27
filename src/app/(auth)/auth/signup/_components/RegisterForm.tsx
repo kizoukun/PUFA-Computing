@@ -5,7 +5,6 @@ import Swal from "sweetalert2";
 import { AxiosError, AxiosResponse } from "axios";
 import User from "@/models/user";
 import Seperator from "@/components/Seperator";
-import Link from "next/link";
 
 // Type for error response
 type ErrorResponse = {
@@ -53,6 +52,13 @@ export default function RegisterForm() {
       const email = formData.get("email") as string;
       const password = formData.get("password") as string;
       const studentId = formData.get("studentId") as string;
+      const batch = studentId.substring(3, 7);
+      const firstName = (formData.get("firstName") as string).trim();
+      const lastName = (formData.get("lastName") as string).trim();
+
+      const username = `${firstName}${lastName}`
+         .toLowerCase()
+         .replace(/\s+/g, "");
 
       // Check if the entered email is valid
       if (!isEmailValid(email)) {
@@ -60,6 +66,16 @@ export default function RegisterForm() {
             icon: "error",
             title: "Invalid Email",
             text: "Please enter a valid email address",
+         });
+         return;
+      }
+      // Password Confirmation
+      const passwordConfirm = formData.get("passwordConfirm") as string;
+      if (password !== passwordConfirm) {
+         await Swal.fire({
+            icon: "error",
+            title: "Password Mismatch",
+            text: "The entered passwords do not match.",
          });
          return;
       }
@@ -85,9 +101,9 @@ export default function RegisterForm() {
 
       // Additional validation for Computizen role
       if (SelectedRole === "Student") {
-         const batchPrefix = studentId.substr(0, 3);
-         const allowedBatchPrefixes = ["001", "012", "013", "025"];
-         if (!allowedBatchPrefixes.includes(batchPrefix)) {
+         const majorPrefix = studentId.substr(0, 3);
+         const allowedMajorPrefixes = ["001", "012", "013", "025"];
+         if (!allowedMajorPrefixes.includes(majorPrefix)) {
             await Swal.fire({
                icon: "error",
                title: "Invalid Student ID",
@@ -100,15 +116,13 @@ export default function RegisterForm() {
       try {
          // Construct user object based on form data
          const user: User = {
-            username: `${formData.get("firstName") as string}.${
-               formData.get("lastName") as string
-            }`.toLowerCase(),
-            first_name: formData.get("firstName") as string,
-            last_name: formData.get("lastName") as string,
+            username: username,
+            first_name: firstName,
+            last_name: lastName,
             email: email,
             password: password,
             student_id: studentId,
-            year: formData.get("batch") as string,
+            year: batch,
          };
 
          const response = await Register(user);
@@ -212,6 +226,13 @@ export default function RegisterForm() {
                   name="password"
                   required
                />
+               <input
+                  type="password"
+                  className="mt-2 block w-full rounded-lg border bg-white px-5 py-3 text-gray-700"
+                  placeholder="ConfirmPassword"
+                  name="passwordConfirm"
+                  required
+               />
             </div>
 
             <div>
@@ -270,7 +291,7 @@ export default function RegisterForm() {
                   </div>
                )}
 
-               {/* Batch */}
+               {/* Batch
                {SelectedRole === "Student" && (
                   <div className="mt-2">
                      <input
@@ -281,7 +302,7 @@ export default function RegisterForm() {
                         required
                      />
                   </div>
-               )}
+               )} */}
             </div>
 
             {/* Institution */}
@@ -310,12 +331,6 @@ export default function RegisterForm() {
                   Register
                </button>
             </div>
-            <h1 className="pt-1 text-center font-[400] text-[#475467] text-[0.875] md:pt-3">
-               Already have an account?
-               <span className="text-[#02ABF3] hover:underline">
-                  <Link href={"/auth/signin"}> Sign In</Link>{" "}
-               </span>
-            </h1>
          </form>
       </section>
    );
