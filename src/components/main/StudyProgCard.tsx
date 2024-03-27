@@ -41,7 +41,7 @@ export default function StudyProgCard({
             {/* Horizontal line for separation */}
             <hr className="mx-auto mb-12 mt-4 w-16 border border-[#3C99DC]" />
             {/* Display the article or description of the study program on larger screens */}
-            <p className="my-16 hidden md:block">{article}</p>
+            <p className="my-16 hidden h-[8rem] md:block">{article}</p>
             {/* Button to navigate to the details page, with optional link */}
             <Link href={link || "/"}>
                 <Button className="mx-auto my-4 w-max text-[#3C99DC]">
