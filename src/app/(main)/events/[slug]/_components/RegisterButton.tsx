@@ -1,12 +1,13 @@
 "use client";
 import Button from "@/components/Button";
-import { API_EVENT } from "@/config/config";
-import { fetchUserEvents } from "@/services/api/user";
+import {API_EVENT} from "@/config/config";
+import {fetchUserEvents} from "@/services/api/user";
 import axios from "axios";
-import { access } from "fs";
-import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import {access} from "fs";
+import {useRouter} from "next/navigation";
+import React, {useEffect, useState} from "react";
 import Swal from "sweetalert2";
+import {fetchEvents} from "@/services/api/event";
 
 interface RegisterButtonProps {
     eventId: number;
@@ -15,10 +16,10 @@ interface RegisterButtonProps {
 }
 
 export default function RegisterButton({
-    eventId,
-    eventTitle,
-    eventSlug,
-}: RegisterButtonProps) {
+                                           eventId,
+                                           eventTitle,
+                                           eventSlug,
+                                       }: RegisterButtonProps) {
     const [registerDisabled, setregisterDisabled] = useState(false);
     const [buttonRegisterText, setButtonRegisterText] = useState("Loading...")
 
@@ -35,9 +36,6 @@ export default function RegisterButton({
                     });
 
                     setButtonRegisterText("You need to login")
-
-
-
                     // router.push("/auth/signin");
                     return;
                 }
@@ -54,19 +52,19 @@ export default function RegisterButton({
                 setButtonRegisterText("Register Now!")
             } catch (error) {
                 console.log(error);
-                Swal.fire({
+                await Swal.fire({
                     icon: "error",
                     title: "Oops...",
                     text: "Cant fetch users event, please try again later",
                 });
             }
         };
-        userEvents();
+        userEvents().then(r => r);
     }, []);
 
     const router = useRouter();
     const handleRegister = async () => {
-        if(buttonRegisterText.toLowerCase().includes("login")) {
+        if (buttonRegisterText.toLowerCase().includes("login")) {
             router.push("/auth/signin")
             return;
         }
@@ -102,7 +100,7 @@ export default function RegisterButton({
                             router.push("/dashboard/events");
                         });
                     } else {
-                        Swal.fire({
+                        await Swal.fire({
                             icon: "error",
                             title: "Registration failed",
                             text: "There was an error while registering for the event.",
@@ -111,7 +109,7 @@ export default function RegisterButton({
                 }
             });
 
-            
+
         } catch (error) {
             console.error("Error registering for event:", error);
         }

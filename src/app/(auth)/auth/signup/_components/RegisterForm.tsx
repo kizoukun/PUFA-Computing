@@ -132,8 +132,24 @@ export default function RegisterForm() {
                     return;
                 }
                 const ErrorResponse = error?.response?.data as ErrorResponse;
-                if (!ErrorResponse.success)
-                    setError(ErrorResponse.message ?? "Failed to Register");
+                if (!ErrorResponse.success) {
+                    // Check if error message indicates email or student ID already exists
+                    if (ErrorResponse.message.includes("Email already exists")) {
+                        await Swal.fire({
+                            icon: "error",
+                            title: "Email Exists",
+                            text: "The email you entered already exists",
+                        });
+                    } else if (ErrorResponse.message.includes("Student ID already exists")) {
+                        await Swal.fire({
+                            icon: "error",
+                            title: "Student ID Exists",
+                            text: "The student ID you entered already exists",
+                        });
+                    } else {
+                        setError(ErrorResponse.message ?? "Failed to Register");
+                    }
+                }
             } else {
                 setError("Register failed");
             }

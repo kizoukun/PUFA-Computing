@@ -19,13 +19,19 @@ export async function GetUserProfile() {
 }
 
 export async function UpdateUserProfile() {
-   try {
-      const response = await axios.put(`${API_USER}/update`);
-      return response.data.data;
-   } catch (error) {
-      console.log(error);
-      throw error;
-   }
+    try {
+       const id = localStorage.getItem("userId");
+       const response = await axios.put(`${API_USER}/${id}`, {
+          headers: {
+             Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+          },
+       });
+
+       return response.data?.data;
+    } catch (error) {
+         console.log(error);
+         throw error;
+    }
 }
 
 export async function DeleteUserProfile() {
@@ -76,6 +82,7 @@ export async function fetchUserEvents(userId: string): Promise<Event[]> {
             Authorization: `Bearer ${token}`,
          },
       });
+
       return response.data?.data || [];
    } catch (error) {
       console.error("Error fetching user events", error);
