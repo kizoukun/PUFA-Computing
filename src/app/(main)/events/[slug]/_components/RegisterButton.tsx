@@ -1,13 +1,13 @@
 "use client";
 import Button from "@/components/Button";
-import {API_EVENT} from "@/config/config";
-import {fetchUserEvents} from "@/services/api/user";
+import { API_EVENT } from "@/config/config";
+import { fetchUserEvents } from "@/services/api/user";
 import axios from "axios";
-import {access} from "fs";
-import {useRouter} from "next/navigation";
-import React, {useEffect, useState} from "react";
+import { access } from "fs";
+import { useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
-import {fetchEvents} from "@/services/api/event";
+import { fetchEvents } from "@/services/api/event";
 
 interface RegisterButtonProps {
     eventId: number;
@@ -16,13 +16,12 @@ interface RegisterButtonProps {
 }
 
 export default function RegisterButton({
-                                           eventId,
-                                           eventTitle,
-                                           eventSlug,
-                                       }: RegisterButtonProps) {
+    eventId,
+    eventTitle,
+    eventSlug,
+}: RegisterButtonProps) {
     const [registerDisabled, setregisterDisabled] = useState(false);
-    const [buttonRegisterText, setButtonRegisterText] = useState("Loading...")
-
+    const [buttonRegisterText, setButtonRegisterText] = useState("Loading...");
 
     useEffect(() => {
         const userEvents = async () => {
@@ -35,7 +34,7 @@ export default function RegisterButton({
                         text: "You havent logged in yet",
                     });
 
-                    setButtonRegisterText("You need to login")
+                    setButtonRegisterText("You need to login");
                     // router.push("/auth/signin");
                     return;
                 }
@@ -45,11 +44,11 @@ export default function RegisterButton({
                 for (const event of response) {
                     if (event.slug == eventSlug) {
                         setregisterDisabled(true);
-                        setButtonRegisterText("Registered")
+                        setButtonRegisterText("Registered");
                         return;
                     }
                 }
-                setButtonRegisterText("Register Now!")
+                setButtonRegisterText("Register Now!");
             } catch (error) {
                 console.log(error);
                 await Swal.fire({
@@ -59,13 +58,13 @@ export default function RegisterButton({
                 });
             }
         };
-        userEvents().then(r => r);
+        userEvents().then((r) => r);
     }, []);
 
     const router = useRouter();
     const handleRegister = async () => {
         if (buttonRegisterText.toLowerCase().includes("login")) {
-            router.push("/auth/signin")
+            router.push("/auth/signin");
             return;
         }
         try {
@@ -77,43 +76,69 @@ export default function RegisterButton({
                 confirmButtonText: "Yes",
                 cancelButtonText: "No",
             }).then(async (result) => {
-                if (result.isConfirmed) {
-                    const accessToken = localStorage.getItem("access_token");
-                    const response = await axios.post(
-                        `${API_EVENT}/${eventId}/register`,
-                        {},
-                        {
-                            headers: {
-                                "Content-Type": "application/json",
-                                Authorization: `Bearer ${accessToken}`,
-                            },
-                        }
-                    );
+                try {
+                    if (result.isConfirmed) {
+                        const accessToken =
+                            localStorage.getItem("access_token");
+                        const response = await axios.post(
+                            `${API_EVENT}/${eventId}/register`,
+                            {},
+                            {
+                                headers: {
+                                    "Content-Type": "application/json",
+                                    Authorization: `Bearer ${accessToken}`,
+                                },
+                            }
+                        );
 
-                    if (response.status === 200) {
+                        if (response.status === 200) {
+                            Swal.fire({
+                                icon: "success",
+                                title: "Registered successfully!",
+                                text: "Redirect to dashboard...",
+                                showConfirmButton: false,
+                                timer: 3000,
+                            }).then(() => {
+                                router.push("/dashboard/events");
+                            });
+                        } else {
+                            await Swal.fire({
+                                icon: "error",
+                                title: "Registration failed",
+                                text: "There was an error while registering for the event.",
+                            });
+                        }
+                    }
+                } catch (error: any) {
+                    console.error("Error registering for event:", error);
+                    if (
+                        error.response &&
+                        error.response.status === 500 &&
+                        error.response.data &&
+                        error.response.data.message &&
+                        error.response.data.message.includes(
+                            "Request failed with status code 500"
+                        )
+                    ) {
                         Swal.fire({
-                            icon: "success",
-                            title: "Registered successfully!",
-                            showConfirmButton: false,
-                            timer: 1500,
-                        }).then(() => {
-                            router.push("/dashboard/events");
+                            icon: "error",
+                            title: "Registration failed",
+                            text: "Maximum registration limit reached for this event.",
                         });
                     } else {
                         await Swal.fire({
                             icon: "error",
                             title: "Registration failed",
-                            text: "There was an error while registering for the event.",
+                            text: `There was an error while registering event ${eventTitle}`,
                         });
                     }
                 }
             });
-
-
-        } catch (error) {
-            console.error("Error registering for event:", error);
+        } catch (error: any) {
+            console.log(error);
         }
     };
+
     return (
         <Button
             className="w-5/6 border-[#353535] py-2 text-[#353535] hover:bg-[#353535] hover:text-white"

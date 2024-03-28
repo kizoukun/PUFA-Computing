@@ -52,7 +52,7 @@ export default async function EventDetailsPage({ params }: EventPageProps) {
             </section>
 
             <div className="mx-auto grid max-w-7xl items-start gap-6 py-6 md:grid-cols-2 lg:gap-12">
-                <div className="w-full md:w-auto">
+                <div className="w-full md:w-auto px-2">
                     <div className="w-full scale-100 overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800">
                         <Image
                             alt={`${event.title}'s poster`}
