@@ -35,8 +35,14 @@ export default function LoginForm() {
          const data = await Login(username, password);
          successLogin(data);
       } catch (error: any) {
-         console.error(error.response); // This might give you more details
-         setError(error.message);
+         await Swal.fire({
+            icon: "error",
+            title: "Login Failed",
+            text: "Invalid username or password",
+            showConfirmButton: false,
+            timer: 2000,
+         });
+            setError(error.response.data.message);
       }
    };
 
@@ -120,7 +126,7 @@ export default function LoginForm() {
                   Sign in
                </button>
                <h1 className="text-[0.875] font-[400] text-[#475467] text-center pt-1 md:pt-3">
-                  Doenst have an account ? 
+                  Doenst have an account ?
                   <span className="text-[#02ABF3] hover:underline">
                      <Link href={"/auth/signup"}> Sign Up</Link>{" "}
                   </span>
