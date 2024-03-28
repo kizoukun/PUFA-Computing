@@ -14,7 +14,7 @@ export default function EventCardCompleted({ events }: { events: Event[] }) {
             {events.map((event, index) => (
                 <div
                     key={index}
-                    className="flex max-w-[20rem] flex-col justify-between space-y-4 rounded-lg border border-[#E50D0D] px-6 py-4"
+                    className="flex max-w-[23rem] flex-col justify-between space-y-4 rounded-lg border border-[#E50D0D] px-6 py-4"
                 >
                     <h1 className="h-[3rem] text-[1.2rem] font-[600]">
                         {event.title}
