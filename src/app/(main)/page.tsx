@@ -33,7 +33,7 @@ export default async function Index() {
             </div>
             <section
                 id="introduction"
-                className="container mx-auto -mt-24 sm:-mt-32 md:-mt-48 lg:-mt-64 xl:-mt-96"
+                className="container mx-auto -mt-24 sm:-mt-32 md:-mt-48 md:px-[5rem] lg:-mt-64 xl:-mt-96"
             >
                 <Image
                     alt="PUFA Photo"
@@ -47,7 +47,7 @@ export default async function Index() {
                src="../member.jpg"
                alt="PUMA Photo"
             /> */}
-                <div className="space-y-6 px-8 text-justify text-base font-[400] md:px-24 md:text-xl">
+                <div className="space-y-6 px-8 text-justify text-base md:px-24 md:text-xl">
                     <p>
                         PUFA Computing stands for President University's Faculty
                         Association of Computing, serving as a dynamic platform
@@ -75,7 +75,7 @@ export default async function Index() {
             </section>
 
             {/* programs */}
-            <section className="my-[10rem] flex flex-col items-center space-y-12">
+            <section className="my-[10rem] flex flex-col items-center space-y-8 md:px-[5rem]">
                 <div className="border-l-4 border-[#3C99DC] pl-4">
                     <h1 className="text-[1.5rem] font-[600]">Study Programs</h1>
                 </div>
@@ -95,7 +95,7 @@ export default async function Index() {
             </section>
 
             {/* cabinet anagata */}
-            <section className="my-[10rem] flex flex-col items-center space-y-12">
+            <section className="my-[10rem] flex flex-col items-center space-y-8 md:px-[5rem]">
                 <div className="border-l-4 border-[#1FA820] pl-4">
                     <h1 className="text-[1.5rem] font-bold">
                         Cabinet 2023/2024
@@ -139,7 +139,7 @@ export default async function Index() {
             </section>
 
             {/* event section */}
-            <section className="my-[10rem] flex select-none flex-col items-center space-y-8 md:space-y-12">
+            <section className="flex select-none flex-col items-center space-y-8 md:space-y-8 md:px-[5rem]">
                 <div className="border-l-4 border-[#E50D0D] pl-4">
                     <h1 className="text-[1.5rem] font-[600]">
                         Computing Events
@@ -151,6 +151,7 @@ export default async function Index() {
                 </h1>
 
                 <EventSection />
+
                 <Link
                     href={"/events"}
                     className="rounded-lg border-2 border-[#E50D0D] px-10 py-2 text-[#E50D0D] transition-all duration-300 hover:bg-[#E50D0D] hover:text-white"
@@ -162,7 +163,7 @@ export default async function Index() {
             {/* news */}
             <section
                 id="news"
-                className="max-h-xl mx-auto my-[10rem] max-w-7xl space-y-12 p-5 text-center"
+                className="max-h-xl mx-auto max-w-7xl space-y-12 p-5 text-center md:px-[5rem]"
             >
                 <h2 className="text-2xl font-bold">
                     <span className="mr-4 border-l-4 border-l-[#FF6F22]"></span>
@@ -282,7 +283,7 @@ export default async function Index() {
             {/* Faq */}
             <section
                 id="faq"
-                className="max-h-xl mx-auto my-32 max-w-7xl space-y-8 p-5"
+                className="max-h-xl mx-auto max-w-7xl space-y-8 p-5  md:px-[5rem]"
             >
                 <div className="items-justify container mx-auto flex flex-col rounded-lg border border-black bg-white px-4 py-8 md:p-8">
                     <div>

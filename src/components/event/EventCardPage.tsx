@@ -27,8 +27,8 @@ export default function EventCardPage({ events }: { events: Event[] }) {
                         src={event.thumbnail}
                         className="h-full w-full rounded-[15px] scale-110"
                         alt={`${event.title}'s poster`}
-                        layout="fixed" // Set layout to fixed
-                        width={2800} // Set width to 2000 pixels for a wider image
+                        layout="fixed"
+                        width={2800}
                         height={1080}
                      />
                   </div>
@@ -51,7 +51,7 @@ export default function EventCardPage({ events }: { events: Event[] }) {
                         })}`}
                      </p>
                      <p className="text-sm md:text-base text-justify">
-                        {truncateDescription(event.description, 150)} {/* Batasi panjang deskripsi menjadi 150 karakter */}
+                        {truncateDescription(event.description, 150)}
                      </p>
                      <div className="flex justify-between">
                         <p className="text-[16px] font-bold ">
