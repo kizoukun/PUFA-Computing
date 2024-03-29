@@ -1,63 +1,6 @@
 import axios from "axios";
-import { API_EVENT, API_USER } from "@/config/config";
+import { API_USER } from "@/config/config";
 import Event from "@/models/event";
-
-// User
-export async function GetUserProfile() {
-   try {
-      const id = localStorage.getItem("userId");
-      const response = await axios.get(`${API_USER}/${id}`, {
-         headers: {
-            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
-         },
-      });
-      return response.data?.data;
-   } catch (error) {
-      console.log(error);
-      throw error;
-   }
-}
-
-export async function UpdateUserProfile() {
-   try {
-      const response = await axios.put(`${API_USER}/update`);
-      return response.data.data;
-   } catch (error) {
-      console.log(error);
-      throw error;
-   }
-}
-
-export async function DeleteUserProfile() {
-   try {
-      const response = await axios.delete(`${API_USER}/delete`);
-      return response.data.data;
-   } catch (error) {
-      console.log(error);
-      throw error;
-   }
-}
-
-export async function Logout() {
-   try {
-      const response = await axios.post(`${API_USER}`);
-      return response.data.data;
-   } catch (error) {
-      console.log(error);
-      throw error;
-   }
-}
-
-// Admin
-export async function GetUser() {
-   try {
-      const response = await axios.get(`${API_USER}`);
-      return response.data.data;
-   } catch (error) {
-      console.log(error);
-      throw error;
-   }
-}
 
 /** Fetches the events that the user has registered for from the API.
  * @param {string} userId The ID of the user to fetch events for.
