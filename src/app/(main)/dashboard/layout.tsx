@@ -1,35 +1,15 @@
-"use client";
-import { access } from "fs";
+import { authOptions } from "@/lib/authOptions";
+import { getServerSession } from "next-auth";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 
-export default function DashboardLayout({
+export default async function DashboardLayout({
    children,
 }: {
    children: React.ReactNode;
 }) {
-   const router = useRouter();
-   const [isLoggedIn, setIsLoggedIn] = useState(false);
-   const [isMenuOpen, setIsMenuOpen] = useState(true);
-   const toggleMenu = () => {
-      setIsMenuOpen(!isMenuOpen);
-   };
-
-   useEffect(() => {
-      const userToken = localStorage.getItem("access_token");
-      setIsLoggedIn(!!userToken);
-
-      if (!isLoggedIn) {
-         // Redirect to login page if not logged in
-         router.push("/auth/signin");
-      } else {
-         // User is logged in, redirect to profile page
-         router.push("/dashboard/profile");
-      }
-   }, [isLoggedIn, router]);
-
+   const session = await getServerSession(authOptions);
    const LINKS = [
       {
          name: "Profile",
@@ -138,13 +118,15 @@ export default function DashboardLayout({
       },
    ];
 
+   const hardCodedIsMenuOpen = true;
+
    return (
       <div className="flex h-screen">
          {/* Sidebar */}
-         {isLoggedIn && (
+         {session?.user && (
             <aside
                className={`overflow-w-auto fixed bottom-0 left-0 top-0 z-10 mt-[100px] h-screen w-64 min-w-[200px] bg-white shadow-lg ${
-                  isMenuOpen ? "translate-x-0" : "-translate-x-full"
+                  hardCodedIsMenuOpen ? "translate-x-0" : "-translate-x-full"
                } transition-transform duration-300 ease-in-out`}
             >
                <div className="flex items-center justify-between p-3">
@@ -169,18 +151,15 @@ export default function DashboardLayout({
          {/* Main content */}
          <main
             className={`flex-1 overflow-y-auto p-4 transition-transform duration-300 ease-in-out ${
-               isMenuOpen ? "ml-64" : "ml-0"
+               hardCodedIsMenuOpen ? "ml-64" : "ml-0"
             }`}
          >
             {children}
          </main>
 
          {/* Toggle button */}
-         <button
-            className="fixed bottom-4 left-4 z-30 rounded-full bg-sky-500 p-2 text-white shadow-md"
-            onClick={toggleMenu}
-         >
-            {isMenuOpen ? <FiX /> : <FiMenu />}
+         <button className="fixed bottom-4 left-4 z-30 rounded-full bg-sky-500 p-2 text-white shadow-md">
+            {hardCodedIsMenuOpen ? <FiX /> : <FiMenu />}
          </button>
       </div>
    );
