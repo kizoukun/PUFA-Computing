@@ -269,9 +269,10 @@ export default function Navbar() {
                 </div>
             </div>
             {/*Alpha Version Tag*/}
-            <div className="bg-[#FF6F22] py-1 text-center text-sm text-white">
+            <div className="bg-[#FF6F22] p-1 text-center text-sm text-white">
                 <span className="font-bold">Warning:</span> This is the version
-                Alpha 0.6.2, your data will be deleted on 27-04-2024
+                is a forked version that is still in development. Some features
+                may not work properly
             </div>
         </header>
     );
