@@ -80,7 +80,7 @@ export default async function DashboardProfilePage() {
             </div>
          </div>
          <div>
-            <div className="rounded-lg border border-[#CBCBCB] bg-white shadow-lg">
+            <div className="rounded-lg border border-[#CBCBCB] bg-white shadow-lg" style={{ opacity: 0.5, pointerEvents: 'none' }}>
                <div className="mt-2 px-6 py-3">
                   <p className="text-[16px] font-[500]">Profile Photo</p>
                </div>
