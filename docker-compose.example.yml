@@ -1,0 +1,50 @@
+version: "3.8"
+x-common:
+   database: &db-environment
+      # Do not remove the "&db-password" from the end of the line below, it is important
+      # for Panel functionality.
+      POSTGRES_PASSWORD: &db-password "CHHANGE_ME"
+      POSTGRES_ROOT_PASSWORD: "CHANGE_ME_TOO"
+   panel: &panel-environment
+      API_PORT: 80
+
+#
+# ------------------------------------------------------------------------------------------
+# DANGER ZONE BELOW
+#
+# The remainder of this file likely does not need to be changed. Please only make modifications
+# below if you understand what you are doing.
+#
+services:
+   database:
+      image: postgres:latest
+      restart: always
+      ports:
+         - 5432
+      environment:
+         <<: *db-environment
+         POSTGRES_DB: "db"
+         POSTGRES_USER: "postgres"
+   panel:
+      image: ghcr.io/kizoukun/pufafrontend:latest
+      restart: always
+      ports:
+         - 4000:3000
+      links:
+         - database
+      environment:
+         <<: [*panel-environment]
+         DB_PASSWORD: *db-password
+         APP_ENV: "production"
+         APP_ENVIRONMENT_ONLY: "false"
+         DATABASE_URL: "postgres://postgres:CHANGE_ME_TOO@database:5432/db"
+      volumes:
+         - panel_public:/app/public/uploads
+networks:
+   default:
+      ipam:
+         config:
+            - subnet: 172.23.0.0/16
+
+volumes:
+   panel_public:
