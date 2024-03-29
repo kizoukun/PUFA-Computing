@@ -1,10 +1,11 @@
-import AspirationCard from "@/components/aspiration/AspirationCard";
-import { CiSearch } from "react-icons/ci";
-import React from "react";
+import React, { Suspense } from "react";
 import AspirationForm from "./_components/Form";
 import AspirationsCards from "./_components/Aspirations";
 import { Metadata } from "next";
 import PageHeading from "@/components/PageHeading";
+import Loading from "@/components/Loading";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/authOptions";
 
 export const revalidate = 600;
 export const dynamic = "force-dynamic";
@@ -14,21 +15,11 @@ export const metadata: Metadata = {
       "A place for computizens to share their aspirations, ideas, and suggestions with us.",
 };
 
-export default function page() {
+export default async function AspirationPage() {
+   const session = await getServerSession(authOptions);
    return (
       <div>
          {/* // title */}
-         {/* <section className="bg-[#F2F2F2] p-6 md:p-10">
-            <div className="mx-auto flex max-w-7xl flex-col border-l-4 border-[#E50D0D] pl-2 md:pl-5">
-               <h1 className="text-[1.5rem] font-[700] text-[#353535] md:text-[2rem]">
-                  Aspirations
-               </h1>
-               <p className="text-[0.8rem] font-[400] md:text-[0.9rem] ">
-                  A place for computizens to share their aspirations, ideas, and
-                  suggestions with us.
-               </p>
-            </div>
-         </section> */}
 
          <PageHeading
             title="Aspirations"
@@ -41,7 +32,7 @@ export default function page() {
             className="bg-cover bg-center bg-repeat px-4 py-8 md:px-[10rem] md:py-16"
             style={{ backgroundImage: `url('/doodle.svg')` }}
          >
-            <AspirationForm />
+            <AspirationForm isLoggedIn={session?.user != undefined} />
 
             <h1 className="mt-20 text-center text-[35px] font-[700] text-[#353535]">
                Aspirations Library
@@ -56,7 +47,9 @@ export default function page() {
                placeholder="Search Aspirations"
             />
             <div className="flex w-full flex-col items-center justify-center rounded-t-3xl border-2 p-8 shadow-lg md:px-16 md:py-16">
-               <AspirationsCards />
+               <Suspense fallback={<Loading />}>
+                  <AspirationsCards />
+               </Suspense>
             </div>
          </section>
       </div>

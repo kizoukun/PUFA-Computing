@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io";
-import Aspiration from "@/models/aspiration";
+import { type Aspiration } from "@prisma/client";
 
 type AspirationCardProps = {
    aspiration: Aspiration;
@@ -47,7 +47,7 @@ const AspirationCard: React.FC<AspirationCardProps> = ({ aspiration }) => {
             <h1 className="text-lg font-bold capitalize md:text-xl">
                {aspiration.subject}
             </h1>
-            {aspiration.admin_reply && (
+            {aspiration.adminResponse && (
                <button
                   onClick={toggleAdminReply}
                   className={`md:ml-auto ${
@@ -81,20 +81,20 @@ const AspirationCard: React.FC<AspirationCardProps> = ({ aspiration }) => {
                Admin :{" "}
                <span className="text-[16px] font-[400] text-[#6B7280]">
                   {" "}
-                  {aspiration.admin_reply}{" "}
+                  {aspiration.adminResponse}{" "}
                </span>
             </p>
          )}
          <div className="flex flex-col">
             {/*Author if anonymous show anonymous if its false show user_id*/}
             <p className="text-[14px] font-semibold text-[#111827]">
-               From: {aspiration.anonymous ? "Anonymous" : aspiration.author}
+               From: {aspiration.anonymous ? "Anonymous" : aspiration.from}
             </p>
             <div className="flex flex-col gap-2 text-sm md:flex-row md:justify-between">
                <div className="text-[#6B7280]">
                   <p>
-                     To: {aspiration.organization} <span> · </span>{" "}
-                     <span>{dateConvert(aspiration.updated_at)}</span>
+                     To: {aspiration.to} <span> · </span>{" "}
+                     <span>{dateConvert(aspiration.createdAt)}</span>
                   </p>
                </div>
 
@@ -102,16 +102,20 @@ const AspirationCard: React.FC<AspirationCardProps> = ({ aspiration }) => {
                <div className="flex flex-row gap-4">
                   <button
                      onClick={toggleLike}
-                     className="flex items-center gap-1 text-[#6B7280] hover:text-[#E50D0D] text-2xl"
+                     className="flex items-center gap-1 text-2xl text-[#6B7280] hover:text-[#E50D0D]"
                   >
-                     {liked ? <IoIosHeart className="text-3xl" /> : <IoIosHeartEmpty className="text-3xl" />}
-                     <span className="text-xl">{aspiration.upvote}</span>
+                     {liked ? (
+                        <IoIosHeart className="text-3xl" />
+                     ) : (
+                        <IoIosHeartEmpty className="text-3xl" />
+                     )}
+                     <span className="text-xl">0</span>
                   </button>
                </div>
             </div>
          </div>
       </div>
    );
-}
+};
 
 export default AspirationCard;
