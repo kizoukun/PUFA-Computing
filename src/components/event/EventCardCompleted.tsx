@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Event from "@/models/event";
+import { Event } from "@/lib/types";
 
 export default function EventCardCompleted({ events }: { events: Event[] }) {
     const truncateDescription = (description: string, maxLength: number) => {
@@ -25,10 +25,12 @@ export default function EventCardCompleted({ events }: { events: Event[] }) {
                     <div className="flex justify-between">
                         <div className="rounded-2xl border-2 border-[#E50D0D] px-4">
                             <h1 className="text-[0.8rem] text-[#E50D0D]">
-                                {event.status}
+                                {/* {event.status} */}
                             </h1>
                         </div>
-                        <Link href={`/events/${event.slug}`}>Read More</Link>
+                        <Link href={`/events/${event.uniqueId}`}>
+                            Read More
+                        </Link>
                     </div>
                 </div>
             ))}

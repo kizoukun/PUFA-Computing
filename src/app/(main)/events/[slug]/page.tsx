@@ -1,11 +1,14 @@
 import { redirect } from "next/navigation";
 import React from "react";
-import { fetchEventBySlug } from "@/services/api/event";
 import Image from "next/image";
 import Link from "next/link";
 import { IoIosArrowForward } from "react-icons/io";
 import Seperator from "@/components/Seperator";
 import RegisterButton from "./_components/RegisterButton";
+import { db } from "@/lib/db";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/authOptions";
+import Button from "@/components/Button";
 
 const description = (description: string) => {
     const lines = description.split("\n");
@@ -25,7 +28,37 @@ export default async function EventDetailsPage({ params }: EventPageProps) {
     if (!params.slug || params.slug.length < 1) {
         return redirect("/404");
     }
-    const event = await fetchEventBySlug(params.slug);
+    const session = await getServerSession(authOptions);
+    const user = session?.user;
+    const event = await db.event.findUnique({
+        where: {
+            uniqueId: params.slug,
+        },
+        include: {
+            organization: true,
+        },
+    });
+
+    const userParticipation = await db.users.findFirst({
+        where: {
+            EventParticipant: {
+                some: {
+                    userId: user?.id,
+                },
+            },
+        },
+        select: {
+            Event: {
+                select: {
+                    id: true,
+                },
+            },
+        },
+    });
+
+    const isAlreadyRegistered =
+        userParticipation?.Event.some((event) => event.id === event.id) ||
+        false;
 
     if (!event) {
         return redirect("/404");
@@ -41,7 +74,7 @@ export default async function EventDetailsPage({ params }: EventPageProps) {
                                 Computing Events
                             </Link>
                             <IoIosArrowForward className="ml-2" />
-                            {event.organization}
+                            {event.organization.name}
                         </div>
                     </h1>
                     <p className="text-[0.8rem] font-[400]">
@@ -52,7 +85,7 @@ export default async function EventDetailsPage({ params }: EventPageProps) {
             </section>
 
             <div className="mx-auto grid max-w-7xl items-start gap-6 py-6 md:grid-cols-2 lg:gap-12">
-                <div className="w-full md:w-auto px-2">
+                <div className="w-full px-2 md:w-auto">
                     <div className="w-full scale-100 overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800">
                         <Image
                             alt={`${event.title}'s poster`}
@@ -79,12 +112,22 @@ export default async function EventDetailsPage({ params }: EventPageProps) {
                     </div>
                     <Seperator className="border-[#CBCBCB]" />
                     <div className="flex items-center justify-center pb-5 pt-3 ">
-                        <RegisterButton
-                            eventSlug={event.slug}
-                            eventId={event.id}
-                            eventTitle={event.title}
-                            eventStatus={event.status}
-                        />
+                        {user ? (
+                            <RegisterButton
+                                eventId={event.id}
+                                eventTitle={event.title}
+                                isAlreadyRegistered={isAlreadyRegistered}
+                            />
+                        ) : (
+                            <Link href="/auth/signin">
+                                <Button
+                                    className="w-5/6 border-[#353535] py-2 text-[#353535] hover:bg-[#353535] hover:text-white"
+                                    disabled={true}
+                                >
+                                    Sign In to Register
+                                </Button>
+                            </Link>
+                        )}
                     </div>
                 </div>
             </div>

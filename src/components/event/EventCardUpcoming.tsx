@@ -1,7 +1,6 @@
 import React from "react";
-import Link from "next/link";
-import Event from "@/models/event";
 import Image from "next/image";
+import { Event } from "@/lib/types";
 
 export default function EventCardUpcoming({ events }: { events: Event[] }) {
     const truncateDescription = (description: string, maxLength: number) => {
@@ -35,16 +34,18 @@ export default function EventCardUpcoming({ events }: { events: Event[] }) {
                             {event.title}
                         </h1>
                         <h1 className="text-[0.8rem] text-[#353535]">
-                            {event.start_date.toDateString()}
+                            {event.startDate.toDateString()}
                         </h1>
                         <p className="text-justify text-[0.8rem] font-[400] text-[#353535]">
                             {truncateDescription(event.description, 150)}{" "}
                         </p>
                         <div className="flex justify-between">
-                            <h1 className="font-[600]">{event.organization}</h1>
+                            <h1 className="font-[600]">
+                                {event.organization.name}
+                            </h1>
                             <div className="rounded-2xl border-2 border-[#E50D0D] px-4">
                                 <h1 className="text-[#E50D0D]">
-                                    {event.status}
+                                    {/* {event.status} */}
                                 </h1>
                             </div>
                         </div>

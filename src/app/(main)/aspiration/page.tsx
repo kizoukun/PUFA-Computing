@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default async function AspirationPage() {
     const session = await getServerSession(authOptions);
-    const majors = await db.major.findMany({
+    const organizations = await db.organization.findMany({
         select: {
             id: true,
             name: true,
@@ -41,7 +41,7 @@ export default async function AspirationPage() {
             >
                 <AspirationForm
                     isLoggedIn={session?.user != undefined}
-                    majors={majors}
+                    organizations={organizations}
                 />
 
                 <h1 className="mt-20 text-center text-[35px] font-[700] text-[#353535]">

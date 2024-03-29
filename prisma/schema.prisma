@@ -72,8 +72,8 @@ model ProjectImage {
 
 model Aspiration {
    id             String           @id @default(uuid())
-   majorId        Int
-   major          Major            @relation(fields: [majorId], references: [id])
+   organizationId Int
+   organization   Organization     @relation(fields: [organizationId], references: [id])
    from           String
    anonymous      Boolean          @default(false)
    subject        String
@@ -93,20 +93,22 @@ model AspirationLike {
 }
 
 model Users {
-   id             String           @id @default(uuid())
-   password       String
-   email          String           @unique
-   firstName      String
-   lastName       String
-   studentId      String           @unique
-   majorId        Int
-   major          Major            @relation(fields: [majorId], references: [id])
-   profilePicture String?
-   dateOfBirth    DateTime?
-   yearOfBatch    String
-   createAt       DateTime         @default(now())
-   updateAt       DateTime         @default(now()) @updatedAt
-   AspirationLike AspirationLike[]
+   id               String             @id @default(uuid())
+   password         String
+   email            String             @unique
+   firstName        String
+   lastName         String
+   studentId        String             @unique
+   majorId          Int
+   major            Major              @relation(fields: [majorId], references: [id])
+   profilePicture   String?
+   dateOfBirth      DateTime?
+   yearOfBatch      String
+   createAt         DateTime           @default(now())
+   updateAt         DateTime           @default(now()) @updatedAt
+   AspirationLike   AspirationLike[]
+   Event            Event[]
+   EventParticipant EventParticipant[]
 }
 
 model Major {
@@ -118,6 +120,46 @@ model Major {
    createdAt   DateTime @default(now())
    updatedAt   DateTime @default(now()) @updatedAt
 
-   Users      Users[]
-   Aspiration Aspiration[]
+   Users Users[]
+   Event Event[]
+}
+
+model Organization {
+   id          Int          @id @default(autoincrement())
+   name        String
+   description String
+   logo        String
+   createdAt   DateTime     @default(now())
+   updatedAt   DateTime     @default(now()) @updatedAt
+   Aspiration  Aspiration[]
+   Event       Event[]
+}
+
+model Event {
+   id               Int                @id @default(autoincrement())
+   uniqueId         String             @unique
+   title            String
+   description      String
+   startDate        DateTime
+   endDate          DateTime
+   majorId          Int?
+   major            Major?             @relation(fields: [majorId], references: [id])
+   organizationId   Int
+   organization     Organization       @relation(fields: [organizationId], references: [id])
+   authorId         String
+   author           Users              @relation(fields: [authorId], references: [id])
+   thumbnail        String
+   maxParticipant   Int                @default(0)
+   createdAt        DateTime           @default(now())
+   updatedAt        DateTime           @default(now()) @updatedAt
+   EventParticipant EventParticipant[]
+}
+
+model EventParticipant {
+   id       Int      @id @default(autoincrement())
+   eventId  Int
+   userId   String
+   event    Event    @relation(fields: [eventId], references: [id])
+   user     Users    @relation(fields: [userId], references: [id])
+   createAt DateTime @default(now())
 }

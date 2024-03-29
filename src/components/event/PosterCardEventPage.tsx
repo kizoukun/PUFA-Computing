@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Event from "@/models/event";
 
 /**
  * PosterCardEventPage component represents a card with a poster image linked to a specific page.
@@ -21,28 +20,35 @@ import Event from "@/models/event";
  */
 
 interface PosterCardEventPageProps {
-   slug: string;
-   image: string;
-   alt: string;
+    events: {
+        title: string;
+        uniqueId: string;
+        thumbnail: string;
+    }[];
 }
 
-export default function PosterCardEventPage({ events }: { events: Event[] }) {
-   return (
-      <section className="mx-auto max-w-7xl px-10 py-[5rem]">
-         <h1 className="mb-[3rem] text-[1.2rem] font-bold">All Events</h1>
-         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
-            {events.map((event) => (
-               <Link href={`events/${event.slug}`} className="block w-full">
-                  <div className="rounded-xl transition duration-300 hover:scale-105 hover:shadow-md">
-                     <img
-                        className="h-full w-full rounded-xl bg-center object-cover"
-                        src={event.thumbnail}
-                        alt={event.title}
-                     />
-                  </div>
-               </Link>
-            ))}
-         </div>
-      </section>
-);
+export default function PosterCardEventPage({
+    events,
+}: PosterCardEventPageProps) {
+    return (
+        <section className="mx-auto max-w-7xl px-10 py-[5rem]">
+            <h1 className="mb-[3rem] text-[1.2rem] font-bold">All Events</h1>
+            <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+                {events.map((event) => (
+                    <Link
+                        href={`events/${event.uniqueId}`}
+                        className="block w-full"
+                    >
+                        <div className="rounded-xl transition duration-300 hover:scale-105 hover:shadow-md">
+                            <img
+                                className="h-full w-full rounded-xl bg-center object-cover"
+                                src={event.thumbnail}
+                                alt={event.title}
+                            />
+                        </div>
+                    </Link>
+                ))}
+            </div>
+        </section>
+    );
 }
