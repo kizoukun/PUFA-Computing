@@ -89,3 +89,18 @@ model AspirationLike {
    userEmail    String
    aspiration   Aspiration @relation(fields: [aspirationId], references: [id], onDelete: Cascade)
 }
+
+model Users {
+   id             String    @id @default(uuid())
+   password       String
+   email          String    @unique
+   firstName      String
+   lastName       String
+   studentId      String    @unique
+   major          String
+   profilePicture String?
+   dateOfBirth    DateTime?
+   yearOfBatch    String
+   createAt       DateTime  @default(now())
+   updateAt       DateTime  @default(now()) @updatedAt
+}
