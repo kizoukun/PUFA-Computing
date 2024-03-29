@@ -1,46 +1,15 @@
-"use client";
 import Button from "@/components/Button";
 import Input from "@/components/Input";
 import React from "react";
 import Seperator from "@/components/Seperator";
-import { GetUserProfile } from "@/services/api/user";
-import User from "@/models/user";
 import Image from "next/image";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/authOptions";
 
-export default function DashboardProfilePage() {
-   const [loading, setLoading] = React.useState(true);
-   const [userData, setUserData] = React.useState<User>();
+export default async function DashboardProfilePage() {
+   const session = await getServerSession(authOptions);
+   const user = session?.user;
 
-   // Fetch user data
-   React.useEffect(() => {
-      const fetchData = async () => {
-         try {
-            const userData = await GetUserProfile();
-            setUserData(userData);
-            setLoading(false);
-         } catch (error) {
-            console.error("Error fetching user data:", error);
-         }
-      };
-
-      fetchData().then((r) => r);
-   }, []);
-
-   const Major = [
-      { value: "informatics", label: "Informatics" },
-      { value: "information System", label: "Information System" },
-      {
-         value: "visual communication design",
-         label: "Visual Communication Design",
-      },
-      { value: "interior design", label: "Interior Design" },
-   ];
-
-   const Batch = [
-      { value: "2023", label: "2023" },
-      { value: "2022", label: "2022" },
-      { value: "2021", label: "2021" },
-   ];
    return (
       <div className="grid grid-cols-1 gap-5 p-4 lg:grid-cols-2">
          <div>
@@ -55,14 +24,14 @@ export default function DashboardProfilePage() {
                         htmlFor="first-name"
                         label="First Name"
                         type="text"
-                        placeholder={userData?.first_name}
+                        placeholder={user?.firstName}
                         disabled
                      />
                      <Input
                         htmlFor="last-name"
                         label="Last Name"
                         type="text"
-                        placeholder={userData?.last_name}
+                        placeholder={user?.lastName}
                         disabled
                      />
                   </div>
@@ -71,7 +40,7 @@ export default function DashboardProfilePage() {
                         htmlFor="email-address"
                         label="Email Address"
                         type="email"
-                        placeholder={userData?.email}
+                        placeholder={user?.email}
                         disabled
                      />
                   </div>
@@ -80,7 +49,7 @@ export default function DashboardProfilePage() {
                         htmlFor="major"
                         label="Major"
                         type="text"
-                        placeholder={userData?.major}
+                        placeholder={user?.major}
                         disabled
                      />
                   </div>
@@ -89,7 +58,7 @@ export default function DashboardProfilePage() {
                         htmlFor="batch"
                         label="Batch"
                         type="text"
-                        placeholder={userData?.year}
+                        placeholder={user?.yearOfBatch}
                         disabled
                      />
                   </div>
@@ -169,7 +138,8 @@ export default function DashboardProfilePage() {
                            Upload or darg & drop your file SVG, PNG, or JPG.{" "}
                         </p>
 
-                        <input disabled
+                        <input
+                           disabled
                            id="dropzone-file"
                            type="file"
                            className="hidden"
