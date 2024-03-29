@@ -13,10 +13,11 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import NavbarDropdown from "./NavbarDropdown";
 import Logo from "@/assets/logo.png";
 import Image from "next/image";
+import { useSession, signOut } from "next-auth/react";
 
 /**
  * Navbar Component
@@ -26,7 +27,7 @@ import Image from "next/image";
 export default function Navbar() {
    // State for mobile menu and user authentication
    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-   const [isLoggedIn, setIsLogggedIn] = useState(false);
+   const session = useSession();
 
    // Navigation links for PUMA and Others sections
    const NavbarOthers = [
@@ -77,27 +78,14 @@ export default function Navbar() {
       },
    ];
 
-   useEffect(() => {
-      // Check user authentication on component mount
-      const userToken = localStorage.getItem("access_token");
-      setIsLogggedIn(!!userToken);
-   }, []);
-
    /**
     * Handle Logout
     *
     * Function to handle user logout.
     */
-   const handleLogout = () => {
-      localStorage.removeItem("access_token");
-      localStorage.removeItem("userId");
-      window.location.href = "/";
-      setIsLogggedIn(false);
-   };
-
    const dashboard = () => {
       window.location.href = "/dashboard";
-   }
+   };
 
    return (
       <header className="sticky top-0 z-50 bg-white shadow-md">
@@ -105,16 +93,27 @@ export default function Navbar() {
             <div className="flex h-24 items-center justify-between">
                <div className="flex items-center gap-12 lg:divide-x-2 lg:divide-black">
                   <Link href="/">
-                     <Image alt="PU Computing" src={Logo} width="130" height="80" />
+                     <Image
+                        alt="PU Computing"
+                        src={Logo}
+                        width="130"
+                        height="80"
+                     />
                   </Link>
                   <div className="hidden px-7 font-bold lg:block">
                      <div className="flex flex-col items-center">
                         <div className="flex-grow text-sm font-normal tracking-widest">
                            President University
-                           <p className="text-sm font-normal" style={{ letterSpacing: "0.11em" }}>
+                           <p
+                              className="text-sm font-normal"
+                              style={{ letterSpacing: "0.11em" }}
+                           >
                               Faculty Association
                            </p>
-                           <div className="text-center text-[19px] font-[700]" style={{ letterSpacing: "0.33em" }}>
+                           <div
+                              className="text-center text-[19px] font-[700]"
+                              style={{ letterSpacing: "0.33em" }}
+                           >
                               COMPUTING
                            </div>
                         </div>
@@ -135,13 +134,17 @@ export default function Navbar() {
                         stroke="currentColor"
                         strokeWidth="2"
                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        <path
+                           strokeLinecap="round"
+                           strokeLinejoin="round"
+                           d="M4 6h16M4 12h16M4 18h16"
+                        />
                      </svg>
                   </button>
                </div>
 
                {isMobileMenuOpen && (
-                  <div className="lg:hidden absolute top-24 left-0 right-0 bg-white shadow-md">
+                  <div className="absolute left-0 right-0 top-24 bg-white shadow-md lg:hidden">
                      <nav aria-label="Global" className="p-4">
                         <ul className="text-md flex flex-col items-center gap-6 font-medium text-black">
                            <li>
@@ -153,44 +156,49 @@ export default function Navbar() {
                            <li>
                               <Link href="/news">News</Link>
                            </li>
-                           <NavbarDropdown title="PUMA" items={NavbarPuma[0].items} />
-                           <NavbarDropdown title="Others" items={NavbarOthers[0].items} />
+                           <NavbarDropdown
+                              title="PUMA"
+                              items={NavbarPuma[0].items}
+                           />
+                           <NavbarDropdown
+                              title="Others"
+                              items={NavbarOthers[0].items}
+                           />
                            <div>
-                           {isLoggedIn ? (
-                              <>
-                                 <button
-                                    onClick={dashboard} // Change onClick to dashboard function
-                                    className="rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5 mr-3"
-                                 >
-                                    Dashboard
-                                 </button>
-                                 <button
-                                    onClick={handleLogout}
-                                    className="rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5 mr-3"
-                                 >
-                                    Logout
-                                 </button>
-                              </>
-                           ) : (
-                              <>
-                                 <div className="mb-5">
-                                    <Link
-                                       className="rounded-md bg-white px-2 py-2.5 my-6 font-medium text-black md:px-5 mr-3"
-                                       href="/auth/signin"
+                              {session.data ? (
+                                 <>
+                                    <button
+                                       onClick={dashboard} // Change onClick to dashboard function
+                                       className="mr-3 rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5"
                                     >
-                                       Log in
+                                       Dashboard
+                                    </button>
+                                    <button
+                                       onClick={() => signOut()}
+                                       className="mr-3 rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5"
+                                    >
+                                       Logout
+                                    </button>
+                                 </>
+                              ) : (
+                                 <>
+                                    <div className="mb-5">
+                                       <Link
+                                          className="my-6 mr-3 rounded-md bg-white px-2 py-2.5 font-medium text-black md:px-5"
+                                          href="/auth/signin"
+                                       >
+                                          Log in
+                                       </Link>
+                                    </div>
+                                    <Link
+                                       className="rounded-md bg-white px-2 py-2.5 font-medium text-black"
+                                       href="/auth/signup"
+                                    >
+                                       Sign up
                                     </Link>
-                                 </div>
-                                 <Link
-                                    className="rounded-md bg-white px-2 py-2.5 font-medium text-black"
-                                    href="/auth/signup"
-                                 >
-                                    Sign up
-                                 </Link>
-                              </>
-                           )}
-                        </div>
-
+                                 </>
+                              )}
+                           </div>
                         </ul>
                      </nav>
                   </div>
@@ -208,23 +216,31 @@ export default function Navbar() {
                         <Link href="/news">News</Link>
                      </li>
                      {NavbarPuma.map((item) => (
-                        <NavbarDropdown title={item.title} items={item.items} key={item.title} />
+                        <NavbarDropdown
+                           title={item.title}
+                           items={item.items}
+                           key={item.title}
+                        />
                      ))}
                      {NavbarOthers.map((item) => (
-                        <NavbarDropdown title={item.title} items={item.items} key={item.title} />
+                        <NavbarDropdown
+                           title={item.title}
+                           items={item.items}
+                           key={item.title}
+                        />
                      ))}
                      <li>
-                        {isLoggedIn ? (
+                        {session.data ? (
                            <>
                               <button
                                  onClick={dashboard} // Change onClick to dashboard function
-                                 className="rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5 mr-3"
+                                 className="mr-3 rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5"
                               >
                                  Dashboard
                               </button>
                               <button
-                                 onClick={handleLogout}
-                                 className="rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5 mr-3"
+                                 onClick={() => signOut()}
+                                 className="mr-3 rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5"
                               >
                                  Logout
                               </button>
@@ -232,7 +248,7 @@ export default function Navbar() {
                         ) : (
                            <>
                               <Link
-                                 className="rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 mr-2 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5"
+                                 className="mr-2 rounded-md border-2 border-[#0C8CE9] bg-white px-2 py-2.5 text-sm font-medium text-black duration-300 hover:bg-[#0C8CE9] hover:text-white md:px-5"
                                  href="/auth/signin"
                               >
                                  Log in
@@ -251,8 +267,9 @@ export default function Navbar() {
             </div>
          </div>
          {/*Alpha Version Tag*/}
-         <div className="bg-[#FF6F22] text-white text-center text-sm py-1">
-            <span className="font-bold">Warning:</span> This is the version Alpha 0.6.2, your data will be deleted on 27-04-2024
+         <div className="bg-[#FF6F22] py-1 text-center text-sm text-white">
+            <span className="font-bold">Warning:</span> This is the version
+            Alpha 0.6.2, your data will be deleted on 27-04-2024
          </div>
       </header>
    );

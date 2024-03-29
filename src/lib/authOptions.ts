@@ -20,7 +20,6 @@ export const authOptions: NextAuthOptions = {
                   email: credentials.email,
                },
             });
-            console.log(user);
             if (!user) {
                throw new Error("Email atau password salah");
             }
@@ -50,7 +49,6 @@ export const authOptions: NextAuthOptions = {
                email: token.email,
             },
          });
-         console.log(dbUser);
          if (!dbUser) {
             return "/auth/login";
          }
