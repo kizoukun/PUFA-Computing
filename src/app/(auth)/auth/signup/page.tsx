@@ -14,7 +14,7 @@ export default async function RegisterPage() {
          style={{ backgroundImage: `url('/doodle.svg')` }}
       >
          <div className="container mx-auto flex min-h-screen items-center justify-center px-6 py-10">
-            <div className="mx-auto max-w-lg">
+            <div className="mx-auto max-w-lg" >
                <RegisterForm />
             </div>
          </div>

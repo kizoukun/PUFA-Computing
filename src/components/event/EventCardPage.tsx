@@ -17,6 +17,17 @@ export default function EventCardPage({ events }: { events: Event[] }) {
       return description.substring(0, maxLength) + "...";
    };
 
+   if (events.length === 0) {
+      return (
+          <div className="flex items-center justify-center h-screen">
+             <div className="text-center">
+                <h1 className="text-5xl font-bold text-gray-700 mb-4">No Upcoming Events</h1>
+                <p className="text-xl text-gray-500">Check back later for updates.</p>
+             </div>
+          </div>
+      );
+   }
+
    return (
       <div className="mt-16 grid grid-cols-1 gap-16 lg:grid-cols-2">
          {events.map((event) => (
@@ -27,8 +38,8 @@ export default function EventCardPage({ events }: { events: Event[] }) {
                         src={event.thumbnail}
                         className="h-full w-full rounded-[15px] scale-110"
                         alt={`${event.title}'s poster`}
-                        layout="fixed" // Set layout to fixed
-                        width={2800} // Set width to 2000 pixels for a wider image
+                        layout="fixed"
+                        width={2800}
                         height={1080}
                      />
                   </div>
@@ -51,7 +62,7 @@ export default function EventCardPage({ events }: { events: Event[] }) {
                         })}`}
                      </p>
                      <p className="text-sm md:text-base text-justify">
-                        {truncateDescription(event.description, 150)} {/* Batasi panjang deskripsi menjadi 150 karakter */}
+                        {truncateDescription(event.description, 150)}
                      </p>
                      <div className="flex justify-between">
                         <p className="text-[16px] font-bold ">
