@@ -270,9 +270,9 @@ export default function Navbar() {
             </div>
             {/*Alpha Version Tag*/}
             <div className="bg-[#FF6F22] p-1 text-center text-sm text-white">
-                <span className="font-bold">Warning:</span> This is the version
-                is a forked version that is still in development. Some features
-                may not work properly
+                <span className="font-bold">Warning:</span> This is a forked
+                version of PUFA Computing website this is still in development.
+                Some features may not work properly
             </div>
         </header>
     );
