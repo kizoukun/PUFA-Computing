@@ -91,16 +91,29 @@ model AspirationLike {
 }
 
 model Users {
-   id             String    @id @default(uuid())
+   id             String       @id @default(uuid())
    password       String
-   email          String    @unique
+   email          String       @unique
    firstName      String
    lastName       String
-   studentId      String    @unique
-   major          String
+   studentId      String       @unique
+   majorId        Int
+   major          Organization @relation(fields: [majorId], references: [id])
    profilePicture String?
    dateOfBirth    DateTime?
    yearOfBatch    String
-   createAt       DateTime  @default(now())
-   updateAt       DateTime  @default(now()) @updatedAt
+   createAt       DateTime     @default(now())
+   updateAt       DateTime     @default(now()) @updatedAt
+}
+
+model Organization {
+   id          Int      @id @default(autoincrement())
+   uniqueId    String   @unique
+   name        String
+   description String
+   logo        String
+   createdAt   DateTime @default(now())
+   updatedAt   DateTime @default(now()) @updatedAt
+
+   Users Users[]
 }

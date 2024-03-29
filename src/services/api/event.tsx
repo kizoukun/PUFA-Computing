@@ -13,7 +13,7 @@ const eventCache: { [key: string]: Event } = {};
  * @returns {Promise<Event[]>} A promise that resolves to an array of Event objects.
  * @throws {Error} If an error occurs during the API request.
  */
-export  const fetchEvents = async (): Promise<Event[]> => {
+export const fetchEvents = async (): Promise<Event[]> => {
    try {
       // Make a GET request to the API endpoint.
       const response = await axios.get(API_EVENT);

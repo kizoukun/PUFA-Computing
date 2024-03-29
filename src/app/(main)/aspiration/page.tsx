@@ -6,6 +6,7 @@ import PageHeading from "@/components/PageHeading";
 import Loading from "@/components/Loading";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/authOptions";
+import { db } from "@/lib/db";
 
 export const revalidate = 600;
 export const dynamic = "force-dynamic";
@@ -17,6 +18,12 @@ export const metadata: Metadata = {
 
 export default async function AspirationPage() {
    const session = await getServerSession(authOptions);
+   const organizations = await db.organization.findMany({
+      select: {
+         id: true,
+         name: true,
+      },
+   });
    return (
       <div>
          {/* // title */}
@@ -32,7 +39,10 @@ export default async function AspirationPage() {
             className="bg-cover bg-center bg-repeat px-4 py-8 md:px-[10rem] md:py-16"
             style={{ backgroundImage: `url('/doodle.svg')` }}
          >
-            <AspirationForm isLoggedIn={session?.user != undefined} />
+            <AspirationForm
+               isLoggedIn={session?.user != undefined}
+               organizations={organizations}
+            />
 
             <h1 className="mt-20 text-center text-[35px] font-[700] text-[#353535]">
                Aspirations Library

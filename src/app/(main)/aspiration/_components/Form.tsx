@@ -10,9 +10,13 @@ import { AspirationFormSchema } from "@/lib/schema/aspiration";
 
 type AspirationFormProps = {
    isLoggedIn: boolean;
+   organizations: { id: number; name: string }[];
 };
 
-export default function AspirationForm({ isLoggedIn }: AspirationFormProps) {
+export default function AspirationForm({
+   isLoggedIn,
+   organizations,
+}: AspirationFormProps) {
    const formHtml = useRef<HTMLFormElement>(null);
    const session = useSession();
    const [selectedOrganization, setSelectedOrganization] = useState<{
@@ -28,11 +32,11 @@ export default function AspirationForm({ isLoggedIn }: AspirationFormProps) {
 
       const formData = new FormData(event.target as HTMLFormElement);
       const organization = organizations.find(
-         (org) => org.value === selectedOrganization.value
+         (org) => org.id.toString() == selectedOrganization.value
       );
       const data = {
          subject: formData.get("subject") as string,
-         to: organization?.label,
+         to: organization?.name,
          from: session.data?.user.firstName + " " + session.data?.user.lastName,
          anonymous: formData.get("anonymous") === "on",
          message: formData.get("message") as string,
@@ -80,13 +84,10 @@ export default function AspirationForm({ isLoggedIn }: AspirationFormProps) {
       }
    }
 
-   const organizations = [
-      { value: "1", label: "PUFA Computing" },
-      { value: "2", label: "PUMA Informatics" },
-      { value: "3", label: "PUMA Information System" },
-      { value: "4", label: "PUMA VCD" },
-      { value: "5", label: "PUMA Interior Design" },
-   ];
+   const organizationsForm = organizations.map((org) => ({
+      value: org.id.toString(),
+      label: org.name,
+   }));
 
    if (!isLoggedIn) {
       return (
@@ -142,7 +143,7 @@ export default function AspirationForm({ isLoggedIn }: AspirationFormProps) {
                   onChange={(selectedOption) =>
                      setSelectedOrganization(selectedOption as any)
                   }
-                  options={organizations}
+                  options={organizationsForm}
                />
             </div>
 

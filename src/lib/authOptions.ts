@@ -48,6 +48,9 @@ export const authOptions: NextAuthOptions = {
                // @ts-ignore
                email: token.email,
             },
+            include: {
+               major: true,
+            },
          });
          if (!dbUser) {
             return "/auth/login";
@@ -59,7 +62,7 @@ export const authOptions: NextAuthOptions = {
             firstName: dbUser.firstName,
             lastName: dbUser.lastName,
             studentId: dbUser.studentId,
-            major: dbUser.major,
+            major: dbUser.major.name,
             yearOfBatch: dbUser.yearOfBatch,
             updatedAt: dbUser.updateAt,
             createdAt: dbUser.createAt,

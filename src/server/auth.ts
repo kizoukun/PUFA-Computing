@@ -2,6 +2,7 @@
 import "server-only";
 import { db } from "@/lib/db";
 import { UserRegisterSchema } from "@/lib/schema/auth";
+import { z } from "zod";
 const bcrypt = require("bcrypt");
 
 export async function UserRegister(form: unknown) {
@@ -24,6 +25,20 @@ export async function UserRegister(form: unknown) {
       return { error: "Email already exists" };
    }
 
+   const id = result.data.studentId.substring(0, 3);
+
+   const checkMajor = await db.organization.findFirst({
+      where: {
+         uniqueId: id,
+      },
+   });
+
+   if (!checkMajor) {
+      return {
+         error: "Organization currently not supported, please try to contact us to add organization",
+      };
+   }
+
    const password = await bcrypt.hash(result.data.password, 10);
    const data = result.data;
    const putDb = await db.users.create({
@@ -33,7 +48,7 @@ export async function UserRegister(form: unknown) {
          firstName: data.firstName,
          lastName: data.lastName,
          studentId: data.studentId,
-         major: data.major,
+         majorId: checkMajor.id,
          yearOfBatch: data.year,
       },
    });
@@ -41,4 +56,37 @@ export async function UserRegister(form: unknown) {
       return { error: "Failed to create user" };
    }
    return { error: false, message: "User created", id: putDb.id };
+}
+
+const MajorSchema = z.object({
+   id: z
+      .string({
+         required_error: "ID is required",
+      })
+      .length(3, {
+         message: "ID must be 3 characters",
+      }),
+});
+
+export async function getMajor(formData: unknown) {
+   const result = MajorSchema.safeParse(formData);
+   if (!result.success) {
+      let errorMessage = "";
+      result.error.issues.forEach((issue) => {
+         errorMessage += issue.message + ". ";
+      });
+      return { error: errorMessage };
+   }
+
+   const major = await db.organization.findFirst({
+      where: {
+         uniqueId: result.data.id,
+      },
+   });
+
+   if (!major) {
+      return { error: "Major not found" };
+   }
+
+   return { error: false, major: major };
 }

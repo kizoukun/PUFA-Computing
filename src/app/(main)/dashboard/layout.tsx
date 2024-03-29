@@ -1,6 +1,7 @@
 import { authOptions } from "@/lib/authOptions";
 import { getServerSession } from "next-auth";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import React from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 
@@ -10,6 +11,7 @@ export default async function DashboardLayout({
    children: React.ReactNode;
 }) {
    const session = await getServerSession(authOptions);
+   if (!session) return redirect("/auth/signin");
    const LINKS = [
       {
          name: "Profile",

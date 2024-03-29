@@ -29,9 +29,6 @@ export const UserRegisterSchema = z.object({
          message:
             "Student ID must be 12 digits long and start with 3 digits of major, 4 digits of batch, 5 digits of id",
       }),
-   major: z.string({ required_error: "Major is required" }).min(3, {
-      message: "Major must be at least 3 characters",
-   }),
    year: z.string({ required_error: "Year is required" }).min(4, {
       message: "Year must be 4 characters",
    }),

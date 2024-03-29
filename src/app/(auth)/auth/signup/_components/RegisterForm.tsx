@@ -4,7 +4,6 @@ import Link from "next/link";
 import { UserRegisterSchema } from "@/lib/schema/auth";
 import { Toast } from "@/lib/Toast";
 import { UserRegister } from "@/server/auth";
-import { getMajor } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 
 // RegisterForm component
@@ -26,14 +25,6 @@ export default function RegisterForm() {
       e.preventDefault();
 
       const formData = new FormData(e.target as HTMLFormElement);
-      const studentId = formData.get("studentId");
-      if (getMajor(studentId as string) === undefined) {
-         await Toast.fire({
-            icon: "error",
-            title: "We currently don't support this major. Please contact us for further information.",
-         });
-      }
-      formData.append("major", getMajor(studentId as string) as string);
       const result = UserRegisterSchema.safeParse(
          Object.fromEntries(formData.entries())
       );

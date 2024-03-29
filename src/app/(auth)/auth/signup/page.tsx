@@ -1,13 +1,18 @@
-import Image from "next/image";
+import { getServerSession } from "next-auth";
 import RegisterForm from "./_components/RegisterForm";
 import { Metadata } from "next";
-import PUComputing from "@/assets/PUComputing.png";
+import { authOptions } from "@/lib/authOptions";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
    title: "Register",
 };
 
 export default async function RegisterPage() {
+   const session = await getServerSession(authOptions);
+   if (session) {
+      return redirect("/dashboard");
+   }
    return (
       <div
          className="bg-cover bg-center"
