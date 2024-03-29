@@ -14,7 +14,7 @@
       "@designbycode/tailwindcss-text-stroke": "^1.2.1",
       "@headlessui/react": "^1.7.17",
       "@heroicons/react": "^2.0.18",
-      "@prisma/client": "^5.10.2",
+      "@prisma/client": "^5.11.0",
       "@radix-ui/react-select": "^2.0.0",
       "@react-icons/all-files": "^4.1.0",
       "@tailwindcss/typography": "^0.5.10",
@@ -48,6 +48,6 @@
    "devDependencies": {
       "prettier": "^3.1.0",
       "prettier-plugin-tailwindcss": "^0.5.7",
-      "prisma": "^5.10.2"
+      "prisma": "^5.11.0"
    }
 }
