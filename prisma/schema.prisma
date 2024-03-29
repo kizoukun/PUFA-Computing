@@ -72,7 +72,8 @@ model ProjectImage {
 
 model Aspiration {
    id             String           @id @default(uuid())
-   to             String
+   majorId        Int
+   major          Major            @relation(fields: [majorId], references: [id])
    from           String
    anonymous      Boolean          @default(false)
    subject        String
@@ -86,27 +87,29 @@ model Aspiration {
 model AspirationLike {
    id           Int        @id @default(autoincrement())
    aspirationId String
-   userEmail    String
+   userId       String
+   user         Users      @relation(fields: [userId], references: [id])
    aspiration   Aspiration @relation(fields: [aspirationId], references: [id], onDelete: Cascade)
 }
 
 model Users {
-   id             String       @id @default(uuid())
+   id             String           @id @default(uuid())
    password       String
-   email          String       @unique
+   email          String           @unique
    firstName      String
    lastName       String
-   studentId      String       @unique
+   studentId      String           @unique
    majorId        Int
-   major          Organization @relation(fields: [majorId], references: [id])
+   major          Major            @relation(fields: [majorId], references: [id])
    profilePicture String?
    dateOfBirth    DateTime?
    yearOfBatch    String
-   createAt       DateTime     @default(now())
-   updateAt       DateTime     @default(now()) @updatedAt
+   createAt       DateTime         @default(now())
+   updateAt       DateTime         @default(now()) @updatedAt
+   AspirationLike AspirationLike[]
 }
 
-model Organization {
+model Major {
    id          Int      @id @default(autoincrement())
    uniqueId    String   @unique
    name        String
@@ -115,5 +118,6 @@ model Organization {
    createdAt   DateTime @default(now())
    updatedAt   DateTime @default(now()) @updatedAt
 
-   Users Users[]
+   Users      Users[]
+   Aspiration Aspiration[]
 }

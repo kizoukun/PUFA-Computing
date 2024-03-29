@@ -10,12 +10,12 @@ import { AspirationFormSchema } from "@/lib/schema/aspiration";
 
 type AspirationFormProps = {
    isLoggedIn: boolean;
-   organizations: { id: number; name: string }[];
+   majors: { id: number; name: string }[];
 };
 
 export default function AspirationForm({
    isLoggedIn,
-   organizations,
+   majors,
 }: AspirationFormProps) {
    const formHtml = useRef<HTMLFormElement>(null);
    const session = useSession();
@@ -27,16 +27,16 @@ export default function AspirationForm({
       event.preventDefault();
 
       if (!selectedOrganization) {
-         return; // If no organization is selected, do not proceed
+         return;
       }
 
       const formData = new FormData(event.target as HTMLFormElement);
-      const organization = organizations.find(
+      const organization = majors.find(
          (org) => org.id.toString() == selectedOrganization.value
       );
       const data = {
          subject: formData.get("subject") as string,
-         to: organization?.name,
+         organization: organization?.id,
          from: session.data?.user.firstName + " " + session.data?.user.lastName,
          anonymous: formData.get("anonymous") === "on",
          message: formData.get("message") as string,
@@ -84,7 +84,7 @@ export default function AspirationForm({
       }
    }
 
-   const organizationsForm = organizations.map((org) => ({
+   const majorsForm = majors.map((org) => ({
       value: org.id.toString(),
       label: org.name,
    }));
@@ -143,7 +143,7 @@ export default function AspirationForm({
                   onChange={(selectedOption) =>
                      setSelectedOrganization(selectedOption as any)
                   }
-                  options={organizationsForm}
+                  options={majorsForm}
                />
             </div>
 

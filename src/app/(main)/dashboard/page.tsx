@@ -1,7 +1,5 @@
-import { redirect } from 'next/navigation';
+import { redirect } from "next/navigation";
 
-const Page = () => {
-  return redirect('/dashboard/profile');
-};
-
-export default Page;
+export default async function DashboardPage() {
+   return redirect("/dashboard/profile");
+}

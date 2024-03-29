@@ -1,9 +1,7 @@
 import { z } from "zod";
 
 export const AspirationFormSchema = z.object({
-   to: z.string({ required_error: "To is required" }).min(3, {
-      message: "To must be at least 3 characters",
-   }),
+   organization: z.number({ required_error: "Organization is required" }),
    from: z.string({ required_error: "From is required" }).min(3, {
       message: "From must be at least 3 characters",
    }),
@@ -14,4 +12,8 @@ export const AspirationFormSchema = z.object({
    message: z.string({ required_error: "Message is required" }).min(10, {
       message: "Message must be at least 10 characters",
    }),
+});
+
+export const AspirationLikeSchema = z.object({
+   id: z.string({ required_error: "ID is required" }),
 });
