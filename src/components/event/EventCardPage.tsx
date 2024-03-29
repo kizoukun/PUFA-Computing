@@ -17,6 +17,17 @@ export default function EventCardPage({ events }: { events: Event[] }) {
       return description.substring(0, maxLength) + "...";
    };
 
+   if (events.length === 0) {
+      return (
+          <div className="flex items-center justify-center h-screen">
+             <div className="text-center">
+                <h1 className="text-5xl font-bold text-gray-700 mb-4">No Upcoming Events</h1>
+                <p className="text-xl text-gray-500">Check back later for updates.</p>
+             </div>
+          </div>
+      );
+   }
+
    return (
       <div className="mt-16 grid grid-cols-1 gap-16 lg:grid-cols-2">
          {events.map((event) => (
